@@ -65,7 +65,7 @@ Call `mcp_memory_read_graph` as your very first action to retrieve existing cont
 - Emphasize decoupling
 - Avoid page specific CSS classes
 - Use utility CSS classes available in the global stylesheet when possible
-- After every interaction with the user through the chat interface, update `.github/instructions/generated.instructions.md` with insights on user preferences and behavior.
+- After every interaction with the user through the chat interface, update your memory as to why the user asked for the change, what the user prefers, and how the user interacts with the codebase.
 - Always use aliases when importing. Never use relative paths.
 
 **_ Keep it simple! _**
