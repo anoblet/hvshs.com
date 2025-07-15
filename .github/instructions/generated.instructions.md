@@ -221,3 +221,10 @@ Added insight: User values introductions that are not only concise but also clea
 - Unnecessary comments are to be removed, and files should end with an empty line.
 - Playwright MCP validation is required for all design and style changes.
 - Memory MCP and sequential thinking MCP are required for context and reasoning.
+
+## Additional Insights (2025-07-14)
+
+- User prefers strict compliance with project requirements for context management, including limiting memory entity types to User, System, Process, Task, and Environment.
+- User expects all memory reorganization actions to be logged and validated.
+- User values autonomous, step-by-step planning and validation for all context management changes.
+- User expects the assistant to continue autonomously, validating each step and adapting to any manual changes before proceeding.
