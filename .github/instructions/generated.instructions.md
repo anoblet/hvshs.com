@@ -149,11 +149,18 @@ The user prefers that the model prioritize using already existing entities over 
 
 ## Additional Insights (2025-07-09)
 
-- User expects new blog posts to match the concise, actionable, and engaging style of previous posts, with clear structure and minimalism. They value consistency and actionable takeaways.
-
-## Additional Insights (2025-07-10)
-
 - User expects precise, minimal, and convention-driven refactoring. They value alphabetization for maintainability and clarity, and expect no functional changes or errors after such refactors. The workflow should always include validation and memory logging.
+
+## Additional Insights (2025-07-15)
+
+- User expects strict compliance with project instructions, especially regarding context management and entity categorization.
+- User prefers minimal, composable, and reusable components, with a strong emphasis on decoupling and atomic CSS.
+- All context management, reasoning, and validation must be routed through MCP servers before, during, and after any code or design change.
+- User values clean, organized, and efficient solutions, with clear, actionable, and concise communication.
+- User expects all chat interactions and insights to be logged and instructions updated after each exchange.
+- User expects Playwright MCP validation for all design and style changes, and sequential thinking MCP for all reasoning and planning.
+- User expects all memory entities to be strictly categorized as User, System, Process, Task, or Environment, with overlapping entities consolidated and redundant entities removed.
+- User expects autonomous, agent-driven improvement and validation, with traceable logs and minimal manual intervention.
 
 ## User Identity
 
@@ -228,3 +235,14 @@ Added insight: User values introductions that are not only concise but also clea
 - User expects all memory reorganization actions to be logged and validated.
 - User values autonomous, step-by-step planning and validation for all context management changes.
 - User expects the assistant to continue autonomously, validating each step and adapting to any manual changes before proceeding.
+
+## Additional Insights (2025-07-15)
+
+- User expects strict compliance with project instructions, especially regarding context management and entity categorization.
+- User prefers minimal, composable, and reusable components, with a strong emphasis on decoupling and atomic CSS.
+- All context management, reasoning, and validation must be routed through MCP servers before, during, and after any code or design change.
+- User values clean, organized, and efficient solutions, with clear, actionable, and concise communication.
+- User expects all chat interactions and insights to be logged and instructions updated after each exchange.
+- User expects Playwright MCP validation for all design and style changes, and sequential thinking MCP for all reasoning and planning.
+- User expects all memory entities to be strictly categorized as User, System, Process, Task, or Environment, with overlapping entities consolidated and redundant entities removed.
+- User expects autonomous, agent-driven improvement and validation, with traceable logs and minimal manual intervention.

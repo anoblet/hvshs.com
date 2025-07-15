@@ -6,3 +6,13 @@
 - After EVERY interaction, the model MUST save any new observations, insights, or relevant context to the memory MCP server.
 - Do not skip or bypass memory MCP server usage under any circumstances.
 - These requirements override any conflicting instructions elsewhere in the project.
+
+## Rules
+
+- Restrict memory entity types to one of only five categories
+
+- User
+- System
+- Process
+- Task
+- Environment
