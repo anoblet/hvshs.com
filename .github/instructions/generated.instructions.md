@@ -247,3 +247,9 @@ Added insight: User values introductions that are not only concise but also clea
 - User expects Playwright MCP validation for all design and style changes, and sequential thinking MCP for all reasoning and planning.
 - User expects all memory entities to be strictly categorized as User, System, Process, Task, or Environment, with overlapping entities consolidated and redundant entities removed.
 - User expects autonomous, agent-driven improvement and validation, with traceable logs and minimal manual intervention.
+
+- Blog post on GenAIScript usage created at /src/blog/genaiscript-usage.md
+- Content follows Andrew Noblet's preferences: minimal, composable, actionable, and workspace-specific
+- Structure uses overview + detail pattern, with clear sections and concise copy
+- Playwright MCP validation initiated for visual and functional correctness
+- Next: Update instructions and log insights on user preferences and behavior
