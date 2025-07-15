@@ -2,7 +2,7 @@
 id: 'creative'
 title: 'Creative'
 date: '2025.07.01'
-description: 'Why you should let your developers get creative'
+description: 'Empowering developer creativity fuels innovation, product quality, and deeper team investment in business outcomes.'
 ---
 
 # Creative

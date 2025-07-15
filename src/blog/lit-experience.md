@@ -2,7 +2,7 @@
 id: 'lit-experience'
 title: 'Building with Lit'
 date: '2025.07.10'
-description: 'How Lit transformed my approach to web components and UI development'
+description: 'Discover how Lit enables fast, reusable, and accessible web components—streamlining UI development and driving project success.'
 ---
 
 # Building with Lit

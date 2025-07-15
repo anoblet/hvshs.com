@@ -19,6 +19,7 @@ const posts = await getCollection('blog');
             <a href={'/blog/' + post.id}>
               {post.data.title} - {post.data.date}
             </a>
+            <div class="blog-description">{post.data.description}</div>
           </li>
         ))
       }
