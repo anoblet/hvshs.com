@@ -93,11 +93,6 @@ export const globalStyles = css`
     padding: 0.5rem;
     position: fixed;
     z-index: 1;
-
-    icon-component {
-      --icon-color: blue;
-      color: inherit;
-    }
   }
 
   h1,
@@ -127,15 +122,6 @@ export const globalStyles = css`
   hr {
     border-color: var(--color-neutral-800);
     width: 100%;
-  }
-
-  icon-component {
-    /* color: var(--icon-color); */
-    padding: var(--icon-padding);
-
-    &:hover {
-      color: var(--icon-hover-color);
-    }
   }
 
   main {
