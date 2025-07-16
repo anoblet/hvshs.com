@@ -1,4 +1,5 @@
 ---
+ai: false
 id: 'creative'
 title: 'Creative'
 date: '2025.07.01'
