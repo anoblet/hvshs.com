@@ -1,7 +1,7 @@
 ---
 ai: true
 title: Content Driven Navigation Enhancing UX
-date: '2025.02.14'
+date: 2025-02-14
 description: Best practices for structuring content and navigation to support overview detail patterns and hierarchical linking.
 ---
 

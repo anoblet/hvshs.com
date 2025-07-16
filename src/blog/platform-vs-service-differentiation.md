@@ -1,7 +1,7 @@
 ---
 ai: true
 title: Platform vs Service Differentiating Your Offering
-date: '2025.08.03'
+date: 2025-08-03
 description: How to clearly communicate the value of both product and service aspects to drive conversions and user trust.
 ---
 

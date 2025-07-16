@@ -2,7 +2,7 @@
 ai: false
 id: 'focus'
 title: 'Focus'
-date: '2025.07.01'
+date: 2025-07-01
 description: 'Prioritizing focus empowers teams to deliver higher quality, faster results, and greater business value.'
 ---
 

@@ -2,7 +2,7 @@
 ai: true
 id: 'lit-experience'
 title: 'Building with Lit'
-date: '2025.03.05'
+date: 2025-03-05
 description: 'Discover how Lit enables fast, reusable, and accessible web components—streamlining UI development and driving project success.'
 ---
 
