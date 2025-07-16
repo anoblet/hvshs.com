@@ -1,4 +1,5 @@
 ---
+ai: true
 title: Community Engagement Lessons Learned
 date: '2025.07.15'
 description: Insights and actionable tips from building and sustaining an active user and contributor community.

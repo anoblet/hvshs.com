@@ -1,4 +1,5 @@
 ---
+ai: true
 title: Open Source Strategy Building Community and Value
 date: '2025.07.15'
 description: Actionable steps for fostering community engagement transparency and sustainable growth through open source principles.

@@ -1,4 +1,5 @@
 ---
+ai: true
 id: 'astro-experience'
 title: 'Building with Astro: Fast, Flexible, and Future-Proof'
 date: '2025.07.10'

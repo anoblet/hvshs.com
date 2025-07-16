@@ -1,4 +1,5 @@
 ---
+ai: true
 id: modular-architecture-scalable-platforms
 title: Modular Architecture for Scalable Platforms
 date: '2025.07.15'

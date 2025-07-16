@@ -1,4 +1,5 @@
 ---
+ai: true
 id: 'genaiscript-usage'
 title: 'How I Use GenAIScript to Automate, Validate, and Accelerate My Workflow'
 date: '2025.07.15'

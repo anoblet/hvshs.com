@@ -1,4 +1,5 @@
 ---
+ai: true
 title: Atomic CSS and Brand Continuity
 date: '2025.07.15'
 description: The role of atomic CSS in maintaining a consistent brand identity and improving performance across components.

@@ -1,4 +1,5 @@
 ---
+ai: true
 title: Technical Case Study Portfolio Project Deep Dive
 date: '2025.07.15'
 description: A detailed breakdown of a recent portfolio project highlighting technical challenges solutions and business impact.

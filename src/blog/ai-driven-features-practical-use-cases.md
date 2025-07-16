@@ -1,4 +1,5 @@
 ---
+ai: true
 title: AI Driven Features Practical Use Cases
 date: '2025.07.15'
 description: Real world examples of integrating AI into web platforms to enhance user experience and automate workflows.

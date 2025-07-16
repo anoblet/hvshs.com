@@ -1,4 +1,5 @@
 ---
+ai: true
 id: 'lit-experience'
 title: 'Building with Lit'
 date: '2025.07.10'
