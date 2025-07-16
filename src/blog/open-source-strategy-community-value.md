@@ -10,14 +10,13 @@ Open source is more than a licensing model—it's a philosophy that empowers col
 
 # Why Open Source Matters
 
+## Why Open Source Matters
+
 Open source offers unique advantages:
 
-- **Transparency:** Code is visible to everyone, fostering trust and accountability.
-- **Collaboration:** Contributors from around the world can participate, bringing diverse perspectives and skills.
-- **Innovation:** Open development accelerates experimentation and the adoption of new ideas.
-- **Sustainability:** Community-driven projects can survive leadership changes and market shifts.
-
 # Building a Community Around Open Source
+
+## Building a Community Around Open Source
 
 ## 1. Clear Contribution Guidelines
 
@@ -41,6 +40,8 @@ Empower community leaders to organize events, moderate discussions, and mentor n
 
 # Strategies for Sustainable Growth
 
+## Strategies for Sustainable Growth
+
 ## 1. Publish a Roadmap and Invite Feedback
 
 Transparency in planning builds trust. Share your project’s roadmap and invite feedback from the community. Use polls, open discussions, and working groups to involve contributors in decision-making.
@@ -63,6 +64,8 @@ Use bots and tools to manage moderation, onboarding, and recognition. Automation
 
 # Overcoming Common Challenges
 
+## Overcoming Common Challenges
+
 ## 1. Low Engagement
 
 If participation drops, try new formats for events, increase recognition, or reach out personally to inactive members. Analyze feedback to identify barriers.
@@ -81,6 +84,8 @@ As the community grows, processes and tools may need to evolve. Invest in automa
 
 # Real-World Examples
 
+## Real-World Examples
+
 ## Example 1: Popular Open-Source Library
 
 A widely used open-source library grew its community by hosting monthly webinars, publishing contributor spotlights, and offering mentorship for new members. Engagement increased, and the project attracted sponsorships and new maintainers.
@@ -95,6 +100,8 @@ A tech startup launched an advocacy program, providing resources and recognition
 
 # Actionable Steps (Expanded)
 
+## Actionable Steps (Expanded)
+
 1. **Audit your current community:** Identify strengths, weaknesses, and opportunities for growth.
 2. **Set clear goals:** Define what success looks like for your project and community.
 3. **Invest in onboarding:** Make it easy for newcomers to join and contribute.
@@ -104,12 +111,11 @@ A tech startup launched an advocacy program, providing resources and recognition
 
 # Business Outcomes (Expanded)
 
-- **Greater Adoption:** Engaged communities attract new users and contributors.
-- **Trust and Transparency:** Open development builds credibility and accountability.
-- **Long-Term Sustainability:** Community-driven projects can weather leadership changes and market shifts.
-- **Faster Innovation:** Collaborative feedback and contributions accelerate development.
+## Business Outcomes (Expanded)
 
 # Conclusion
+
+## Conclusion
 
 Open source is a powerful strategy for building community and delivering value. By fostering transparency, collaboration, and inclusivity, projects can grow and thrive. The lessons learned from successful open-source communities—celebrating achievements, adapting to change, and supporting leaders—can help any project succeed.
 

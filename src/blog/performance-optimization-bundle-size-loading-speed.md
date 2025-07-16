@@ -10,14 +10,13 @@ Website and application performance is a critical factor in user retention, enga
 
 # Why Performance Matters
 
+## Why Performance Matters
+
 Performance impacts:
 
-- **User Experience:** Fast sites keep users engaged and reduce bounce rates.
-- **SEO:** Search engines prioritize fast-loading sites in rankings.
-- **Conversion Rates:** Faster sites lead to higher sales and sign-ups.
-- **Resource Costs:** Efficient code reduces server and bandwidth costs.
-
 # Key Concepts in Performance Optimization
+
+## Key Concepts in Performance Optimization
 
 ## 1. Bundle Size
 
@@ -32,6 +31,8 @@ Loading speed is the time it takes for a site or app to become usable. It’s af
 TTI measures how quickly users can interact with your site. Reducing TTI improves perceived performance and user satisfaction.
 
 # Strategies for Reducing Bundle Size
+
+## Strategies for Reducing Bundle Size
 
 ## 1. Code Splitting
 
@@ -55,6 +56,8 @@ Load non-critical resources (images, components, scripts) only when needed. This
 
 # Strategies for Improving Loading Speed
 
+## Strategies for Improving Loading Speed
+
 ## 1. Optimize Images and Assets
 
 Compress images, use modern formats (e.g., WebP), and serve scaled images for different devices. Optimize fonts and icons for faster rendering.
@@ -77,6 +80,8 @@ Use tools like Lighthouse, WebPageTest, and Google Analytics to track performanc
 
 # Common Pitfalls and How to Avoid Them
 
+## Common Pitfalls and How to Avoid Them
+
 ## 1. Over-Optimization
 
 Too much optimization can make code hard to maintain. Balance performance with readability and maintainability.
@@ -90,6 +95,8 @@ Mobile devices have limited resources and slower connections. Test performance o
 External scripts (ads, analytics, widgets) can slow down your site. Audit and optimize third-party integrations.
 
 # Real-World Examples
+
+## Real-World Examples
 
 ## Example 1: E-Commerce Site
 
@@ -105,6 +112,8 @@ A news site implemented lazy loading for images and articles, improving TTI and 
 
 # Actionable Steps (Expanded)
 
+## Actionable Steps (Expanded)
+
 1. **Audit your bundles:** Use build tools to analyze and reduce bundle size.
 2. **Optimize assets:** Compress images, fonts, and icons.
 3. **Implement code splitting and lazy loading:** Load only what’s needed, when it’s needed.
@@ -113,12 +122,11 @@ A news site implemented lazy loading for images and articles, improving TTI and 
 
 # Business Outcomes (Expanded)
 
-- **Faster Load Times:** Improved user experience and engagement.
-- **Higher Conversion Rates:** Faster sites drive more sales and sign-ups.
-- **Reduced Costs:** Efficient code lowers server and bandwidth expenses.
-- **Better SEO:** Higher rankings and more organic traffic.
+## Business Outcomes (Expanded)
 
 # Conclusion
+
+## Conclusion
 
 Performance optimization is an ongoing process. By reducing bundle size, optimizing assets, and monitoring key metrics, you can deliver a seamless experience that delights users and drives business results.
 
