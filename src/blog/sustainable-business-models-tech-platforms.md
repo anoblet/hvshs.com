@@ -1,7 +1,7 @@
 ---
 ai: true
 title: Sustainable Business Models for Tech Platforms
-date: 2025-10-16
+date: 2025-03-14
 description: Exploring open source monetization service differentiation and long term sustainability.
 ---
 
