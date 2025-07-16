@@ -1,7 +1,7 @@
 ---
 ai: true
 title: Performance Optimization Bundle Size and Loading Speed
-date: '2025.07.15'
+date: '2025.12.15'
 description: Strategies for reducing bundle size improving loading times and delivering a seamless user experience.
 ---
 

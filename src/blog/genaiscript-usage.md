@@ -2,7 +2,7 @@
 ai: true
 id: 'genaiscript-usage'
 title: 'How I Use GenAIScript to Automate, Validate, and Accelerate My Workflow'
-date: '2025.07.15'
+date: '2025.07.11'
 description: 'A practical overview of how GenAIScript powers minimal, composable automation and validation in the astronautical-apogee project.'
 ---
 

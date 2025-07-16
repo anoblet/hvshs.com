@@ -2,7 +2,7 @@
 ai: true
 id: modular-architecture-scalable-platforms
 title: Modular Architecture for Scalable Platforms
-date: '2025.07.15'
+date: '2025.06.27'
 description: How modular design enables rapid iteration, maintainability, and business agility in open-source projects.
 ---
 
