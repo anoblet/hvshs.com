@@ -20,4 +20,15 @@ export const utility = css`
   .height-0-5 {
     height: 0.5rem;
   }
+
+  .space-around {
+    justify-content: space-around;
+  }
+
+  .space-between {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
 `;

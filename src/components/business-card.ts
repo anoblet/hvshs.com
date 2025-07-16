@@ -1,93 +1,84 @@
 import { Base } from '@components/base';
-import { css, html } from 'lit';
-import { customElement, property } from 'lit/decorators.js';
 import { planet } from '@icons/planet';
+import { css, html } from 'lit';
+import { customElement } from 'lit/decorators.js';
+import { phone } from '@icons/phone';
+import { mail } from '@icons/mail';
+import { language } from '@icons/language';
 
 @customElement('business-card')
 export class BusinessCard extends Base {
-  @property({ type: String }) accessor front = '';
-  @property({ type: String }) accessor back = '';
-
   static styles = [
     ...super.styles,
     css`
       :host {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 2rem;
-        width: 100%;
-        max-width: 600px;
-        aspect-ratio: 2 / 1;
-        background: none;
-      }
-      .card-side {
-        position: relative;
-        background: var(--card-background-color);
+        --icon-padding: 0.5rem;
+
+        background-color: var(--color-neutral-900);
+        border: 1px solid var(--color-neutral-500);
         border-radius: 0.5rem;
-        box-shadow: var(--box-shadow);
-        border: 1px solid var(--card-border-color);
-        display: flex;
-        flex-direction: column;
+        height: calc(600px / 2);
         justify-content: center;
-        align-items: center;
-        padding: 2rem;
-        overflow: hidden;
-        min-height: 300px;
-        min-width: 280px;
+        width: calc(1050px / 2);
       }
-      .planet-bg {
-        position: absolute;
-        inset: 0;
-        opacity: 0.08;
-        pointer-events: none;
-        z-index: 0;
+
+      .amber-300 {
+        color: var(--color-amber-300);
+      }
+
+      .padding {
+        padding: 0.75rem;
+      }
+
+      .sky-200 {
+        color: var(--color-sky-200);
+      }
+
+      span {
+        align-items: center;
         display: flex;
-        justify-content: center;
-        align-items: center;
       }
-      .content {
-        position: relative;
-        z-index: 1;
-        width: 100%;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-      }
-      @media print {
-        :host {
-          box-shadow: none;
-          border: none;
-          background: none;
-          width: 100vw;
-          max-width: unset;
-          aspect-ratio: unset;
-          grid-template-columns: 1fr 1fr;
-        }
-        .card-side {
-          box-shadow: none;
-          border: 1px solid var(--card-border-color);
-          background: var(--card-background-color);
-          page-break-inside: avoid;
-        }
+
+      ul {
+        padding: 0.5rem;
       }
     `,
   ];
 
   render() {
     return html`
-      <div class="card-side front">
-        <div class="planet-bg">${planet}</div>
-        <div class="content">
-          <slot name="front">${this.front}</slot>
+      <div class="column flex padding width-100">
+        <h1 class="text-align-center">Andrew Noblet</h1>
+        <p class="text-align-center">
+          Empowering your online presence with design, hosting, and expert
+          guidance.
+        </p>
+        <div class="flex space-around">
+          <ul class="amber-300">
+            <li>Design</li>
+            <li>Hosting</li>
+            <li>Consultation</li>
+          </ul>
+          <ul class="amber-300">
+            <li>Mentorship</li>
+            <li>Tutoring</li>
+            <li>Development</li>
+          </ul>
         </div>
-      </div>
-      <div class="card-side back">
-        <div class="planet-bg">${planet}</div>
-        <div class="content">
-          <slot name="back">${this.back}</slot>
+        <div class="gap flex space-around">
+          <span>
+            <icon-component>${phone}</icon-component>
+            (914) 417-9070
+          </span>
+          <span>
+            <icon-component>${mail}</icon-component>
+            andrewbnoblet@gmail.com
+          </span>
         </div>
+        <span class="justify-content-center text-align-center">
+          <icon-component>${language}</icon-component>
+          andrewbnoblet.com
+        </span>
       </div>
     `;
   }

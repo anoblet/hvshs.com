@@ -432,13 +432,6 @@ export const globalStyles = css`
     height: 0.5rem;
   }
 
-  .space-between {
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-  }
-
   .step-card {
     background-color: var(--step-card-background-color);
     border: 1px solid var(--color-neutral-600);
