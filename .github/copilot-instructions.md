@@ -72,6 +72,7 @@ Call `mcp_memory_read_graph` as your very first action to retrieve existing cont
 
 # Tools
 
+#file:./instructions/context.instructions.md
 #file:./instructions/memory.instructions.md
 #file:./instructions/playwright.instructions.md
 #file:./instructions/sequential-thinking.instructions.md
