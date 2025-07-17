@@ -71,10 +71,6 @@ export const globalStyles = css`
     }
   }
 
-  contact-component {
-    right: 1rem;
-  }
-
   contact-component,
   theme-toggle {
     --icon-color: inherit;
@@ -82,7 +78,6 @@ export const globalStyles = css`
     align-items: center;
     border: 1px solid var(--color-neutral-400);
     border-radius: 50%;
-    bottom: 1rem;
     outline: var(--button-outline);
     box-shadow: var(--box-shadow);
     cursor: pointer;
@@ -142,6 +137,7 @@ export const globalStyles = css`
   }
 
   theme-toggle {
+    bottom: 1rem;
     left: 1rem;
   }
 

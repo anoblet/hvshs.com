@@ -15,8 +15,10 @@ export class ContactComponent extends Base {
         --icon-size: 1.5rem;
 
         background-color: var(--button-background-color);
+        bottom: 1rem;
         color: var(--button-color);
         cursor: pointer;
+        right: 1rem;
 
         a {
           color: inherit;
