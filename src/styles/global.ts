@@ -147,7 +147,7 @@ export const globalStyles = css`
 
   ul {
     margin: 0;
-    padding: 0 1.75rem;
+    padding: 0 1rem;
 
     &.card-list {
       display: flex;
