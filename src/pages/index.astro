@@ -12,8 +12,22 @@ import Layout from '../layouts/default.astro';
   import { css, html } from 'lit';
   import { customElement } from 'lit/decorators.js';
 
+  const taglines = [
+    'Crafting Modern, Accessible Web Experiences',
+    'Building Inclusive Digital Solutions',
+    'Designing for Everyone, Everywhere',
+    'Empowering Users with Accessible Design',
+    'Innovating for a Better Web Experience',
+    'Creating Seamless, Accessible Interfaces',
+    'Fostering Accessibility in Web Development',
+    'Championing Inclusive Web Design',
+  ];
+
   @customElement('index-component')
   class IndexComponent extends Base {
+    private randomTagline =
+      taglines[Math.floor(Math.random() * taglines.length)];
+
     static styles = [
       globalStyles,
       css`
@@ -68,15 +82,13 @@ import Layout from '../layouts/default.astro';
           <media-component desktop>
             <h1 class="text-align-center hidden-mobile">
               Andrew Noblet |
-              <span class="bold"
-                >Crafting Modern, Accessible Web Experiences</span
-              >
+              <span class="bold">${this.randomTagline}</span>
             </h1>
           </media-component>
           <media-component mobile>
             <h1 class="grid text-align-center hidden-desktop">
               <span class="text-align-center">Andrew Noblet</span>
-              <span class="bold">Accessible Web Experiences</span>
+              <span class="bold">${this.randomTagline}</span>
             </h1>
           </media-component>
           <media-component class="align-items-center" desktop>
