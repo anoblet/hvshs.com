@@ -33,10 +33,23 @@ export class ThemeToggle extends Base {
       :host {
         --icon-padding: 0.25rem;
         --icon-size: 1.25rem;
+        --icon-color: inherit;
 
+        align-items: center;
         background-color: var(--button-background-color);
+        border: 1px solid var(--color-neutral-400);
+        border-radius: 50%;
+        bottom: 1rem;
+        box-shadow: var(--box-shadow);
         color: var(--button-color);
         cursor: pointer;
+        display: flex;
+        justify-content: center;
+        left: 1rem;
+        outline: var(--button-outline);
+        padding: 0.5rem;
+        position: fixed;
+        z-index: 1;
       }
 
       :host(:hover) {

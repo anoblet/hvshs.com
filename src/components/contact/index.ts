@@ -13,12 +13,23 @@ export class ContactComponent extends Base {
       :host {
         --icon-padding: 0.5rem;
         --icon-size: 1.5rem;
+        --icon-color: inherit;
 
+        align-items: center;
         background-color: var(--button-background-color);
+        border: 1px solid var(--color-neutral-400);
+        border-radius: 50%;
         bottom: 1rem;
+        box-shadow: var(--box-shadow);
         color: var(--button-color);
         cursor: pointer;
+        display: flex;
+        justify-content: center;
+        outline: var(--button-outline);
+        padding: 0.5rem;
+        position: fixed;
         right: 1rem;
+        z-index: 1;
 
         a {
           color: inherit;

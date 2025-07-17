@@ -71,23 +71,6 @@ export const globalStyles = css`
     }
   }
 
-  contact-component,
-  theme-toggle {
-    --icon-color: inherit;
-
-    align-items: center;
-    border: 1px solid var(--color-neutral-400);
-    border-radius: 50%;
-    outline: var(--button-outline);
-    box-shadow: var(--box-shadow);
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    padding: 0.5rem;
-    position: fixed;
-    z-index: 1;
-  }
-
   h1,
   h2,
   h3,
@@ -134,11 +117,6 @@ export const globalStyles = css`
     fill: currentColor;
     /* height: 1rem; */
     /* width: 1rem; */
-  }
-
-  theme-toggle {
-    bottom: 1rem;
-    left: 1rem;
   }
 
   ul {
