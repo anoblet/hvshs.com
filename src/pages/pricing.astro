@@ -13,15 +13,21 @@ import PricingCard from '@components/PricingCard.astro';
   </p>
 
   <div class="flex gap-2 justify-center margin-bottom-4">
-    <a class="button font-size-1-125" href="/services/hosting/pricing"
-      >Hosting Pricing</a
-    >
-    <a class="button font-size-1-125" href="/services/design/pricing"
-      >Design Pricing</a
-    >
-    <a class="button font-size-1-125" href="/services/consultation/pricing"
-      >Consultation Pricing</a
-    >
+    <a href="/services/hosting/pricing">
+      <button-component variant="primary" class="font-size-1-125">
+        Hosting Pricing
+      </button-component>
+    </a>
+    <a href="/services/design/pricing">
+      <button-component variant="primary" class="font-size-1-125">
+        Design Pricing
+      </button-component>
+    </a>
+    <a href="/services/consultation/pricing">
+      <button-component variant="primary" class="font-size-1-125">
+        Consultation Pricing
+      </button-component>
+    </a>
   </div>
   <div class="grid auto-fit-20 gap-2 width-100 max-width-64 margin-auto">
     <PricingCard
