@@ -12,7 +12,7 @@ export class ContactComponent extends Base {
     css`
       :host {
         --icon-padding: 0.5rem;
-        --icon-size: 2rem;
+        --icon-size: 1.5rem;
 
         background-color: var(--button-background-color);
         color: var(--button-color);
