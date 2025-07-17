@@ -11,6 +11,9 @@ export class ContactComponent extends Base {
     ...super.styles,
     css`
       :host {
+        --icon-padding: 0.5rem;
+        --icon-size: 2rem;
+
         background-color: var(--button-background-color);
         color: var(--button-color);
         cursor: pointer;

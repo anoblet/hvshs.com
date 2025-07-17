@@ -78,8 +78,6 @@ export const globalStyles = css`
   contact-component,
   theme-toggle {
     --icon-color: inherit;
-    --icon-padding: 0.25rem;
-    --icon-size: 1.25rem;
 
     align-items: center;
     border: 1px solid var(--color-neutral-400);

@@ -31,6 +31,9 @@ export class ThemeToggle extends Base {
     ...super.styles,
     css`
       :host {
+        --icon-padding: 0.25rem;
+        --icon-size: 1.25rem;
+
         background-color: var(--button-background-color);
         color: var(--button-color);
         cursor: pointer;
