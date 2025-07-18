@@ -17,7 +17,9 @@ const { title, description, features, price, buttonText, buttonHref } =
   <ul class="list margin-bottom-2">
     {features.map(feature => <li>{feature}</li>)}
   </ul>
-  <div class="font-size-2 font-weight-6 margin-bottom-2">{price}</div>
+  <div class="font-size-2 font-weight-6 margin-bottom-2 text-align-center">
+    {price}
+  </div>
   <div class="flex justify-content-center">
     <button-component variant="primary" href={buttonHref}
       >{buttonText}</button-component
