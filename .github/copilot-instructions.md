@@ -1,10 +1,10 @@
-## ⚠️ CRITICAL: CHECK MEMORY FIRST ⚠️
+# Copilot Instructions
 
-**BEFORE BEGINNING ANY WORK, YOU MUST IMMEDIATELY CHECK THE MEMORY MCP SERVER.**
+# Tools
 
-Call `mcp_memory_read_graph` as your very first action to retrieve existing context, user preferences, and project observations. No exceptions.
-
----
+#file:./instructions/memory.instructions.md
+#file:./instructions/playwright.instructions.md
+#file:./instructions/sequential-thinking.instructions.md
 
 ## 🎯 PRIORITY: USER CLARIFICATIONS & MANUAL MODIFICATIONS 🎯
 
@@ -69,9 +69,3 @@ Call `mcp_memory_read_graph` as your very first action to retrieve existing cont
 - Always use aliases when importing. Never use relative paths.
 
 **_ Keep it simple! _**
-
-# Tools
-
-#file:./instructions/memory.instructions.md
-#file:./instructions/playwright.instructions.md
-#file:./instructions/sequential-thinking.instructions.md

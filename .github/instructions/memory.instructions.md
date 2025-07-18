@@ -1,6 +1,10 @@
 # Memory MCP Server Instructions
 
-## CRITICAL REQUIREMENT: MEMORY FIRST
+## ⚠️ CRITICAL: CHECK MEMORY FIRST ⚠️
+
+**BEFORE BEGINNING ANY WORK, YOU MUST IMMEDIATELY CHECK THE MEMORY MCP SERVER.**
+
+Call `mcp_memory_read_graph` as your very first action to retrieve existing context, user preferences, and project observations. No exceptions.
 
 **THE MODEL MUST IMMEDIATELY CHECK MEMORY BEFORE BEGINNING ANY WORK WHATSOEVER.**
 
