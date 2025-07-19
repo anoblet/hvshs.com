@@ -2,9 +2,21 @@
 import { getCollection } from 'astro:content';
 import Layout from '../layouts/default.astro';
 
-const posts = (await getCollection('blog')).sort(
-  (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
-);
+const postCollection = await getCollection('blog');
+
+const originalPosts = postCollection
+  .filter(post => post.data.ai !== true)
+  .sort(
+    (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
+  );
+
+const generatedPosts = postCollection
+  .filter(post => post.data.ai === true)
+  .sort(
+    (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
+  );
+
+const posts = [...originalPosts, ...generatedPosts];
 ---
 
 <Layout title="Blog">
