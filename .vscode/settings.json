@@ -4,6 +4,7 @@
     ".copilot/instructions": true
   },
   "chat.modeFilesLocations": {
+    ".copilot/chatmodes": true,
     "awesome-copilot/chatmodes": true
   }
 }
