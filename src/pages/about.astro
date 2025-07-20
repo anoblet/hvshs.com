@@ -1,12 +1,13 @@
 ---
 import Layout from '@layouts/default.astro';
+import profileImage from '@assets/images/profile.webp';
 ---
 
 <Layout title="About Andrew Noblet">
   <div class="max-width-56 width-100 margin-auto column flex gap-2">
     <section class="gap grid justify-content-center text-align-center">
       <img
-        src="/src/assets/images/profile.webp"
+        src={profileImage.src}
         alt="Andrew Noblet profile photo"
         class="profile-image margin-auto"
         width="128"
