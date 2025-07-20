@@ -5,6 +5,14 @@ import Layout from '@layouts/default.astro';
 <Layout title="About Andrew Noblet">
   <div class="max-width-56 width-100 margin-auto column flex gap-2">
     <section class="gap grid justify-content-center text-align-center">
+      <img
+        src="/src/assets/images/profile.webp"
+        alt="Andrew Noblet profile photo"
+        class="profile-image margin-auto"
+        width="128"
+        height="128"
+        loading="lazy"
+      />
       <h1>Meet Andrew Noblet</h1>
       <p class="bold-5 max-width-56">
         Hello! I'm <strong>Andrew Noblet</strong>, a developer dedicated to
@@ -47,6 +55,16 @@ import Layout from '@layouts/default.astro';
   </div>
 </Layout>
 
+<style>
+  .profile-image {
+    display: block;
+    border-radius: 50%;
+    width: min(16rem, 50vw);
+    height: min(16rem, 50vw);
+    object-fit: cover;
+    box-shadow: 0 0 0 4px var(--tertiary-color);
+  }
+</style>
 <script>
   import '@components/card';
   import '@components/button';
