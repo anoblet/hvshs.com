@@ -54,5 +54,6 @@ Failure to check memory first will result in:
 
 - Project Goal
 - Project Structure
+- Project Preference
 - User Development Preferences
 - User Personal Information
