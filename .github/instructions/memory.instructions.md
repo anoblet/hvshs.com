@@ -50,10 +50,9 @@ Failure to check memory first will result in:
 
 ## Rules
 
-- Restrict memory entity types to one of only five categories
+- Restrict memory entity types to one of these categories
 
-- User
-- System
-- Process
-- Task
-- Environment
+- Project Goal
+- Project Structure
+- User Development Preferences
+- User Personal Information
