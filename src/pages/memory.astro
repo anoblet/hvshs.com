@@ -1,0 +1,144 @@
+---
+import Layout from '@layouts/default.astro';
+import MemoryViewer from '@components/MemoryViewer.astro';
+import '@components/card';
+
+const memory = [
+  {
+    name: 'Andrew Noblet',
+    entityType: 'User Personal Information',
+    observations: [
+      "The user's name is Andrew Noblet.",
+      "The user's GitHub profile URL is https://github.com/anoblet.",
+      'The developer lived in Puerto Rico.',
+      'The developer lived in Ohio.',
+      'The developer lives in New York.',
+      'The developer was born in Chile.',
+      'The developer enjoys skateboarding.',
+      'The developer enjoys snowboarding.',
+      'The developer likes guitar.',
+      'User enjoys Confucianism.',
+      'User enjoys 3D printing, smart home technology, and bike riding as hobbies.',
+      "User clarified: 'I don't like lamb.' This is a high-priority personal preference and should be respected in all content, copy, and code. No references to lamb (literal or figurative) should appear in the project.",
+      "User clarified: 'I do love spaghetti.' This is a high-priority personal preference and should be respected in all content, copy, and code. Positive references to spaghetti are welcome in the project.",
+      "Astro is one of the user's favorite pieces of software. This is a high-priority personal preference and should be respected and emphasized in all recommendations, framework/tool choices, and project discussions.",
+      "Lit is one of the user's favorite pieces of software. This is a high-priority personal preference and should be respected and emphasized in all recommendations, framework/tool choices, and project discussions, alongside the existing preference for Astro.",
+      'User has reiterated that Astro is one of their favorite pieces of software. This reinforces the existing high-priority personal preference and should be continually emphasized in all recommendations, framework/tool choices, and project discussions.',
+      'The user enjoys politics.',
+      'The user enjoys history.',
+      'The user enjoys 3D printing.',
+    ],
+  },
+  {
+    name: 'Coding Standards',
+    entityType: 'User Development Preferences',
+    observations: [
+      'Prefers minimal, composable, and reusable components.',
+      'Emphasizes decoupling and simplicity in code structure.',
+      'Strictly adheres to a global color scheme and atomic CSS principles.',
+      'Removes unnecessary comments and avoids adding new ones.',
+      'Keeps changes to existing logic minimal and only updates when necessary.',
+      'Values performance optimization and bundle size reduction.',
+      'Uses semantic HTML and prioritizes accessibility.',
+      'Favors utility CSS classes and direct element targeting over page-specific classes.',
+      'Organizes code for maintainability and extensibility, with clear separation of concerns.',
+      'Prefers content-driven component design over prop-driven design.',
+      'Wants all code to include an empty line at the end of the file.',
+      'Consistently requests strict adherence to project and coding instructions.',
+      'Prefers clean, organized, and efficient solutions with clear, actionable, and concise communication.',
+      'Values consistency across pages and components, and expects design patterns to be maintained throughout the application.',
+      'Prefers minimal, streamlined approaches to file management and configuration.',
+      'Wants all changes to be as minimal as possible, with a focus on reusability and performance.',
+      'Prefers detailed technical analysis with actionable recommendations and clear prioritization.',
+      'Prefers content-driven, minimal component syntax without unnecessary attributes.',
+      'Values maintainability, extensibility, and DRY principles in all code and content.',
+      'The developer prefers to use aliases for imports and utility CSS classes from the global stylesheet.',
+      'Decorators in TypeScript require the accessor keyword, per project instructions.',
+      'Styles are always scoped to components and use CSS variables and the global color scheme.',
+      'User prefers concise, clear, and brand-aligned copy across all site pages except blog pages.',
+      'User values minimal changes, composability, and professional yet approachable tone.',
+      'Prefers MCP server-based context management, reasoning, and validation for all code and design changes.',
+      'Expects Playwright MCP validation for all design and style changes, and sequential thinking MCP for all reasoning and planning.',
+      'Wants all code and content to be workspace-specific, efficient, and aligned with astronautical-apogee project standards.',
+      'Values minimal, composable, and reusable components, with strict adherence to global color scheme and atomic CSS.',
+      'Expects rigorous, step-by-step planning and validation before, during, and after code changes.',
+      'Wants all edge cases and boundary conditions to be considered and tested.',
+      'Prefers maintainability, extensibility, and DRY principles in all code and content.',
+      'User preferred component-scoped styles over global styles, aligning with their emphasis on composability and reusability.',
+      'User strongly prefers to use Husky, lint-staged, pnpm, Prettier, and wireit in all projects. This is a high-priority workflow and tooling preference and should be emphasized in all project setups, recommendations, and automation scripts.',
+    ],
+  },
+  {
+    name: 'Astronautical Apogee Architecture',
+    entityType: 'Project Structure',
+    observations: [
+      'The codebase uses MCP servers for memory, sequential thinking, and Playwright-based validation, as configured in mcp.json.',
+      'Tooling is agent-driven and emphasizes autonomous, iterative improvement with traceable logs.',
+      'Configuration files (e.g., mcp.json) are clean, minimal, and workspace-specific.',
+      'Strict adherence to project instructions and validation protocols is enforced via MCP servers.',
+      'The developer expects all context management, reasoning, and validation to be routed through MCP servers before, during, and after any code or design change.',
+      'The codebase is organized for maintainability, extensibility, and composability, with a focus on minimal, reusable structure and atomic CSS.',
+      'All memory entity types in the knowledge graph have been reorganized to fit one of the five allowed categories: User, System, Process, Task, Environment, as specified in TODO.md. This ensures strict compliance with project requirements for context management.',
+      'Project has grown complex beyond its requirements despite excellent engineering practices.',
+      'Current architecture includes 100+ files with 39 TypeScript components and 17 custom web components.',
+      'Icon system is fragmented across 16 separate files and needs consolidation.',
+      'Theme system is over-engineered with runtime JavaScript switching that could be CSS-native.',
+      'Component architecture has over-componentization with minimal code per component.',
+      'Global styles file is 500 lines and needs modularization.',
+      'GenAIScript automation packages need evaluation for usage patterns and consolidation opportunities.',
+      'MCP servers are properly configured for memory, sequential thinking, and Playwright validation.',
+      'Development workflow follows strict validation protocols with lint-staged and Husky.',
+      'Content management is currently hardcoded and needs data-driven architecture.',
+      "The developer's established technique for blog post frontmatter uses a minimal YAML block with triple-dash delimiters and only the fields: id, title, date, and description. This was confirmed by analyzing other blog posts in the workspace.",
+      "My initial implementation included extra fields and a different format, which was incorrect. I have now corrected the frontmatter to match the developer's established technique for consistency and compatibility.",
+      'The deviation was due to referencing markdown instructions that included additional metadata fields, but the actual project technique is simpler and only uses the four required fields.',
+      "All future blog posts will strictly follow the developer's minimal frontmatter format: id, title, date, description, with triple-dash delimiters.",
+      'Tool-specific instructions are now properly separated: memory instructions in memory.instructions.md, Playwright instructions in playwright.instructions.md, sequential thinking instructions in sequential-thinking.instructions.md.',
+      'Main copilot-instructions.md now starts with user clarifications section instead of memory requirements, improving logical flow.',
+      'Change aligns with user preference for minimal, organized, and efficiently structured instruction files.',
+      'Refactored all pricing pages to use a new reusable PricingCard component, passing minimal props and ensuring atomic CSS and strict adherence to the global color scheme. Navigation and accessibility remain consistent and clear. Playwright MCP validation confirms visual and functional correctness.',
+      'Converted all blog post frontmatter date fields to ISO 8601 format and updated the blog collection schema to use z.date() instead of z.string(). Validated changes with Astro dev server and Playwright MCP. No errors found, and blog posts render correctly with date type conversion.',
+      "Moved the import of '@components/business-card' to the Astro frontmatter in src/pages/business-card.astro and removed the <script> block at the bottom. This ensures the business-card web component is registered correctly and follows project standards for imports. Validated visually and functionally using Playwright MCP; the page renders as expected with all navigation and business card details present.",
+      'Moved the imports for `business-card` and `button` components to a script tag at the bottom of the contact page in `src/pages/contact.astro` as per user request.',
+      'Ensured all custom elements on the about page are registered by adding missing imports for card-component and button-component in a <script> tag at the bottom, matching project conventions.',
+      '2025-07-17: Successfully moved contact-component and theme-toggle styles from global.ts to their respective component files.',
+      'Moved shared styles (alignment, border, border-radius, box-shadow, cursor, display, justify-content, outline, padding, position, z-index) from global.ts to both component files.',
+      'Added component-specific positioning: right: 1rem for contact-component and left: 1rem for theme-toggle.',
+      'Removed all references to contact-component and theme-toggle from global.ts after migration.',
+      'Validated changes with Playwright MCP: both components render correctly, maintain proper styling, positioning, and functionality.',
+      'Theme toggle functionality confirmed working (theme switching validated visually).',
+      'No compilation errors detected in any modified files.',
+      "Change improves code organization by keeping component styles with their components, supporting the user's preference for decoupling and component-scoped CSS.",
+      '2025-07-18: Successfully moved memory-specific instructions from main copilot-instructions.md to memory.instructions.md file to eliminate duplication and improve organization.',
+      'Consolidated memory MCP requirements into single memory.instructions.md file with prominent warning section at the top.',
+      'Removed duplicate memory instructions from main copilot-instructions.md file, keeping only user clarifications and general coding instructions.',
+      "2025-07-20: Successfully improved the about page with enhanced personal content and authentic representation of Andrew's interests and philosophy.",
+      "Updated intro paragraph to reflect Andrew's global perspective (Chile, Puerto Rico, Ohio, New York) and Confucian-inspired minimalist philosophy.",
+      "Expanded interests section to include all of Andrew's hobbies from memory: skateboarding, snowboarding, guitar, 3D printing, smart home technology, bike riding, politics, history, and Confucian philosophy.",
+      "Enhanced 'Values & Approach' section to 'Philosophy & Approach' with specific focus on minimalism, composability, continuous learning, and favorite tools (Astro and Lit).",
+      'All changes maintain atomic CSS, global color scheme, and existing card-component structure for consistency.',
+      'Playwright MCP validation confirms proper rendering, accessibility, and visual correctness of improved about page.',
+      "About page now authentically represents Andrew's personality, interests, global experience, and development philosophy while maintaining minimal, composable design.",
+    ],
+  },
+];
+---
+
+<Layout title="Memory">
+  <div class="max-width-56 width-100 margin-auto column flex gap-2">
+    <section class="gap grid justify-content-center text-align-center">
+      <h1>Memory</h1>
+      <p class="hero-description text-align-center">
+        Explore the knowledge graph and project memory. This page displays all
+        tracked entities, preferences, and project context for
+        astronautical-apogee.
+      </p>
+    </section>
+    <card-component>
+      <MemoryViewer memory={memory} />
+    </card-component>
+  </div>
+</Layout>
+<script>
+  import '@components/card';
+</script>

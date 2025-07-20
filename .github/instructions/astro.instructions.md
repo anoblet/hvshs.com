@@ -1,0 +1,3 @@
+- All frontmatter should be at the top of the file and within the `---` delimiters
+- All Astro components and layouts must be imported inside of the frontmatter at the top of the file
+- All Lit components must be imported inside of a script tag at the bottom of the file
