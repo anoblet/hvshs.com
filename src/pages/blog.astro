@@ -29,7 +29,7 @@ const posts = [...originalPosts, ...generatedPosts];
     <ul class="gap-2 list">
       {
         posts.map(post => (
-          <li class="column flex gap-0-25">
+          <li class="gap-0-25 grid">
             <div class="gap-0-5 grid">
               <span class="color-tertiary font-weight-700">
                 {new Date(post.data.date).toLocaleDateString('en-US', {
