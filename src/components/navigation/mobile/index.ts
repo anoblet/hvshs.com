@@ -29,12 +29,6 @@ export class NavigationMobile extends Base {
     super.firstUpdated();
 
     window.addEventListener('scroll', () => {
-      if (window.scrollY > 0) {
-        this.style.position = 'fixed';
-      } else {
-        this.style.position = '';
-      }
-
       if (this.scrollY > window.scrollY) {
         this.hidden = false;
       }

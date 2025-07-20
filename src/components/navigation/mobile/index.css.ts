@@ -4,10 +4,14 @@ export const style = css`
   :host {
     background-color: var(--navigation-background-color);
     /* color: var(--navigation-color); */
-    position: relative;
-    transition: opacity 0.2s ease-in-out;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition:
+      transform 0.3s ease-in-out,
+      opacity 0.4s ease-in-out;
     width: 100%;
-    z-index: 1;
+    z-index: 1000;
 
     aside > ul {
       margin: 0 1rem;
@@ -15,8 +19,11 @@ export const style = css`
   }
 
   :host([hidden]) {
-    opacity: 0 !important;
-    transition: opacity 0.2s ease-in-out;
+    opacity: 0;
+    transform: translateY(-100%);
+    transition:
+      transform 0.3s ease-in-out,
+      opacity 0.4s ease-in-out;
   }
 
   :host([opened]) {
