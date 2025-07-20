@@ -13,6 +13,30 @@ export const utility = css`
     align-self: flex-end;
   }
 
+  .color-tertiary {
+    color: var(--tertiary-color);
+  }
+
+  .font-weight-500 {
+    font-weight: 500;
+  }
+
+  .font-weight-600 {
+    font-weight: 600;
+  }
+
+  .font-weight-700 {
+    font-weight: 700;
+  }
+
+  .gap-0-25 {
+    gap: 0.25rem;
+  }
+
+  .gap-0-5 {
+    gap: 0.5rem;
+  }
+
   .height-0-25 {
     height: 0.25rem;
   }
