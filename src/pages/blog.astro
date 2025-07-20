@@ -16,7 +16,10 @@ const generatedPosts = postCollection
     (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
   );
 
-const posts = [...originalPosts, ...generatedPosts];
+// const posts = [...originalPosts, ...generatedPosts];
+const posts = postCollection.sort(
+  (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
+);
 ---
 
 <Layout title="Blog">
