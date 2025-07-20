@@ -2,9 +2,9 @@
 
 # Tools
 
-#file:./instructions/memory.instructions.md
-#file:./instructions/playwright.instructions.md
-#file:./instructions/sequential-thinking.instructions.md
+#file:../.copilot/instructions/memory.instructions.md
+#file:../.copilot/instructions/playwright.instructions.md
+#file:../.copilot/instructions/sequential-thinking.instructions.md
 
 ## 🎯 PRIORITY: USER CLARIFICATIONS & MANUAL MODIFICATIONS 🎯
 
