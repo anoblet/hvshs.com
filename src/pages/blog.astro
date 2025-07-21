@@ -29,6 +29,7 @@ const posts = postCollection.sort(
       Discover new ideas, stories, and updates. Dive into topics that inspire,
       inform, and spark conversation—from web development to creative workflows.
     </p>
+    <span></span>
     <ul class="gap-2 list">
       {
         posts.map(post => (
@@ -53,3 +54,9 @@ const posts = postCollection.sort(
     </ul>
   </div>
 </Layout>
+<style>
+  ul,
+  li {
+    padding: 0;
+  }
+</style>
