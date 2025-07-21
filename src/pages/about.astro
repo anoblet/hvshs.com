@@ -5,13 +5,12 @@ import profileImage from '@assets/images/profile.webp';
 
 <Layout title="About Andrew Noblet">
   <div class="max-width-56 width-100 margin-auto column flex gap-2">
+    <span></span>
     <section class="gap grid justify-content-center text-align-center">
       <img
         src={profileImage.src}
         alt="Andrew Noblet profile photo"
         class="profile-image margin-auto"
-        width="128"
-        height="128"
         loading="lazy"
       />
       <h1>Meet Andrew Noblet</h1>
@@ -74,13 +73,15 @@ import profileImage from '@assets/images/profile.webp';
 
 <style>
   .profile-image {
-    display: block;
     border-radius: 50%;
-    width: min(16rem, 50vw);
-    height: min(16rem, 50vw);
-    object-fit: cover;
     box-shadow: 0 0 0 4px var(--tertiary-color);
+    display: block;
+    height: 50vw;
+    max-height: 16rem;
+    max-width: 16rem;
+    object-fit: cover;
     position: relative;
+    width: 50vw;
     z-index: 1;
   }
 </style>
