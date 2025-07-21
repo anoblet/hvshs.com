@@ -69,3 +69,7 @@
 - Always use aliases when importing. Never use relative paths.
 
 **_ Keep it simple! _**
+
+## 2025.07.10
+
+Remember to never use inline styles. If you ever feel the need to, create a utility class in `src/styles/utility.ts`.

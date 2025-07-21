@@ -55,4 +55,21 @@ export const utility = css`
     justify-content: space-between;
     width: 100%;
   }
+
+  .visually-hidden {
+    display: none;
+    visibility: hidden;
+  }
+
+  .padding-top-3 {
+    padding-top: 3rem;
+  }
+
+  .padding-top-5 {
+    padding-top: 5rem;
+  }
+
+  .padding-top-6 {
+    padding-top: 6rem;
+  }
 `;
