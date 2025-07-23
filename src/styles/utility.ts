@@ -17,6 +17,10 @@ export const utility = css`
     color: var(--tertiary-color);
   }
 
+  .flex-wrap {
+    flex-wrap: wrap;
+  }
+
   .font-weight-500 {
     font-weight: 500;
   }

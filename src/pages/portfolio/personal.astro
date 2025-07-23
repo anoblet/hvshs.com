@@ -18,18 +18,7 @@ import { Image } from 'astro:assets';
     </div>
     <div class="space-0-5"></div>
     <card-component>
-      <div class="flex gap justify-content-space-between align-items-center">
-        <h2>Astro</h2>
-        <div class="tags">
-          <div class="flex flex-wrap gap-0-5">
-            <tag-component>JavaScript</tag-component>
-            <tag-component>TypeScript</tag-component>
-            <tag-component>Static Site Generator</tag-component>
-            <tag-component>Astro</tag-component>
-            <tag-component>Open Source</tag-component>
-          </div>
-        </div>
-      </div>
+      <h2>Astro</h2>
       <div class="flex-1">
         <Image src={astro} alt="Astro" class="card-image" />
         <ul>
@@ -54,23 +43,19 @@ import { Image } from 'astro:assets';
           </li>
         </ul>
       </div>
-      <a class="gap-0-5 align-self-flex-end" href="https://astro.build/">
+      <div class="flex flex-wrap gap-0-5 justify-content-center tags">
+        <tag-component>JavaScript</tag-component>
+        <tag-component>TypeScript</tag-component>
+        <tag-component>Static Site Generator</tag-component>
+        <tag-component>Astro</tag-component>
+        <tag-component>Open Source</tag-component>
+      </div>
+      <a class="align-self-flex-end gap-0-5" href="https://astro.build/">
         Learn more <ArrowForward />
       </a>
     </card-component>
     <card-component>
-      <div class="flex gap justify-content-space-between align-items-center">
-        <h2>Lit</h2>
-        <div class="tags">
-          <div class="flex flex-wrap gap-0-5">
-            <tag-component>JavaScript</tag-component>
-            <tag-component>TypeScript</tag-component>
-            <tag-component>Web Components</tag-component>
-            <tag-component>LitElement</tag-component>
-            <tag-component>Open Source</tag-component>
-          </div>
-        </div>
-      </div>
+      <h2>Lit</h2>
       <div class="flex-1">
         <Image src={lit} alt="Lit" class="card-image" />
         <ul>
@@ -95,24 +80,19 @@ import { Image } from 'astro:assets';
           </li>
         </ul>
       </div>
-      <a class="gap-0-5 align-self-flex-end" href="https://lit.dev/">
+      <div class="flex flex-wrap gap-0-5 justify-content-center tags">
+        <tag-component>JavaScript</tag-component>
+        <tag-component>TypeScript</tag-component>
+        <tag-component>Web Components</tag-component>
+        <tag-component>LitElement</tag-component>
+        <tag-component>Open Source</tag-component>
+      </div>
+      <a class="align-self-flex-end gap-0-5" href="https://lit.dev/">
         Learn more <ArrowForward />
       </a>
     </card-component>
     <card-component>
-      <div class="flex gap justify-content-space-between align-items-center">
-        <h2>GenAIScript</h2>
-        <div class="tags">
-          <div class="flex flex-wrap gap-0-5">
-            <tag-component>TypeScript</tag-component>
-            <tag-component>Node.js</tag-component>
-            <tag-component>AI</tag-component>
-            <tag-component>CLI</tag-component>
-            <tag-component>OpenAI</tag-component>
-            <tag-component>Prompt Engineering</tag-component>
-          </div>
-        </div>
-      </div>
+      <h2>GenAIScript</h2>
       <div class="flex-1">
         <Image src={genaiscript} alt="GenAIScript" class="card-image" />
         <ul>
@@ -135,8 +115,16 @@ import { Image } from 'astro:assets';
           </li>
         </ul>
       </div>
+      <div class="flex flex-wrap gap-0-5 justify-content-center tags">
+        <tag-component>TypeScript</tag-component>
+        <tag-component>Node.js</tag-component>
+        <tag-component>AI</tag-component>
+        <tag-component>CLI</tag-component>
+        <tag-component>OpenAI</tag-component>
+        <tag-component>Prompt Engineering</tag-component>
+      </div>
       <a
-        class="gap-0-5 align-self-flex-end"
+        class="align-self-flex-end gap-0-5"
         href="https://microsoft.github.io/genaiscript/"
       >
         Learn more <ArrowForward />
@@ -144,16 +132,17 @@ import { Image } from 'astro:assets';
     </card-component>
   </div>
 </Layout>
+
 <style>
-  .tags {
-    overflow-x: auto;
+  .card-image {
+    border-radius: 0.25rem;
+    height: 100%;
+    margin: 1rem 0;
+    width: 100%;
   }
 
-  .card-image {
-    height: 100%;
-    width: 100%;
-    border-radius: 0.25rem;
-    margin: 1rem 0;
+  .tags {
+    margin-bottom: 1rem;
   }
 </style>
 <script>
