@@ -13,14 +13,22 @@ export const style = css`
     flex: 1;
     justify-content: space-between;
     opacity: 1;
-    transition: opacity 0.2s ease-in-out;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition:
+      transform 0.3s ease-in-out,
+      opacity 0.4s ease-in-out;
     width: 100%;
-    z-index: 1;
+    z-index: 1000;
   }
 
   :host([hidden]) {
-    opacity: 0 !important;
-    transition: opacity 0.2s ease-in-out;
+    opacity: 0;
+    transform: translateY(-100%);
+    transition:
+      transform 0.3s ease-in-out,
+      opacity 0.4s ease-in-out;
   }
 
   #home {
@@ -89,10 +97,6 @@ export const style = css`
         display: block;
         padding: 0.75rem 1rem;
         transition: background-color 0.2s ease-in-out;
-
-        &:hover {
-          // background-color: var(--color-neutral-800);
-        }
 
         &:last-child {
           border-radius: 0 0 0.25rem 0.25rem;

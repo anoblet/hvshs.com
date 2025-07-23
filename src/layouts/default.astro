@@ -51,11 +51,11 @@ import { ClientRouter } from 'astro:transitions';
         src="https://www.googletagmanager.com/ns.html?id=GTM-N2FTVHQC"
         height="0"
         width="0"
-        style="display:none;visibility:hidden"></iframe></noscript
+        class="visually-hidden"></iframe></noscript
     >
     <!-- End Google Tag Manager (noscript) -->
     <Header />
-    <main id="main-content" class="column flex gap padding">
+    <main id="main-content" class="column flex gap">
       <slot />
     </main>
     <Footer />
@@ -109,6 +109,7 @@ import { ClientRouter } from 'astro:transitions';
   main {
     align-items: center;
     flex: 1;
+    padding: 5rem 1rem;
 
     p {
       align-items: initial;

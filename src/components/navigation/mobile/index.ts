@@ -1,5 +1,6 @@
 import { Base } from '@components/base';
 import '@components/icon';
+import '@components/social';
 import { close } from '@icons/close';
 import { menu } from '@icons/menu';
 import { html } from 'lit';
@@ -16,18 +17,18 @@ export class NavigationMobile extends Base {
 
   toggle() {
     this.opened = !this.opened;
+
+    if (this.opened) {
+      document.documentElement.style.overflow = 'hidden';
+    } else {
+      document.documentElement.style.overflow = '';
+    }
   }
 
   firstUpdated() {
     super.firstUpdated();
 
     window.addEventListener('scroll', () => {
-      if (window.scrollY > 0) {
-        this.style.position = 'fixed';
-      } else {
-        this.style.position = '';
-      }
-
       if (this.scrollY > window.scrollY) {
         this.hidden = false;
       }
@@ -47,31 +48,34 @@ export class NavigationMobile extends Base {
       </div>
       <aside class="column gap flex">
         <icon-component @click=${this.toggle}>${close}</icon-component>
-        <ul>
-          <li><a href="/">Home</a></li>
-          <li>
-            <details>
-              <summary>Portfolio</summary>
-              <ul>
-                <li><a href="/portfolio/personal">Personal</a></li>
-                <li><a href="/portfolio/professional">Professional</a></li>
-              </ul>
-            </details>
-          </li>
-          <li>
-            <details>
-              <summary>Services</summary>
-              <ul>
-                <li><a href="/services/design">Design</a></li>
-                <li><a href="/services/hosting">Hosting</a></li>
-                <li><a href="/services/consultation">Consultation</a></li>
-              </ul>
-            </details>
-          </li>
-          <li><a href="/mentorship">Mentorship</a></li>
-          <li><a href="/blog">Blog</a></li>
-          <li><a href="/about">About</a></li>
-        </ul>
+        <div class="flex-1 padding">
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li>
+              <details>
+                <summary>Portfolio</summary>
+                <ul>
+                  <li><a href="/portfolio/personal">Personal</a></li>
+                  <li><a href="/portfolio/professional">Professional</a></li>
+                </ul>
+              </details>
+            </li>
+            <li>
+              <details>
+                <summary>Services</summary>
+                <ul>
+                  <li><a href="/services/design">Design</a></li>
+                  <li><a href="/services/hosting">Hosting</a></li>
+                  <li><a href="/services/consultation">Consultation</a></li>
+                </ul>
+              </details>
+            </li>
+            <li><a href="/mentorship">Mentorship</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="/about">About</a></li>
+          </ul>
+        </div>
+        <social-component></social-component>
       </aside>
     `;
   }

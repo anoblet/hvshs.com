@@ -1,65 +1,107 @@
 ---
 import Layout from '@layouts/default.astro';
+import profileImage from '@assets/images/profile.webp';
 ---
 
 <Layout title="About Andrew Noblet">
-  <div class="max-width-56 width-100 margin-auto">
-    <h1>About Andrew Noblet</h1>
+  <div class="max-width-56 width-100 margin-auto column flex gap-2">
+    <span></span>
+    <section class="gap grid justify-content-center text-align-center">
+      <img
+        src={profileImage.src}
+        alt="Andrew Noblet profile photo"
+        class="profile-image margin-auto"
+        loading="lazy"
+      />
+      <h1>Meet Andrew Noblet</h1>
+      <p class="bold-5 max-width-56">
+        Hello! I'm <strong>Andrew Noblet</strong>, a software engineer with a
+        global perspective shaped by living in Chile, Puerto Rico, Ohio, and now
+        New York. I'm passionate about creating fast, accessible, and
+        beautifully simple web experiences. Inspired by Confucian principles of
+        balance and continuous learning, I believe technology should empower
+        everyone through elegant, minimal design.
+      </p>
+    </section>
+    <card-component>
+      <ul class="column flex gap-0-5 font-size-1-125">
+        <li><strong>Full Name:</strong> Andrew Noblet</li>
+        <li><strong>Born in:</strong> Chile</li>
+        <li>
+          <strong>Global Experience:</strong> Chile, Puerto Rico, Ohio, and now <strong
+            >New York</strong
+          >
+        </li>
+        <li>
+          <strong>GitHub:</strong>
+          <a href="https://github.com/anoblet" target="_blank" rel="noopener"
+            >anoblet</a
+          >
+        </li>
+        <li>
+          <strong>Interests:</strong> Skateboarding, snowboarding, guitar, 3D printing,
+          smart home technology, bike riding, politics, history, and Confucian philosophy
+        </li>
+      </ul>
+    </card-component>
 
-    <p>
-      Hi, I'm <strong>Andrew Noblet</strong>—a software developer passionate
-      about building fast, accessible, and modern web experiences. My focus is
-      on making the web simpler and more user-friendly for everyone.
-    </p>
+    <card-component>
+      <h2 class="font-size-1-25 margin-bottom-0-5">Philosophy & Approach</h2>
+      <ul class="column flex gap-0-5 font-size-1-125">
+        <li>
+          <strong>Minimalism:</strong> Less is more—simple, elegant solutions that
+          do exactly what they need to do.
+        </li>
+        <li>
+          <strong>Composability:</strong> Building reusable, modular components that
+          work beautifully together.
+        </li>
+        <li>
+          <strong>Continuous Learning:</strong> Embracing growth and new perspectives,
+          inspired by Confucian wisdom.
+        </li>
+        <li>
+          <strong>Favorite Tools:</strong> Astro and Lit for their simplicity, performance,
+          and developer experience.
+        </li>
+      </ul>
+    </card-component>
 
-    <h2>Early Programming Journey</h2>
-    <p>
-      My passion for programming started early. At <strong>age 14</strong>, I
-      read a thick programming book cover-to-cover, diving deep into the
-      fundamentals that would shape my approach to software development.
-    </p>
+    <card-component>
+      <h2 class="font-size-1-25 margin-bottom-0-5">Early Programming Journey</h2>
+      <p class="margin-bottom-0-5">
+        My passion for programming started early. At <strong>age 14</strong>, I
+        read a thick programming book cover-to-cover, diving deep into the
+        fundamentals that would shape my approach to software development.
+      </p>
 
-    <p>
-      By <strong>age 15</strong>, I was building my own water-cooled computer to
-      get the power I needed for gaming. Let's just say I learned the importance
-      of planning the hard way—I definitely needed those towels to mop up my
-      mistakes! 😅
-    </p>
+      <p>
+        By <strong>age 15</strong>, I was building my own water-cooled computer to
+        get the power I needed for gaming. Let's just say I learned the importance
+        of planning the hard way—I definitely needed those towels to mop up my
+        mistakes! 😅
+      </p>
+    </card-component>
 
-    <ul>
-      <li><strong>Full Name:</strong> Andrew Noblet</li>
-      <li><strong>Born in:</strong> Chile</li>
-      <li>
-        <strong>Lived in:</strong> Chile, Puerto Rico, Ohio, and now <strong
-          >New York!</strong
-        >
-      </li>
-      <li>
-        <strong>Find me on GitHub:</strong>
-        <a href="https://github.com/anoblet" target="_blank" rel="noopener"
-          >anoblet</a
-        >
-      </li>
-      <li>
-        <strong>Outside of coding:</strong> Skateboarding, snowboarding, and playing
-        guitar
-      </li>
-    </ul>
-
-    <p>
-      My global background shapes my approach to technology—adaptable,
-      open-minded, and always considering diverse perspectives.
-    </p>
-
-    <p>
-      I believe in simplicity, reusable components, and continuous improvement.
-      Collaboration, clear documentation, and helpful solutions are at the core
-      of my work.
-    </p>
-
-    <p>
-      Explore the site to discover my projects, development insights, and
-      journey. Thanks for visiting!
-    </p>
+    <consultation-component class="margin-top-4"></consultation-component>
   </div>
 </Layout>
+
+<style>
+  .profile-image {
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px var(--tertiary-color);
+    display: block;
+    height: 50vw;
+    max-height: 16rem;
+    max-width: 16rem;
+    object-fit: cover;
+    position: relative;
+    width: 50vw;
+    z-index: 1;
+  }
+</style>
+<script>
+  import '@components/card';
+  import '@components/consultation';
+</script>

@@ -1,4 +1,0 @@
-- Analyze each and every chat log.
-- After each file, identify instances where I(the developer) corrected or clarified the model's behavior.
-- Do not record the fact I told the model yes, continue, or to keep going.
-- Record these observations to memory.

@@ -1,8 +1,9 @@
 ---
+ai: true
 id: 'astro-experience'
 title: 'Building with Astro: Fast, Flexible, and Future-Proof'
-date: '2025.07.10'
-description: 'How Astro transformed my approach to building high-performance, content-driven sites.'
+date: 2025-01-23
+description: 'Astro delivers blazing-fast, flexible sites—optimizing performance, maintainability, and business impact.'
 ---
 
 # Building with Astro: Fast, Flexible, and Future-Proof

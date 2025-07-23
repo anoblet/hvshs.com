@@ -1,0 +1,28 @@
+---
+interface MemoryEntity {
+  name: string;
+  entityType: string;
+  observations: string[];
+}
+
+const { memory } = Astro.props as { memory: MemoryEntity[] };
+---
+
+<section class="padding-4 max-width-56 margin-auto">
+  <h1 class="font-size-3 font-weight-7 margin-bottom-3">Memory Review</h1>
+  {
+    memory.map(entity => (
+      <article class="margin-bottom-4 padding-3 border-radius-2 background-color-surface box-shadow-1">
+        <h2 class="font-size-2 font-weight-6 margin-bottom-2">{entity.name}</h2>
+        <div class="font-size-1 margin-bottom-1 color-secondary">
+          {entity.entityType}
+        </div>
+        <ul class="margin-left-2">
+          {entity.observations.map(obs => (
+            <li class="margin-bottom-1">{obs}</li>
+          ))}
+        </ul>
+      </article>
+    ))
+  }
+</section>

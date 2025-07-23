@@ -1,8 +1,9 @@
 ---
+ai: false
 id: 'focus'
 title: 'Focus'
-date: '2025.07.01'
-description: 'How focus drives meaningful results in software development'
+date: 2025-07-01
+description: 'Prioritizing focus empowers teams to deliver higher quality, faster results, and greater business value.'
 ---
 
 # Focus

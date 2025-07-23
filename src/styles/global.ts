@@ -71,35 +71,6 @@ export const globalStyles = css`
     }
   }
 
-  contact-component {
-    right: 1rem;
-  }
-
-  contact-component,
-  theme-toggle {
-    --icon-color: inherit;
-    --icon-padding: 0.25rem;
-    --icon-size: 1.25rem;
-
-    align-items: center;
-    border: 1px solid var(--color-neutral-400);
-    border-radius: 50%;
-    bottom: 1rem;
-    outline: var(--button-outline);
-    box-shadow: var(--box-shadow);
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    padding: 0.5rem;
-    position: fixed;
-    z-index: 1;
-
-    icon-component {
-      --icon-color: blue;
-      color: inherit;
-    }
-  }
-
   h1,
   h2,
   h3,
@@ -129,15 +100,6 @@ export const globalStyles = css`
     width: 100%;
   }
 
-  icon-component {
-    /* color: var(--icon-color); */
-    padding: var(--icon-padding);
-
-    &:hover {
-      color: var(--icon-hover-color);
-    }
-  }
-
   main {
     position: relative;
   }
@@ -157,13 +119,9 @@ export const globalStyles = css`
     /* width: 1rem; */
   }
 
-  theme-toggle {
-    left: 1rem;
-  }
-
   ul {
     margin: 0;
-    padding: var(--padding);
+    padding: 0 1rem;
 
     &.card-list {
       display: flex;
@@ -444,13 +402,6 @@ export const globalStyles = css`
 
   .space-0-5 {
     height: 0.5rem;
-  }
-
-  .space-between {
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
   }
 
   .step-card {

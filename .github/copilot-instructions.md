@@ -1,3 +1,49 @@
+# Copilot Instructions
+
+# Tools
+
+#file:../.copilot/instructions/memory.instructions.md
+#file:../.copilot/instructions/playwright.instructions.md
+#file:../.copilot/instructions/sequential-thinking.instructions.md
+
+## 🎯 PRIORITY: USER CLARIFICATIONS & MANUAL MODIFICATIONS 🎯
+
+**USER CLARIFICATIONS AND MANUAL MODIFICATIONS ALWAYS TAKE ABSOLUTE PRIORITY OVER GENERAL INSTRUCTIONS.**
+
+### Critical Requirements for User Adherence:
+
+1. **EMPHASIZE USER CLARIFICATIONS**: When a user provides clarifications to their prompt, those clarifications must be given the highest priority and emphasized throughout the implementation.
+
+2. **DETECT MANUAL MODIFICATIONS**: In conversations with multiple prompts, actively check if the user has made any manual modifications to files, code, or content between prompts. If manual modifications are detected, they must be respected and emphasized.
+
+3. **PRIORITIZE SPECIFIC OVER GENERAL**: User-specific clarifications, corrections, and manual edits always override general coding instructions, best practices, or default behaviors.
+
+4. **TRACK CONVERSATION CONTEXT**: In multi-prompt conversations, maintain awareness of:
+
+   - Previous user clarifications (e.g., "Yes, continue", "Don't change the home page", "Always use X tool")
+   - Manual file modifications made by the user
+   - Specific requirements or constraints mentioned in earlier prompts
+   - User preferences that deviate from standard practices
+
+5. **EXAMPLES OF CRITICAL CLARIFICATIONS TO EMPHASIZE**:
+   - Explicit confirmations: "Yes" when asked to continue
+   - Specific exclusions: "Don't modify X" or "Leave Y unchanged"
+   - Tool requirements: "Always use sequential thinking MCP", "Always use Playwright MCP"
+   - Personal information: "My name is Andrew Noblet"
+   - Scope limitations: "Only change this specific part"
+
+### Implementation Protocol:
+
+- Before making any changes, review conversation history for user clarifications
+- When user clarifications conflict with general instructions, follow the clarifications
+- Document and emphasize user clarifications in your response
+- Respect the spirit and intent behind user clarifications, not just the literal text
+- Ask for clarification if user intent is ambiguous rather than making assumptions
+
+**The goal is to bring the model as close to adherence to the developer (Andrew Noblet) as possible.**
+
+---
+
 - Create as many new components as neccessary
 - Components should be simple and composible
 - Move as much reusable structure to the layout as apossible.
@@ -19,13 +65,11 @@
 - Emphasize decoupling
 - Avoid page specific CSS classes
 - Use utility CSS classes available in the global stylesheet when possible
-- After every interaction with the user through the chat interface, update `.github/instructions/generated.instructions.md` with insights on user preferences and behavior.
+- After every interaction with the user through the chat interface, update your memory as to why the user asked for the change, what the user prefers, and how the user interacts with the codebase.
 - Always use aliases when importing. Never use relative paths.
 
 **_ Keep it simple! _**
 
-# Tools
+## 2025.07.10
 
-#file:./instructions/memory.instructions.md
-#file:./instructions/playwright.instructions.md
-#file:./instructions/sequential-thinking.instructions.md
+Remember to never use inline styles. If you ever feel the need to, create a utility class in `src/styles/utility.ts`.
