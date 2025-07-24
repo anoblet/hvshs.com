@@ -9,6 +9,7 @@ export const style = css`
     --icon-hover-color: var(--navigation-icon-hover-color);
 
     background-color: var(--navigation-background-color);
+    box-shadow: var(--box-shadow);
     display: flex;
     flex: 1;
     justify-content: space-between;
@@ -17,8 +18,9 @@ export const style = css`
     top: 0;
     left: 0;
     transition:
-      transform 0.3s ease-in-out,
-      opacity 0.4s ease-in-out;
+      opacity 0.4s ease-in-out,
+      transform 0.3s ease-in-out;
+
     width: 100%;
     z-index: 1000;
   }
@@ -27,8 +29,8 @@ export const style = css`
     opacity: 0;
     transform: translateY(-100%);
     transition:
-      transform 0.3s ease-in-out,
-      opacity 0.4s ease-in-out;
+      opacity 0.4s ease-in-out,
+      transform 0.3s ease-in-out;
   }
 
   #home {

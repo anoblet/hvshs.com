@@ -3,13 +3,14 @@ import { css } from 'lit';
 export const style = css`
   :host {
     background-color: var(--navigation-background-color);
-    /* color: var(--navigation-color); */
+    box-shadow: var(--box-shadow);
+    opacity: 1;
     position: fixed;
     top: 0;
     left: 0;
     transition:
-      transform 0.3s ease-in-out,
-      opacity 0.4s ease-in-out;
+      opacity 0.4s ease-in-out,
+      transform 0.3s ease-in-out;
     width: 100%;
     z-index: 1000;
 
@@ -22,8 +23,8 @@ export const style = css`
     opacity: 0;
     transform: translateY(-100%);
     transition:
-      transform 0.3s ease-in-out,
-      opacity 0.4s ease-in-out;
+      opacity 0.4s ease-in-out,
+      transform 0.3s ease-in-out;
   }
 
   :host([opened]) {
