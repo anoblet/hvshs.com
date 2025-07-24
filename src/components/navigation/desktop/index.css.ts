@@ -38,20 +38,11 @@ export const style = css`
   }
 
   a {
-    color: var(--navigation-a-color);
     font-weight: 500;
-
-    &:hover {
-      color: var(--navigation-a-hover-color);
-    }
   }
 
   icon-component {
     padding: 0.5rem 1rem;
-  }
-
-  a {
-    color: var(--navigation-a-color);
   }
 
   li {
@@ -111,10 +102,6 @@ export const style = css`
       visibility: visible;
       transform: translateY(0);
     }
-  }
-
-  social-component {
-    color: var(--color-teal-200);
   }
 
   ul {
