@@ -17,11 +17,11 @@ export class BusinessCard extends Base {
         --icon-padding: 0;
 
         background-color: var(--color-neutral-900);
-        border: 1px solid var(--color-neutral-500);
+        /* border: 1px solid var(--color-neutral-500); */
         border-radius: 0.5rem;
-        height: calc(600px / 2);
+        height: calc(600px);
         justify-content: center;
-        width: calc(1050px / 2);
+        width: calc(1050px);
       }
 
       .amber-300 {
@@ -30,7 +30,7 @@ export class BusinessCard extends Base {
 
       .front {
         icon-component {
-          --icon-size: calc(75% * (1 / 1.618));
+          --icon-size: calc(50% * (1 / 1.618));
         }
       }
 
@@ -84,7 +84,7 @@ export class BusinessCard extends Base {
                 <ul class="amber-300">
                   <li>Mentorship</li>
                   <li>Tutoring</li>
-                  <li>Development</li>
+                  <li>Coaching</li>
                 </ul>
               </div>
               <div class="flex small space-around">
