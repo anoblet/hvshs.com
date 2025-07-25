@@ -1,6 +1,7 @@
 .astro
 .env
 .genaiscript
+.screenshots
 .wireit
 .wrangler
 chats
