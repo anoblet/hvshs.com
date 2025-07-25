@@ -17,9 +17,6 @@ importers:
       lit:
         specifier: ^3.3.0
         version: 3.3.0
-      wireit:
-        specifier: ^0.14.12
-        version: 0.14.12
     devDependencies:
       '@eslint/js':
         specifier: ^9.29.0
@@ -60,6 +57,9 @@ importers:
       sharp:
         specifier: ^0.34.2
         version: 0.34.2
+      wireit:
+        specifier: ^0.14.12
+        version: 0.14.12
       wrangler:
         specifier: ^4.14.1
         version: 4.16.1

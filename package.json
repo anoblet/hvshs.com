@@ -18,8 +18,7 @@
   "dependencies": {
     "@anoblet/mixins": "github:anoblet/mixins",
     "astro": "^5.12.0",
-    "lit": "^3.3.0",
-    "wireit": "^0.14.12"
+    "lit": "^3.3.0"
   },
   "lint-staged": {
     "*.{js,mjs,ts,astro}": [
@@ -45,6 +44,7 @@
     "prettier": "^3.5.3",
     "prettier-plugin-astro": "^0.14.1",
     "sharp": "^0.34.2",
+    "wireit": "^0.14.12",
     "wrangler": "^4.14.1"
   },
   "wireit": {
