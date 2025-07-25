@@ -34,14 +34,6 @@ export class BusinessCard extends Base {
         }
       }
 
-      .padding {
-        padding: 0.75rem;
-      }
-
-      .small {
-        font-size: 0.8rem;
-      }
-
       .sky-200 {
         color: var(--color-sky-200);
       }
@@ -69,25 +61,27 @@ export class BusinessCard extends Base {
             </div>
           `
         : html`
-            <div class="column flex padding width-100">
-              <h1 class="text-align-center">Andrew Noblet</h1>
-              <p class="text-align-center">
+            <div
+              class="column flex padding justify-content-space-around width-100"
+            >
+              <h1 class="font-size-2 text-align-center">Andrew Noblet</h1>
+              <p class="font-size-1-5 text-align-center">
                 Empowering your online presence with design, hosting, and expert
                 guidance.
               </p>
-              <div class="align-items-center flex flex-1 space-around">
-                <ul class="amber-300">
+              <div class="align-items-center flex space-around">
+                <ul class="amber-300 font-size-1-5">
                   <li>Design</li>
                   <li>Hosting</li>
                   <li>Consultation</li>
                 </ul>
-                <ul class="amber-300">
+                <ul class="amber-300 font-size-1-5">
                   <li>Mentorship</li>
                   <li>Tutoring</li>
                   <li>Coaching</li>
                 </ul>
               </div>
-              <div class="flex small space-around">
+              <div class="flex font-size-1-5 space-around">
                 <span class="flex gap-0-5">
                   <icon-component>${phone}</icon-component>
                   (914) 417-9070

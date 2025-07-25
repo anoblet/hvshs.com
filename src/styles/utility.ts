@@ -1,6 +1,10 @@
 import { css } from 'lit';
 
 export const utility = css`
+  .align-content-space-around {
+    align-content: space-around;
+  }
+
   .align-items-center {
     align-items: center;
   }
@@ -47,6 +51,10 @@ export const utility = css`
 
   .height-0-5 {
     height: 0.5rem;
+  }
+
+  .justify-content-space-around {
+    justify-content: space-around;
   }
 
   .space-around {
