@@ -15,6 +15,7 @@ export class BusinessCard extends Base {
     css`
       :host {
         --icon-padding: 0;
+        --icon-size: 24px;
 
         background-color: var(--color-neutral-900);
         /* border: 1px solid var(--color-neutral-500); */
@@ -22,6 +23,22 @@ export class BusinessCard extends Base {
         height: calc(600px);
         justify-content: center;
         width: calc(1050px);
+      }
+
+      ::marker {
+        content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='1rem' viewBox='0 -960 960 960' width='1rem' fill='currentColor'%0A%3E%3Cpath d='M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z' /%3E%3C/svg%3E");
+      }
+
+      :host([data-theme='dark']) {
+        li::marker {
+          content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='1rem' viewBox='0 -960 960 960' width='1rem' fill='oklch(0.91 0.096 180.426)'%0A%3E%3Cpath d='M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z' /%3E%3C/svg%3E");
+        }
+      }
+
+      :host([side='back']) {
+        icon-component {
+          margin-top: 0.25rem;
+        }
       }
 
       .amber-300 {
@@ -36,6 +53,10 @@ export class BusinessCard extends Base {
 
       .sky-200 {
         color: var(--color-sky-200);
+      }
+
+      li {
+        line-height: unset;
       }
 
       span {
@@ -64,7 +85,7 @@ export class BusinessCard extends Base {
             <div
               class="column flex padding justify-content-space-around width-100"
             >
-              <h1 class="font-size-2 text-align-center">Andrew Noblet</h1>
+              <h1 class="font-weight-6 text-align-center">Andrew Noblet</h1>
               <p class="font-size-1-5 text-align-center">
                 Empowering your online presence with design, hosting, and expert
                 guidance.
@@ -82,15 +103,15 @@ export class BusinessCard extends Base {
                 </ul>
               </div>
               <div class="flex font-size-1-5 space-around">
-                <span class="flex gap-0-5">
+                <span class="align-items-center flex gap-0-5">
                   <icon-component>${phone}</icon-component>
                   (914) 417-9070
                 </span>
-                <span class="flex gap-0-5">
+                <span class="align-items-center flex gap-0-5">
                   <icon-component>${mail}</icon-component>
                   andrewbnoblet@gmail.com
                 </span>
-                <span class="flex gap-0-5">
+                <span class="align-items-center flex gap-0-5">
                   <icon-component>${language}</icon-component>
                   andrewnoblet.com
                 </span>
