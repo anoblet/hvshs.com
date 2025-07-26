@@ -70,15 +70,15 @@ export class BusinessCard extends Base {
                 guidance.
               </p>
               <div class="align-items-center flex space-around">
-                <ul class="amber-300 font-size-1-5">
+                <ul class="amber-300 font-size-1-5 gap-2 grid">
                   <li>Design</li>
                   <li>Hosting</li>
                   <li>Consultation</li>
                 </ul>
-                <ul class="amber-300 font-size-1-5">
+                <ul class="amber-300 font-size-1-5 gap-2 grid">
                   <li>Mentorship</li>
-                  <li>Tutoring</li>
-                  <li>Coaching</li>
+                  <li>Workshops</li>
+                  <li>Strategy</li>
                 </ul>
               </div>
               <div class="flex font-size-1-5 space-around">

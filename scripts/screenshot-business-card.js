@@ -25,7 +25,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const SCREENSHOT_DIR = '.screenshots';
-const DEV_SERVER_URL = 'http://localhost:4322/business-card';
+const DEV_SERVER_URL = 'http://localhost:4321/business-card';
 const BROWSER_WIDTH = 1200;
 const BROWSER_HEIGHT = 800;
 

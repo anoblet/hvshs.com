@@ -67,6 +67,8 @@
 - Use utility CSS classes available in the global stylesheet when possible
 - After every interaction with the user through the chat interface, update your memory as to why the user asked for the change, what the user prefers, and how the user interacts with the codebase.
 - Always use aliases when importing. Never use relative paths.
+- Always assume the development server is already running.
+- The development server is running on `http://localhost:4321/`
 
 **_ Keep it simple! _**
 
