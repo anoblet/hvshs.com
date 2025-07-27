@@ -323,10 +323,6 @@ export const globalStyles = css`
     margin: 0 auto;
   }
 
-  .margin-auto {
-    margin: 0 auto;
-  }
-
   .margin-bottom-1 {
     margin-bottom: 1rem;
   }

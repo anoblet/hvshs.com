@@ -51,10 +51,6 @@ import Layout from '../layouts/default.astro';
             padding: 2rem;
           }
 
-          .bold {
-            font-weight: 800;
-          }
-
           #buttons {
             min-width: 50%;
 
@@ -80,15 +76,15 @@ import Layout from '../layouts/default.astro';
       return html`
         <section>
           <media-component desktop>
-            <h1 class="text-align-center hidden-mobile">
+            <h1 class="text-align-center">
               Andrew Noblet |
-              <span class="bold">${this.randomTagline}</span>
+              <span class="font-weight-800">${this.randomTagline}</span>
             </h1>
           </media-component>
           <media-component mobile>
-            <h1 class="grid text-align-center hidden-desktop">
+            <h1 class="grid text-align-center">
               <span class="text-align-center">Andrew Noblet</span>
-              <span class="bold">${this.randomTagline}</span>
+              <span class="font-weight-800">${this.randomTagline}</span>
             </h1>
           </media-component>
           <media-component class="align-items-center" desktop>

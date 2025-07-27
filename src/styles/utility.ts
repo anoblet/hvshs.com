@@ -37,6 +37,10 @@ export const utility = css`
     font-weight: 700;
   }
 
+  .font-weight-800 {
+    font-weight: 800;
+  }
+
   .gap-0-25 {
     gap: 0.25rem;
   }
@@ -55,6 +59,10 @@ export const utility = css`
 
   .justify-content-space-around {
     justify-content: space-around;
+  }
+
+  .margin-auto {
+    margin: auto;
   }
 
   .space-around {
