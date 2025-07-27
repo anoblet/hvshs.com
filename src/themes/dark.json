@@ -3,7 +3,7 @@
   "a-hover-color": "var(--color-rose-400)",
   "body-background-color": "var(--color-neutral-900)",
   "border-radius": "0.25rem",
-  "box-shadow": "0 4px 6px -1px rgba(0, 0, 0, 0.1)",
+  "box-shadow": "0 0.125rem 0.125rem rgba(0, 0, 0, 0.125)",
   "button-background-color": "var(--color-teal-200)",
   "button-color": "var(--color-neutral-900)",
   "button-hover-background-color": "var(--color-rose-400)",
