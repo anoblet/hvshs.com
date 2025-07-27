@@ -20,8 +20,8 @@ import { Image } from 'astro:assets';
     <div class="space-0-5"></div>
     <card-component>
       <h2>CXL</h2>
+      <Image src={cxl} alt="CXL" class="card-image" />
       <div class="flex-1">
-        <Image src={cxl} alt="CXL" class="card-image" />
         <ul>
           <li>
             Helped build CXL.com, a top online training platform for B2B
@@ -58,12 +58,12 @@ import { Image } from 'astro:assets';
     </card-component>
     <card-component>
       <h2>Graduation Source</h2>
+      <Image
+        src={graduationSource}
+        alt="Graduation Source"
+        class="card-image"
+      />
       <div class="flex-1">
-        <Image
-          src={graduationSource}
-          alt="Graduation Source"
-          class="card-image"
-        />
         <ul>
           <li>
             Built and maintained a robust e-commerce platform for
@@ -99,12 +99,12 @@ import { Image } from 'astro:assets';
     </card-component>
     <card-component>
       <h2>Avanti Systems USA</h2>
+      <Image
+        src={avantisystemsusa}
+        alt="Avanti Systems USA"
+        class="card-image"
+      />
       <div class="flex-1">
-        <Image
-          src={avantisystemsusa}
-          alt="Avanti Systems USA"
-          class="card-image"
-        />
         <ul>
           <li>
             Built a modern web presence for Avanti Systems USA, a leader in
@@ -150,7 +150,6 @@ import { Image } from 'astro:assets';
   .card-image {
     border-radius: 0.25rem;
     height: 100%;
-    margin: 1rem 0;
     width: 100%;
   }
 </style>
