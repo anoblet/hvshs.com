@@ -7,7 +7,7 @@ import ArrowForward from '@icons/arrow-forward.svg';
 import { Image } from 'astro:assets';
 ---
 
-<Layout title="Andrew Noblet- Personal">
+<Layout title="Andrew Noblet - Personal">
   <div class="column flex gap page">
     <div class="gap grid justify-content-center text-align-center">
       <h1>Personal</h1>
@@ -19,8 +19,8 @@ import { Image } from 'astro:assets';
     <div class="space-0-5"></div>
     <card-component>
       <h2>Astro</h2>
+      <Image src={astro} alt="Astro" class="card-image" />
       <div class="flex-1">
-        <Image src={astro} alt="Astro" class="card-image" />
         <ul>
           <li>
             Astro is a modern static site builder focused on performance and
@@ -50,14 +50,15 @@ import { Image } from 'astro:assets';
         <tag-component>Astro</tag-component>
         <tag-component>Open Source</tag-component>
       </div>
+      <span></span>
       <a class="align-self-flex-end gap-0-5" href="https://astro.build/">
         Learn more <ArrowForward />
       </a>
     </card-component>
     <card-component>
       <h2>Lit</h2>
+      <Image src={lit} alt="Lit" class="card-image" />
       <div class="flex-1">
-        <Image src={lit} alt="Lit" class="card-image" />
         <ul>
           <li>
             Lit is a fast, simple library for building web components and
@@ -87,14 +88,15 @@ import { Image } from 'astro:assets';
         <tag-component>LitElement</tag-component>
         <tag-component>Open Source</tag-component>
       </div>
+      <span></span>
       <a class="align-self-flex-end gap-0-5" href="https://lit.dev/">
         Learn more <ArrowForward />
       </a>
     </card-component>
     <card-component>
       <h2>GenAIScript</h2>
+      <Image src={genaiscript} alt="GenAIScript" class="card-image" />
       <div class="flex-1">
-        <Image src={genaiscript} alt="GenAIScript" class="card-image" />
         <ul>
           <li>
             <strong>Early Adopter & Contributor:</strong> I am actively learning
@@ -123,6 +125,7 @@ import { Image } from 'astro:assets';
         <tag-component>OpenAI</tag-component>
         <tag-component>Prompt Engineering</tag-component>
       </div>
+      <span></span>
       <a
         class="align-self-flex-end gap-0-5"
         href="https://microsoft.github.io/genaiscript/"
