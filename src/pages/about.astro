@@ -10,11 +10,11 @@ import profileImage from '@assets/images/profile.webp';
       <img
         src={profileImage.src}
         alt="Andrew Noblet profile photo"
-        class="profile-image margin-auto"
+        class="profile-image"
         loading="lazy"
       />
       <h1>Meet Andrew Noblet</h1>
-      <p class="bold-5 max-width-56">
+      <p>
         Hello! I'm <strong>Andrew Noblet</strong>, a curious soul with a truly
         global perspective—born in Chile and shaped by experiences living in
         Puerto Rico, Ohio, and now New York. I'm passionate about exploring life
@@ -25,8 +25,8 @@ import profileImage from '@assets/images/profile.webp';
       </p>
     </section>
     <card-component>
-      <h2 class="font-size-1-25 margin-bottom-0-5">Personal Facts</h2>
-      <ul class="column flex gap-0-5 font-size-1-125">
+      <h2>Personal Facts</h2>
+      <ul class="column flex gap-0-5">
         <li><strong>Full Name:</strong> Andrew Noblet</li>
         <li><strong>Born in:</strong> Chile</li>
         <li>
@@ -50,11 +50,11 @@ import profileImage from '@assets/images/profile.webp';
       </ul>
     </card-component>
     <card-component>
-      <h2 class="font-size-1-25 margin-bottom-0-5">Hobbies & Passions</h2>
+      <h2>Hobbies & Passions</h2>
       <div class="column flex gap">
         <div>
-          <h3 class="font-size-1-125 margin-bottom-0-25">Physical & Outdoor</h3>
-          <p class="font-size-1-125">
+          <h3>Physical & Outdoor</h3>
+          <p>
             Skateboarding (been at it since I was young enough to petition my
             town for a skatepark at 14!), snowboarding, and bike riding. There's
             something about the rhythm and flow of these activities that
@@ -62,10 +62,8 @@ import profileImage from '@assets/images/profile.webp';
           </p>
         </div>
         <div>
-          <h3 class="font-size-1-125 margin-bottom-0-25">
-            Creative & Technical
-          </h3>
-          <p class="font-size-1-125">
+          <h3>Creative & Technical</h3>
+          <p>
             Playing guitar, diving into 3D printing projects, and tinkering with
             smart home technology. I love the blend of creativity and technical
             problem-solving—whether it's learning a new song or printing
@@ -73,10 +71,8 @@ import profileImage from '@assets/images/profile.webp';
           </p>
         </div>
         <div>
-          <h3 class="font-size-1-125 margin-bottom-0-25">
-            Intellectual Pursuits
-          </h3>
-          <p class="font-size-1-125">
+          <h3>Intellectual Pursuits</h3>
+          <p>
             Politics, history, Eastern philosophy (Confucianism, Buddhism,
             Shintoism), and Greek mythology. I'm fascinated by how ancient
             wisdom applies to modern life and how understanding the past helps
@@ -86,14 +82,14 @@ import profileImage from '@assets/images/profile.webp';
       </div>
     </card-component>
     <card-component>
-      <h2 class="font-size-1-25 margin-bottom-0-5">Life Philosophy</h2>
-      <p class="margin-bottom-0-5 font-size-1-125">
+      <h2>Life Philosophy</h2>
+      <p>
         I find deep meaning in the balance and wisdom of Eastern philosophy.
         Confucian principles of harmony and continuous learning, Buddhist
         mindfulness and compassion, and Shinto reverence for nature all
         influence how I approach daily life.
       </p>
-      <p class="font-size-1-125">
+      <p>
         The stories of Greek mythology remind me that human struggles and
         triumphs are timeless—we're all part of something larger, navigating
         similar challenges of growth, purpose, and connection. Minimalism in all
@@ -101,42 +97,42 @@ import profileImage from '@assets/images/profile.webp';
       </p>
     </card-component>
     <card-component>
-      <h2 class="font-size-1-25 margin-bottom-0-5">Early Adventures</h2>
-      <p class="margin-bottom-0-5 font-size-1-125">
+      <h2>Early Adventures</h2>
+      <p>
         My curiosity started young. At <strong>13</strong>, I built my first
         website at
         <strong>nebulae.org</strong> and dove into learning PHP with php-nuke. By
         <strong>14</strong>, I was passionate enough about skateboarding to
         petition my town to build a skatepark—and they did!
       </p>
-      <p class="margin-bottom-0-5 font-size-1-125">
+      <p>
         I bought a several-hundred-page book on Adobe ColdFusion and read it
         cover-to-cover, used Adobe Dreamweaver religiously, and by my teens was
         building my own water-cooled computer. Let's just say I learned the
         importance of preparation the hard way—towels were definitely needed! 😅
       </p>
-      <p class="font-size-1-125">
+      <p>
         These early adventures taught me that curiosity, persistence, and a
         willingness to learn from mistakes are the best tools for any journey.
       </p>
     </card-component>
     <card-component>
-      <h2 class="font-size-1-25 margin-bottom-0-5">Life in New York</h2>
-      <p class="margin-bottom-0-5 font-size-1-125">
+      <h2>Life in New York</h2>
+      <p>
         These days, I'm enjoying the energy and diversity of New York while
         staying connected to the simple pleasures. Whether I'm exploring the
         city on my bike, working on a 3D printing project, or diving into a book
         about history or philosophy, I try to approach each day with curiosity
         and openness.
       </p>
-      <p class="font-size-1-125">
+      <p>
         I love connecting with people who share similar passions—whether that's
         discussing the parallels between ancient Stoicism and modern minimalism,
         sharing skateboarding stories, or just appreciating good design and
         thoughtful solutions to everyday problems.
       </p>
     </card-component>
-    <consultation-component class="margin-top-4"></consultation-component>
+    <consultation-component></consultation-component>
   </div>
 </Layout>
 
@@ -152,6 +148,10 @@ import profileImage from '@assets/images/profile.webp';
     position: relative;
     width: 50vw;
     z-index: 1;
+  }
+
+  ul {
+    padding: 0 1rem;
   }
 </style>
 <script>
