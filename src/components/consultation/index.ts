@@ -1,7 +1,7 @@
 import { Base } from '@components/base';
 import '@components/button';
 import '@components/icon';
-import { arrowForward } from '@icons/arrow-forward';
+import { arrowForward } from '@icons/index';
 import { css, html } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 

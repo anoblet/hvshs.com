@@ -1,10 +1,7 @@
 import { Base } from '@components/base';
-import { planet } from '@icons/planet';
+import { planet, phone, mail, language } from '@icons/index';
 import { css, html } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
-import { phone } from '@icons/phone';
-import { mail } from '@icons/mail';
-import { language } from '@icons/language';
 
 @customElement('business-card')
 export class BusinessCard extends Base {
