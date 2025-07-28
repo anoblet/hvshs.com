@@ -83,12 +83,13 @@ export const globalStyles = css`
 
   h1 {
     color: var(--h1-color);
-    font-size: var(--h1-font-size);
+    font-size: 2.5rem;
   }
 
   h2 {
     color: var(--h2-color);
     font-size: 2rem;
+    line-height: 3rem;
   }
 
   h3 {
