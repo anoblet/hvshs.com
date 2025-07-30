@@ -52,6 +52,10 @@ export class BusinessCard extends Base {
         color: var(--color-sky-200);
       }
 
+      h1 {
+        font-size: 5rem;
+      }
+
       li {
         line-height: unset;
       }

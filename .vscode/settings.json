@@ -7,5 +7,6 @@
     ".copilot/awesome-copilot/chatmodes": true,
     ".copilot/chatmodes": true
   },
-  "chat.tools.autoApprove": true
+  "chat.tools.autoApprove": true,
+  "githubPullRequests.ignoredPullRequestBranches": ["develop"]
 }
