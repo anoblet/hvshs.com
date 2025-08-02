@@ -14,7 +14,8 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "screenshot:business-card": "node scripts/screenshot-business-card.js",
-    "prepare": "husky"
+    "prepare": "husky",
+    "lighthouse": "npx lighthouse https://andrewnoblet.com --chrome-flags='--headless' --output json --output-path reports/lighthouse.json --quiet"
   },
   "dependencies": {
     "@anoblet/mixins": "github:anoblet/mixins",
