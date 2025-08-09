@@ -1,88 +1,52 @@
-# Lighthouse Report — 2025-08-09
+## Scores
 
-Target: https://andrewnoblet.com
-Fetch time: 2025-08-09T13:31:50.999Z
-
-Scores
 - Performance: 67
 - Accessibility: 94
 - Best Practices: 96
 - SEO: 100
 
-Core metrics
-- FCP: 2.2s
-- LCP: 2.7s
-- TTI: 6.4s
-- TBT: 1,590ms
+## Metrics
+
+- FCP: 2.2 s
+- LCP: 2.7 s (LCP element: section > media-component > h1.grid > span.font-weight-800; 81% render delay)
+- Speed Index: 2.4 s
+- TTI: 6.4 s
+- TBT: 1,590 ms
 - CLS: 0.017
-- Speed Index: 2.4s
 
-Summary
-- Third‑party code: Google Tag Manager blocked the main thread for ~1,040ms.
-- Main‑thread work: 5.2s total (Script evaluation 2.0s, Other 1.95s, Style/Layout 0.76s).
-- Render‑blocking: _astro/about.cOPtgU5F.css (4.4KB) adds ~229ms blocking.
+## Summary
 
-Top actions (simplest ➜ most complex)
-1. Delay analytics: load GTM/GA after first interaction or when idle; enable Consent Mode; remove unused tags.
-2. Eliminate render‑blocking CSS: inline minimal critical styles or load non‑critical CSS with media/onload swap; avoid shipping page‑specific CSS (about.css) on pages that don’t need it.
-3. Cut main‑thread JS: audit client JS, split non‑critical work, and offload to idle; prefer Astro islands and reduce hydration where possible.
+- Performance is held back primarily by main-thread work (5.2 s) and third‑party JS (GTM/GA) blocking ~1.0 s, inflating TBT to 1.59 s and delaying TTI to 6.4 s.
+- LCP is text (hero H1) and is good at 2.7 s; render delay dominates, so reducing long tasks and render‑blocking CSS will improve it further.
+- One small render‑blocking CSS file (`about.*.css`, ~4.3 KiB) adds ~229 ms; inlining critical CSS on the affected route will remove this.
+- Unused JS from GTM/GA (~108 KiB potential) contributes to bootup-time; load GA after user interaction and use a facade to defer execution on initial view.
+- No image size/format issues; CLS is healthy. Server TTFB is great (50 ms). One console error is from GA collect failing when blocked; this affects Best Practices.
 
----
+## Task List
 
-# Lighthouse Task Checklist
+1) Third‑party and JS execution (biggest TBT wins)
+	1. Defer GA/GTM during initial load; switch to a consent/interaction facade (maps: third-party-summary, unused-javascript, errors-in-console).
+		- Astro: gate GA init behind a lightweight facade component rendered after user interaction (e.g., dismiss banner or first navigation). Use island/hydration only when needed.
+		- Lit: if a Lit component initializes analytics, wrap init in requestIdleCallback or an interaction event, and guard with feature flags.
+	2. Reduce main-thread work and bootup time (maps: mainthread-work-breakdown, bootup-time).
+		- Audit client:only components. Prefer server-side/static rendering with Astro where possible; convert non-interactive Lit islands to static HTML.
+		- Split heavy modules behind onVisible importer or dynamic import in Astro islands/Lit components.
 
-This checklist is distilled from reports/lighthouse.json to reach or maintain 100s across Performance, Accessibility, Best Practices, and SEO.
+2) Render‑blocking and LCP polish
+	1. Inline critical CSS for about route and defer the rest (maps: render-blocking-resources).
+		- Extract above‑the‑fold styles (~4–5 KiB) into the page head via an Astro `<style>` block and load the generated CSS with `media="print" onload` or `rel="preload" as="style"` fallback.
+	2. Ensure hero text paints ASAP (maps: largest-contentful-paint-element).
+		- Keep webfonts with `font-display: swap` (already set). Provide system fallbacks and avoid layout‑thrashing in hero.
 
-## Performance
-- [ ] Preload critical webfont(s) used by the LCP text (hero heading). Add <link rel="preload" as="font" type="font/woff2" crossorigin> and use font-display: swap.
-- [ ] Ensure no render-blocking CSS/JS: inline critical CSS, defer non-critical CSS (media or onload swap), and add defer/async to non-critical scripts.
-- [ ] Reduce JS on the main thread: audit bundles, remove unused code, enable tree-shaking, and prefer Astro islands/SSR over client JS where possible.
-- [ ] Eliminate unused JavaScript and CSS flagged in the report.
-- [ ] Add preconnect/dns-prefetch for top third-party origins that are needed early (limit to ~4).
-- [ ] Preload the LCP resource if it’s an image or font; add fetchpriority="high" to the LCP image if applicable.
-- [ ] Lazy-load offscreen images and embeds; ensure loading="lazy" and decoding="async".
-- [ ] Serve modern image formats (WebP/AVIF) for all large images; resize images to display size and provide width/height to reserve space.
-- [ ] Enable Brotli/Gzip for all text assets (JS/CSS/HTML/SVG/JSON).
-- [ ] Review critical request chains and shorten where possible (remove redirects, split bundles, inline tiny assets).
-- [ ] Address long main-thread tasks; break up heavy work and defer non-urgent tasks to idle callbacks.
-- [ ] Verify HTTP/2 or HTTP/3 for all origins.
+3) Trim unused third‑party bytes
+	- Scope GA config to minimal required features and disable unused plugins (maps: unused-javascript).
+	- Consider server‑side analytics or lightweight alternatives if acceptable.
 
-## Stability (CLS)
-- [ ] Add explicit width/height or CSS aspect-ratio for all images/media/iframes to prevent layout shifts.
-- [ ] Avoid non-composited animations; prefer transform/opacity and will-change where appropriate.
-- [ ] Use font-display: swap and preload fonts to reduce FOIT/FOUT shifting.
-- [ ] Reserve space for dynamic components (hero, nav, async content) with min-height.
+4) Hygiene and verification
+	- Fix console error from blocked GA collect by handling fetch failures or gating requests (maps: errors-in-console).
+	- Keep preconnects limited to critical origins only (gtm/ga already added) (maps: uses-rel-preconnect).
+	- Re‑run Lighthouse after changes; target TBT < 200 ms and TTI < 3.5 s.
 
-## Third‑party
-- [ ] Reduce/replace heavy third-party scripts; self-host where possible.
-- [ ] Lazy-load third-party widgets with a facade (YouTube, maps, embeds) until user interaction.
-- [ ] Defer analytics/heatmaps until after first interaction or when idle.
+Notes
 
-## Accessibility
-- [ ] Fix any ARIA role/attribute warnings (aria-allowed-attr, aria-allowed-role, required parents/children).
-- [ ] Ensure all interactive controls have accessible names and are keyboard focusable with visible focus.
-- [ ] Use landmarks (<header>, <nav>, <main>, <footer>) and ensure DOM order follows the visual order.
-- [ ] Provide text alternatives for images/icons and hide purely decorative ones from AT.
-
-## Best Practices & Security Headers
-- [ ] Add a strong Content-Security-Policy (script-src, object-src 'none', base-uri 'none', upgrade-insecure-requests, etc.).
-- [ ] Enable HSTS (Strict-Transport-Security) with a safe max-age and includeSubDomains; consider preload after validation.
-- [ ] Mitigate clickjacking (X-Frame-Options: DENY or CSP frame-ancestors 'none').
-- [ ] Consider Trusted Types (require-trusted-types-for 'script') if injecting HTML.
-- [ ] Mark passive listeners for touch/wheel events where appropriate.
-
-## SEO
-- [ ] Ensure each page has a unique <title> and meta description.
-- [ ] Add canonical URL and verify robots.txt and sitemap.xml.
-- [ ] Use descriptive link text; ensure mobile legible font sizes (>=12px) and tap targets.
-- [ ] Add structured data (Person/Organization, WebSite, BlogPosting) where applicable.
-
-## PWA (if desired)
-- [ ] Provide a complete web app manifest (name, icons incl. maskable, theme/background colors) and link it.
-- [ ] Register a service worker with basic offline caching for static assets and pages.
-
-## Diagnostics to review in the report
-- [ ] Third-party summary blocking time (~1,040 ms): identify and prioritize items to defer/remove.
-- [ ] Main thread work breakdown: verify “Script Evaluation/Parsing” time and target the worst offenders.
-- [ ] Largest Contentful Paint element: confirm it’s intended and optimized.
-- [ ] Image aspect ratio/size diagnostics: fix any mismatches highlighted.
+- Source: reports/lighthouse.json (v12). Astro + Lit stack, pnpm. Changes prioritize minimal risk and high ROI.

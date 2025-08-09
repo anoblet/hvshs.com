@@ -74,4 +74,4 @@
 
 - Remember to never use inline styles. If you ever feel the need to, create a utility class in `src/styles/utility.ts`.
 
-- Whenever asked to implement a solution, always start by creating a new branch.
+- Whenever asked to implement a solution, and you are on the main or default branch, always start by creating a new branch.
