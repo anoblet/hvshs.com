@@ -1,0 +1,31 @@
+---
+export interface Props {
+  class?: string;
+}
+
+const { class: className = '' } = Astro.props;
+---
+
+<div class={`card ${className}`}>
+  <slot />
+</div>
+
+<style>
+  .card {
+    background-color: var(--card-background-color);
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+    border: 1px solid var(--card-border-color);
+    box-shadow: var(--box-shadow);
+    transition: outline-color 0.1s ease-in-out;
+    width: 100%;
+  }
+
+  .card:hover {
+    outline-color: var(--color-neutral-400);
+    transition: outline-color 0.1s ease-in-out;
+  }
+</style>

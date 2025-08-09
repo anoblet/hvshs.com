@@ -144,4 +144,38 @@ export const utility = css`
   .z-index-1 {
     z-index: 1;
   }
+
+  .button {
+    background: var(--button-background-color, var(--color-primary));
+    border: 1px solid var(--button-border-color, var(--color-primary));
+    border-radius: 0.375rem;
+    color: var(--button-text-color, var(--color-primary-contrast));
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.875rem;
+    font-weight: 500;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    transition: all 0.15s ease-in-out;
+  }
+
+  .button:hover {
+    background: var(--button-hover-background-color, var(--color-primary-700));
+    border-color: var(--button-hover-border-color, var(--color-primary-700));
+    text-decoration: none;
+  }
+
+  .button-primary {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+    color: var(--color-primary-contrast);
+  }
+
+  .button-primary:hover {
+    background: var(--color-primary-700);
+    border-color: var(--color-primary-700);
+  }
 `;
