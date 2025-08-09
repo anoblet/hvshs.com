@@ -1,52 +1,109 @@
+# Lighthouse Performance Report
+
 ## Scores
 
-- Performance: 67
-- Accessibility: 94
-- Best Practices: 96
-- SEO: 100
+- **Performance**: 73/100
+- **Accessibility**: 94/100
+- **Best Practices**: 100/100
+- **SEO**: 100/100
 
 ## Metrics
 
-- FCP: 2.2 s
-- LCP: 2.7 s (LCP element: section > media-component > h1.grid > span.font-weight-800; 81% render delay)
-- Speed Index: 2.4 s
-- TTI: 6.4 s
-- TBT: 1,590 ms
-- CLS: 0.017
+- **First Contentful Paint (FCP)**: 2.1s
+- **Largest Contentful Paint (LCP)**: 2.3s
+- **Time to Interactive (TTI)**: 3.5s
+- **Total Blocking Time (TBT)**: 990ms
+- **Cumulative Layout Shift (CLS)**: 0.045
+- **Speed Index (SI)**: 3.0s
 
 ## Summary
 
-- Performance is held back primarily by main-thread work (5.2 s) and third‑party JS (GTM/GA) blocking ~1.0 s, inflating TBT to 1.59 s and delaying TTI to 6.4 s.
-- LCP is text (hero H1) and is good at 2.7 s; render delay dominates, so reducing long tasks and render‑blocking CSS will improve it further.
-- One small render‑blocking CSS file (`about.*.css`, ~4.3 KiB) adds ~229 ms; inlining critical CSS on the affected route will remove this.
-- Unused JS from GTM/GA (~108 KiB potential) contributes to bootup-time; load GA after user interaction and use a facade to defer execution on initial view.
-- No image size/format issues; CLS is healthy. Server TTFB is great (50 ms). One console error is from GA collect failing when blocked; this affects Best Practices.
+- **Main Performance Bottleneck**: Excessive main-thread work (4.5s) causing high Total Blocking Time (990ms)
+- **Render-Blocking Issue**: CSS file blocking first paint, causing 300ms delay
+- **Script Performance**: 901ms spent on script evaluation impacting interactivity
+- **Accessibility Gap**: Link without discernible name affecting screen reader users
+- **Quick Wins**: Font display optimization, render-blocking CSS elimination, main-thread work reduction
 
 ## Task List
 
-1) Third‑party and JS execution (biggest TBT wins)
-	1. Defer GA/GTM during initial load; switch to a consent/interaction facade (maps: third-party-summary, unused-javascript, errors-in-console).
-		- Astro: gate GA init behind a lightweight facade component rendered after user interaction (e.g., dismiss banner or first navigation). Use island/hydration only when needed.
-		- Lit: if a Lit component initializes analytics, wrap init in requestIdleCallback or an interaction event, and guard with feature flags.
-	2. Reduce main-thread work and bootup time (maps: mainthread-work-breakdown, bootup-time).
-		- Audit client:only components. Prefer server-side/static rendering with Astro where possible; convert non-interactive Lit islands to static HTML.
-		- Split heavy modules behind onVisible importer or dynamic import in Astro islands/Lit components.
+### 1. Optimize Main-Thread Work
+- **Action**: Reduce JavaScript execution time from 4.5s to under 2s
+- **Why**: `mainthread-work-breakdown` audit shows 4492ms of main-thread work, with 901ms in script evaluation
+- **How**: 
+  - Code-split JavaScript bundles to defer non-critical scripts
+  - Use dynamic imports for components not needed above-the-fold
+  - Remove or defer unused JavaScript libraries
+  - Implement tree-shaking in build process
+- **Impact**: Could reduce TBT by up to 1000ms, significantly improving Performance score
+- **Effort**: L
+- **Verification**: Re-run Lighthouse and check TBT < 300ms, main-thread work < 2000ms
 
-2) Render‑blocking and LCP polish
-	1. Inline critical CSS for about route and defer the rest (maps: render-blocking-resources).
-		- Extract above‑the‑fold styles (~4–5 KiB) into the page head via an Astro `<style>` block and load the generated CSS with `media="print" onload` or `rel="preload" as="style"` fallback.
-	2. Ensure hero text paints ASAP (maps: largest-contentful-paint-element).
-		- Keep webfonts with `font-display: swap` (already set). Provide system fallbacks and avoid layout‑thrashing in hero.
+### 2. Eliminate Render-Blocking CSS
+- **Action**: Inline critical CSS and defer non-critical styles
+- **Why**: `render-blocking-resources` audit shows 300ms savings available from CSS file blocking first paint
+- **How**:
+  - Extract above-the-fold CSS and inline it in the HTML `<head>`
+  - Use `media="print" onload="this.media='all'"` for non-critical CSS
+  - Implement critical CSS extraction in Astro build process
+- **Impact**: 300ms reduction in FCP and LCP
+- **Effort**: M
+- **Verification**: Re-run Lighthouse and verify render-blocking-resources audit passes
 
-3) Trim unused third‑party bytes
-	- Scope GA config to minimal required features and disable unused plugins (maps: unused-javascript).
-	- Consider server‑side analytics or lightweight alternatives if acceptable.
+### 3. Fix Link Accessibility
+- **Action**: Add accessible name to calendar link
+- **Why**: `link-name` audit fails due to link without discernible text for screen readers
+- **How**:
+  - Add `aria-label="Schedule consultation"` to the calendar link in contact component
+  - Or include visually hidden text: `<span class="sr-only">Schedule consultation</span>`
+  - Located in: `contact-component` with href `https://calendar.app.google/JjnLtVR6mnM11FcS9`
+- **Impact**: Fixes accessibility score gap, improves screen reader experience
+- **Effort**: S
+- **Verification**: Re-run Lighthouse and verify link-name audit passes
 
-4) Hygiene and verification
-	- Fix console error from blocked GA collect by handling fetch failures or gating requests (maps: errors-in-console).
-	- Keep preconnects limited to critical origins only (gtm/ga already added) (maps: uses-rel-preconnect).
-	- Re‑run Lighthouse after changes; target TBT < 200 ms and TTI < 3.5 s.
+### 4. Implement Font Display Optimization
+- **Action**: Add `font-display: swap` to web fonts
+- **Why**: `font-display` audit suggests optimizing font loading to reduce layout shifts
+- **How**:
+  - Add `font-display: swap` to all `@font-face` declarations
+  - Consider using `font-display: optional` for non-critical fonts
+  - Implement font fallback metrics to reduce CLS
+- **Impact**: Reduces perceived loading time, improves CLS
+- **Effort**: S
+- **Verification**: Check font-display audit and verify CLS remains under 0.1
 
-Notes
+### 5. Optimize Critical Request Chains
+- **Action**: Reduce font loading chain length and preload critical fonts
+- **Why**: 13 critical request chains found, fonts loaded sequentially after CSS
+- **How**:
+  - Preload the most critical fonts (Noto Sans 400, 600 weights) in HTML head
+  - Add `<link rel="preload" href="/_astro/noto-sans-latin-400-normal.DBaOTIGl.woff2" as="font" type="font/woff2" crossorigin>`
+  - Consider subsetting fonts to reduce transfer size
+- **Impact**: Faster font loading, reduced FCP/LCP
+- **Effort**: M
+- **Verification**: Check critical-request-chains audit for reduced chain count
+
+### 6. Reduce Style & Layout Work
+- **Action**: Optimize CSS and reduce layout recalculations
+- **Why**: 876ms spent on Style & Layout work contributing to main-thread blocking
+- **How**:
+  - Review CSS for complex selectors and simplify
+  - Avoid layout-triggering CSS properties in animations
+  - Use CSS containment where appropriate
+  - Minimize DOM complexity in Lit components
+- **Impact**: Reduces main-thread work, improves TBT
+- **Effort**: M
+- **Verification**: Check mainthread-work-breakdown for reduced Style & Layout time
+
+### 7. Script Evaluation Optimization
+- **Action**: Optimize JavaScript parsing and execution
+- **Why**: 901ms spent on script evaluation blocking main thread
+- **How**:
+  - Use `defer` attribute on non-critical scripts
+  - Implement module preloading for critical Lit components
+  - Consider using Web Workers for heavy computations
+  - Minify and compress JavaScript bundles
+- **Impact**: Reduces TBT and improves TTI
+- **Effort**: L
+- **Verification**: Check Script Evaluation time in mainthread-work-breakdown audit
 
 - Source: reports/lighthouse.json (v12). Astro + Lit stack, pnpm. Changes prioritize minimal risk and high ROI.
