@@ -59,6 +59,7 @@ export class ContactComponent extends Base {
         href="https://calendar.app.google/JjnLtVR6mnM11FcS9"
         target="_blank"
         rel="noopener noreferrer"
+        aria-label="Schedule a consultation"
       >
         <icon-component>${phone}</icon-component>
       </a>
