@@ -1,4 +1,6 @@
 ```prompt
+Step 1: Run the lighthouse script (`pnpm lighthouse`).
+
 Goal: Create/update `reports/lighthouse.md` to drive the site toward a perfect Lighthouse score (100 in Performance, Accessibility, Best Practices, SEO) using the latest `reports/lighthouse.json`.
 
 Inputs:
