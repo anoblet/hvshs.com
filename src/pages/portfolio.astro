@@ -1,7 +1,11 @@
 ---
 import ArrowForward from '@icons/arrow-forward.svg';
-import Layout from '@layouts/default.astro';
+import Card from '@components/Card.astro';
+import Layout from '../layouts/default.astro';
 ---
+
+mport ArrowForward from '@icons/arrow-forward.svg'; import Layout from
+'@layouts/default.astro'; ---
 
 <Layout
   title="Portfolio"
@@ -16,7 +20,7 @@ import Layout from '@layouts/default.astro';
       </p>
     </div>
     <div class="column gap-2 grid">
-      <card-component>
+      <Card>
         <h3>Professional Projects</h3>
         <div class="flex-1">
           <p>
@@ -36,8 +40,8 @@ import Layout from '@layouts/default.astro';
         >
           View projects <ArrowForward />
         </a>
-      </card-component>
-      <card-component>
+      </Card>
+      <Card>
         <h3>Personal Projects</h3>
         <div class="flex-1">
           <p>
@@ -54,13 +58,17 @@ import Layout from '@layouts/default.astro';
         <a class="gap-0-5 justify-content-flex-end" href="/portfolio/personal">
           View projects <ArrowForward />
         </a>
-      </card-component>
+      </Card>
     </div>
-    <consultation-component></consultation-component>
+    <section class="gap grid justify-content-center text-align-center">
+      <h2>Let's Connect!</h2>
+      <p>
+        Let's connect and discuss how my experience can help bring your vision
+        to life.
+      </p>
+      <div class="gap grid">
+        <a href="/contact" class="button button-primary">Get in Touch</a>
+      </div>
+    </section>
   </div>
 </Layout>
-
-<script>
-  import '@components/card';
-  import '@components/consultation';
-</script>

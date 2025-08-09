@@ -7,5 +7,14 @@ export default defineConfig({
     esbuild: {
       target: 'es2022',
     },
+    build: {
+      rollupOptions: {
+        output: {
+          manualChunks: {
+            lit: ['lit'],
+          },
+        },
+      },
+    },
   },
 });

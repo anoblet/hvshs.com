@@ -1,5 +1,6 @@
 ---
 import Layout from '@layouts/default.astro';
+import Card from '@components/Card.astro';
 import profileImage from '@assets/images/profile.webp';
 ---
 
@@ -13,7 +14,7 @@ import profileImage from '@assets/images/profile.webp';
       <img
         src={profileImage.src}
         alt="Andrew Noblet profile photo"
-        class="margin-auto profile-image"
+        class="margin-auto border-radius-50 box-shadow-tertiary block height-16 width-16 object-fit-cover relative z-index-1"
         loading="lazy"
         decoding="async"
         width={profileImage.width}
@@ -37,9 +38,9 @@ import profileImage from '@assets/images/profile.webp';
         day brings.
       </p>
     </section>
-    <card-component>
+    <Card>
       <h2>Personal Facts</h2>
-      <ul class="column flex gap-0-5">
+      <ul class="column flex gap-0-5 padding-horizontal-1">
         <li><strong>Full Name:</strong> Andrew Noblet</li>
         <li><strong>Born in:</strong> Chile</li>
         <li>
@@ -70,8 +71,8 @@ import profileImage from '@assets/images/profile.webp';
           catch me eating lamb!
         </li>
       </ul>
-    </card-component>
-    <card-component>
+    </Card>
+    <Card>
       <h2>Hobbies & Passions</h2>
       <div class="column flex gap">
         <div>
@@ -110,8 +111,8 @@ import profileImage from '@assets/images/profile.webp';
           </p>
         </div>
       </div>
-    </card-component>
-    <card-component>
+    </Card>
+    <Card>
       <h2>Life Philosophy</h2>
       <p>
         My worldview is shaped by a blend of Eastern wisdom traditions that
@@ -138,8 +139,8 @@ import profileImage from '@assets/images/profile.webp';
         decisions, I strive for simplicity, intentionality, and authentic
         connection.
       </p>
-    </card-component>
-    <card-component>
+    </Card>
+    <Card>
       <h2>Early Adventures</h2>
       <p>
         My curiosity started young and led to some memorable learning
@@ -173,8 +174,8 @@ import profileImage from '@assets/images/profile.webp';
         persistence, preparation, and a willingness to learn from mistakes
         (sometimes messy ones!) are the best tools for any journey.
       </p>
-    </card-component>
-    <card-component>
+    </Card>
+    <Card>
       <h2>Life in New York</h2>
       <p>
         New York perfectly matches my energy for exploration and growth. The
@@ -200,30 +201,16 @@ import profileImage from '@assets/images/profile.webp';
         someone who appreciates both cutting-edge innovation and timeless
         wisdom.
       </p>
-    </card-component>
-    <consultation-component></consultation-component>
+    </Card>
+    <section class="gap grid justify-content-center text-align-center">
+      <h2>Let's Connect!</h2>
+      <p>
+        Let's connect and discuss how my experience can help bring your vision
+        to life.
+      </p>
+      <div class="gap grid">
+        <a href="/contact" class="button button-primary">Get in Touch</a>
+      </div>
+    </section>
   </div>
 </Layout>
-
-<style>
-  .profile-image {
-    border-radius: 50%;
-    box-shadow: 0 0 0 4px var(--tertiary-color);
-    display: block;
-    height: 50vw;
-    max-height: 16rem;
-    max-width: 16rem;
-    object-fit: cover;
-    position: relative;
-    width: 50vw;
-    z-index: 1;
-  }
-
-  ul {
-    padding: 0 1rem;
-  }
-</style>
-<script>
-  import '@components/card';
-  import '@components/consultation';
-</script>
