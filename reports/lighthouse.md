@@ -1,3 +1,34 @@
+# Lighthouse Report — 2025-08-09
+
+Target: https://andrewnoblet.com
+Fetch time: 2025-08-09T13:31:50.999Z
+
+Scores
+- Performance: 67
+- Accessibility: 94
+- Best Practices: 96
+- SEO: 100
+
+Core metrics
+- FCP: 2.2s
+- LCP: 2.7s
+- TTI: 6.4s
+- TBT: 1,590ms
+- CLS: 0.017
+- Speed Index: 2.4s
+
+Summary
+- Third‑party code: Google Tag Manager blocked the main thread for ~1,040ms.
+- Main‑thread work: 5.2s total (Script evaluation 2.0s, Other 1.95s, Style/Layout 0.76s).
+- Render‑blocking: _astro/about.cOPtgU5F.css (4.4KB) adds ~229ms blocking.
+
+Top actions (simplest ➜ most complex)
+1. Delay analytics: load GTM/GA after first interaction or when idle; enable Consent Mode; remove unused tags.
+2. Eliminate render‑blocking CSS: inline minimal critical styles or load non‑critical CSS with media/onload swap; avoid shipping page‑specific CSS (about.css) on pages that don’t need it.
+3. Cut main‑thread JS: audit client JS, split non‑critical work, and offload to idle; prefer Astro islands and reduce hydration where possible.
+
+---
+
 # Lighthouse Task Checklist
 
 This checklist is distilled from reports/lighthouse.json to reach or maintain 100s across Performance, Accessibility, Best Practices, and SEO.
@@ -51,7 +82,7 @@ This checklist is distilled from reports/lighthouse.json to reach or maintain 10
 - [ ] Register a service worker with basic offline caching for static assets and pages.
 
 ## Diagnostics to review in the report
-- [ ] Third-party summary blocking time (~600 ms): identify and prioritize items to defer/remove.
+- [ ] Third-party summary blocking time (~1,040 ms): identify and prioritize items to defer/remove.
 - [ ] Main thread work breakdown: verify “Script Evaluation/Parsing” time and target the worst offenders.
-- [ ] Largest Contentful Paint element: confirm it’s intended (hero heading/text) and optimized.
+- [ ] Largest Contentful Paint element: confirm it’s intended and optimized.
 - [ ] Image aspect ratio/size diagnostics: fix any mismatches highlighted.
