@@ -9,7 +9,16 @@ import litdev from '../assets/lit.dev_.webp';
 >
   <h1>Lit</h1>
   <card-component>
-    <img src={litdev.src} alt="Lit" slot="image" />
+    <img
+      src={litdev.src}
+      alt="Lit"
+      slot="image"
+      loading="lazy"
+      decoding="async"
+      fetchpriority="auto"
+      width={litdev.width}
+      height={litdev.height}
+    />
     <h2 slot="title">
       <a href="https://lit.dev/">Lit</a>
     </h2>
