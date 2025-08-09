@@ -113,6 +113,14 @@ export const utility = css`
     width: 50vw;
   }
 
+  .height-16 {
+    height: 16rem;
+  }
+
+  .width-16 {
+    width: 16rem;
+  }
+
   .max-height-16 {
     max-height: 16rem;
   }
