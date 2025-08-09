@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/default.astro';
+import Card from '@components/Card.astro';
 ---
 
 <Layout
@@ -43,7 +44,7 @@ import Layout from '../../layouts/default.astro';
     <section class="gap grid">
       <h2>Consultation Services</h2>
       <div class="column gap grid">
-        <card-component>
+        <Card>
           <h3>Technology Strategy</h3>
           <p>
             Strategic guidance on technology choices, architecture, and
@@ -55,8 +56,8 @@ import Layout from '../../layouts/default.astro';
             <li>Scalability assessment</li>
             <li>Future-proofing strategies</li>
           </ul>
-        </card-component>
-        <card-component>
+        </Card>
+        <Card>
           <h3>Code Review & Audits</h3>
           <p>
             Comprehensive code reviews and technical audits to identify
@@ -68,8 +69,8 @@ import Layout from '../../layouts/default.astro';
             <li>Performance bottleneck identification</li>
             <li>Best practices recommendations</li>
           </ul>
-        </card-component>
-        <card-component>
+        </Card>
+        <Card>
           <h3>Project Planning & Estimation</h3>
           <p>
             Expert project planning and timeline estimation to break down
@@ -82,8 +83,8 @@ import Layout from '../../layouts/default.astro';
             <li>Risk assessment</li>
             <li>Milestone planning</li>
           </ul>
-        </card-component>
-        <card-component>
+        </Card>
+        <Card>
           <h3>Performance Optimization</h3>
           <p>
             Deep-dive analysis of application performance with actionable
@@ -96,8 +97,8 @@ import Layout from '../../layouts/default.astro';
             <li>Frontend optimization</li>
             <li>Infrastructure tuning</li>
           </ul>
-        </card-component>
-        <card-component>
+        </Card>
+        <Card>
           <h3>Team Mentoring</h3>
           <p>
             Technical mentoring for development teams, including best practices,
@@ -109,8 +110,8 @@ import Layout from '../../layouts/default.astro';
             <li>Team skill development</li>
             <li>Technical leadership</li>
           </ul>
-        </card-component>
-        <card-component>
+        </Card>
+        <Card>
           <h3>Problem Solving</h3>
           <p>
             Expert troubleshooting for complex technical challenges, system
@@ -123,15 +124,9 @@ import Layout from '../../layouts/default.astro';
             <li>Architecture problem solving</li>
             <li>Emergency support</li>
           </ul>
-        </card-component>
+        </Card>
       </div>
     </section>
     <consultation-component></consultation-component>
   </div>
 </Layout>
-
-<script>
-  import '@components/card';
-  import '@components/consultation';
-  import '@components/button';
-</script>

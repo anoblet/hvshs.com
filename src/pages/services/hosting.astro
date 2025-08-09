@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/default.astro';
+import Card from '@components/Card.astro';
 ---
 
 <Layout
@@ -44,7 +45,7 @@ import Layout from '../../layouts/default.astro';
     <section class="gap grid">
       <h2>Hosting Solutions</h2>
       <div class="column gap grid">
-        <card-component>
+        <Card>
           <h3>Static Site Hosting</h3>
           <p>
             Fast, global hosting for static sites, JAMstack apps, and SPAs.
@@ -56,8 +57,8 @@ import Layout from '../../layouts/default.astro';
             <li>Git-based deployments</li>
             <li>Custom domains</li>
           </ul>
-        </card-component>
-        <card-component>
+        </Card>
+        <Card>
           <h3>Cloud Infrastructure</h3>
           <p>
             Scalable cloud hosting with auto-scaling, load balancing, and high
@@ -70,8 +71,8 @@ import Layout from '../../layouts/default.astro';
             <li>Database management</li>
             <li>CI/CD pipelines</li>
           </ul>
-        </card-component>
-        <card-component>
+        </Card>
+        <Card>
           <h3>Performance Optimization</h3>
           <p>
             Comprehensive performance tuning to ensure your site loads fast
@@ -84,8 +85,8 @@ import Layout from '../../layouts/default.astro';
             <li>Code splitting</li>
             <li>Performance monitoring</li>
           </ul>
-        </card-component>
-        <card-component>
+        </Card>
+        <Card>
           <h3>Security & Monitoring</h3>
           <p>
             Robust security measures with SSL certificates, firewall protection,
@@ -97,8 +98,8 @@ import Layout from '../../layouts/default.astro';
             <li>Security monitoring</li>
             <li>Automated backups</li>
           </ul>
-        </card-component>
-        <card-component>
+        </Card>
+        <Card>
           <h3>Migration Support</h3>
           <p>
             Seamless migration from your current hosting provider with zero
@@ -111,8 +112,8 @@ import Layout from '../../layouts/default.astro';
             <li>Data transfer</li>
             <li>Testing & validation</li>
           </ul>
-        </card-component>
-        <card-component>
+        </Card>
+        <Card>
           <h3>Maintenance & Support</h3>
           <p>
             Ongoing maintenance and support services to keep your website
@@ -125,21 +126,17 @@ import Layout from '../../layouts/default.astro';
             <li>Performance monitoring</li>
             <li>Technical support</li>
           </ul>
-        </card-component>
+        </Card>
       </div>
     </section>
 
     <div class="text-align-center margin-top-4">
-      <a href="/services/hosting/pricing">
-        <button-component variant="primary" class="font-size-1-125">
-          View Hosting Pricing
-        </button-component>
+      <a
+        href="/services/hosting/pricing"
+        class="button button-primary font-size-1-125"
+      >
+        View Hosting Pricing
       </a>
     </div>
   </div>
 </Layout>
-
-<script>
-  import '../../components/card';
-  import '../../components/contact';
-</script>
