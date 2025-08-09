@@ -1,3 +1,8 @@
+/* Ensure font-display: swap via @fontsource variable */
+:root {
+  --font-display: swap;
+}
+
 @import '@fontsource/noto-sans/latin-400.css';
 @import '@fontsource/noto-sans/latin-500.css';
 @import '@fontsource/noto-sans/latin-600.css';
@@ -5,3 +10,19 @@
 @import '@fontsource/poppins/latin-500.css';
 @import '@fontsource/poppins/latin-600.css';
 @import '@fontsource/poppins/latin-800.css';
+
+/* System fallbacks */
+html {
+  font-family:
+    'Noto Sans',
+    system-ui,
+    -apple-system,
+    Segoe UI,
+    Roboto,
+    Helvetica,
+    Arial,
+    'Apple Color Emoji',
+    'Segoe UI Emoji',
+    'Segoe UI Symbol',
+    sans-serif;
+}
