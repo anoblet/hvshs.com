@@ -6,3 +6,7 @@
 6. Run `npm run deploy` wait for it to complete.
 
 Repeat these steps until you have achieved a perfect lighthouse score.
+
+- Use Playwright to check against the local site(https://localhost:4321)
+
+- Keep in mind the lighthouse script is run against the live site(https://andrewnoblet.com). The project needs to be deployed before running the lighthouse script again.
