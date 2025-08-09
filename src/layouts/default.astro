@@ -10,8 +10,6 @@ interface Props {
 }
 
 const { title, description = 'Astro description' } = Astro.props;
-
-import { ClientRouter } from 'astro:transitions';
 ---
 
 <!doctype html>
@@ -23,7 +21,6 @@ import { ClientRouter } from 'astro:transitions';
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
-    <ClientRouter />
   </head>
   <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
