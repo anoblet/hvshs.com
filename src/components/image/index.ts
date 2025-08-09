@@ -1,7 +1,7 @@
 import { css, html, LitElement } from 'lit';
 import { ifDefined } from 'lit/directives/if-defined.js';
 import { customElement, property } from 'lit/decorators.js';
-import { globalStyles } from '../../styles/global';
+import { globalStyles } from '@styles/global';
 
 @customElement('image-component')
 export class ImageComponent extends LitElement {
