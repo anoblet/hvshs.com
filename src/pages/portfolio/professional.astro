@@ -1,5 +1,7 @@
 ---
 import Layout from '@layouts/default.astro';
+import Card from '@components/Card.astro';
+import Tag from '@components/Tag.astro';
 import cxl from '@assets/cxl.com_.webp';
 import graduationSource from '@assets/graduationsource.com_.webp';
 import avantisystemsusa from '@assets/avantisystemsusa.com_.webp';
@@ -15,13 +17,13 @@ import { Image } from 'astro:assets';
     <div class="gap grid justify-content-center text-align-center">
       <h1>Professional</h1>
       <p class="bold-5 max-width-56">
-        Explore professional web projects where I’ve built scalable e-commerce
+        Explore professional web projects where I've built scalable e-commerce
         platforms, educational systems, and corporate sites—demonstrating
         expertise in modern tech and user-focused solutions.
       </p>
     </div>
     <div class="space-0-5"></div>
-    <card-component>
+    <Card>
       <h2>CXL</h2>
       <Image src={cxl} alt="CXL" class="card-image" />
       <div class="flex-1">
@@ -41,13 +43,13 @@ import { Image } from 'astro:assets';
         </ul>
       </div>
       <div class="flex flex-wrap gap-0-5 justify-content-center tags">
-        <tag-component>HTML</tag-component>
-        <tag-component>CSS</tag-component>
-        <tag-component>JavaScript</tag-component>
-        <tag-component>Web Components</tag-component>
-        <tag-component>Lit</tag-component>
-        <tag-component>Wordpress</tag-component>
-        <tag-component>WooCommerce</tag-component>
+        <Tag>HTML</Tag>
+        <Tag>CSS</Tag>
+        <Tag>JavaScript</Tag>
+        <Tag>Web Components</Tag>
+        <Tag>Lit</Tag>
+        <Tag>Wordpress</Tag>
+        <Tag>WooCommerce</Tag>
       </div>
       <span></span>
       <a
@@ -58,8 +60,8 @@ import { Image } from 'astro:assets';
       >
         Learn more <ArrowForward />
       </a>
-    </card-component>
-    <card-component>
+    </Card>
+    <Card>
       <h2>Graduation Source</h2>
       <Image
         src={graduationSource}
@@ -84,11 +86,11 @@ import { Image } from 'astro:assets';
         </ul>
       </div>
       <div class="flex flex-wrap gap-0-5 justify-content-center tags">
-        <tag-component>HTML</tag-component>
-        <tag-component>CSS</tag-component>
-        <tag-component>JS</tag-component>
-        <tag-component>PHP</tag-component>
-        <tag-component>Magento</tag-component>
+        <Tag>HTML</Tag>
+        <Tag>CSS</Tag>
+        <Tag>JS</Tag>
+        <Tag>PHP</Tag>
+        <Tag>Magento</Tag>
       </div>
       <span></span>
       <a
@@ -99,8 +101,8 @@ import { Image } from 'astro:assets';
       >
         Learn more <ArrowForward />
       </a>
-    </card-component>
-    <card-component>
+    </Card>
+    <Card>
       <h2>Avanti Systems USA</h2>
       <Image
         src={avantisystemsusa}
@@ -132,10 +134,10 @@ import { Image } from 'astro:assets';
         </ul>
       </div>
       <div class="flex flex-wrap gap-0-5 justify-content-center tags">
-        <tag-component>HTML</tag-component>
-        <tag-component>CSS</tag-component>
-        <tag-component>JavaScript</tag-component>
-        <tag-component>Wordpress</tag-component>
+        <Tag>HTML</Tag>
+        <Tag>CSS</Tag>
+        <Tag>JavaScript</Tag>
+        <Tag>Wordpress</Tag>
       </div>
       <span></span>
       <a
@@ -146,7 +148,7 @@ import { Image } from 'astro:assets';
       >
         Learn more <ArrowForward />
       </a>
-    </card-component>
+    </Card>
   </div>
 </Layout>
 <style>
@@ -156,7 +158,3 @@ import { Image } from 'astro:assets';
     width: 100%;
   }
 </style>
-<script>
-  import '@components/card';
-  import '@components/tag';
-</script>
