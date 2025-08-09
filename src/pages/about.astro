@@ -13,7 +13,7 @@ import profileImage from '@assets/images/profile.webp';
       <img
         src={profileImage.src}
         alt="Andrew Noblet profile photo"
-        class="margin-auto profile-image"
+        class="margin-auto border-radius-50 box-shadow-tertiary block height-50vw width-50vw max-height-16 max-width-16 object-fit-cover relative z-index-1"
         loading="lazy"
         decoding="async"
         width={profileImage.width}
@@ -39,7 +39,7 @@ import profileImage from '@assets/images/profile.webp';
     </section>
     <card-component>
       <h2>Personal Facts</h2>
-      <ul class="column flex gap-0-5">
+      <ul class="column flex gap-0-5 padding-horizontal-1">
         <li><strong>Full Name:</strong> Andrew Noblet</li>
         <li><strong>Born in:</strong> Chile</li>
         <li>
@@ -205,24 +205,6 @@ import profileImage from '@assets/images/profile.webp';
   </div>
 </Layout>
 
-<style>
-  .profile-image {
-    border-radius: 50%;
-    box-shadow: 0 0 0 4px var(--tertiary-color);
-    display: block;
-    height: 50vw;
-    max-height: 16rem;
-    max-width: 16rem;
-    object-fit: cover;
-    position: relative;
-    width: 50vw;
-    z-index: 1;
-  }
-
-  ul {
-    padding: 0 1rem;
-  }
-</style>
 <script>
   import '@components/card';
   import '@components/consultation';

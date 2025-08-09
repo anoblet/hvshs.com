@@ -92,4 +92,48 @@ export const utility = css`
   .padding-top-6 {
     padding-top: 6rem;
   }
+
+  .border-radius-50 {
+    border-radius: 50%;
+  }
+
+  .box-shadow-tertiary {
+    box-shadow: 0 0 0 4px var(--tertiary-color);
+  }
+
+  .object-fit-cover {
+    object-fit: cover;
+  }
+
+  .height-50vw {
+    height: 50vw;
+  }
+
+  .width-50vw {
+    width: 50vw;
+  }
+
+  .max-height-16 {
+    max-height: 16rem;
+  }
+
+  .max-width-16 {
+    max-width: 16rem;
+  }
+
+  .padding-horizontal-1 {
+    padding: 0 1rem;
+  }
+
+  .block {
+    display: block;
+  }
+
+  .relative {
+    position: relative;
+  }
+
+  .z-index-1 {
+    z-index: 1;
+  }
 `;
