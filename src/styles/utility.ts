@@ -225,7 +225,7 @@ export const utility = css`
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: var(--body-background-color);
+    background-color: var(--body-background-color, #fff);
     z-index: 9999;
     display: flex;
     align-items: center;
@@ -243,7 +243,17 @@ export const utility = css`
 
   .interstitial-planet {
     animation: pulse 2s ease-in-out infinite;
-    fill: var(--primary-color);
+    fill: var(--primary-color, var(--color-sky-600));
+  }
+
+  /* Support for dark mode when primary-color is not yet loaded */
+  @media (prefers-color-scheme: dark) {
+    .interstitial {
+      background-color: var(--body-background-color, #0a0a0a);
+    }
+    .interstitial-planet {
+      fill: var(--primary-color, var(--color-teal-200));
+    }
   }
 
   @keyframes pulse {
