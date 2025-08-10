@@ -2,6 +2,7 @@
 
 # Tools
 
+#file:../.copilot/instructions/git-flow.md
 #file:../.copilot/instructions/memory.instructions.md
 #file:../.copilot/instructions/playwright.instructions.md
 #file:../.copilot/instructions/sequential-thinking.instructions.md
@@ -75,3 +76,5 @@
 - Remember to never use inline styles. If you ever feel the need to, create a utility class in `src/styles/utility.ts`.
 
 - Whenever asked to implement a solution, and you are on the main or default branch, always start by creating a new branch.
+
+- Always use every tool available before beginning and finishing your implementation.

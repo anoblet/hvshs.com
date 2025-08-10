@@ -83,12 +83,7 @@ const { title, description = 'Astro description' } = Astro.props;
   import '@components/social';
   import '@components/theme/toggle';
   import { globalStyles } from '@styles/global';
-  import media from '@utility/media';
   import { applyStoredTheme } from '@utility/theme';
-
-  media.subscribe((media: string) => {
-    document.body.setAttribute('data-media', media);
-  });
 
   // Apply global styles
   if (globalStyles.styleSheet) {
