@@ -230,14 +230,9 @@ export const utility = css`
     display: flex;
     align-items: center;
     justify-content: center;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s ease-in-out;
-  }
-
-  .interstitial.show {
     opacity: 1;
     pointer-events: auto;
+    transition: opacity 0.3s ease-in-out;
   }
 
   .interstitial-content {
