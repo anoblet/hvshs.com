@@ -2,6 +2,7 @@
 
 # Tools
 
+#file:../.copilot/instructions/git-flow.md
 #file:../.copilot/instructions/memory.instructions.md
 #file:../.copilot/instructions/playwright.instructions.md
 #file:../.copilot/instructions/sequential-thinking.instructions.md
