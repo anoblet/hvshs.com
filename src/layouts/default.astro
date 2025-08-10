@@ -25,6 +25,7 @@ const { title, description = 'Astro description' } = Astro.props;
     <ViewTransitions />
   </head>
   <body>
+    <loading-bar id="loading-bar"></loading-bar>
     <div id="interstitial" class="interstitial">
       <div class="interstitial-content">
         <svg
@@ -145,6 +146,7 @@ const { title, description = 'Astro description' } = Astro.props;
   import '@components/contact';
   import '@components/social';
   import '@components/theme/toggle';
+  import '@components/loading-bar';
   import { globalStyles } from '@styles/global';
   import { applyStoredTheme } from '@utility/theme';
 
@@ -162,9 +164,38 @@ const { title, description = 'Astro description' } = Astro.props;
 
   document.addEventListener('astro:after-swap', applyStoredTheme);
 
+  // Loading bar integration with ViewTransitions
+  const loadingBar = document.getElementById('loading-bar') as any;
+  let loadingTimeout: number;
+
+  // Start loading bar on navigation
+  document.addEventListener('astro:before-preparation', () => {
+    if (loadingBar) {
+      loadingBar.start();
+      // Set a timeout to complete the loading bar if navigation takes too long
+      loadingTimeout = window.setTimeout(() => {
+        if (loadingBar) loadingBar.complete();
+      }, 5000);
+    }
+  });
+
+  // Complete loading bar after swap
+  document.addEventListener('astro:after-swap', () => {
+    if (loadingTimeout) {
+      clearTimeout(loadingTimeout);
+    }
+    if (loadingBar) {
+      loadingBar.complete();
+    }
+  });
+
   // Interstitial management with fallback for browsers that don't support :has()
   function checkCustomElements() {
-    const customElementTags = ['contact-component', 'theme-toggle'];
+    const customElementTags = [
+      'contact-component',
+      'theme-toggle',
+      'loading-bar',
+    ];
     const allDefined = customElementTags.every(tag => customElements.get(tag));
     const interstitial = document.getElementById('interstitial') as HTMLElement;
     const hiddenContent = document.querySelector(
