@@ -245,17 +245,14 @@ export const utility = css`
     color: var(--text-color);
   }
 
-  .interstitial-spinner {
-    width: 2rem;
-    height: 2rem;
-    border: 2px solid var(--icon-color);
-    border-radius: 50%;
-    border-top: 2px solid transparent;
-    animation: spin 1s linear infinite;
+  .interstitial-planet {
+    animation: rotate 2s linear infinite;
     margin: 0 auto 1rem;
+    display: block;
+    fill: var(--icon-color);
   }
 
-  @keyframes spin {
+  @keyframes rotate {
     0% {
       transform: rotate(0deg);
     }
