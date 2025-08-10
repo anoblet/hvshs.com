@@ -271,9 +271,11 @@ This project is open source and available under the [MIT License](LICENSE).
 **Andrew Noblet**
 
 - **GitHub**: [anoblet](https://github.com/anoblet)
-- **Website**: [Astronautical Apogee](https://astronautical-apogee.pages.dev)
+- **Website**: [astronautical-apogee.pages.dev](https://my-astro-app.andrewbnoblet.workers.dev)
 - **LinkedIn**: [Andrew Noblet](https://linkedin.com/in/andrewnoblet)
 
 ---
 
 **Built with ❤️ using modern web technologies**
+
+_Current Version: 0.1.1_
