@@ -241,23 +241,23 @@ export const utility = css`
   }
 
   .interstitial-content {
-    text-align: center;
-    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .interstitial-planet {
-    animation: rotate 2s linear infinite;
-    margin: 0 auto 1rem;
-    display: block;
-    fill: var(--icon-color);
+    animation: pulse 2s ease-in-out infinite;
+    fill: var(--primary-color);
   }
 
-  @keyframes rotate {
-    0% {
-      transform: rotate(0deg);
-    }
+  @keyframes pulse {
+    0%,
     100% {
-      transform: rotate(360deg);
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
     }
   }
 
