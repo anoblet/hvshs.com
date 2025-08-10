@@ -1,8 +1,12 @@
 ---
 import Layout from '../../layouts/default.astro';
+import Card from '@components/Card.astro';
 ---
 
-<Layout title="UI/UX Design Services">
+<Layout
+  title="UI/UX Design Services"
+  description="Intuitive, user-friendly interface design that drives engagement. Professional UI/UX design services from research to launch, balancing beauty and function for optimal user experience."
+>
   <div class="grid gap-3 page">
     <section class="gap-2 grid text-align-center justify-content-center">
       <h1>UI/UX Design</h1>
@@ -47,7 +51,7 @@ import Layout from '../../layouts/default.astro';
     <section class="gap-2 grid">
       <h2>Design Services</h2>
       <div class="grid auto-fit-20 gap-2">
-        <card-component>
+        <Card>
           <h3>User Experience Design</h3>
           <p>
             In-depth UX research, journey mapping, and information architecture
@@ -59,8 +63,8 @@ import Layout from '../../layouts/default.astro';
             <li>User journey mapping</li>
             <li>Usability testing</li>
           </ul>
-        </card-component>
-        <card-component>
+        </Card>
+        <Card>
           <h3>User Interface Design</h3>
           <p>
             Beautiful and functional user interfaces that align with your brand
@@ -72,8 +76,8 @@ import Layout from '../../layouts/default.astro';
             <li>Responsive design</li>
             <li>Accessibility compliance</li>
           </ul>
-        </card-component>
-        <card-component>
+        </Card>
+        <Card>
           <h3>Design Systems</h3>
           <p>
             Scalable design systems with reusable components that ensure
@@ -85,19 +89,17 @@ import Layout from '../../layouts/default.astro';
             <li>Design tokens</li>
             <li>Documentation</li>
           </ul>
-        </card-component>
+        </Card>
       </div>
     </section>
 
     <div class="text-align-center margin-top-4">
-      <a class="button font-size-1-125" href="/services/design/pricing"
-        >View Design Pricing</a
+      <a
+        href="/services/design/pricing"
+        class="button button-primary font-size-1-125"
       >
+        View Design Pricing
+      </a>
     </div>
-
-    <script>
-      import '@components/card';
-      import '@components/contact';
-    </script>
   </div>
 </Layout>

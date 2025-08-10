@@ -1,5 +1,5 @@
 import { Base } from '@components/base';
-import { home } from '@icons/home';
+import { home } from '@icons/index';
 import { globalStyles } from '@styles/global';
 import { html } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
@@ -35,7 +35,7 @@ export class NavigationDesktop extends Base {
 
   render() {
     return html`
-      <a href="/" id="home" part="home">
+      <a href="/" id="home" part="home" aria-label="Home">
         <icon-component>${home}</icon-component>
       </a>
       <ul class="overflow-x">

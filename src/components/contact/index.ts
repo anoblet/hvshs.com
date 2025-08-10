@@ -1,6 +1,6 @@
 import '@components/button';
 import '@components/icon';
-import { phone } from '@icons/phone';
+import { phone } from '@icons/index';
 import { css, html } from 'lit';
 import { customElement } from 'lit/decorators.js';
 import { Base } from '../base';
@@ -11,9 +11,25 @@ export class ContactComponent extends Base {
     ...super.styles,
     css`
       :host {
+        --icon-padding: 0.5rem;
+        --icon-size: 1.5rem;
+        --icon-color: inherit;
+
+        align-items: center;
         background-color: var(--button-background-color);
+        border: 1px solid var(--color-neutral-400);
+        border-radius: 50%;
+        bottom: 1rem;
+        box-shadow: var(--box-shadow);
         color: var(--button-color);
         cursor: pointer;
+        display: flex;
+        justify-content: center;
+        outline: var(--button-outline);
+        padding: 0.5rem;
+        position: fixed;
+        right: 1rem;
+        z-index: 1;
 
         a {
           color: inherit;
@@ -43,6 +59,7 @@ export class ContactComponent extends Base {
         href="https://calendar.app.google/JjnLtVR6mnM11FcS9"
         target="_blank"
         rel="noopener noreferrer"
+        aria-label="Schedule a consultation"
       >
         <icon-component>${phone}</icon-component>
       </a>

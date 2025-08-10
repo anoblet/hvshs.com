@@ -71,35 +71,6 @@ export const globalStyles = css`
     }
   }
 
-  contact-component {
-    right: 1rem;
-  }
-
-  contact-component,
-  theme-toggle {
-    --icon-color: inherit;
-    --icon-padding: 0.25rem;
-    --icon-size: 1.25rem;
-
-    align-items: center;
-    border: 1px solid var(--color-neutral-400);
-    border-radius: 50%;
-    bottom: 1rem;
-    outline: var(--button-outline);
-    box-shadow: var(--box-shadow);
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    padding: 0.5rem;
-    position: fixed;
-    z-index: 1;
-
-    icon-component {
-      --icon-color: blue;
-      color: inherit;
-    }
-  }
-
   h1,
   h2,
   h3,
@@ -112,12 +83,13 @@ export const globalStyles = css`
 
   h1 {
     color: var(--h1-color);
-    font-size: var(--h1-font-size);
+    font-size: 2.5rem;
   }
 
   h2 {
     color: var(--h2-color);
     font-size: 2rem;
+    line-height: 3rem;
   }
 
   h3 {
@@ -127,15 +99,6 @@ export const globalStyles = css`
   hr {
     border-color: var(--color-neutral-800);
     width: 100%;
-  }
-
-  icon-component {
-    /* color: var(--icon-color); */
-    padding: var(--icon-padding);
-
-    &:hover {
-      color: var(--icon-hover-color);
-    }
   }
 
   main {
@@ -157,13 +120,9 @@ export const globalStyles = css`
     /* width: 1rem; */
   }
 
-  theme-toggle {
-    left: 1rem;
-  }
-
   ul {
     margin: 0;
-    padding: var(--padding);
+    padding: 1rem;
 
     &.card-list {
       display: flex;
@@ -365,10 +324,6 @@ export const globalStyles = css`
     margin: 0 auto;
   }
 
-  .margin-auto {
-    margin: 0 auto;
-  }
-
   .margin-bottom-1 {
     margin-bottom: 1rem;
   }
@@ -444,13 +399,6 @@ export const globalStyles = css`
 
   .space-0-5 {
     height: 0.5rem;
-  }
-
-  .space-between {
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
   }
 
   .step-card {

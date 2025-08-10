@@ -12,6 +12,9 @@ export class ButtonComponent extends Base {
     ...super.styles,
     css`
       :host {
+        --icon-color: inherit;
+        --icon-hover-color: inherit;
+
         align-items: center;
         background-color: var(--button-background-color);
         border: none;
@@ -51,6 +54,11 @@ export class ButtonComponent extends Base {
         background-color: var(--button-hover-background-color);
         color: var(--button-hover-color);
         outline: 1px solid var(--button-hover-background-color);
+      }
+
+      ::slotted(icon-component) {
+        --icon-color: var(--button-color);
+        --icon-hover-color: var(--button-hover-color);
       }
 
       ::slotted(span) {

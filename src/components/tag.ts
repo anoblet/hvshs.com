@@ -13,7 +13,7 @@ export class TagComponent extends Base {
         cursor: pointer;
         display: block;
         font-size: 0.875rem;
-        padding: 0.125rem 0.75rem;
+        padding: 0.25rem 0.75rem;
       }
 
       :host(:hover) {

@@ -35,6 +35,14 @@ export class ScrollComponent extends Base {
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
+        cursor: pointer;
+        outline: none;
+      }
+
+      icon-component:focus {
+        outline: 2px solid var(--color-accent-500, #19f9d8);
+        outline-offset: 2px;
+        border-radius: 50%;
       }
 
       ul {
@@ -110,6 +118,17 @@ export class ScrollComponent extends Base {
     });
   }
 
+  handleKeydown(event: KeyboardEvent, action: 'previous' | 'next') {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      if (action === 'previous') {
+        this.previous();
+      } else {
+        this.next();
+      }
+    }
+  }
+
   firstUpdated() {
     super.firstUpdated();
 
@@ -137,11 +156,25 @@ export class ScrollComponent extends Base {
   render() {
     return html`
       <div id="container">
-        <icon-component @click=${this.previous} id="left">
+        <icon-component
+          @click=${this.previous}
+          @keydown=${(e: KeyboardEvent) => this.handleKeydown(e, 'previous')}
+          id="left"
+          role="button"
+          tabindex="0"
+          aria-label="Previous"
+        >
           ${chevronLeft}
         </icon-component>
         <slot></slot>
-        <icon-component @click=${this.next} id="right">
+        <icon-component
+          @click=${this.next}
+          @keydown=${(e: KeyboardEvent) => this.handleKeydown(e, 'next')}
+          id="right"
+          role="button"
+          tabindex="0"
+          aria-label="Next"
+        >
           ${chevronRight}
         </icon-component>
       </div>

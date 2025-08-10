@@ -1,12 +1,16 @@
 ---
 import ArrowForward from '@icons/arrow-forward.svg';
+import Card from '@components/Card.astro';
 import { Image } from 'astro:assets';
 import Layout from '../layouts/default.astro';
 
 const arrowForward = '';
 ---
 
-<Layout title="Services">
+<Layout
+  title="Services"
+  description="End-to-end digital solutions from design to deployment. Quality web development, hosting, and consultation services focused on performance and seamless user experiences."
+>
   <div class="column flex gap-3 page">
     <div class="gap grid">
       <h1 class="text-align-center">Services</h1>
@@ -17,7 +21,7 @@ const arrowForward = '';
       </p>
     </div>
     <div class="column gap-2 grid">
-      <card-component>
+      <Card>
         <h3>UI/UX Design</h3>
         <div class="flex-1">
           <p>
@@ -31,11 +35,12 @@ const arrowForward = '';
             <li>Accessibility-focused design</li>
           </ul>
         </div>
+        <span></span>
         <a class="gap-0-5 align-self-flex-end" href="/services/design">
           Learn more <ArrowForward />
         </a>
-      </card-component>
-      <card-component>
+      </Card>
+      <Card>
         <h3>Web Hosting & Deployment</h3>
         <div class="flex-1">
           <p>
@@ -49,11 +54,12 @@ const arrowForward = '';
             <li>CI/CD pipeline setup</li>
           </ul>
         </div>
+        <span></span>
         <a class="gap-0-5 align-self-flex-end" href="/services/hosting">
           Learn more <ArrowForward />
         </a>
-      </card-component>
-      <card-component>
+      </Card>
+      <Card>
         <h3>Technical Consultation</h3>
         <div class="flex-1">
           <p>
@@ -67,29 +73,23 @@ const arrowForward = '';
             <li>Project planning and strategy</li>
           </ul>
         </div>
+        <span></span>
         <a class="gap-0-5 align-self-flex-end" href="services/consultation">
           Learn more <ArrowForward />
         </a>
-      </card-component>
+      </Card>
     </div>
     <section class="gap grid justify-content-center text-align-center">
       <h2>Ready to Get Started?</h2>
       <p>Let's connect and find the perfect solution for your project.</p>
       <span class="space"></span>
       <a
-        class="justify-content-center"
+        class="button button-primary justify-content-center"
         href="https://calendar.app.google/JjnLtVR6mnM11FcS9"
       >
-        <button-component variant="primary">
-          Book a Free Consultation
-          <ArrowForward />
-        </button-component>
+        Book a Free Consultation
+        <ArrowForward />
       </a>
     </section>
   </div>
 </Layout>
-
-<script>
-  import '@components/card';
-  import '@components/button';
-</script>

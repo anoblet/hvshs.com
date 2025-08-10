@@ -21,6 +21,7 @@ export class Icon extends Base {
       }
 
       ::slotted(svg) {
+        fill: currentColor;
         height: var(--icon-size, 1rem);
         width: var(--icon-size, 1rem);
       }

@@ -1,5 +1,5 @@
 import { Base } from '@components/base';
-import { contrast } from '@icons/contrast';
+import { contrast } from '@icons/index';
 import dark from '@themes/dark.json' assert { type: 'json' };
 import light from '@themes/light.json' assert { type: 'json' };
 import { css, html } from 'lit';
@@ -31,9 +31,25 @@ export class ThemeToggle extends Base {
     ...super.styles,
     css`
       :host {
+        --icon-padding: 0.25rem;
+        --icon-size: 1.25rem;
+        --icon-color: inherit;
+
+        align-items: center;
         background-color: var(--button-background-color);
+        border: 1px solid var(--color-neutral-400);
+        border-radius: 50%;
+        bottom: 1rem;
+        box-shadow: var(--box-shadow);
         color: var(--button-color);
         cursor: pointer;
+        display: flex;
+        justify-content: center;
+        left: 1rem;
+        outline: var(--button-outline);
+        padding: 0.5rem;
+        position: fixed;
+        z-index: 1;
       }
 
       :host(:hover) {

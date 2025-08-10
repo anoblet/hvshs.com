@@ -1,11 +1,11 @@
 import { Base } from '@components/base';
 import '@components/button';
-import { arrowBack } from '@icons/arrow-back';
+import { arrowBack } from '@icons/index';
 import { css, html } from 'lit';
 import { customElement } from 'lit/decorators.js';
 
-@customElement('contact-component')
-export class ContactComponent extends Base {
+@customElement('back-component')
+export class BackComponent extends Base {
   static styles = [...super.styles, css``];
 
   render() {

@@ -1,15 +1,15 @@
-import { css, html, LitElement } from 'lit';
+import email from '@assets/icons/email.svg?raw';
+import github from '@assets/icons/github.svg?raw';
+import linkedin from '@assets/icons/linkedin.svg?raw';
+import { Base } from '@components/base';
+import { css, html } from 'lit';
 import { customElement } from 'lit/decorators.js';
 import { unsafeHTML } from 'lit/directives/unsafe-html.js';
-import email from '../../assets/icons/email.svg?raw';
-import github from '../../assets/icons/github.svg?raw';
-import linkedin from '../../assets/icons/linkedin.svg?raw';
-import { globalStyles } from '../../styles/global.ts';
 
 @customElement('social-component')
-export class Social extends LitElement {
+export class Social extends Base {
   static styles = [
-    globalStyles,
+    ...super.styles,
     css`
       :host {
         display: flex;

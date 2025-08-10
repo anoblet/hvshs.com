@@ -1,0 +1,36 @@
+---
+export interface Props {
+  variant?: 'primary' | 'secondary' | 'tertiary';
+}
+
+const { variant = 'primary' } = Astro.props;
+---
+
+<span class={`tag tag-${variant}`}>
+  <slot />
+</span>
+
+<style>
+  .tag {
+    border-radius: 0.25rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.25rem 0.5rem;
+    white-space: nowrap;
+  }
+
+  .tag-primary {
+    background-color: var(--primary-color);
+    color: var(--button-color);
+  }
+
+  .tag-secondary {
+    background-color: var(--secondary-color);
+    color: var(--button-color);
+  }
+
+  .tag-tertiary {
+    background-color: var(--tertiary-color);
+    color: var(--button-color);
+  }
+</style>

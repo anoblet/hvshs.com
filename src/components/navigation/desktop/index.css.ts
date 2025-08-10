@@ -9,18 +9,28 @@ export const style = css`
     --icon-hover-color: var(--navigation-icon-hover-color);
 
     background-color: var(--navigation-background-color);
+    box-shadow: var(--box-shadow);
     display: flex;
     flex: 1;
     justify-content: space-between;
     opacity: 1;
-    transition: opacity 0.2s ease-in-out;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition:
+      opacity 0.4s ease-in-out,
+      transform 0.3s ease-in-out;
+
     width: 100%;
-    z-index: 1;
+    z-index: 1000;
   }
 
   :host([hidden]) {
-    opacity: 0 !important;
-    transition: opacity 0.2s ease-in-out;
+    opacity: 0;
+    transform: translateY(-100%);
+    transition:
+      opacity 0.4s ease-in-out,
+      transform 0.3s ease-in-out;
   }
 
   #home {
@@ -28,20 +38,11 @@ export const style = css`
   }
 
   a {
-    color: var(--navigation-a-color);
     font-weight: 500;
-
-    &:hover {
-      color: var(--navigation-a-hover-color);
-    }
   }
 
   icon-component {
     padding: 0.5rem 1rem;
-  }
-
-  a {
-    color: var(--navigation-a-color);
   }
 
   li {
@@ -90,10 +91,6 @@ export const style = css`
         padding: 0.75rem 1rem;
         transition: background-color 0.2s ease-in-out;
 
-        &:hover {
-          // background-color: var(--color-neutral-800);
-        }
-
         &:last-child {
           border-radius: 0 0 0.25rem 0.25rem;
         }
@@ -105,10 +102,6 @@ export const style = css`
       visibility: visible;
       transform: translateY(0);
     }
-  }
-
-  social-component {
-    color: var(--color-teal-200);
   }
 
   ul {

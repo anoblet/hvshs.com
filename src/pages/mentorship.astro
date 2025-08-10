@@ -1,183 +1,175 @@
 ---
 import Layout from '../layouts/default.astro';
+import Card from '@components/Card.astro';
+import { arrowForward } from '@icons/index';
 ---
 
-<Layout title="Mentorship">
-  <mentorship-component></mentorship-component>
+<Layout
+  title="Mentorship"
+  description="Professional mentorship in software development and career guidance. Learn modern web technologies, build your portfolio, and advance your career with personalized coaching and technical skills development."
+>
+  <div class="column flex gap-3 page">
+    <div class="gap grid">
+      <h1 class="text-align-center">Mentorship</h1>
+      <p class="hero-description text-align-center">
+        Fast-track your growth with personalized mentorship and industry
+        insight. Whether you're starting out or advancing your skills, I help
+        you navigate software development and reach your goals.
+      </p>
+    </div>
+
+    <div class="column gap-2 grid">
+      <Card>
+        <h3>Career Guidance</h3>
+        <div class="flex-1">
+          <p>
+            Build your software career with confidence. Get guidance on
+            technology choices, job search, and strategic planning for success.
+          </p>
+          <ul>
+            <li>Career path planning and goal setting</li>
+            <li>Portfolio and resume review</li>
+            <li>Interview preparation and practice</li>
+            <li>Salary negotiation strategies</li>
+            <li>Professional networking guidance</li>
+          </ul>
+        </div>
+      </Card>
+
+      <Card>
+        <h3>Technical Skills Development</h3>
+        <div class="flex-1">
+          <p>
+            Master modern web technologies and best practices with hands-on
+            learning tailored to your goals and experience.
+          </p>
+          <ul>
+            <li>Web Components and Lit framework</li>
+            <li>Modern JavaScript and TypeScript</li>
+            <li>CSS architecture and design systems</li>
+            <li>Performance optimization techniques</li>
+            <li>Testing and quality assurance</li>
+          </ul>
+        </div>
+      </Card>
+
+      <Card>
+        <h3>Project Mentorship</h3>
+        <div class="flex-1">
+          <p>
+            Get expert support for your projects—from architecture decisions to
+            implementation challenges—so you can build better software.
+          </p>
+          <ul>
+            <li>Code review and architecture feedback</li>
+            <li>Problem-solving and debugging support</li>
+            <li>Best practices and design patterns</li>
+            <li>Project planning and execution</li>
+            <li>Technology selection and evaluation</li>
+          </ul>
+        </div>
+      </Card>
+    </div>
+
+    <section class="gap grid">
+      <h2 class="text-align-center">What You Can Expect</h2>
+      <div class="mentor-grid">
+        <div class="testimonial">
+          "Invaluable insights into modern web development helped me land my
+          first developer role in three months."
+          <div class="testimonial-author">— Jamie Carter</div>
+        </div>
+        <div class="testimonial">
+          "Andrew's mentorship transformed my approach to problem-solving and
+          clean architecture—making me a more effective developer."
+          <div class="testimonial-author">— Riley Morgan</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="gap grid">
+      <h2 class="text-align-center">Mentorship Process</h2>
+      <div class="mentor-grid">
+        <Card>
+          <h4>1. Initial Assessment</h4>
+          <p>
+            We begin with a discussion of your background, goals, and challenges
+            to create a personalized learning plan.
+          </p>
+        </Card>
+        <Card>
+          <h4>2. Regular Sessions</h4>
+          <p>
+            Weekly or bi-weekly sessions focused on your needs—technical skills,
+            career guidance, or project support.
+          </p>
+        </Card>
+        <Card>
+          <h4>3. Practical Application</h4>
+          <p>
+            Hands-on projects and real-world challenges reinforce learning and
+            build your portfolio with feedback.
+          </p>
+        </Card>
+        <Card>
+          <h4>4. Ongoing Support</h4>
+          <p>
+            Access resources, code reviews, and ongoing guidance as you
+            progress.
+          </p>
+        </Card>
+      </div>
+    </section>
+
+    <section class="gap grid justify-content-center text-align-center">
+      <h2>Ready to Level Up Your Skills?</h2>
+      <p>
+        Let's discuss your goals and create a mentorship plan tailored for you.
+      </p>
+      <span class="space"></span>
+      <a
+        class="button button-primary justify-content-center"
+        href="https://calendar.app.google/JjnLtVR6mnM11FcS9"
+      >
+        Book a Free Consultation
+        <span set:html={arrowForward} />
+      </a>
+    </section>
+  </div>
 </Layout>
 
-<script>
-  import { Base } from '@components/base';
-  import { css, html } from 'lit';
-  import { customElement } from 'lit/decorators.js';
-  import '@components/button';
-  import '@components/card';
-  import { arrowForward } from '@icons/arrow-forward';
+<style>
+  a {
+    font-weight: 800;
+  }
 
-  @customElement('mentorship-component')
-  class MentorshipComponent extends Base {
-    static styles = [
-      ...super.styles,
-      css`
-        a {
-          font-weight: 800;
-        }
+  .mentor-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    gap: 2rem;
+  }
 
-        svg {
-          height: 1rem;
-          width: 1rem;
-        }
+  .testimonial {
+    background-color: var(--card-background-color);
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    border-left: 4px solid var(--primary-color);
+    font-style: italic;
+  }
 
-        .mentor-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-          gap: 2rem;
-        }
+  .testimonial-author {
+    font-weight: 600;
+    margin-top: 1rem;
+  }
 
-        .testimonial {
-          background-color: var(--card-background-color);
-          border-radius: 0.5rem;
-          padding: 1.5rem;
-          border-left: 4px solid var(--primary-color);
-          font-style: italic;
-        }
+  @media (max-width: 768px) {
+    .hero-description {
+      font-size: 1rem;
+    }
 
-        .testimonial-author {
-          font-weight: 600;
-          margin-top: 1rem;
-        }
-
-        @media (max-width: 768px) {
-          .hero-description {
-            font-size: 1rem;
-          }
-
-          .mentor-grid {
-            grid-template-columns: 1fr;
-            gap: 1.5rem;
-          }
-        }
-      `,
-    ];
-
-    render() {
-      return html`
-        <div class="column flex gap-3 page">
-          <div class="gap grid">
-            <h1 class="text-align-center">Mentorship</h1>
-            <p class="hero-description text-align-center">
-              Fast-track your growth with personalized mentorship and industry insight. Whether you're starting out or advancing your skills, I help you navigate software development and reach your goals.
-            </p>
-          </div>
-
-          <div class="column gap-2 grid">
-            <card-component>
-              <h3>Career Guidance</h3>
-              <div class="flex-1">
-                <p>
-                  Build your software career with confidence. Get guidance on technology choices, job search, and strategic planning for success.
-                </p>
-                <ul>
-                  <li>Career path planning and goal setting</li>
-                  <li>Portfolio and resume review</li>
-                  <li>Interview preparation and practice</li>
-                  <li>Salary negotiation strategies</li>
-                  <li>Professional networking guidance</li>
-                </ul>
-              </div>
-            </card-component>
-
-            <card-component>
-              <h3>Technical Skills Development</h3>
-              <div class="flex-1">
-                <p>
-                  Master modern web technologies and best practices with hands-on learning tailored to your goals and experience.
-                </p>
-                <ul>
-                  <li>Web Components and Lit framework</li>
-                  <li>Modern JavaScript and TypeScript</li>
-                  <li>CSS architecture and design systems</li>
-                  <li>Performance optimization techniques</li>
-                  <li>Testing and quality assurance</li>
-                </ul>
-              </div>
-            </card-component>
-
-            <card-component>
-              <h3>Project Mentorship</h3>
-              <div class="flex-1">
-                <p>
-                  Get expert support for your projects—from architecture decisions to implementation challenges—so you can build better software.
-                </p>
-                <ul>
-                  <li>Code review and architecture feedback</li>
-                  <li>Problem-solving and debugging support</li>
-                  <li>Best practices and design patterns</li>
-                  <li>Project planning and execution</li>
-                  <li>Technology selection and evaluation</li>
-                </ul>
-              </div>
-            </card-component>
-          </div>
-
-          <section class="gap grid">
-            <h2 class="text-align-center">What You Can Expect</h2>
-            <div class="mentor-grid">
-              <div class="testimonial">
-                "Invaluable insights into modern web development helped me land my first developer role in three months."
-                <div class="testimonial-author">— Former Mentee</div>
-              </div>
-              <div class="testimonial">
-                "Andrew's mentorship transformed my approach to problem-solving and clean architecture—making me a more effective developer."
-                <div class="testimonial-author">— Software Engineer</div>
-              </div>
-            </div>
-          </section>
-
-          <section class="gap grid">
-            <h2 class="text-align-center">Mentorship Process</h2>
-            <div class="mentor-grid">
-              <card-component>
-                <h4>1. Initial Assessment</h4>
-                <p>
-                  We begin with a discussion of your background, goals, and challenges to create a personalized learning plan.
-                </p>
-              </card-component>
-              <card-component>
-                <h4>2. Regular Sessions</h4>
-                <p>
-                  Weekly or bi-weekly sessions focused on your needs—technical skills, career guidance, or project support.
-                </p>
-              </card-component>
-              <card-component>
-                <h4>3. Practical Application</h4>
-                <p>
-                  Hands-on projects and real-world challenges reinforce learning and build your portfolio with feedback.
-                </p>
-              </card-component>
-              <card-component>
-                <h4>4. Ongoing Support</h4>
-                <p>
-                  Access resources, code reviews, and ongoing guidance as you progress.
-                </p>
-              </card-component>
-            </div>
-          </section>
-
-          <section class="gap grid justify-content-center text-align-center">
-            <h2>Ready to Level Up Your Skills?</h2>
-            <p>
-              Let's discuss your goals and create a mentorship plan tailored for you.
-            </p>
-            <span class="space"></span>
-            <a class="justify-content-center" href="https://calendar.app.google/JjnLtVR6mnM11FcS9">
-              <button-component variant="primary">
-                Book a Free Consultation
-                ${arrowForward}
-              </button-component>
-          </section>
-        </div>
-      `;
+    .mentor-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
     }
   }
-</script>
+</style>
