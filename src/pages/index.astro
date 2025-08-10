@@ -78,19 +78,19 @@ import Layout from '../layouts/default.astro';
     render() {
       return html`
         <section>
-          <media-component desktop>
+          <div class="desktop">
             <h1 class="text-align-center">
               Andrew Noblet |
               <span class="font-weight-800">${this.randomTagline}</span>
             </h1>
-          </media-component>
-          <media-component mobile>
+          </div>
+          <div class="mobile">
             <h1 class="grid text-align-center">
               <span class="text-align-center">Andrew Noblet</span>
               <span class="font-weight-800">${this.randomTagline}</span>
             </h1>
-          </media-component>
-          <media-component class="align-items-center" desktop>
+          </div>
+          <div class="desktop align-items-center">
             <div class="column gap grid min-width-50 padding" id="buttons">
               <button-component href="/portfolio/personal" variant="primary">
                 Personal Projects
@@ -102,8 +102,8 @@ import Layout from '../layouts/default.astro';
                 Professional Work
               </button-component>
             </div>
-          </media-component>
-          <media-component mobile>
+          </div>
+          <div class="mobile">
             <div class="gap grid min-width-50 padding" id="buttons">
               <button-component href="/portfolio/personal" variant="primary">
                 Personal Projects
@@ -115,7 +115,7 @@ import Layout from '../layouts/default.astro';
                 Professional Work
               </button-component>
             </div>
-          </media-component>
+          </div>
         </section>
       `;
     }

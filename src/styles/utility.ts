@@ -178,4 +178,43 @@ export const utility = css`
     background: var(--color-primary-700);
     border-color: var(--color-primary-700);
   }
+
+  /* Responsive utility classes */
+  .mobile {
+    display: block;
+  }
+
+  .tablet {
+    display: none;
+  }
+
+  .desktop {
+    display: none;
+  }
+
+  /* Show tablet and desktop content starting at 64rem (1024px) */
+  @media (min-width: 64rem) {
+    .mobile {
+      display: none;
+    }
+
+    .tablet {
+      display: block;
+    }
+
+    .desktop {
+      display: block;
+    }
+  }
+
+  /* For very large screens 120rem+ (1920px+), we can add additional classes if needed */
+  .desktop-large {
+    display: none;
+  }
+
+  @media (min-width: 120rem) {
+    .desktop-large {
+      display: block;
+    }
+  }
 `;
