@@ -217,4 +217,59 @@ export const utility = css`
       display: block;
     }
   }
+
+  /* Interstitial loading utility classes */
+  .interstitial {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--body-background-color);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  .interstitial.show {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .interstitial-content {
+    text-align: center;
+    color: var(--text-color);
+  }
+
+  .interstitial-spinner {
+    width: 2rem;
+    height: 2rem;
+    border: 2px solid var(--icon-color);
+    border-radius: 50%;
+    border-top: 2px solid transparent;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 1rem;
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  .hidden-until-loaded {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  .loaded .hidden-until-loaded {
+    opacity: 1;
+  }
 `;

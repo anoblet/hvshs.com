@@ -25,9 +25,15 @@ const { title, description = 'Astro description' } = Astro.props;
     <ViewTransitions />
   </head>
   <body>
+    <div id="interstitial" class="interstitial">
+      <div class="interstitial-content">
+        <div class="interstitial-spinner"></div>
+        <p>Loading...</p>
+      </div>
+    </div>
     <a href="#main-content" class="skip-link">Skip to main content</a>
     <Header />
-    <main id="main-content" class="column flex gap">
+    <main id="main-content" class="column flex gap hidden-until-loaded">
       <slot />
     </main>
     <Footer />
@@ -60,11 +66,27 @@ const { title, description = 'Astro description' } = Astro.props;
 
   body {
     min-height: 100vh;
-    /* opacity: 1; */
-    /* transition: opacity 0.2s ease-in-out; */
 
-    &:has(*:not(:defined)) {
-      /* opacity: 0; */
+    /* Show interstitial when there are undefined custom elements */
+    &:has(*:not(:defined)) #interstitial {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    /* Hide main content when there are undefined custom elements */
+    &:has(*:not(:defined)) .hidden-until-loaded {
+      opacity: 0;
+    }
+
+    /* Show main content when all custom elements are defined */
+    &:not(:has(*:not(:defined))) .hidden-until-loaded {
+      opacity: 1;
+    }
+
+    /* Hide interstitial when all custom elements are defined */
+    &:not(:has(*:not(:defined))) #interstitial {
+      opacity: 0;
+      pointer-events: none;
     }
   }
 
