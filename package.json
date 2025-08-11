@@ -56,10 +56,7 @@
   },
   "wireit": {
     "build": {
-      "command": "astro build",
-      "dependencies": [
-        "commit"
-      ]
+      "command": "astro build"
     },
     "commit": {
       "command": "pnpm dlx genaiscript run commit"

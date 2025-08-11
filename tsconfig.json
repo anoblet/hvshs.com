@@ -1,24 +1,40 @@
 {
     "compilerOptions": {
-        "lib": [
-            "ES2024"
-        ],
-        "target": "ES2024",
-        "module": "NodeNext",
-        "moduleDetection": "force",
-        "moduleResolution": "nodenext",
-        "checkJs": true,
-        "allowJs": true,
-        "skipLibCheck": true,
-        "noEmit": true,
-        "allowImportingTsExtensions": true,
-        "verbatimModuleSyntax": true,
-        "resolveJsonModule": true,
-        "erasableSyntaxOnly": true
+        "baseUrl": ".",
+        "paths": {
+            "@assets/*": [
+                "src/assets/*"
+            ],
+            "@components/*": [
+                "src/components/*"
+            ],
+            "@icons/*": [
+                "src/icons/*"
+            ],
+            "@layouts/*": [
+                "src/layouts/*"
+            ],
+            "@mixins/*": [
+                "src/mixins/*"
+            ],
+            "@styles/*": [
+                "src/styles/*"
+            ],
+            "@themes/*": [
+                "src/themes/*"
+            ],
+            "@utility/*": [
+                "src/utility/*"
+            ]
+        },
+        "target": "esnext"
     },
+    "extends": "astro/tsconfigs/strict",
     "include": [
-        "**/*.mjs",
-        "**/*.mts",
-        "./genaiscript.d.ts"
+        ".astro/types.d.ts",
+        "**/*"
+    ],
+    "exclude": [
+        "dist"
     ]
 }
