@@ -81,3 +81,5 @@
 - Always use every tool available before beginning and finishing your implementation.
 
 - Always add Copilot as a reviewer to each PR
+
+**_ NEVER MODIFY THIS PROJECTS `main` BRANCH! _**
