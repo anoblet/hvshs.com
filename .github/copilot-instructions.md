@@ -1,6 +1,6 @@
 # Copilot Instructions
 
-# Tools
+## Tools
 
 #file:../.copilot/instructions/git-flow.md
 #file:../.copilot/instructions/memory.instructions.md

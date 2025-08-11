@@ -1,6 +1,7 @@
 .astro
 .env
 .genaiscript
+.lighthouseci
 .screenshots
 .playwright-mcp
 .wireit
