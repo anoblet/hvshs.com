@@ -1,0 +1,97 @@
+name: Lighthouse CI
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  lighthouse:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Build project
+        run: pnpm run build
+
+      - name: Start preview server
+        run: pnpm run preview &
+        env:
+          PORT: 4173
+
+      - name: Wait for server to be ready
+        run: |
+          npx wait-on http://localhost:4173 --timeout 60000
+
+      - name: Run Lighthouse
+        run: |
+          npx lighthouse http://localhost:4173 \
+            --chrome-flags='--headless --no-sandbox --disable-dev-shm-usage' \
+            --output json \
+            --output-path lighthouse-report.json \
+            --quiet
+
+      - name: Parse Lighthouse results
+        id: lighthouse
+        run: |
+          SCORE=$(node -p "JSON.parse(require('fs').readFileSync('lighthouse-report.json', 'utf8')).categories.performance.score * 100")
+          ACCESSIBILITY=$(node -p "JSON.parse(require('fs').readFileSync('lighthouse-report.json', 'utf8')).categories.accessibility.score * 100")
+          BEST_PRACTICES=$(node -p "JSON.parse(require('fs').readFileSync('lighthouse-report.json', 'utf8')).categories['best-practices'].score * 100")
+          SEO=$(node -p "JSON.parse(require('fs').readFileSync('lighthouse-report.json', 'utf8')).categories.seo.score * 100")
+          
+          echo "performance=$SCORE" >> $GITHUB_OUTPUT
+          echo "accessibility=$ACCESSIBILITY" >> $GITHUB_OUTPUT
+          echo "best-practices=$BEST_PRACTICES" >> $GITHUB_OUTPUT
+          echo "seo=$SEO" >> $GITHUB_OUTPUT
+
+      - name: Comment PR
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const performance = ${{ steps.lighthouse.outputs.performance }};
+            const accessibility = ${{ steps.lighthouse.outputs.accessibility }};
+            const bestPractices = ${{ steps.lighthouse.outputs.best-practices }};
+            const seo = ${{ steps.lighthouse.outputs.seo }};
+            
+            const getEmoji = (score) => {
+              if (score >= 90) return '🟢';
+              if (score >= 50) return '🟡';
+              return '🔴';
+            };
+            
+            const comment = `## 🚨 Lighthouse Report
+            
+            | Category | Score | Status |
+            |----------|-------|--------|
+            | Performance | ${performance}/100 | ${getEmoji(performance)} |
+            | Accessibility | ${accessibility}/100 | ${getEmoji(accessibility)} |
+            | Best Practices | ${bestPractices}/100 | ${getEmoji(bestPractices)} |
+            | SEO | ${seo}/100 | ${getEmoji(seo)} |
+            
+            ---
+            *Lighthouse CI report for commit ${context.sha.substring(0, 7)}*`;
+            
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: comment
+            });
