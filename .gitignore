@@ -8,3 +8,7 @@
 chats
 dist
 node_modules
+
+genaiscript.d.ts
+tsconfig.json
+jsconfig.json

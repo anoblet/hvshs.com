@@ -1,6 +1,7 @@
 script({
-  title: "Version",
-  description: "Automatically determine and apply appropriate version bump for deployment",
+  title: 'Version',
+  description:
+    'Automatically determine and apply appropriate version bump for deployment',
 });
 
 /**
@@ -13,22 +14,29 @@ script({
  * @returns {Promise<string>} The version bump type: "major", "minor", or "patch"
  */
 const analyzeVersionBump = async () => {
-  console.log("Analyzing commits since last version tag...");
+  console.log('Analyzing commits since last version tag...');
 
   // Get the latest version tag
-  const latestTag = await git.exec(["describe", "--tags", "--abbrev=0"]).catch(() => "");
-  console.log(`Latest tag: ${latestTag || "none"}`);
+  const latestTag = await git
+    .exec(['describe', '--tags', '--abbrev=0'])
+    .catch(() => '');
+  console.log(`Latest tag: ${latestTag || 'none'}`);
 
   // Get commits since the latest tag
-  const commitRange = latestTag ? `${latestTag}..HEAD` : "--all";
-  const commits = await git.exec(["log", "--oneline", "--pretty=format:%s", commitRange]);
-  
+  const commitRange = latestTag ? `${latestTag}..HEAD` : '--all';
+  const commits = await git.exec([
+    'log',
+    '--oneline',
+    '--pretty=format:%s',
+    commitRange,
+  ]);
+
   if (!commits.trim()) {
-    console.log("No new commits since last tag, skipping version bump");
-    return "none";
+    console.log('No new commits since last tag, skipping version bump');
+    return 'none';
   }
 
-  console.log("Commits to analyze:");
+  console.log('Commits to analyze:');
   commits.split('\n').forEach(commit => console.log(`  - ${commit}`));
 
   // Analyze commit messages for version impact
@@ -39,9 +47,13 @@ const analyzeVersionBump = async () => {
 
   for (const commit of commitLines) {
     const message = commit.toLowerCase().trim();
-    
+
     // Check for breaking changes (major version bump)
-    if (message.includes('breaking change') || message.includes('!:') || message.includes('! ')) {
+    if (
+      message.includes('breaking change') ||
+      message.includes('!:') ||
+      message.includes('! ')
+    ) {
       hasMajor = true;
       console.log(`  ✓ Major change detected: ${commit}`);
     }
@@ -52,13 +64,20 @@ const analyzeVersionBump = async () => {
     }
     // Check for patches (patch version bump)
     else if (
-      message.startsWith('fix(') || message.startsWith('fix:') ||
-      message.startsWith('chore(') || message.startsWith('chore:') ||
-      message.startsWith('docs(') || message.startsWith('docs:') ||
-      message.startsWith('style(') || message.startsWith('style:') ||
-      message.startsWith('refactor(') || message.startsWith('refactor:') ||
-      message.startsWith('perf(') || message.startsWith('perf:') ||
-      message.startsWith('test(') || message.startsWith('test:')
+      message.startsWith('fix(') ||
+      message.startsWith('fix:') ||
+      message.startsWith('chore(') ||
+      message.startsWith('chore:') ||
+      message.startsWith('docs(') ||
+      message.startsWith('docs:') ||
+      message.startsWith('style(') ||
+      message.startsWith('style:') ||
+      message.startsWith('refactor(') ||
+      message.startsWith('refactor:') ||
+      message.startsWith('perf(') ||
+      message.startsWith('perf:') ||
+      message.startsWith('test(') ||
+      message.startsWith('test:')
     ) {
       hasPatch = true;
       console.log(`  ✓ Patch change detected: ${commit}`);
@@ -67,62 +86,63 @@ const analyzeVersionBump = async () => {
 
   // Determine version bump priority (major > minor > patch)
   if (hasMajor) {
-    return "major";
+    return 'major';
   } else if (hasMinor) {
-    return "minor";
+    return 'minor';
   } else if (hasPatch) {
-    return "patch";
+    return 'patch';
   } else {
     // Default to patch for any commits that don't follow conventional format
-    console.log("No conventional commits detected, defaulting to patch version bump");
-    return "patch";
+    console.log(
+      'No conventional commits detected, defaulting to patch version bump'
+    );
+    return 'patch';
   }
 };
 
 /**
  * Applies the version bump using npm version command
- * 
+ *
  * @param {string} bumpType - The type of version bump: "major", "minor", "patch", or "none"
  * @returns {Promise<void>}
  */
-const applyVersionBump = async (bumpType) => {
-  if (bumpType === "none") {
-    console.log("No version bump needed");
+const applyVersionBump = async bumpType => {
+  if (bumpType === 'none') {
+    console.log('No version bump needed');
     return;
   }
 
   console.log(`Applying ${bumpType} version bump...`);
-  
+
   try {
     // Apply version bump using npm version (works with package.json)
     await host.exec(`npm version ${bumpType} --no-git-tag-version`);
     console.log(`Version bump successful`);
-    
+
     // Read the package.json file to get the new version
-    const packageJsonFile = await workspace.readText("package.json");
+    const packageJsonFile = await workspace.readText('package.json');
     const packageJson = JSON.parse(packageJsonFile.content);
     const newVersion = packageJson.version;
     console.log(`New version: ${newVersion}`);
-    
+
     // Stage the package.json changes
-    await git.exec(["add", "package.json"]);
-    
+    await git.exec(['add', 'package.json']);
+
     // Create a version commit
-    await git.exec(["commit", "-m", `chore: bump version to ${newVersion}`]);
-    
+    await git.exec(['commit', '-m', `chore: bump version to ${newVersion}`]);
+
     // Create a git tag
     const tagName = `v${newVersion}`;
-    await git.exec(["tag", tagName]);
-    
+    await git.exec(['tag', tagName]);
+
     console.log(`Created version tag: ${tagName}`);
-    
+
     // Push changes and tags
-    console.log("Pushing version changes and tags...");
-    await git.exec(["push"]);
-    await git.exec(["push", "--tags"]);
-    
+    console.log('Pushing version changes and tags...');
+    await git.exec(['push']);
+    await git.exec(['push', '--tags']);
   } catch (error) {
-    console.error("Version bump failed:", error);
+    console.error('Version bump failed:', error);
     throw error;
   }
 };
@@ -131,14 +151,14 @@ const applyVersionBump = async (bumpType) => {
  * Main version management function that analyzes commits and applies appropriate version bump
  */
 const main = async () => {
-  console.log("Starting version management...");
-  
+  console.log('Starting version management...');
+
   const bumpType = await analyzeVersionBump();
   console.log(`Determined version bump type: ${bumpType}`);
-  
+
   await applyVersionBump(bumpType);
-  
-  console.log("Version management complete!");
+
+  console.log('Version management complete!');
 };
 
 // Run the main function
