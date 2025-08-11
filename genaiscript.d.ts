@@ -5,20 +5,20 @@
  * GenAIScript Ambient Type Definition File
  * @version 2.3.13
  */
-type OptionsOrString<TOptions extends string> = (string & {}) | TOptions;
+ type OptionsOrString<TOptions extends string> = (string & {}) | TOptions;
 
-type ElementOrArray<T> = T | T[];
+ type ElementOrArray<T> = T | T[];
 
-interface PromptGenerationConsole {
+ interface PromptGenerationConsole {
   log(...data: any[]): void;
   warn(...data: any[]): void;
   debug(...data: any[]): void;
   error(...data: any[]): void;
 }
 
-type DiagnosticSeverity = 'error' | 'warning' | 'info';
+ type DiagnosticSeverity = "error" | "warning" | "info";
 
-interface Diagnostic {
+ interface Diagnostic {
   filename: string;
   range: CharRange;
   severity: DiagnosticSeverity;
@@ -33,9 +33,9 @@ interface Diagnostic {
   code?: string;
 }
 
-type Awaitable<T> = T | PromiseLike<T>;
+ type Awaitable<T> = T | PromiseLike<T>;
 
-interface SerializedError {
+ interface SerializedError {
   name?: string;
   message?: string;
   stack?: string;
@@ -49,7 +49,7 @@ interface SerializedError {
  * A color and icon to associate with the script.
  * @see https://actions-cool.github.io/github-action-branding/
  */
-interface PromptBranding {
+ interface PromptBranding {
   /**
    * Marketplace and web site branding
    */
@@ -58,15 +58,15 @@ interface PromptBranding {
      * The background color of the badge.
      */
     color?:
-      | 'white'
-      | 'black'
-      | 'yellow'
-      | 'blue'
-      | 'green'
-      | 'orange'
-      | 'red'
-      | 'purple'
-      | 'gray-dark';
+      | "white"
+      | "black"
+      | "yellow"
+      | "blue"
+      | "green"
+      | "orange"
+      | "red"
+      | "purple"
+      | "gray-dark";
     /**
      * Name of the Feather icon to use.
      * @see https://actions-cool.github.io/github-action-branding/
@@ -75,7 +75,7 @@ interface PromptBranding {
   };
 }
 
-interface PromptDefinition {
+ interface PromptDefinition {
   /**
    * Based on file name.
    */
@@ -99,10 +99,10 @@ interface PromptDefinition {
   /**
    * List of tools defined in the script
    */
-  defTools?: { id: string; description: string; kind: 'tool' | 'agent' }[];
+  defTools?: { id: string; description: string; kind: "tool" | "agent" }[];
 }
 
-interface PromptLike extends PromptDefinition {
+ interface PromptLike extends PromptDefinition {
   /**
    * File where the prompt comes from (if any).
    */
@@ -130,168 +130,168 @@ interface PromptLike extends PromptDefinition {
   inputSchema?: JSONSchemaObject;
 }
 
-type SystemPromptId = OptionsOrString<
-  | 'system'
-  | 'system.agent_data'
-  | 'system.agent_docs'
-  | 'system.agent_fs'
-  | 'system.agent_git'
-  | 'system.agent_github'
-  | 'system.agent_interpreter'
-  | 'system.agent_mcp'
-  | 'system.agent_planner'
-  | 'system.agent_user_input'
-  | 'system.agent_video'
-  | 'system.agent_web'
-  | 'system.agent_z3'
-  | 'system.annotations'
-  | 'system.assistant'
-  | 'system.chain_of_draft'
-  | 'system.changelog'
-  | 'system.cooperation'
-  | 'system.cpp'
-  | 'system.diagrams'
-  | 'system.diff'
-  | 'system.do_not_explain'
-  | 'system.english'
-  | 'system.explanations'
-  | 'system.fetch'
-  | 'system.files'
-  | 'system.files_schema'
-  | 'system.fs_ask_file'
-  | 'system.fs_data_query'
-  | 'system.fs_diff_files'
-  | 'system.fs_find_files'
-  | 'system.fs_read_file'
-  | 'system.git'
-  | 'system.git_diff'
-  | 'system.git_info'
-  | 'system.github_actions'
-  | 'system.github_files'
-  | 'system.github_info'
-  | 'system.github_issues'
-  | 'system.github_pulls'
-  | 'system.go'
-  | 'system.java'
-  | 'system.math'
-  | 'system.mcp'
-  | 'system.md_find_files'
-  | 'system.md_frontmatter'
-  | 'system.meta_prompt'
-  | 'system.meta_schema'
-  | 'system.node_info'
-  | 'system.node_test'
-  | 'system.output_ini'
-  | 'system.output_json'
-  | 'system.output_markdown'
-  | 'system.output_plaintext'
-  | 'system.output_yaml'
-  | 'system.php'
-  | 'system.planner'
-  | 'system.python'
-  | 'system.python_code_interpreter'
-  | 'system.python_types'
-  | 'system.retrieval_fuzz_search'
-  | 'system.retrieval_vector_search'
-  | 'system.retrieval_web_search'
-  | 'system.ruby'
-  | 'system.rust'
-  | 'system.safety_canary_word'
-  | 'system.safety_harmful_content'
-  | 'system.safety_jailbreak'
-  | 'system.safety_protected_material'
-  | 'system.safety_ungrounded_content_summarization'
-  | 'system.safety_validate_harmful_content'
-  | 'system.schema'
-  | 'system.tasks'
-  | 'system.technical'
-  | 'system.think'
-  | 'system.today'
-  | 'system.tool_calls'
-  | 'system.tools'
-  | 'system.transcribe'
-  | 'system.typescript'
-  | 'system.user_input'
-  | 'system.video'
-  | 'system.vision_ask_images'
-  | 'system.zero_shot_cot'
+ type SystemPromptId = OptionsOrString<
+    | "system"
+    | "system.agent_data"
+    | "system.agent_docs"
+    | "system.agent_fs"
+    | "system.agent_git"
+    | "system.agent_github"
+    | "system.agent_interpreter"
+    | "system.agent_mcp"
+    | "system.agent_planner"
+    | "system.agent_user_input"
+    | "system.agent_video"
+    | "system.agent_web"
+    | "system.agent_z3"
+    | "system.annotations"
+    | "system.assistant"
+    | "system.chain_of_draft"
+    | "system.changelog"
+    | "system.cooperation"
+    | "system.cpp"
+    | "system.diagrams"
+    | "system.diff"
+    | "system.do_not_explain"
+    | "system.english"
+    | "system.explanations"
+    | "system.fetch"
+    | "system.files"
+    | "system.files_schema"
+    | "system.fs_ask_file"
+    | "system.fs_data_query"
+    | "system.fs_diff_files"
+    | "system.fs_find_files"
+    | "system.fs_read_file"
+    | "system.git"
+    | "system.git_diff"
+    | "system.git_info"
+    | "system.github_actions"
+    | "system.github_files"
+    | "system.github_info"
+    | "system.github_issues"
+    | "system.github_pulls"
+    | "system.go"
+    | "system.java"
+    | "system.math"
+    | "system.mcp"
+    | "system.md_find_files"
+    | "system.md_frontmatter"
+    | "system.meta_prompt"
+    | "system.meta_schema"
+    | "system.node_info"
+    | "system.node_test"
+    | "system.output_ini"
+    | "system.output_json"
+    | "system.output_markdown"
+    | "system.output_plaintext"
+    | "system.output_yaml"
+    | "system.php"
+    | "system.planner"
+    | "system.python"
+    | "system.python_code_interpreter"
+    | "system.python_types"
+    | "system.retrieval_fuzz_search"
+    | "system.retrieval_vector_search"
+    | "system.retrieval_web_search"
+    | "system.ruby"
+    | "system.rust"
+    | "system.safety_canary_word"
+    | "system.safety_harmful_content"
+    | "system.safety_jailbreak"
+    | "system.safety_protected_material"
+    | "system.safety_ungrounded_content_summarization"
+    | "system.safety_validate_harmful_content"
+    | "system.schema"
+    | "system.tasks"
+    | "system.technical"
+    | "system.think"
+    | "system.today"
+    | "system.tool_calls"
+    | "system.tools"
+    | "system.transcribe"
+    | "system.typescript"
+    | "system.user_input"
+    | "system.video"
+    | "system.vision_ask_images"
+    | "system.zero_shot_cot"
 >;
 
-type SystemPromptInstance = {
+ type SystemPromptInstance = {
   id: SystemPromptId;
   parameters?: Record<string, string | boolean | number | object | any>;
   vars?: Record<string, string | boolean | number | object | any>;
 };
 
-type SystemToolId = OptionsOrString<
-  | 'agent_data'
-  | 'agent_docs'
-  | 'agent_fs'
-  | 'agent_git'
-  | 'agent_github'
-  | 'agent_interpreter'
-  | 'agent_planner'
-  | 'agent_user_input'
-  | 'agent_video'
-  | 'agent_web'
-  | 'agent_z3'
-  | 'fetch'
-  | 'fs_ask_file'
-  | 'fs_data_query'
-  | 'fs_diff_files'
-  | 'fs_find_files'
-  | 'fs_read_file'
-  | 'git_branch_current'
-  | 'git_branch_default'
-  | 'git_branch_list'
-  | 'git_diff'
-  | 'git_last_tag'
-  | 'git_list_commits'
-  | 'git_status'
-  | 'github_actions_job_logs_diff'
-  | 'github_actions_job_logs_get'
-  | 'github_actions_jobs_list'
-  | 'github_actions_workflows_list'
-  | 'github_files_get'
-  | 'github_files_list'
-  | 'github_issues_comments_list'
-  | 'github_issues_get'
-  | 'github_issues_list'
-  | 'github_pulls_get'
-  | 'github_pulls_list'
-  | 'github_pulls_review_comments_list'
-  | 'math_eval'
-  | 'md_find_files'
-  | 'md_read_frontmatter'
-  | 'meta_prompt'
-  | 'meta_schema'
-  | 'node_test'
-  | 'python_code_interpreter_copy_files_to_container'
-  | 'python_code_interpreter_read_file'
-  | 'python_code_interpreter_run'
-  | 'retrieval_fuzz_search'
-  | 'retrieval_vector_search'
-  | 'retrieval_web_search'
-  | 'think'
-  | 'transcribe'
-  | 'user_input_confirm'
-  | 'user_input_select'
-  | 'user_input_text'
-  | 'video_extract_audio'
-  | 'video_extract_clip'
-  | 'video_extract_frames'
-  | 'video_probe'
-  | 'vision_ask_images'
+ type SystemToolId = OptionsOrString<
+    | "agent_data"
+    | "agent_docs"
+    | "agent_fs"
+    | "agent_git"
+    | "agent_github"
+    | "agent_interpreter"
+    | "agent_planner"
+    | "agent_user_input"
+    | "agent_video"
+    | "agent_web"
+    | "agent_z3"
+    | "fetch"
+    | "fs_ask_file"
+    | "fs_data_query"
+    | "fs_diff_files"
+    | "fs_find_files"
+    | "fs_read_file"
+    | "git_branch_current"
+    | "git_branch_default"
+    | "git_branch_list"
+    | "git_diff"
+    | "git_last_tag"
+    | "git_list_commits"
+    | "git_status"
+    | "github_actions_job_logs_diff"
+    | "github_actions_job_logs_get"
+    | "github_actions_jobs_list"
+    | "github_actions_workflows_list"
+    | "github_files_get"
+    | "github_files_list"
+    | "github_issues_comments_list"
+    | "github_issues_get"
+    | "github_issues_list"
+    | "github_pulls_get"
+    | "github_pulls_list"
+    | "github_pulls_review_comments_list"
+    | "math_eval"
+    | "md_find_files"
+    | "md_read_frontmatter"
+    | "meta_prompt"
+    | "meta_schema"
+    | "node_test"
+    | "python_code_interpreter_copy_files_to_container"
+    | "python_code_interpreter_read_file"
+    | "python_code_interpreter_run"
+    | "retrieval_fuzz_search"
+    | "retrieval_vector_search"
+    | "retrieval_web_search"
+    | "think"
+    | "transcribe"
+    | "user_input_confirm"
+    | "user_input_select"
+    | "user_input_text"
+    | "video_extract_audio"
+    | "video_extract_clip"
+    | "video_extract_frames"
+    | "video_probe"
+    | "vision_ask_images"
 >;
 
-type FileMergeHandler = (
+ type FileMergeHandler = (
   filename: string,
   label: string,
   before: string,
-  generated: string
+  generated: string,
 ) => Awaitable<string>;
 
-interface PromptOutputProcessorResult {
+ interface PromptOutputProcessorResult {
   /**
    * Updated text
    */
@@ -307,8 +307,8 @@ interface PromptOutputProcessorResult {
   annotations?: Diagnostic[];
 }
 
-type PromptOutputProcessorHandler = (
-  output: GenerationOutput
+ type PromptOutputProcessorHandler = (
+  output: GenerationOutput,
 ) =>
   | PromptOutputProcessorResult
   | Promise<PromptOutputProcessorResult>
@@ -317,175 +317,172 @@ type PromptOutputProcessorHandler = (
   | void
   | Promise<void>;
 
-type PromptTemplateResponseType =
-  | 'text'
-  | 'json'
-  | 'yaml'
-  | 'markdown'
-  | 'json_object'
-  | 'json_schema'
+ type PromptTemplateResponseType =
+  | "text"
+  | "json"
+  | "yaml"
+  | "markdown"
+  | "json_object"
+  | "json_schema"
   | undefined;
 
-type ModelType = OptionsOrString<
-  | 'large'
-  | 'small'
-  | 'tiny'
-  | 'long'
-  | 'vision'
-  | 'vision_small'
-  | 'reasoning'
-  | 'reasoning_small'
-  | 'openai:gpt-4.1'
-  | 'openai:gpt-4.1-mini'
-  | 'openai:gpt-4.1-nano'
-  | 'openai:gpt-4o'
-  | 'openai:gpt-4o-mini'
-  | 'openai:gpt-3.5-turbo'
-  | 'openai:o3-mini'
-  | 'openai:o3-mini:low'
-  | 'openai:o3-mini:medium'
-  | 'openai:o3-mini:high'
-  | 'openai:o1'
-  | 'openai:o1-mini'
-  | 'openai:o1-preview'
-  | 'github:openai/gpt-4.1'
-  | 'github:openai/gpt-4o'
-  | 'github:openai/gpt-4o-mini'
-  | 'github:openai/o1'
-  | 'github:openai/o1-mini'
-  | 'github:openai/o3-mini'
-  | 'github:openai/o3-mini:low'
-  | 'github:microsoft/mai-ds-r1'
-  | 'github:deepseek/deepseek-v3'
-  | 'github:deepseek/deepseek-r1'
-  | 'github:microsoft/phi-4'
-  | 'github_copilot_chat:current'
-  | 'github_copilot_chat:gpt-3.5-turbo'
-  | 'github_copilot_chat:gpt-4o-mini'
-  | 'github_copilot_chat:gpt-4o-2024-11-20'
-  | 'github_copilot_chat:gpt-4'
-  | 'github_copilot_chat:o1'
-  | 'github_copilot_chat:o1:low'
-  | 'github_copilot_chat:o1:medium'
-  | 'github_copilot_chat:o1:high'
-  | 'github_copilot_chat:o3-mini'
-  | 'github_copilot_chat:o3-mini:low'
-  | 'github_copilot_chat:o3-mini:medium'
-  | 'github_copilot_chat:o3-mini:high'
-  | 'azure:gpt-4o'
-  | 'azure:gpt-4o-mini'
-  | 'azure:o1'
-  | 'azure:o1-mini'
-  | 'azure:o1-preview'
-  | 'azure:o3-mini'
-  | 'azure:o3-mini:low'
-  | 'azure:o3-mini:medium'
-  | 'azure:o3-mini:high'
-  | 'azure_ai_inference:gpt-4.1'
-  | 'azure_ai_inference:gpt-4o'
-  | 'azure_ai_inference:gpt-4o-mini'
-  | 'azure_ai_inference:o1'
-  | 'azure_ai_inference:o1-mini'
-  | 'azure_ai_inference:o1-preview'
-  | 'azure_ai_inference:o3-mini'
-  | 'azure_ai_inference:o3-mini:low'
-  | 'azure_ai_inference:o3-mini:medium'
-  | 'azure_ai_inference:o3-mini:high'
-  | 'azure_ai_inference:deepSeek-v3'
-  | 'azure_ai_inference:deepseek-r1'
-  | 'ollama:gemma3:4b'
-  | 'ollama:llama3.2'
-  | 'ollama:command-r7b:7b'
-  | 'anthropic:claude-opus-4-0'
-  | 'anthropic:claude-sonnet-4-0'
-  | 'anthropic:claude-sonnet-4-0:low'
-  | 'anthropic:claude-sonnet-4-0:medium'
-  | 'anthropic:claude-sonnet-4-0:high'
-  | 'anthropic:claude-3-7-sonnet-latest'
-  | 'anthropic:claude-3-7-sonnet-latest:low'
-  | 'anthropic:claude-3-7-sonnet-latest:medium'
-  | 'anthropic:claude-3-7-sonnet-latest:high'
-  | 'anthropic_bedrock:anthropic.claude-3-7-sonnet-20250219-v1:0'
-  | 'anthropic_bedrock:anthropic.claude-3-7-sonnet-20250219-v1:0:low'
-  | 'anthropic_bedrock:anthropic.claude-3-7-sonnet-20250219-v1:0:medium'
-  | 'anthropic_bedrock:anthropic.claude-3-7-sonnet-20250219-v1:0:high'
-  | 'huggingface:microsoft/Phi-3-mini-4k-instruct'
-  | 'jan:llama3.2-3b-instruct'
-  | 'google:gemini-2.0-flash-exp'
-  | 'llamafile'
-  | 'sglang'
-  | 'vllm'
-  | 'echo'
-  | 'none'
+ type ModelType = OptionsOrString<
+  | "large"
+  | "small"
+  | "tiny"
+  | "long"
+  | "vision"
+  | "vision_small"
+  | "reasoning"
+  | "reasoning_small"
+  | "openai:gpt-4.1"
+  | "openai:gpt-4.1-mini"
+  | "openai:gpt-4.1-nano"
+  | "openai:gpt-4o"
+  | "openai:gpt-4o-mini"
+  | "openai:gpt-3.5-turbo"
+  | "openai:o3-mini"
+  | "openai:o3-mini:low"
+  | "openai:o3-mini:medium"
+  | "openai:o3-mini:high"
+  | "openai:o1"
+  | "openai:o1-mini"
+  | "openai:o1-preview"
+  | "github:openai/gpt-4.1"
+  | "github:openai/gpt-4o"
+  | "github:openai/gpt-4o-mini"
+  | "github:openai/o1"
+  | "github:openai/o1-mini"
+  | "github:openai/o3-mini"
+  | "github:openai/o3-mini:low"
+  | "github:microsoft/mai-ds-r1"
+  | "github:deepseek/deepseek-v3"
+  | "github:deepseek/deepseek-r1"
+  | "github:microsoft/phi-4"
+  | "github_copilot_chat:current"
+  | "github_copilot_chat:gpt-3.5-turbo"
+  | "github_copilot_chat:gpt-4o-mini"
+  | "github_copilot_chat:gpt-4o-2024-11-20"
+  | "github_copilot_chat:gpt-4"
+  | "github_copilot_chat:o1"
+  | "github_copilot_chat:o1:low"
+  | "github_copilot_chat:o1:medium"
+  | "github_copilot_chat:o1:high"
+  | "github_copilot_chat:o3-mini"
+  | "github_copilot_chat:o3-mini:low"
+  | "github_copilot_chat:o3-mini:medium"
+  | "github_copilot_chat:o3-mini:high"
+  | "azure:gpt-4o"
+  | "azure:gpt-4o-mini"
+  | "azure:o1"
+  | "azure:o1-mini"
+  | "azure:o1-preview"
+  | "azure:o3-mini"
+  | "azure:o3-mini:low"
+  | "azure:o3-mini:medium"
+  | "azure:o3-mini:high"
+  | "azure_ai_inference:gpt-4.1"
+  | "azure_ai_inference:gpt-4o"
+  | "azure_ai_inference:gpt-4o-mini"
+  | "azure_ai_inference:o1"
+  | "azure_ai_inference:o1-mini"
+  | "azure_ai_inference:o1-preview"
+  | "azure_ai_inference:o3-mini"
+  | "azure_ai_inference:o3-mini:low"
+  | "azure_ai_inference:o3-mini:medium"
+  | "azure_ai_inference:o3-mini:high"
+  | "azure_ai_inference:deepSeek-v3"
+  | "azure_ai_inference:deepseek-r1"
+  | "ollama:gemma3:4b"
+  | "ollama:llama3.2"
+  | "ollama:command-r7b:7b"
+  | "anthropic:claude-opus-4-0"
+  | "anthropic:claude-sonnet-4-0"
+  | "anthropic:claude-sonnet-4-0:low"
+  | "anthropic:claude-sonnet-4-0:medium"
+  | "anthropic:claude-sonnet-4-0:high"
+  | "anthropic:claude-3-7-sonnet-latest"
+  | "anthropic:claude-3-7-sonnet-latest:low"
+  | "anthropic:claude-3-7-sonnet-latest:medium"
+  | "anthropic:claude-3-7-sonnet-latest:high"
+  | "anthropic_bedrock:anthropic.claude-3-7-sonnet-20250219-v1:0"
+  | "anthropic_bedrock:anthropic.claude-3-7-sonnet-20250219-v1:0:low"
+  | "anthropic_bedrock:anthropic.claude-3-7-sonnet-20250219-v1:0:medium"
+  | "anthropic_bedrock:anthropic.claude-3-7-sonnet-20250219-v1:0:high"
+  | "huggingface:microsoft/Phi-3-mini-4k-instruct"
+  | "jan:llama3.2-3b-instruct"
+  | "google:gemini-2.0-flash-exp"
+  | "llamafile"
+  | "sglang"
+  | "vllm"
+  | "echo"
+  | "none"
 >;
 
-type EmbeddingsModelType = OptionsOrString<
-  | 'openai:text-embedding-3-small'
-  | 'openai:text-embedding-3-large'
-  | 'openai:text-embedding-ada-002'
-  | 'github:text-embedding-3-small'
-  | 'github:text-embedding-3-large'
-  | 'azure:text-embedding-3-small'
-  | 'azure:text-embedding-3-large'
-  | 'azure_ai_inference:text-embedding-3-small'
-  | 'azure_ai_inference:text-embedding-3-large'
-  | 'ollama:nomic-embed-text'
-  | 'google:text-embedding-004'
-  | 'huggingface:nomic-ai/nomic-embed-text-v1.5'
+ type EmbeddingsModelType = OptionsOrString<
+  | "openai:text-embedding-3-small"
+  | "openai:text-embedding-3-large"
+  | "openai:text-embedding-ada-002"
+  | "github:text-embedding-3-small"
+  | "github:text-embedding-3-large"
+  | "azure:text-embedding-3-small"
+  | "azure:text-embedding-3-large"
+  | "azure_ai_inference:text-embedding-3-small"
+  | "azure_ai_inference:text-embedding-3-large"
+  | "ollama:nomic-embed-text"
+  | "google:text-embedding-004"
+  | "huggingface:nomic-ai/nomic-embed-text-v1.5"
 >;
 
-type ModelSmallType = OptionsOrString<
-  | 'openai:gpt-4o-mini'
-  | 'github:openai/gpt-4o-mini'
-  | 'azure:gpt-4o-mini'
-  | 'github:microsoft/phi-4'
+ type ModelSmallType = OptionsOrString<
+  | "openai:gpt-4o-mini"
+  | "github:openai/gpt-4o-mini"
+  | "azure:gpt-4o-mini"
+  | "github:microsoft/phi-4"
 >;
 
-type ModelVisionType = OptionsOrString<
-  | 'openai:gpt-4o'
-  | 'github:openai/gpt-4o'
-  | 'azure:gpt-4o'
-  | 'azure:gpt-4o-mini'
+ type ModelVisionType = OptionsOrString<
+  "openai:gpt-4o" | "github:openai/gpt-4o" | "azure:gpt-4o" | "azure:gpt-4o-mini"
 >;
 
-type ModelImageGenerationType = OptionsOrString<
-  'openai:gpt-image-1' | 'openai:dall-e-2' | 'openai:dall-e-3'
+ type ModelImageGenerationType = OptionsOrString<
+  "openai:gpt-image-1" | "openai:dall-e-2" | "openai:dall-e-3"
 >;
 
-type ModelProviderType = OptionsOrString<
-  | 'openai'
-  | 'azure'
-  | 'azure_serverless'
-  | 'azure_serverless_models'
-  | 'anthropic'
-  | 'anthropic_bedrock'
-  | 'google'
-  | 'huggingface'
-  | 'mistral'
-  | 'alibaba'
-  | 'github'
-  | 'transformers'
-  | 'ollama'
-  | 'lmstudio'
-  | 'jan'
-  | 'sglang'
-  | 'vllm'
-  | 'llamafile'
-  | 'litellm'
-  | 'github_copilot_chat'
-  | 'deepseek'
-  | 'whisperasr'
-  | 'echo'
+ type ModelProviderType = OptionsOrString<
+  | "openai"
+  | "azure"
+  | "azure_serverless"
+  | "azure_serverless_models"
+  | "anthropic"
+  | "anthropic_bedrock"
+  | "google"
+  | "huggingface"
+  | "mistral"
+  | "alibaba"
+  | "github"
+  | "transformers"
+  | "ollama"
+  | "lmstudio"
+  | "jan"
+  | "sglang"
+  | "vllm"
+  | "llamafile"
+  | "litellm"
+  | "github_copilot_chat"
+  | "deepseek"
+  | "whisperasr"
+  | "echo"
 >;
 
-interface ModelConnectionOptions {
+ interface ModelConnectionOptions {
   /**
    * Which LLM model by default or for the `large` alias.
    */
   model?: ModelType;
 }
 
-interface ModelAliasesOptions extends ModelConnectionOptions {
+ interface ModelAliasesOptions extends ModelConnectionOptions {
   /**
    * Configure the `small` model alias.
    */
@@ -502,12 +499,12 @@ interface ModelAliasesOptions extends ModelConnectionOptions {
   modelAliases?: Record<string, string>;
 }
 
-type ReasoningEffortType = 'high' | 'medium' | 'low';
+ type ReasoningEffortType = "high" | "medium" | "low";
 
-type ChatToolChoice =
-  | 'none'
-  | 'auto'
-  | 'required'
+ type ChatToolChoice =
+  | "none"
+  | "auto"
+  | "required"
   | {
       /**
        * The name of the function to call.
@@ -515,7 +512,7 @@ type ChatToolChoice =
       name: string;
     };
 
-interface ModelOptions
+ interface ModelOptions
   extends ModelConnectionOptions,
     ModelTemplateOptions,
     CacheOptions,
@@ -542,9 +539,7 @@ interface ModelOptions
   /**
    * A list of keywords that should be found in the output.
    */
-  choices?: ElementOrArray<
-    string | { token: string | number; weight?: number }
-  >;
+  choices?: ElementOrArray<string | { token: string | number; weight?: number }>;
 
   /**
    * Returns the log probabilities of the each tokens. Not supported in all models.
@@ -611,14 +606,14 @@ interface ModelOptions
   modelConcurrency?: Record<string, number>;
 }
 
-interface EmbeddingsModelOptions {
+ interface EmbeddingsModelOptions {
   /**
    * LLM model to use for embeddings.
    */
   embeddingsModel?: EmbeddingsModelType;
 }
 
-interface PromptSystemOptions extends PromptSystemSafetyOptions {
+ interface PromptSystemOptions extends PromptSystemSafetyOptions {
   /**
    * List of system script ids used by the prompt.
    */
@@ -645,16 +640,16 @@ interface PromptSystemOptions extends PromptSystemSafetyOptions {
   mcpAgentServers?: McpAgentServersConfig;
 }
 
-interface ScriptRuntimeOptions extends LineNumberingOptions {
+ interface ScriptRuntimeOptions extends LineNumberingOptions {
   /**
    * Secrets required by the prompt
    */
   secrets?: string[];
 }
 
-type PromptJSONParameterType<T> = T & { required?: boolean };
+ type PromptJSONParameterType<T> = T & { required?: boolean };
 
-type PromptParameterType =
+ type PromptParameterType =
   | string
   | number
   | boolean
@@ -662,13 +657,10 @@ type PromptParameterType =
   | PromptJSONParameterType<JSONSchemaNumber>
   | PromptJSONParameterType<JSONSchemaString>
   | PromptJSONParameterType<JSONSchemaBoolean>;
-type PromptParametersSchema = Record<
-  string,
-  PromptParameterType | [PromptParameterType]
->;
-type PromptParameters = Record<string, string | number | boolean | object>;
+ type PromptParametersSchema = Record<string, PromptParameterType | [PromptParameterType]>;
+ type PromptParameters = Record<string, string | number | boolean | object>;
 
-type PromptAssertion = {
+ type PromptAssertion = {
   // How heavily to weigh the assertion. Defaults to 1.0
   weight?: number;
   /**
@@ -679,30 +671,30 @@ type PromptAssertion = {
   | {
       // type of assertion
       type:
-        | 'icontains'
-        | 'not-icontains'
-        | 'equals'
-        | 'not-equals'
-        | 'starts-with'
-        | 'not-starts-with';
+        | "icontains"
+        | "not-icontains"
+        | "equals"
+        | "not-equals"
+        | "starts-with"
+        | "not-starts-with";
       // The expected value
       value: string;
     }
   | {
       // type of assertion
       type:
-        | 'contains-all'
-        | 'not-contains-all'
-        | 'contains-any'
-        | 'not-contains-any'
-        | 'icontains-all'
-        | 'not-icontains-all';
+        | "contains-all"
+        | "not-contains-all"
+        | "contains-any"
+        | "not-contains-any"
+        | "icontains-all"
+        | "not-icontains-all";
       // The expected values
       value: string[];
     }
   | {
       // type of assertion
-      type: 'levenshtein' | 'not-levenshtein';
+      type: "levenshtein" | "not-levenshtein";
       // The expected value
       value: string;
       // The threshold value
@@ -710,7 +702,7 @@ type PromptAssertion = {
     }
 );
 
-interface PromptTest {
+ interface PromptTest {
   /**
    * Short name of the test
    */
@@ -755,13 +747,13 @@ interface PromptTest {
   /**
    * Determines what kind of output is sent back to the test engine. Default is "text".
    */
-  format?: 'text' | 'json';
+  format?: "text" | "json";
 }
 
 /**
  * Configure promptfoo redteam plugins
  */
-interface PromptRedteam {
+ interface PromptRedteam {
   /**
    * The `purpose` property is used to guide the attack generation process. It should be as clear and specific as possible.
    * Include the following information:
@@ -807,23 +799,23 @@ interface PromptRedteam {
 /**
  * Different ways to render a fence block.
  */
-type FenceFormat = 'markdown' | 'xml' | 'none';
+ type FenceFormat = "markdown" | "xml" | "none";
 
-interface FenceFormatOptions {
+ interface FenceFormatOptions {
   /**
    * Formatting of code sections
    */
   fenceFormat?: FenceFormat;
 }
 
-interface ModelTemplateOptions extends FenceFormatOptions {
+ interface ModelTemplateOptions extends FenceFormatOptions {
   /**
    * Budget of tokens to apply the prompt flex renderer.
    */
   flexTokens?: number;
 }
 
-interface McpToolAnnotations {
+ interface McpToolAnnotations {
   /**
    * Annotations for MCP tools
    * @link https://modelcontextprotocol.io/docs/concepts/tools#available-tool-annotations
@@ -848,7 +840,7 @@ interface McpToolAnnotations {
   };
 }
 
-interface MetadataOptions {
+ interface MetadataOptions {
   /**
    * Set of 16 key-value pairs that can be attached to an object.
    * This can be useful for storing additional information about the object in a structured format, and querying for objects via API or the dashboard.
@@ -857,7 +849,7 @@ interface MetadataOptions {
   metadata?: Record<string, string>;
 }
 
-interface TerminalOptions {
+ interface TerminalOptions {
   /**
    * Disable generation of run trace.
    */
@@ -869,7 +861,7 @@ interface TerminalOptions {
   disableChatPreview?: boolean;
 }
 
-interface PromptScript
+ interface PromptScript
   extends PromptLike,
     PromptBranding,
     ModelOptions,
@@ -902,7 +894,7 @@ interface PromptScript
   /**
    * A comma separated list of file extensions to accept.
    */
-  accept?: OptionsOrString<'.md,.mdx' | 'none'>;
+  accept?: OptionsOrString<".md,.mdx" | "none">;
 
   /**
    * Extra variable values that can be used to configure system prompts.
@@ -937,7 +929,7 @@ interface PromptScript
 /**
  * Represent a workspace file and optional content.
  */
-interface WorkspaceFile {
+ interface WorkspaceFile {
   /**
    * Name of the file, relative to project root.
    */
@@ -951,7 +943,7 @@ interface WorkspaceFile {
   /**
    * Encoding of the content
    */
-  encoding?: 'base64';
+  encoding?: "base64";
 
   /**
    * Content of the file.
@@ -964,14 +956,14 @@ interface WorkspaceFile {
   size?: number;
 }
 
-interface WorkspaceFileWithScore extends WorkspaceFile {
+ interface WorkspaceFileWithScore extends WorkspaceFile {
   /**
    * Score allocated by search algorithm
    */
   score?: number;
 }
 
-interface ToolDefinition {
+ interface ToolDefinition {
   /**
    * The name of the function to be called. Must be a-z, A-Z, 0-9, or contain
    * underscores and dashes, with a maximum length of 64.
@@ -1000,7 +992,7 @@ interface ToolDefinition {
  * Interface representing an output trace with various logging and tracing methods.
  * Extends the `ToolCallTrace` interface.
  */
-interface OutputTrace extends ToolCallTrace {
+ interface OutputTrace extends ToolCallTrace {
   /**
    * Logs a heading message at the specified level.
    * @param level - The level of the heading.
@@ -1027,7 +1019,7 @@ interface OutputTrace extends ToolCallTrace {
   diff(
     left: string | WorkspaceFile,
     right: string | WorkspaceFile,
-    options?: { context?: number }
+    options?: { context?: number },
   ): void;
 
   /**
@@ -1043,10 +1035,7 @@ interface OutputTrace extends ToolCallTrace {
    * @param options - Optional settings for the trace.
    * @returns A `MarkdownTrace` instance.
    */
-  startTraceDetails(
-    title: string,
-    options?: { expanded?: boolean }
-  ): OutputTrace;
+  startTraceDetails(title: string, options?: { expanded?: boolean }): OutputTrace;
 
   /**
    * Appends content to the trace.
@@ -1059,10 +1048,7 @@ interface OutputTrace extends ToolCallTrace {
    * @param title - The title of the details section.
    * @param options - Optional settings for the details section.
    */
-  startDetails(
-    title: string,
-    options?: { success?: boolean; expanded?: boolean }
-  ): void;
+  startDetails(title: string, options?: { success?: boolean; expanded?: boolean }): void;
 
   /**
    * Ends the current details section in the trace.
@@ -1094,7 +1080,7 @@ interface OutputTrace extends ToolCallTrace {
   details(
     title: string,
     body: string | object,
-    options?: { success?: boolean; expanded?: boolean }
+    options?: { success?: boolean; expanded?: boolean },
   ): void;
 
   /**
@@ -1108,7 +1094,7 @@ interface OutputTrace extends ToolCallTrace {
     title: string,
     body: string | object,
     contentType?: string,
-    options?: { expanded?: boolean }
+    options?: { expanded?: boolean },
   ): void;
 
   /**
@@ -1160,7 +1146,7 @@ interface OutputTrace extends ToolCallTrace {
 /**
  * Interface representing a tool call trace for logging various types of messages.
  */
-interface ToolCallTrace {
+ interface ToolCallTrace {
   /**
    * Logs a general message.
    * @param message - The message to log.
@@ -1190,58 +1176,58 @@ interface ToolCallTrace {
 /**
  * Position (line, character) in a file. Both are 0-based.
  */
-type CharPosition = [number, number];
+ type CharPosition = [number, number];
 
 /**
  * Describes a run of text.
  */
-type CharRange = [CharPosition, CharPosition];
+ type CharRange = [CharPosition, CharPosition];
 
 /**
  * 0-based line numbers.
  */
-type LineRange = [number, number];
+ type LineRange = [number, number];
 
-interface FileEdit {
+ interface FileEdit {
   type: string;
   filename: string;
   label?: string;
   validated?: boolean;
 }
 
-interface ReplaceEdit extends FileEdit {
-  type: 'replace';
+ interface ReplaceEdit extends FileEdit {
+  type: "replace";
   range: CharRange | LineRange;
   text: string;
 }
 
-interface InsertEdit extends FileEdit {
-  type: 'insert';
+ interface InsertEdit extends FileEdit {
+  type: "insert";
   pos: CharPosition | number;
   text: string;
 }
 
-interface DeleteEdit extends FileEdit {
-  type: 'delete';
+ interface DeleteEdit extends FileEdit {
+  type: "delete";
   range: CharRange | LineRange;
 }
 
-interface CreateFileEdit extends FileEdit {
-  type: 'createfile';
+ interface CreateFileEdit extends FileEdit {
+  type: "createfile";
   overwrite?: boolean;
   ignoreIfExists?: boolean;
   text: string;
 }
 
-type Edits = InsertEdit | ReplaceEdit | DeleteEdit | CreateFileEdit;
+ type Edits = InsertEdit | ReplaceEdit | DeleteEdit | CreateFileEdit;
 
-interface ToolCallContent {
-  type?: 'content';
+ interface ToolCallContent {
+  type?: "content";
   content: string;
   edits?: Edits[];
 }
 
-type ToolCallOutput =
+ type ToolCallOutput =
   | string
   | number
   | boolean
@@ -1252,7 +1238,7 @@ type ToolCallOutput =
   | SerializedError
   | undefined;
 
-interface WorkspaceFileCache<K, V> {
+ interface WorkspaceFileCache<K, V> {
   /**
    * Name of the cache
    */
@@ -1286,11 +1272,11 @@ interface WorkspaceFileCache<K, V> {
   getOrUpdate(
     key: K,
     updater: () => Promise<V>,
-    validator?: (val: V) => boolean
+    validator?: (val: V) => boolean,
   ): Promise<{ key: string; value: V; cached?: boolean }>;
 }
 
-interface WorkspaceGrepOptions extends FilterGitFilesOptions {
+ interface WorkspaceGrepOptions extends FilterGitFilesOptions {
   /**
    * List of paths to
    */
@@ -1310,23 +1296,23 @@ interface WorkspaceGrepOptions extends FilterGitFilesOptions {
   debug?: boolean;
 }
 
-interface WorkspaceGrepResult {
+ interface WorkspaceGrepResult {
   files: WorkspaceFile[];
   matches: WorkspaceFile[];
 }
 
-interface INIParseOptions extends JSONSchemaValidationOptions {
+ interface INIParseOptions extends JSONSchemaValidationOptions {
   defaultValue?: any;
 }
 
-interface FilterGitFilesOptions {
+ interface FilterGitFilesOptions {
   /**
    * Ignore workspace .gitignore instructions
    */
   applyGitIgnore?: false | undefined;
 }
 
-interface FindFilesOptions extends FilterGitFilesOptions {
+ interface FindFilesOptions extends FilterGitFilesOptions {
   /** Glob patterns to ignore */
   ignore?: ElementOrArray<string>;
 
@@ -1336,7 +1322,7 @@ interface FindFilesOptions extends FilterGitFilesOptions {
   readText?: boolean;
 }
 
-interface FileStats {
+ interface FileStats {
   /**
    * Size of the file in bytes
    */
@@ -1344,35 +1330,29 @@ interface FileStats {
   mode: number;
 }
 
-interface JSONSchemaValidationOptions {
+ interface JSONSchemaValidationOptions {
   schema?: JSONSchema;
   throwOnValidationError?: boolean;
 }
 
-interface WorkspaceFileSystem {
+ interface WorkspaceFileSystem {
   /**
    * Searches for files using the glob pattern and returns a list of files.
    * Ignore `.env` files and apply `.gitignore` if present.
    * @param glob
    */
-  findFiles(
-    glob: ElementOrArray<string>,
-    options?: FindFilesOptions
-  ): Promise<WorkspaceFile[]>;
+  findFiles(glob: ElementOrArray<string>, options?: FindFilesOptions): Promise<WorkspaceFile[]>;
 
   /**
    * Performs a grep search over the files in the workspace using ripgrep.
    * @param pattern A string to match or a regex pattern.
    * @param options Options for the grep search.
    */
-  grep(
-    pattern: string | RegExp,
-    options?: WorkspaceGrepOptions
-  ): Promise<WorkspaceGrepResult>;
+  grep(pattern: string | RegExp, options?: WorkspaceGrepOptions): Promise<WorkspaceGrepResult>;
   grep(
     pattern: string | RegExp,
     glob: string,
-    options?: Omit<WorkspaceGrepOptions, 'path' | 'glob'>
+    options?: Omit<WorkspaceGrepOptions, "path" | "glob">,
   ): Promise<WorkspaceGrepResult>;
 
   /**
@@ -1393,7 +1373,7 @@ interface WorkspaceFileSystem {
    */
   readJSON(
     path: string | Awaitable<WorkspaceFile>,
-    options?: JSONSchemaValidationOptions
+    options?: JSONSchemaValidationOptions,
   ): Promise<any>;
 
   /**
@@ -1402,16 +1382,13 @@ interface WorkspaceFileSystem {
    */
   readYAML(
     path: string | Awaitable<WorkspaceFile>,
-    options?: JSONSchemaValidationOptions
+    options?: JSONSchemaValidationOptions,
   ): Promise<any>;
 
   /**
    * Reads the content of a file and parses to XML, using the XML parser.
    */
-  readXML(
-    path: string | Awaitable<WorkspaceFile>,
-    options?: XMLParseOptions
-  ): Promise<any>;
+  readXML(path: string | Awaitable<WorkspaceFile>, options?: XMLParseOptions): Promise<any>;
 
   /**
    * Reads the content of a CSV file.
@@ -1419,16 +1396,13 @@ interface WorkspaceFileSystem {
    */
   readCSV<T extends object>(
     path: string | Awaitable<WorkspaceFile>,
-    options?: CSVParseOptions
+    options?: CSVParseOptions,
   ): Promise<T[]>;
 
   /**
    * Reads the content of a file and parses to INI
    */
-  readINI(
-    path: string | Awaitable<WorkspaceFile>,
-    options?: INIParseOptions
-  ): Promise<any>;
+  readINI(path: string | Awaitable<WorkspaceFile>, options?: INIParseOptions): Promise<any>;
 
   /**
    * Reads the content of a file and attempts to parse it as data.
@@ -1437,10 +1411,7 @@ interface WorkspaceFileSystem {
    */
   readData(
     path: string | Awaitable<WorkspaceFile>,
-    options?: CSVParseOptions &
-      INIParseOptions &
-      XMLParseOptions &
-      JSONSchemaValidationOptions
+    options?: CSVParseOptions & INIParseOptions & XMLParseOptions & JSONSchemaValidationOptions,
   ): Promise<any>;
 
   /**
@@ -1464,12 +1435,12 @@ interface WorkspaceFileSystem {
   writeCached(
     bytes: BufferLike,
     options?: {
-      scope?: 'workspace' | 'run';
+      scope?: "workspace" | "run";
       /**
        * Filename extension
        */
       ext?: string;
-    }
+    },
   ): Promise<string>;
 
   /**
@@ -1493,22 +1464,20 @@ interface WorkspaceFileSystem {
   cache<K = any, V = any>(cacheName: string): Promise<WorkspaceFileCache<K, V>>;
 }
 
-interface ToolCallContext {
+ interface ToolCallContext {
   log(message: string): void;
   debug(message: string): void;
   trace: ToolCallTrace;
 }
 
-interface ToolCallback {
+ interface ToolCallback {
   spec: ToolDefinition;
   options?: DefToolOptions;
   generator?: ChatGenerationContext;
-  impl: (
-    args: { context: ToolCallContext } & Record<string, any>
-  ) => Awaitable<ToolCallOutput>;
+  impl: (args: { context: ToolCallContext } & Record<string, any>) => Awaitable<ToolCallOutput>;
 }
 
-interface ChatContentPartText {
+ interface ChatContentPartText {
   /**
    * The text content.
    */
@@ -1517,10 +1486,10 @@ interface ChatContentPartText {
   /**
    * The type of the content part.
    */
-  type: 'text';
+  type: "text";
 }
 
-interface ChatContentPartImage {
+ interface ChatContentPartImage {
   image_url: {
     /**
      * Either a URL of the image or the base64 encoded image data.
@@ -1531,16 +1500,16 @@ interface ChatContentPartImage {
      * Specifies the detail level of the image. Learn more in the
      * [Vision guide](https://platform.openai.com/docs/guides/vision#low-or-high-fidelity-image-understanding).
      */
-    detail?: 'auto' | 'low' | 'high';
+    detail?: "auto" | "low" | "high";
   };
 
   /**
    * The type of the content part.
    */
-  type: 'image_url';
+  type: "image_url";
 }
 
-interface ChatContentPartInputAudio {
+ interface ChatContentPartInputAudio {
   input_audio: {
     /**
      * Base64 encoded audio data.
@@ -1550,16 +1519,16 @@ interface ChatContentPartInputAudio {
     /**
      * The format of the encoded audio data. Currently supports "wav" and "mp3".
      */
-    format: 'wav' | 'mp3';
+    format: "wav" | "mp3";
   };
 
   /**
    * The type of the content part. Always `input_audio`.
    */
-  type: 'input_audio';
+  type: "input_audio";
 }
 
-interface ChatContentPartFile {
+ interface ChatContentPartFile {
   file: {
     /**
      * The base64 encoded file data, used when passing the file to the model as a
@@ -1581,10 +1550,10 @@ interface ChatContentPartFile {
   /**
    * The type of the content part. Always `file`.
    */
-  type: 'file';
+  type: "file";
 }
 
-interface ChatContentPartRefusal {
+ interface ChatContentPartRefusal {
   /**
    * The refusal message generated by the model.
    */
@@ -1593,10 +1562,10 @@ interface ChatContentPartRefusal {
   /**
    * The type of the content part.
    */
-  type: 'refusal';
+  type: "refusal";
 }
 
-interface ChatSystemMessage {
+ interface ChatSystemMessage {
   /**
    * The contents of the system message.
    */
@@ -1605,7 +1574,7 @@ interface ChatSystemMessage {
   /**
    * The role of the messages author, in this case `system`.
    */
-  role: 'system';
+  role: "system";
 
   /**
    * An optional name for the participant. Provides the model information to
@@ -1617,13 +1586,13 @@ interface ChatSystemMessage {
 /**
  * @deprecated
  */
-interface ChatFunctionMessage {
+ interface ChatFunctionMessage {
   content: string;
   name: string;
-  role: 'function';
+  role: "function";
 }
 
-interface ChatToolMessage {
+ interface ChatToolMessage {
   /**
    * The contents of the tool message.
    */
@@ -1632,7 +1601,7 @@ interface ChatToolMessage {
   /**
    * The role of the messages author, in this case `tool`.
    */
-  role: 'tool';
+  role: "tool";
 
   /**
    * Tool call that this message is responding to.
@@ -1640,7 +1609,7 @@ interface ChatToolMessage {
   tool_call_id: string;
 }
 
-interface ChatMessageToolCall {
+ interface ChatMessageToolCall {
   /**
    * The ID of the tool call.
    */
@@ -1667,14 +1636,14 @@ interface ChatMessageToolCall {
   /**
    * The type of the tool. Currently, only `function` is supported.
    */
-  type: 'function';
+  type: "function";
 }
 
-interface ChatAssistantMessage {
+ interface ChatAssistantMessage {
   /**
    * The role of the messages author, in this case `assistant`.
    */
-  role: 'assistant';
+  role: "assistant";
 
   /**
    * The contents of the assistant message. Required unless `tool_calls` or
@@ -1704,13 +1673,13 @@ interface ChatAssistantMessage {
   reasoning?: string;
 }
 
-type ChatContentPart =
+ type ChatContentPart =
   | ChatContentPartText
   | ChatContentPartImage
   | ChatContentPartInputAudio
   | ChatContentPartFile;
 
-interface ChatUserMessage {
+ interface ChatUserMessage {
   /**
    * The contents of the user message.
    */
@@ -1719,7 +1688,7 @@ interface ChatUserMessage {
   /**
    * The role of the messages author, in this case `user`.
    */
-  role: 'user';
+  role: "user";
 
   /**
    * An optional name for the participant. Provides the model information to
@@ -1728,14 +1697,14 @@ interface ChatUserMessage {
   name?: string;
 }
 
-type ChatMessage =
+ type ChatMessage =
   | ChatSystemMessage
   | ChatUserMessage
   | ChatAssistantMessage
   | ChatToolMessage
   | ChatFunctionMessage;
 
-type ChatParticipantHandler = (
+ type ChatParticipantHandler = (
   /**
    * Prompt generation context to create a new message in the conversation
    */
@@ -1748,14 +1717,14 @@ type ChatParticipantHandler = (
    * The last assistant text, without
    * reasoning sections.
    */
-  assistantText: string
+  assistantText: string,
 ) => Awaitable<{ messages?: ChatMessage[] } | undefined | void>;
 
-interface ChatParticipantOptions {
+ interface ChatParticipantOptions {
   label?: string;
 }
 
-interface ChatParticipant {
+ interface ChatParticipant {
   generator: ChatParticipantHandler;
   options: ChatParticipantOptions;
 }
@@ -1763,8 +1732,8 @@ interface ChatParticipant {
 /**
  * A set of text extracted from the context of the prompt execution
  */
-interface ExpansionVariables
-  extends Required<Pick<ChatGenerationContextOptions, 'generator'>> {
+ interface ExpansionVariables
+  extends Required<Pick<ChatGenerationContextOptions, "generator">> {
   /**
    * Directory where the prompt is executed
    */
@@ -1796,27 +1765,27 @@ interface ExpansionVariables
     /**
      * When running in GitHub Copilot Chat, the current chat history
      */
-    'copilot.history'?: (HistoryMessageUser | HistoryMessageAssistant)[];
+    "copilot.history"?: (HistoryMessageUser | HistoryMessageAssistant)[];
     /**
      * When running in GitHub Copilot Chat, the current editor content
      */
-    'copilot.editor'?: string;
+    "copilot.editor"?: string;
     /**
      * When running in GitHub Copilot Chat, the current selection
      */
-    'copilot.selection'?: string;
+    "copilot.selection"?: string;
     /**
      * When running in GitHub Copilot Chat, the current terminal content
      */
-    'copilot.terminalSelection'?: string;
+    "copilot.terminalSelection"?: string;
     /**
      * Selected model identifier in GitHub Copilot Chat
      */
-    'copilot.model'?: string;
+    "copilot.model"?: string;
     /**
      * selected text in active text editor
      */
-    'editor.selectedText'?: string;
+    "editor.selectedText"?: string;
   };
 
   /**
@@ -1840,34 +1809,34 @@ interface ExpansionVariables
   dbg: DebugLogger;
 }
 
-type MakeOptional<T, P extends keyof T> = Partial<Pick<T, P>> & Omit<T, P>;
+ type MakeOptional<T, P extends keyof T> = Partial<Pick<T, P>> & Omit<T, P>;
 
-type PromptArgs = Omit<
+ type PromptArgs = Omit<
   PromptScript,
-  'text' | 'id' | 'jsSource' | 'defTools' | 'resolvedSystem'
+  "text" | "id" | "jsSource" | "defTools" | "resolvedSystem"
 >;
 
-type PromptSystemArgs = Omit<
+ type PromptSystemArgs = Omit<
   PromptArgs,
-  | 'model'
-  | 'embeddingsModel'
-  | 'temperature'
-  | 'topP'
-  | 'maxTokens'
-  | 'seed'
-  | 'tests'
-  | 'responseLanguage'
-  | 'responseType'
-  | 'responseSchema'
-  | 'files'
-  | 'modelConcurrency'
-  | 'redteam'
-  | 'metadata'
+  | "model"
+  | "embeddingsModel"
+  | "temperature"
+  | "topP"
+  | "maxTokens"
+  | "seed"
+  | "tests"
+  | "responseLanguage"
+  | "responseType"
+  | "responseSchema"
+  | "files"
+  | "modelConcurrency"
+  | "redteam"
+  | "metadata"
 >;
 
-type StringLike = string | WorkspaceFile | WorkspaceFile[];
+ type StringLike = string | WorkspaceFile | WorkspaceFile[];
 
-interface LineNumberingOptions {
+ interface LineNumberingOptions {
   /**
    * Prepend each line with a line numbers. Helps with generating diffs.
    */
@@ -1879,19 +1848,19 @@ interface LineNumberingOptions {
   lineNumbersStart?: number;
 }
 
-interface FenceOptions extends LineNumberingOptions, FenceFormatOptions {
+ interface FenceOptions extends LineNumberingOptions, FenceFormatOptions {
   /**
    * Language of the fenced code block. Defaults to "markdown".
    */
   language?:
-    | 'markdown'
-    | 'json'
-    | 'yaml'
-    | 'javascript'
-    | 'typescript'
-    | 'python'
-    | 'shell'
-    | 'toml'
+    | "markdown"
+    | "json"
+    | "yaml"
+    | "javascript"
+    | "typescript"
+    | "python"
+    | "shell"
+    | "toml"
     | string;
 
   /**
@@ -1900,9 +1869,9 @@ interface FenceOptions extends LineNumberingOptions, FenceFormatOptions {
   schema?: string;
 }
 
-type PromptCacheControlType = 'ephemeral';
+ type PromptCacheControlType = "ephemeral";
 
-interface ContextExpansionOptions {
+ interface ContextExpansionOptions {
   /**
    * Specifies an maximum of estimated tokens for this entry; after which it will be truncated.
    */
@@ -1926,7 +1895,7 @@ interface ContextExpansionOptions {
   cacheControl?: PromptCacheControlType;
 }
 
-interface RangeOptions {
+ interface RangeOptions {
   /**
    * The inclusive start of the line range, with a 1-based index
    */
@@ -1937,14 +1906,14 @@ interface RangeOptions {
   lineEnd?: number;
 }
 
-interface GitIgnoreFilterOptions {
+ interface GitIgnoreFilterOptions {
   /**
    * Disable filtering files based on the `.gitignore` file.
    */
   ignoreGitIgnore?: true | undefined;
 }
 
-interface FileFilterOptions extends GitIgnoreFilterOptions {
+ interface FileFilterOptions extends GitIgnoreFilterOptions {
   /**
    * Filename filter based on file suffix. Case insensitive.
    */
@@ -1956,7 +1925,7 @@ interface FileFilterOptions extends GitIgnoreFilterOptions {
   glob?: ElementOrArray<string>;
 }
 
-interface ContentSafetyOptions {
+ interface ContentSafetyOptions {
   /**
    * Configure the content safety provider.
    */
@@ -1965,17 +1934,17 @@ interface ContentSafetyOptions {
    * Runs the default content safety validator
    * to prevent prompt injection.
    */
-  detectPromptInjection?: 'always' | 'available' | boolean;
+  detectPromptInjection?: "always" | "available" | boolean;
 }
 
-interface PromptSystemSafetyOptions {
+ interface PromptSystemSafetyOptions {
   /**
    * Policy to inject builtin system prompts. See to `false` prevent automatically injecting.
    */
-  systemSafety?: 'default' | boolean;
+  systemSafety?: "default" | boolean;
 }
 
-interface SecretDetectionOptions {
+ interface SecretDetectionOptions {
   /**
    * Policy to disable secret scanning when communicating with the LLM.
    * Set to `false` to disable.
@@ -1983,7 +1952,7 @@ interface SecretDetectionOptions {
   secretScanning?: boolean;
 }
 
-interface DefOptions
+ interface DefOptions
   extends FenceOptions,
     ContextExpansionOptions,
     DataFilter,
@@ -2005,12 +1974,12 @@ interface DefOptions
 /**
  * Options for the `defDiff` command.
  */
-interface DefDiffOptions
+ interface DefDiffOptions
   extends ContextExpansionOptions,
     FenceFormatOptions,
     LineNumberingOptions {}
 
-interface ImageTransformOptions {
+ interface ImageTransformOptions {
   /**
    * Crops the image to the specified region.
    */
@@ -2048,14 +2017,14 @@ interface ImageTransformOptions {
   /**
    * Output mime
    */
-  mime?: 'image/jpeg' | 'image/png';
+  mime?: "image/jpeg" | "image/png";
 }
 
-interface DefImagesOptions extends ImageTransformOptions {
+ interface DefImagesOptions extends ImageTransformOptions {
   /**
    * A "low" detail image is always downsampled to 512x512 pixels.
    */
-  detail?: 'high' | 'low';
+  detail?: "high" | "low";
   /**
    * Selects the first N elements from the data
    */
@@ -2079,30 +2048,30 @@ interface DefImagesOptions extends ImageTransformOptions {
   ignoreEmpty?: boolean;
 }
 
-type JSONSchemaTypeName =
-  | 'string'
-  | 'number'
-  | 'integer'
-  | 'boolean'
-  | 'object'
-  | 'array'
-  | 'null';
+ type JSONSchemaTypeName =
+  | "string"
+  | "number"
+  | "integer"
+  | "boolean"
+  | "object"
+  | "array"
+  | "null";
 
-type JSONSchemaSimpleType =
+ type JSONSchemaSimpleType =
   | JSONSchemaString
   | JSONSchemaNumber
   | JSONSchemaBoolean
   | JSONSchemaObject
   | JSONSchemaArray;
 
-type JSONSchemaType = JSONSchemaSimpleType | JSONSchemaAnyOf | null;
+ type JSONSchemaType = JSONSchemaSimpleType | JSONSchemaAnyOf | null;
 
-interface JSONSchemaAnyOf {
+ interface JSONSchemaAnyOf {
   anyOf: JSONSchemaType[];
   uiGroup?: string;
 }
 
-interface JSONSchemaDescribed {
+ interface JSONSchemaDescribed {
   /**
    * A short description of the property
    */
@@ -2118,17 +2087,17 @@ interface JSONSchemaDescribed {
   uiGroup?: string;
 }
 
-interface JSONSchemaString extends JSONSchemaDescribed {
-  type: 'string';
-  uiType?: 'textarea';
+ interface JSONSchemaString extends JSONSchemaDescribed {
+  type: "string";
+  uiType?: "textarea";
   uiSuggestions?: string[];
   enum?: string[];
   default?: string;
   pattern?: string;
 }
 
-interface JSONSchemaNumber extends JSONSchemaDescribed {
-  type: 'number' | 'integer';
+ interface JSONSchemaNumber extends JSONSchemaDescribed {
+  type: "number" | "integer";
   default?: number;
   minimum?: number;
   exclusiveMinimum?: number;
@@ -2136,15 +2105,15 @@ interface JSONSchemaNumber extends JSONSchemaDescribed {
   exclusiveMaximum?: number;
 }
 
-interface JSONSchemaBoolean extends JSONSchemaDescribed {
-  type: 'boolean';
-  uiType?: 'runOption';
+ interface JSONSchemaBoolean extends JSONSchemaDescribed {
+  type: "boolean";
+  uiType?: "runOption";
   default?: boolean;
 }
 
-interface JSONSchemaObject extends JSONSchemaDescribed {
+ interface JSONSchemaObject extends JSONSchemaDescribed {
   $schema?: string;
-  type: 'object';
+  type: "object";
   properties?: {
     [key: string]: JSONSchemaType;
   };
@@ -2154,17 +2123,17 @@ interface JSONSchemaObject extends JSONSchemaDescribed {
   default?: object;
 }
 
-interface JSONSchemaArray extends JSONSchemaDescribed {
+ interface JSONSchemaArray extends JSONSchemaDescribed {
   $schema?: string;
-  type: 'array';
+  type: "array";
   items?: JSONSchemaType;
 
   default?: any[];
 }
 
-type JSONSchema = JSONSchemaObject | JSONSchemaArray;
+ type JSONSchema = JSONSchemaObject | JSONSchemaArray;
 
-interface FileEditValidation {
+ interface FileEditValidation {
   /**
    * JSON schema
    */
@@ -2179,13 +2148,13 @@ interface FileEditValidation {
   pathValid?: boolean;
 }
 
-interface DataFrame {
+ interface DataFrame {
   schema?: string;
   data: unknown;
   validation?: FileEditValidation;
 }
 
-interface Logprob {
+ interface Logprob {
   /**
    * Token text
    */
@@ -2208,7 +2177,7 @@ interface Logprob {
   topLogprobs?: { token: string; logprob: number }[];
 }
 
-interface RunPromptUsage {
+ interface RunPromptUsage {
   /**
    * Estimated cost in $ of the generation
    */
@@ -2233,7 +2202,7 @@ interface RunPromptUsage {
   total: number;
 }
 
-interface RunPromptResult {
+ interface RunPromptResult {
   messages: ChatMessage[];
   text: string;
   reasoning?: string;
@@ -2243,13 +2212,7 @@ interface RunPromptResult {
   json?: any;
   error?: SerializedError;
   schemas?: Record<string, JSONSchema>;
-  finishReason:
-    | 'stop'
-    | 'length'
-    | 'tool_calls'
-    | 'content_filter'
-    | 'cancel'
-    | 'fail';
+  finishReason: "stop" | "length" | "tool_calls" | "content_filter" | "cancel" | "fail";
   fileEdits?: Record<string, FileUpdate>;
   edits?: Edits[];
   changelogs?: string[];
@@ -2264,7 +2227,7 @@ interface RunPromptResult {
 /**
  * Path manipulation functions.
  */
-interface Path {
+ interface Path {
   parse(path: string): {
     /**
      * The root of the path such as '/' or 'c:\'
@@ -2353,7 +2316,7 @@ interface Path {
   sanitize(path: string): string;
 }
 
-interface Fenced {
+ interface Fenced {
   label: string;
   language?: string;
   content: string;
@@ -2362,7 +2325,7 @@ interface Fenced {
   validation?: FileEditValidation;
 }
 
-interface XMLParseOptions extends JSONSchemaValidationOptions {
+ interface XMLParseOptions extends JSONSchemaValidationOptions {
   allowBooleanAttributes?: boolean;
   ignoreAttributes?: boolean;
   ignoreDeclaration?: boolean;
@@ -2372,7 +2335,7 @@ interface XMLParseOptions extends JSONSchemaValidationOptions {
   unpairedTags?: string[];
 }
 
-interface ParsePDFOptions {
+ interface ParsePDFOptions {
   /**
    * Disable removing trailing spaces in text
    */
@@ -2395,7 +2358,7 @@ interface ParsePDFOptions {
   useSystemFonts?: boolean;
 }
 
-interface HTMLToTextOptions {
+ interface HTMLToTextOptions {
   /**
    * After how many chars a line break should follow in `p` elements.
    *
@@ -2404,26 +2367,26 @@ interface HTMLToTextOptions {
   wordwrap?: number | false | null | undefined;
 }
 
-interface ParseXLSXOptions {
+ interface ParseXLSXOptions {
   // specific worksheet name
   sheet?: string;
   // Use specified range (A1-style bounded range string)
   range?: string;
 }
 
-interface WorkbookSheet {
+ interface WorkbookSheet {
   name: string;
   rows: object[];
 }
 
-interface ParseZipOptions {
+ interface ParseZipOptions {
   glob?: string;
 }
 
-type TokenEncoder = (text: string) => number[];
-type TokenDecoder = (lines: Iterable<number>) => string;
+ type TokenEncoder = (text: string) => number[];
+ type TokenDecoder = (lines: Iterable<number>) => string;
 
-interface Tokenizer {
+ interface Tokenizer {
   model: string;
   /**
    * Number of tokens
@@ -2433,56 +2396,53 @@ interface Tokenizer {
   decode: TokenDecoder;
 }
 
-interface CSVParseOptions extends JSONSchemaValidationOptions {
+ interface CSVParseOptions extends JSONSchemaValidationOptions {
   delimiter?: string;
   headers?: string[];
   repair?: boolean;
 }
 
-interface TextChunk extends WorkspaceFile {
+ interface TextChunk extends WorkspaceFile {
   lineStart: number;
   lineEnd: number;
 }
 
-interface TextChunkerConfig extends LineNumberingOptions {
+ interface TextChunkerConfig extends LineNumberingOptions {
   model?: ModelType;
   chunkSize?: number;
   chunkOverlap?: number;
   docType?: OptionsOrString<
-    | 'cpp'
-    | 'python'
-    | 'py'
-    | 'java'
-    | 'go'
-    | 'c#'
-    | 'c'
-    | 'cs'
-    | 'ts'
-    | 'js'
-    | 'tsx'
-    | 'typescript'
-    | 'js'
-    | 'jsx'
-    | 'javascript'
-    | 'php'
-    | 'md'
-    | 'mdx'
-    | 'markdown'
-    | 'rst'
-    | 'rust'
+    | "cpp"
+    | "python"
+    | "py"
+    | "java"
+    | "go"
+    | "c#"
+    | "c"
+    | "cs"
+    | "ts"
+    | "js"
+    | "tsx"
+    | "typescript"
+    | "js"
+    | "jsx"
+    | "javascript"
+    | "php"
+    | "md"
+    | "mdx"
+    | "markdown"
+    | "rst"
+    | "rust"
   >;
 }
 
-interface Tokenizers {
+ interface Tokenizers {
   /**
    * Estimates the number of tokens in the content. May not be accurate
    * @param model
    * @param text
    */
-  count(
-    text: string,
-    options?: { model?: ModelType; approximate?: boolean }
-  ): Promise<number>;
+  count(text: string, options?: { model?: ModelType; approximate?: boolean }): Promise<number>;
 
   /**
    * Truncates the text to a given number of tokens, approximation.
@@ -2494,7 +2454,7 @@ interface Tokenizers {
   truncate(
     text: string,
     maxTokens: number,
-    options?: { model?: ModelType; last?: boolean }
+    options?: { model?: ModelType; last?: boolean },
   ): Promise<string>;
 
   /**
@@ -2508,17 +2468,14 @@ interface Tokenizers {
    * @param text
    * @param options
    */
-  chunk(
-    file: Awaitable<string | WorkspaceFile>,
-    options?: TextChunkerConfig
-  ): Promise<TextChunk[]>;
+  chunk(file: Awaitable<string | WorkspaceFile>, options?: TextChunkerConfig): Promise<TextChunk[]>;
 }
 
-interface HashOptions {
+ interface HashOptions {
   /**
    * Algorithm used for hashing
    */
-  algorithm?: 'sha-256';
+  algorithm?: "sha-256";
   /**
    * Trim hash to this number of character
    */
@@ -2537,7 +2494,7 @@ interface HashOptions {
   readWorkspaceFiles?: boolean;
 }
 
-interface VideoProbeResult {
+ interface VideoProbeResult {
   streams: {
     index: number;
     codec_name: string;
@@ -2633,42 +2590,42 @@ interface VideoProbeResult {
   };
 }
 
-interface PDFPageImage extends WorkspaceFile {
+ interface PDFPageImage extends WorkspaceFile {
   id: string;
   width: number;
   height: number;
 }
 
-interface PDFPage {
+ interface PDFPage {
   index: number;
   content: string;
   image?: string;
   figures?: PDFPageImage[];
 }
 
-interface DocxParseOptions extends CacheOptions {
+ interface DocxParseOptions extends CacheOptions {
   /**
    * Desired output format
    */
-  format?: 'markdown' | 'text' | 'html';
+  format?: "markdown" | "text" | "html";
 }
 
-interface EncodeIDsOptions {
+ interface EncodeIDsOptions {
   matcher?: RegExp;
   prefix?: string;
   open?: string;
   close?: string;
 }
 
-type GitIgnorer = (files: readonly (string | WorkspaceFile)[]) => string[];
+ type GitIgnorer = (files: readonly (string | WorkspaceFile)[]) => string[];
 
-interface Parsers {
+ interface Parsers {
   /**
    * Parses text as a JSON5 payload
    */
   JSON5(
     content: string | WorkspaceFile,
-    options?: { defaultValue?: any } & JSONSchemaValidationOptions
+    options?: { defaultValue?: any } & JSONSchemaValidationOptions,
   ): any | undefined;
 
   /**
@@ -2688,7 +2645,7 @@ interface Parsers {
    */
   YAML(
     content: string | WorkspaceFile,
-    options?: { defaultValue?: any } & JSONSchemaValidationOptions
+    options?: { defaultValue?: any } & JSONSchemaValidationOptions,
   ): any | undefined;
 
   /**
@@ -2697,7 +2654,7 @@ interface Parsers {
    */
   TOML(
     content: string | WorkspaceFile,
-    options?: { defaultValue?: any } & JSONSchemaValidationOptions
+    options?: { defaultValue?: any } & JSONSchemaValidationOptions,
   ): any | undefined;
 
   /**
@@ -2709,8 +2666,8 @@ interface Parsers {
     content: string | WorkspaceFile,
     options?: {
       defaultValue?: any;
-      format: 'yaml' | 'json' | 'toml';
-    } & JSONSchemaValidationOptions
+      format: "yaml" | "json" | "toml";
+    } & JSONSchemaValidationOptions,
   ): any | undefined;
 
   /**
@@ -2719,7 +2676,7 @@ interface Parsers {
    */
   PDF(
     content: string | WorkspaceFile,
-    options?: ParsePDFOptions
+    options?: ParsePDFOptions,
   ): Promise<
     | {
         /**
@@ -2749,26 +2706,20 @@ interface Parsers {
    */
   DOCX(
     content: string | WorkspaceFile,
-    options?: DocxParseOptions
+    options?: DocxParseOptions,
   ): Promise<{ file?: WorkspaceFile; error?: string }>;
 
   /**
    * Parses a CSV file or text
    * @param content
    */
-  CSV(
-    content: string | WorkspaceFile,
-    options?: CSVParseOptions
-  ): object[] | undefined;
+  CSV(content: string | WorkspaceFile, options?: CSVParseOptions): object[] | undefined;
 
   /**
    * Parses a XLSX file and a given worksheet
    * @param content
    */
-  XLSX(
-    content: WorkspaceFile,
-    options?: ParseXLSXOptions
-  ): Promise<WorkbookSheet[] | undefined>;
+  XLSX(content: WorkspaceFile, options?: ParseXLSXOptions): Promise<WorkbookSheet[] | undefined>;
 
   /**
    * Parses a .env file
@@ -2780,10 +2731,7 @@ interface Parsers {
    * Parses a .ini file
    * @param content
    */
-  INI(
-    content: string | WorkspaceFile,
-    options?: INIParseOptions
-  ): any | undefined;
+  INI(content: string | WorkspaceFile, options?: INIParseOptions): any | undefined;
 
   /**
    * Parses a .xml file
@@ -2791,7 +2739,7 @@ interface Parsers {
    */
   XML(
     content: string | WorkspaceFile,
-    options?: { defaultValue?: any } & XMLParseOptions
+    options?: { defaultValue?: any } & XMLParseOptions,
   ): any | undefined;
 
   /**
@@ -2805,30 +2753,21 @@ interface Parsers {
    * @param content html string or file
    * @param options
    */
-  HTMLToText(
-    content: string | WorkspaceFile,
-    options?: HTMLToTextOptions
-  ): Promise<string>;
+  HTMLToText(content: string | WorkspaceFile, options?: HTMLToTextOptions): Promise<string>;
 
   /**
    * Convert HTML to markdown
    * @param content html string or file
    * @param options rendering options
    */
-  HTMLToMarkdown(
-    content: string | WorkspaceFile,
-    options?: HTMLToMarkdownOptions
-  ): Promise<string>;
+  HTMLToMarkdown(content: string | WorkspaceFile, options?: HTMLToMarkdownOptions): Promise<string>;
 
   /**
    * Extracts the contents of a zip archive file
    * @param file
    * @param options
    */
-  unzip(
-    file: WorkspaceFile,
-    options?: ParseZipOptions
-  ): Promise<WorkspaceFile[]>;
+  unzip(file: WorkspaceFile, options?: ParseZipOptions): Promise<WorkspaceFile[]>;
 
   /**
    * Parses fenced code sections in a markdown text
@@ -2846,10 +2785,7 @@ interface Parsers {
    * @param expression math expression compatible with mathjs
    * @param scope object to read/write variables
    */
-  math(
-    expression: string,
-    scope?: object
-  ): Promise<string | number | undefined>;
+  math(expression: string, scope?: object): Promise<string | number | undefined>;
 
   /**
    * Using the JSON schema, validates the content
@@ -2876,7 +2812,7 @@ interface Parsers {
   diff(
     left: string | WorkspaceFile,
     right: string | WorkspaceFile,
-    options?: DefDiffOptions
+    options?: DefDiffOptions,
   ): string;
 
   /**
@@ -2926,7 +2862,7 @@ interface Parsers {
    */
   encodeIDs(
     text: string,
-    options?: EncodeIDsOptions
+    options?: EncodeIDsOptions,
   ): {
     encoded: string;
     text: string;
@@ -2944,10 +2880,7 @@ interface Parsers {
   /**
    * Computes the Levenshtein distance between two strings or workspace files.
    */
-  levenshtein(
-    a: string | WorkspaceFile,
-    b: string | WorkspaceFile
-  ): Promise<number>;
+  levenshtein(a: string | WorkspaceFile, b: string | WorkspaceFile): Promise<number>;
 
   /**
    * Create a file filter using the `.gitignore` format from the given filenames.
@@ -2956,11 +2889,11 @@ interface Parsers {
   ignore(...filenames: string[]): Promise<GitIgnorer>;
 }
 
-interface YAMLObject {
+ interface YAMLObject {
   /**
    * Parses a YAML string into a JavaScript object using JSON5.
    */
-
+   
   (strings: TemplateStringsArray, ...values: unknown[]): any;
 
   /**
@@ -2971,11 +2904,11 @@ interface YAMLObject {
   /**
    * Parses a YAML string to object
    */
-
+   
   parse(text: string | WorkspaceFile): any;
 }
 
-interface PromptyFrontmatter {
+ interface PromptyFrontmatter {
   name?: string;
   description?: string;
   version?: string;
@@ -2989,11 +2922,11 @@ interface PromptyFrontmatter {
     | JSONSchemaBoolean
     | JSONSchemaString
     | JSONSchemaObject
-    | { type: 'list' }
+    | { type: "list" }
   >;
   outputs?: JSONSchemaObject;
   model?: {
-    api?: 'chat' | 'completion';
+    api?: "chat" | "completion";
     configuration?: {
       type?: string;
       name?: string;
@@ -3003,7 +2936,7 @@ interface PromptyFrontmatter {
       azure_endpoint: string;
     };
     parameters?: {
-      response_format?: { type: 'json_object' | 'json_schema' };
+      response_format?: { type: "json_object" | "json_schema" };
       max_tokens?: number;
       temperature?: number;
       top_p?: number;
@@ -3019,14 +2952,14 @@ interface PromptyFrontmatter {
   tests?: PromptTest | PromptTest[];
 }
 
-interface PromptyDocument {
+ interface PromptyDocument {
   meta: PromptArgs;
   frontmatter: PromptyFrontmatter;
   content: string;
   messages: ChatMessage[];
 }
 
-interface DiffFile {
+ interface DiffFile {
   chunks: DiffChunk[];
   deletions: number;
   additions: number;
@@ -3039,7 +2972,7 @@ interface DiffFile {
   new?: true;
 }
 
-interface DiffChunk {
+ interface DiffChunk {
   content: string;
   changes: DiffChange[];
   oldStart: number;
@@ -3048,33 +2981,33 @@ interface DiffChunk {
   newLines: number;
 }
 
-interface DiffNormalChange {
-  type: 'normal';
+ interface DiffNormalChange {
+  type: "normal";
   ln1: number;
   ln2: number;
   normal: true;
   content: string;
 }
 
-interface DiffAddChange {
-  type: 'add';
+ interface DiffAddChange {
+  type: "add";
   add: true;
   ln: number;
   content: string;
 }
 
-interface DiffDeleteChange {
-  type: 'del';
+ interface DiffDeleteChange {
+  type: "del";
   del: true;
   ln: number;
   content: string;
 }
 
-type DiffChangeType = 'normal' | 'add' | 'del';
+ type DiffChangeType = "normal" | "add" | "del";
 
-type DiffChange = DiffNormalChange | DiffAddChange | DiffDeleteChange;
+ type DiffChange = DiffNormalChange | DiffAddChange | DiffDeleteChange;
 
-interface DIFFObject {
+ interface DIFFObject {
   /**
    * Parses a diff string into a structured object
    * @param input
@@ -3090,7 +3023,7 @@ interface DIFFObject {
   findChunk(
     file: string,
     range: number | [number, number] | number[],
-    diff: ElementOrArray<DiffFile>
+    diff: ElementOrArray<DiffFile>,
   ): { file?: DiffFile; chunk?: DiffChunk } | undefined;
 
   /**
@@ -3106,11 +3039,11 @@ interface DIFFObject {
       context?: number;
       ignoreCase?: boolean;
       ignoreWhitespace?: boolean;
-    }
+    },
   ): string;
 }
 
-interface XMLObject {
+ interface XMLObject {
   /**
    * Parses an XML payload to an object
    * @param text
@@ -3118,7 +3051,7 @@ interface XMLObject {
   parse(text: string | WorkspaceFile, options?: XMLParseOptions): Promise<any>;
 }
 
-interface JSONSchemaUtilities {
+ interface JSONSchemaUtilities {
   /**
    * Infers a JSON schema from an object
    * @param obj
@@ -3133,7 +3066,7 @@ interface JSONSchemaUtilities {
   fromParameters(parameters: PromptParametersSchema | undefined): JSONSchema;
 }
 
-interface HTMLTableToJSONOptions {
+ interface HTMLTableToJSONOptions {
   useFirstRowForHeadings?: boolean;
   headers?: {
     from?: number;
@@ -3154,20 +3087,17 @@ interface HTMLTableToJSONOptions {
   limitrows?: number | null;
 }
 
-interface HTMLToMarkdownOptions {
+ interface HTMLToMarkdownOptions {
   disableGfm?: boolean;
 }
 
-interface HTMLObject {
+ interface HTMLObject {
   /**
    * Converts all HTML tables to JSON.
    * @param html
    * @param options
    */
-  convertTablesToJSON(
-    html: string,
-    options?: HTMLTableToJSONOptions
-  ): Promise<object[][]>;
+  convertTablesToJSON(html: string, options?: HTMLTableToJSONOptions): Promise<object[][]>;
   /**
    * Converts HTML markup to plain text
    * @param html
@@ -3177,13 +3107,10 @@ interface HTMLObject {
    * Converts HTML markup to markdown
    * @param html
    */
-  convertToMarkdown(
-    html: string,
-    options?: HTMLToMarkdownOptions
-  ): Promise<string>;
+  convertToMarkdown(html: string, options?: HTMLToMarkdownOptions): Promise<string>;
 }
 
-interface GitCommit {
+ interface GitCommit {
   sha: string;
   date: string;
   author: string;
@@ -3191,7 +3118,7 @@ interface GitCommit {
   files: string[];
 }
 
-interface GitLogOptions {
+ interface GitLogOptions {
   base?: string;
   head?: string;
   count?: number;
@@ -3204,7 +3131,7 @@ interface GitLogOptions {
   excludedPaths?: ElementOrArray<string>;
 }
 
-interface GitWorktree {
+ interface GitWorktree {
   /**
    * Path to the worktree
    */
@@ -3227,7 +3154,7 @@ interface GitWorktree {
   detached?: boolean;
 }
 
-interface GitWorktreeAddOptions {
+ interface GitWorktreeAddOptions {
   /**
    * Create a new branch with the worktree
    */
@@ -3250,7 +3177,7 @@ interface GitWorktreeAddOptions {
   detach?: boolean;
 }
 
-interface Git {
+ interface Git {
   /**
    * Current working directory
    */
@@ -3279,7 +3206,7 @@ interface Git {
     args: string[] | string,
     options?: {
       label?: string;
-    }
+    },
   ): Promise<string>;
 
   /**
@@ -3287,12 +3214,12 @@ interface Git {
    * @param options
    */
   fetch(
-    remote?: OptionsOrString<'origin'>,
+    remote?: OptionsOrString<"origin">,
     branchOrSha?: string,
     options?: {
       prune?: boolean;
       all?: boolean;
-    }
+    },
   ): Promise<string>;
 
   /**
@@ -3312,7 +3239,7 @@ interface Git {
    * @param options
    */
   listFiles(
-    scope?: 'modified-base' | 'staged' | 'modified',
+    scope?: "modified-base" | "staged" | "modified",
     options?: {
       base?: string;
       /**
@@ -3321,7 +3248,7 @@ interface Git {
       askStageOnEmpty?: boolean;
       paths?: ElementOrArray<string>;
       excludedPaths?: ElementOrArray<string>;
-    }
+    },
   ): Promise<WorkspaceFile[]>;
 
   /**
@@ -3340,7 +3267,7 @@ interface Git {
     excludedPaths?: ElementOrArray<string>;
     unified?: number;
     nameOnly?: boolean;
-    algorithm?: 'patience' | 'minimal' | 'histogram' | 'myers';
+    algorithm?: "patience" | "minimal" | "histogram" | "myers";
     ignoreSpaceChange?: boolean;
     extras?: string[];
     /**
@@ -3369,9 +3296,7 @@ interface Git {
    * Returns a list of files that have changed in the git repository
    * @param options
    */
-  changedFiles(
-    options?: GitLogOptions & { readText?: string }
-  ): Promise<WorkspaceFile[]>;
+  changedFiles(options?: GitLogOptions & { readText?: string }): Promise<WorkspaceFile[]>;
 
   /**
    * Create a shallow git clone
@@ -3401,7 +3326,7 @@ interface Git {
        * Number of commits to fetch
        */
       depth?: number;
-    }
+    },
   ): Promise<Git>;
 
   /**
@@ -3422,11 +3347,7 @@ interface Git {
    * @param options additional options for worktree creation
    * @returns Git client opened at the worktree path
    */
-  addWorktree(
-    path: string,
-    commitish?: string,
-    options?: GitWorktreeAddOptions
-  ): Promise<Git>;
+  addWorktree(path: string, commitish?: string, options?: GitWorktreeAddOptions): Promise<Git>;
 
   /**
    * Remove a git worktree
@@ -3437,14 +3358,14 @@ interface Git {
     path: string,
     options?: {
       force?: boolean;
-    }
+    },
   ): Promise<void>;
 }
 
 /**
  * A ffmpeg command builder. This instance is the 'native' fluent-ffmpeg command builder.
  */
-interface FfmpegCommandBuilder {
+ interface FfmpegCommandBuilder {
   seekInput(startTime: number | string): FfmpegCommandBuilder;
   duration(duration: number | string): FfmpegCommandBuilder;
   noVideo(): FfmpegCommandBuilder;
@@ -3454,16 +3375,11 @@ interface FfmpegCommandBuilder {
   audioChannels(channels: number): FfmpegCommandBuilder;
   audioFrequency(freq: number): FfmpegCommandBuilder;
   audioQuality(quality: number): FfmpegCommandBuilder;
-  audioFilters(
-    filters: string | string[] /* | AudioVideoFilter[]*/
-  ): FfmpegCommandBuilder;
+  audioFilters(filters: string | string[] /* | AudioVideoFilter[]*/): FfmpegCommandBuilder;
   toFormat(format: string): FfmpegCommandBuilder;
 
   videoCodec(codec: string): FfmpegCommandBuilder;
-  videoBitrate(
-    bitrate: string | number,
-    constant?: boolean
-  ): FfmpegCommandBuilder;
+  videoBitrate(bitrate: string | number, constant?: boolean): FfmpegCommandBuilder;
   videoFilters(filters: string | string[]): FfmpegCommandBuilder;
   outputFps(fps: number): FfmpegCommandBuilder;
   frames(frames: number): FfmpegCommandBuilder;
@@ -3476,7 +3392,7 @@ interface FfmpegCommandBuilder {
   outputOptions(...options: string[]): FfmpegCommandBuilder;
 }
 
-interface FFmpegCommandOptions extends CacheOptions {
+ interface FFmpegCommandOptions extends CacheOptions {
   inputOptions?: ElementOrArray<string>;
   outputOptions?: ElementOrArray<string>;
   /**
@@ -3485,7 +3401,7 @@ interface FFmpegCommandOptions extends CacheOptions {
   size?: string;
 }
 
-interface VideoExtractFramesOptions extends FFmpegCommandOptions {
+ interface VideoExtractFramesOptions extends FFmpegCommandOptions {
   /**
    * A set of seconds or timestamps (`[[hh:]mm:]ss[.xxx]`)
    */
@@ -3510,10 +3426,10 @@ interface VideoExtractFramesOptions extends FFmpegCommandOptions {
   /**
    * Output of the extracted frames
    */
-  format?: OptionsOrString<'jpeg' | 'png'>;
+  format?: OptionsOrString<"jpeg" | "png">;
 }
 
-interface VideoExtractClipOptions extends FFmpegCommandOptions {
+ interface VideoExtractClipOptions extends FFmpegCommandOptions {
   /**
    * Start time of the clip in seconds or timestamp (`[[hh:]mm:]ss[.xxx]`)
    */
@@ -3530,7 +3446,7 @@ interface VideoExtractClipOptions extends FFmpegCommandOptions {
   end?: number | string;
 }
 
-interface VideoExtractAudioOptions extends FFmpegCommandOptions {
+ interface VideoExtractAudioOptions extends FFmpegCommandOptions {
   /**
    * Optimize for speech-to-text transcription. Default is true.
    */
@@ -3539,15 +3455,12 @@ interface VideoExtractAudioOptions extends FFmpegCommandOptions {
   forceConversion?: boolean;
 }
 
-interface Ffmpeg {
+ interface Ffmpeg {
   /**
    * Extracts metadata information from a video file using ffprobe
    * @param filename
    */
-  probe(
-    file: string | WorkspaceFile,
-    options?: FFmpegCommandOptions
-  ): Promise<VideoProbeResult>;
+  probe(file: string | WorkspaceFile, options?: FFmpegCommandOptions): Promise<VideoProbeResult>;
 
   /**
    * Extracts frames from a video file
@@ -3555,25 +3468,19 @@ interface Ffmpeg {
    */
   extractFrames(
     file: string | WorkspaceFile,
-    options?: VideoExtractFramesOptions
+    options?: VideoExtractFramesOptions,
   ): Promise<string[]>;
 
   /**
    * Extracts a clip from a video. Returns the generated video file path.
    */
-  extractClip(
-    file: string | WorkspaceFile,
-    options: VideoExtractClipOptions
-  ): Promise<string>;
+  extractClip(file: string | WorkspaceFile, options: VideoExtractClipOptions): Promise<string>;
 
   /**
    * Extract the audio track from a video
    * @param videoPath
    */
-  extractAudio(
-    file: string | WorkspaceFile,
-    options?: VideoExtractAudioOptions
-  ): Promise<string>;
+  extractAudio(file: string | WorkspaceFile, options?: VideoExtractAudioOptions): Promise<string>;
 
   /**
    * Runs a ffmpeg command and returns the list of generated file names
@@ -3584,20 +3491,20 @@ interface Ffmpeg {
     input: string | WorkspaceFile,
     builder: (
       cmd: FfmpegCommandBuilder,
-      options?: { input: string; dir: string }
+      options?: { input: string; dir: string },
     ) => Awaitable<string>,
-    options?: FFmpegCommandOptions
+    options?: FFmpegCommandOptions,
   ): Promise<string[]>;
 }
 
-interface TranscriptionSegment {
+ interface TranscriptionSegment {
   id?: string;
   start: number;
   end?: number;
   text: string;
 }
 
-interface GitHubOptions {
+ interface GitHubOptions {
   owner: string;
   repo: string;
   baseUrl?: string;
@@ -3609,28 +3516,28 @@ interface GitHubOptions {
   runUrl?: string;
 }
 
-type GitHubWorkflowRunStatus =
-  | 'completed'
-  | 'action_required'
-  | 'cancelled'
-  | 'failure'
-  | 'neutral'
-  | 'skipped'
-  | 'stale'
-  | 'success'
-  | 'timed_out'
-  | 'in_progress'
-  | 'queued'
-  | 'requested'
-  | 'waiting'
-  | 'pending';
+ type GitHubWorkflowRunStatus =
+  | "completed"
+  | "action_required"
+  | "cancelled"
+  | "failure"
+  | "neutral"
+  | "skipped"
+  | "stale"
+  | "success"
+  | "timed_out"
+  | "in_progress"
+  | "queued"
+  | "requested"
+  | "waiting"
+  | "pending";
 
-interface GitHubNode {
+ interface GitHubNode {
   id: number;
   node_id: string;
 }
 
-interface GitHubWorkflowRun extends GitHubNode {
+ interface GitHubWorkflowRun extends GitHubNode {
   run_number: number;
   name?: string;
   display_title: string;
@@ -3644,7 +3551,7 @@ interface GitHubWorkflowRun extends GitHubNode {
   run_started_at?: string;
 }
 
-interface GitHubWorkflowJob extends GitHubNode {
+ interface GitHubWorkflowJob extends GitHubNode {
   run_id: number;
   status: string;
   conclusion: string;
@@ -3657,12 +3564,12 @@ interface GitHubWorkflowJob extends GitHubNode {
   content: string;
 }
 
-interface GitHubIssue extends GitHubNode {
+ interface GitHubIssue extends GitHubNode {
   body?: string;
   title: string;
   number: number;
   state: string;
-  state_reason?: 'completed' | 'reopened' | 'not_planned' | null;
+  state_reason?: "completed" | "reopened" | "not_planned" | null;
   html_url: string;
   draft?: boolean;
   reactions?: GitHubReactions;
@@ -3674,26 +3581,26 @@ interface GitHubIssue extends GitHubNode {
   closed_at?: string;
 }
 
-type GitHubReactionType =
-  | 'eyes'
-  | 'hooray'
-  | 'heart'
-  | 'rocket'
-  | 'confused'
-  | 'laugh'
-  | '+1'
-  | '-1';
+ type GitHubReactionType =
+  | "eyes"
+  | "hooray"
+  | "heart"
+  | "rocket"
+  | "confused"
+  | "laugh"
+  | "+1"
+  | "-1";
 
-interface GitHubRef {
+ interface GitHubRef {
   ref: string;
   url: string;
 }
 
-interface GitHubReactions {
+ interface GitHubReactions {
   url: string;
   total_count: number;
-  '+1': number;
-  '-1': number;
+  "+1": number;
+  "-1": number;
   laugh: number;
   confused: number;
   heart: number;
@@ -3702,14 +3609,14 @@ interface GitHubReactions {
   rocket: number;
 }
 
-interface GitHubReaction {
+ interface GitHubReaction {
   id: number;
   user: GitHubUser;
   content: GitHubReactionType;
   created_at: string;
 }
 
-interface GitHubComment extends GitHubNode {
+ interface GitHubComment extends GitHubNode {
   body?: string;
   user: GitHubUser;
   created_at: string;
@@ -3718,7 +3625,7 @@ interface GitHubComment extends GitHubNode {
   reactions?: GitHubReactions;
 }
 
-interface GitHubPullRequest extends GitHubIssue {
+ interface GitHubPullRequest extends GitHubIssue {
   head: {
     ref: string;
   };
@@ -3727,7 +3634,7 @@ interface GitHubPullRequest extends GitHubIssue {
   };
 }
 
-interface GitHubCodeSearchResult {
+ interface GitHubCodeSearchResult {
   name: string;
   path: string;
   sha: string;
@@ -3736,28 +3643,28 @@ interface GitHubCodeSearchResult {
   repository: string;
 }
 
-interface GitHubWorkflow extends GitHubNode {
+ interface GitHubWorkflow extends GitHubNode {
   name: string;
   path: string;
 }
 
-interface GitHubPaginationOptions {
+ interface GitHubPaginationOptions {
   /**
    * Default number of items to fetch, default is 50.
    */
   count?: number;
 }
 
-interface GitHubFile extends WorkspaceFile {
-  type: 'file' | 'dir' | 'submodule' | 'symlink';
+ interface GitHubFile extends WorkspaceFile {
+  type: "file" | "dir" | "submodule" | "symlink";
   size: number;
 }
 
-interface GitHubUser {
+ interface GitHubUser {
   login: string;
 }
 
-interface GitHubRelease {
+ interface GitHubRelease {
   id: number;
   tag_name: string;
   name: string;
@@ -3768,14 +3675,14 @@ interface GitHubRelease {
   body?: string;
 }
 
-interface GitHubGist {
+ interface GitHubGist {
   id: string;
   description?: string;
   created_at?: string;
   files: WorkspaceFile[];
 }
 
-interface GitHubArtifact {
+ interface GitHubArtifact {
   id: number;
   name: string;
   size_in_bytes: number;
@@ -3784,26 +3691,26 @@ interface GitHubArtifact {
   expires_at: string;
 }
 
-interface GitHubIssueUpdateOptions {
+ interface GitHubIssueUpdateOptions {
   title?: string;
   body?: string;
   assignee?: string;
-  state?: 'open' | 'closed';
+  state?: "open" | "closed";
   assignees?: string[];
   labels?: string[];
 }
 
-interface GitHubIssueCreateOptions {
+ interface GitHubIssueCreateOptions {
   labels?: string[];
 }
 
-interface GitHubLabel {
+ interface GitHubLabel {
   name: string;
   color?: string;
   description?: string;
 }
 
-interface GitHub {
+ interface GitHub {
   /**
    * Gets connection information for octokit
    */
@@ -3831,7 +3738,7 @@ interface GitHub {
       branch?: string;
       event?: string;
       status?: GitHubWorkflowRunStatus;
-    } & GitHubPaginationOptions
+    } & GitHubPaginationOptions,
   ): Promise<GitHubWorkflowRun[]>;
 
   /**
@@ -3846,7 +3753,7 @@ interface GitHub {
    */
   listWorkflowRunArtifacts(
     runId: number | string,
-    options?: GitHubPaginationOptions
+    options?: GitHubPaginationOptions,
   ): Promise<GitHubArtifact[]>;
 
   /**
@@ -3865,19 +3772,13 @@ interface GitHub {
    * Downloads a GitHub Action workflow run log
    * @param runId
    */
-  listWorkflowJobs(
-    runId: number,
-    options?: GitHubPaginationOptions
-  ): Promise<GitHubWorkflowJob[]>;
+  listWorkflowJobs(runId: number, options?: GitHubPaginationOptions): Promise<GitHubWorkflowJob[]>;
 
   /**
    * Downloads a GitHub Action workflow run log
    * @param jobId
    */
-  downloadWorkflowJobLog(
-    jobId: number,
-    options?: { llmify?: boolean }
-  ): Promise<string>;
+  downloadWorkflowJobLog(jobId: number, options?: { llmify?: boolean }): Promise<string>;
 
   /**
    * Diffs two GitHub Action workflow job logs
@@ -3895,15 +3796,15 @@ interface GitHub {
    */
   listIssues(
     options?: {
-      state?: 'open' | 'closed' | 'all';
+      state?: "open" | "closed" | "all";
       labels?: string;
-      sort?: 'created' | 'updated' | 'comments';
-      direction?: 'asc' | 'desc';
+      sort?: "created" | "updated" | "comments";
+      direction?: "asc" | "desc";
       creator?: string;
       assignee?: string;
       since?: string;
       mentioned?: string;
-    } & GitHubPaginationOptions
+    } & GitHubPaginationOptions,
   ): Promise<GitHubIssue[]>;
 
   /**
@@ -3928,7 +3829,7 @@ interface GitHub {
    */
   assignIssueToBot(
     issue_number: number | string,
-    options?: { bot?: string }
+    options?: { bot?: string },
   ): Promise<{ id: string; title: string }>;
 
   /**
@@ -3937,7 +3838,7 @@ interface GitHub {
   createIssue(
     title: string,
     body: string,
-    options?: GitHubIssueCreateOptions
+    options?: GitHubIssueCreateOptions,
   ): Promise<GitHubIssue>;
 
   /**
@@ -3947,7 +3848,7 @@ interface GitHub {
    */
   updateIssue(
     issueNumber: number | string,
-    options: GitHubIssueUpdateOptions
+    options: GitHubIssueUpdateOptions,
   ): Promise<GitHubIssue>;
 
   /**
@@ -3955,10 +3856,7 @@ interface GitHub {
    * @param issueNumber issue number (not the issue id!). If undefined, reads value from GITHUB_ISSUE environment variable.
    * @param body the body of the comment as Github Flavored markdown
    */
-  createIssueComment(
-    issueNumber: number | string,
-    body: string
-  ): Promise<GitHubComment>;
+  createIssueComment(issueNumber: number | string, body: string): Promise<GitHubComment>;
 
   /**
    * Lists comments for a given issue
@@ -3967,7 +3865,7 @@ interface GitHub {
    */
   listIssueComments(
     issue_number: number | string,
-    options?: GitHubPaginationOptions
+    options?: GitHubPaginationOptions,
   ): Promise<GitHubComment[]>;
 
   /**
@@ -3978,13 +3876,13 @@ interface GitHub {
   updateIssueComment(
     comment_id: number | string,
     body: string,
-    options?: GitHubAIDisclaimerOptions
+    options?: GitHubAIDisclaimerOptions,
   ): Promise<GitHubComment>;
 
   createReaction(
-    type: 'issue' | 'issueComment' | 'pullRequestReviewComment',
+    type: "issue" | "issueComment" | "pullRequestReviewComment",
     id: number | string,
-    reaction: GitHubReactionType
+    reaction: GitHubReactionType,
   ): Promise<GitHubReaction>;
 
   /**
@@ -3993,10 +3891,10 @@ interface GitHub {
    */
   listPullRequests(
     options?: {
-      state?: 'open' | 'closed' | 'all';
-      sort?: 'created' | 'updated' | 'popularity' | 'long-running';
-      direction?: 'asc' | 'desc';
-    } & GitHubPaginationOptions
+      state?: "open" | "closed" | "all";
+      sort?: "created" | "updated" | "popularity" | "long-running";
+      direction?: "asc" | "desc";
+    } & GitHubPaginationOptions,
   ): Promise<GitHubPullRequest[]>;
 
   /**
@@ -4012,7 +3910,7 @@ interface GitHub {
    */
   listPullRequestReviewComments(
     pull_number: number,
-    options?: GitHubPaginationOptions
+    options?: GitHubPaginationOptions,
   ): Promise<GitHubComment[]>;
 
   /**
@@ -4025,16 +3923,13 @@ interface GitHub {
     /**
      * commit sha, branch name or tag name
      */
-    ref: string
+    ref: string,
   ): Promise<WorkspaceFile>;
 
   /**
    * Searches code in a GitHub repository
    */
-  searchCode(
-    query: string,
-    options?: GitHubPaginationOptions
-  ): Promise<GitHubCodeSearchResult[]>;
+  searchCode(query: string, options?: GitHubPaginationOptions): Promise<GitHubCodeSearchResult[]>;
 
   /**
    * Lists branches in a GitHub repository
@@ -4062,8 +3957,8 @@ interface GitHub {
       glob?: string;
       downloadContent?: boolean;
       maxDownloadSize?: number;
-      type?: GitHubFile['type'];
-    }
+      type?: GitHubFile["type"];
+    },
   ): Promise<GitHubFile[]>;
 
   /**
@@ -4076,7 +3971,7 @@ interface GitHub {
     file: BufferLike,
     options?: {
       branchName?: string;
-    }
+    },
   ): Promise<string>;
 
   /**
@@ -4113,19 +4008,16 @@ interface GitHub {
   addWorktreeForPullRequest(
     pullNumber: number | string,
     path?: string,
-    options?: GitWorktreeAddOptions
+    options?: GitWorktreeAddOptions,
   ): Promise<Git>;
 }
 
-interface MDObject {
+ interface MDObject {
   /**
    * Parses front matter from markdown
    * @param text
    */
-  frontmatter(
-    text: string | WorkspaceFile,
-    format?: 'yaml' | 'json' | 'toml' | 'text'
-  ): any;
+  frontmatter(text: string | WorkspaceFile, format?: "yaml" | "json" | "toml" | "text"): any;
 
   /**
    * Removes the front matter from the markdown text
@@ -4138,11 +4030,7 @@ interface MDObject {
    * @param frontmatter
    * @param format
    */
-  updateFrontmatter(
-    text: string,
-    frontmatter: unknown,
-    format?: 'yaml' | 'json'
-  ): string;
+  updateFrontmatter(text: string, frontmatter: unknown, format?: "yaml" | "json"): string;
 
   /**
    * Attempts to chunk markdown in text section in a way that does not splitting the heading structure.
@@ -4151,7 +4039,7 @@ interface MDObject {
    */
   chunk(
     text: string | WorkspaceFile,
-    options?: { maxTokens?: number; model?: string; pageSeparator?: string }
+    options?: { maxTokens?: number; model?: string; pageSeparator?: string },
   ): Promise<TextChunk[]>;
 
   /**
@@ -4164,13 +4052,13 @@ interface MDObject {
       quoteValues?: boolean;
       headings?: number;
       headingLevel?: number;
-    }
+    },
   ): string;
 }
 
-interface GitHubAIDisclaimerOptions extends Record<string, unknown> {}
+ interface GitHubAIDisclaimerOptions extends Record<string, unknown> {}
 
-interface JSONLObject {
+ interface JSONLObject {
   /**
    * Parses a JSONL string to an array of objects
    * @param text
@@ -4187,14 +4075,10 @@ interface JSONLObject {
    * @param filename
    * @param obj
    */
-  append(
-    name: string,
-    objs: ElementOrArray<unknown>,
-    meta?: any
-  ): Promise<void>;
+  append(name: string, objs: ElementOrArray<unknown>, meta?: any): Promise<void>;
 }
 
-interface INIObject {
+ interface INIObject {
   /**
    * Parses a .ini file
    * @param text
@@ -4208,7 +4092,7 @@ interface INIObject {
   stringify(value: any): string;
 }
 
-interface JSON5Object {
+ interface JSON5Object {
   /**
    * Parses a JSON/YAML/XML string to an object
    * @param text
@@ -4222,7 +4106,7 @@ interface JSON5Object {
   stringify(value: any): string;
 }
 
-interface CSVStringifyOptions {
+ interface CSVStringifyOptions {
   delimiter?: string;
   header?: boolean;
 }
@@ -4230,7 +4114,7 @@ interface CSVStringifyOptions {
 /**
  * Interface representing CSV operations.
  */
-interface CSVObject {
+ interface CSVObject {
   /**
    * Parses a CSV string to an array of objects.
    *
@@ -4267,16 +4151,13 @@ interface CSVObject {
    * @param csv
    * @param rows
    */
-  chunk(
-    csv: object[],
-    size: number
-  ): { chunkStartIndex: number; rows: object[] }[];
+  chunk(csv: object[], size: number): { chunkStartIndex: number; rows: object[] }[];
 }
 
 /**
  * Provide service for responsible.
  */
-interface ContentSafety {
+ interface ContentSafety {
   /**
    * Service identifier
    */
@@ -4287,7 +4168,7 @@ interface ContentSafety {
    * If not supported, the method is not defined.
    */
   detectPromptInjection?(
-    content: Awaitable<ElementOrArray<string> | ElementOrArray<WorkspaceFile>>
+    content: Awaitable<ElementOrArray<string> | ElementOrArray<WorkspaceFile>>,
   ): Promise<{ attackDetected: boolean; filename?: string; chunk?: string }>;
   /**
    * Analyzes text for harmful content.
@@ -4295,7 +4176,7 @@ interface ContentSafety {
    * @param content
    */
   detectHarmfulContent?(
-    content: Awaitable<ElementOrArray<string> | ElementOrArray<WorkspaceFile>>
+    content: Awaitable<ElementOrArray<string> | ElementOrArray<WorkspaceFile>>,
   ): Promise<{
     harmfulContentDetected: boolean;
     filename?: string;
@@ -4303,11 +4184,11 @@ interface ContentSafety {
   }>;
 }
 
-interface HighlightOptions {
+ interface HighlightOptions {
   maxLength?: number;
 }
 
-interface WorkspaceFileIndex {
+ interface WorkspaceFileIndex {
   /**
    * Gets the index name
    */
@@ -4321,17 +4202,17 @@ interface WorkspaceFileIndex {
    */
   search: (
     query: string,
-    options?: { topK?: number; minScore?: number }
+    options?: { topK?: number; minScore?: number },
   ) => Promise<WorkspaceFileWithScore[]>;
 }
 
-interface VectorIndexOptions extends EmbeddingsModelOptions {
+ interface VectorIndexOptions extends EmbeddingsModelOptions {
   /**
    * Type of database implementation.
    * - `local` uses a local database using embeddingsModel
    * - `azure_ai_search` uses Azure AI Search
    */
-  type?: 'local' | 'azure_ai_search';
+  type?: "local" | "azure_ai_search";
   version?: number;
   deleteIfExists?: boolean;
   chunkSize?: number;
@@ -4356,7 +4237,7 @@ interface VectorIndexOptions extends EmbeddingsModelOptions {
   cacheSalt?: string;
 }
 
-interface VectorSearchOptions extends VectorIndexOptions {
+ interface VectorSearchOptions extends VectorIndexOptions {
   /**
    * Maximum number of embeddings to use
    */
@@ -4371,7 +4252,7 @@ interface VectorSearchOptions extends VectorIndexOptions {
   indexName?: string;
 }
 
-interface FuzzSearchOptions {
+ interface FuzzSearchOptions {
   /**
    * Controls whether to perform prefix search. It can be a simple boolean, or a
    * function.
@@ -4417,7 +4298,7 @@ interface FuzzSearchOptions {
   minScore?: number;
 }
 
-interface Retrieval {
+ interface Retrieval {
   /**
    * Executers a web search with Tavily or Bing Search.
    * @param query
@@ -4426,12 +4307,12 @@ interface Retrieval {
     query: string,
     options?: {
       count?: number;
-      provider?: 'tavily' | 'bing';
+      provider?: "tavily" | "bing";
       /**
        * Return undefined when no web search providers are present
        */
       ignoreMissingProvider?: boolean;
-    }
+    },
   ): Promise<WorkspaceFile[]>;
 
   /**
@@ -4440,7 +4321,7 @@ interface Retrieval {
   vectorSearch(
     query: string,
     files: (string | WorkspaceFile) | (string | WorkspaceFile)[],
-    options?: VectorSearchOptions
+    options?: VectorSearchOptions,
   ): Promise<WorkspaceFile[]>;
 
   /**
@@ -4458,11 +4339,11 @@ interface Retrieval {
   fuzzSearch(
     query: string,
     files: WorkspaceFile | WorkspaceFile[],
-    options?: FuzzSearchOptions
+    options?: FuzzSearchOptions,
   ): Promise<WorkspaceFile[]>;
 }
 
-interface ArrayFilter {
+ interface ArrayFilter {
   /**
    * Selects the first N elements from the data
    */
@@ -4477,7 +4358,7 @@ interface ArrayFilter {
   sliceSample?: number;
 }
 
-interface DataFilter extends ArrayFilter {
+ interface DataFilter extends ArrayFilter {
   /**
    * The keys to select from the object.
    * If a key is prefixed with -, it will be removed from the object.
@@ -4493,15 +4374,15 @@ interface DataFilter extends ArrayFilter {
   sort?: ElementOrArray<string>;
 }
 
-interface DefDataOptions
-  extends Omit<ContextExpansionOptions, 'maxTokens'>,
+ interface DefDataOptions
+  extends Omit<ContextExpansionOptions, "maxTokens">,
     FenceFormatOptions,
     DataFilter,
     ContentSafetyOptions {
   /**
    * Output format in the prompt. Defaults to Markdown table rendering.
    */
-  format?: 'json' | 'yaml' | 'csv';
+  format?: "json" | "yaml" | "csv";
 
   /**
    * GROQ query to filter the data
@@ -4510,31 +4391,29 @@ interface DefDataOptions
   query?: string;
 }
 
-interface DefSchemaOptions {
+ interface DefSchemaOptions {
   /**
    * Output format in the prompt.
    */
-  format?: 'typescript' | 'json' | 'yaml';
+  format?: "typescript" | "json" | "yaml";
 }
 
-type ChatFunctionArgs = { context: ToolCallContext } & Record<string, any>;
-type ChatFunctionHandler = (
-  args: ChatFunctionArgs
-) => Awaitable<ToolCallOutput>;
-type ChatMessageRole = 'user' | 'assistant' | 'system';
+ type ChatFunctionArgs = { context: ToolCallContext } & Record<string, any>;
+ type ChatFunctionHandler = (args: ChatFunctionArgs) => Awaitable<ToolCallOutput>;
+ type ChatMessageRole = "user" | "assistant" | "system";
 
-interface HistoryMessageUser {
-  role: 'user';
+ interface HistoryMessageUser {
+  role: "user";
   content: string;
 }
 
-interface HistoryMessageAssistant {
-  role: 'assistant';
+ interface HistoryMessageAssistant {
+  role: "assistant";
   name?: string;
   content: string;
 }
 
-interface WriteTextOptions extends ContextExpansionOptions {
+ interface WriteTextOptions extends ContextExpansionOptions {
   /**
    * Append text to the assistant response. This feature is not supported by all models.
    * @deprecated
@@ -4546,9 +4425,9 @@ interface WriteTextOptions extends ContextExpansionOptions {
   role?: ChatMessageRole;
 }
 
-type PromptGenerator = (ctx: ChatGenerationContext) => Awaitable<unknown>;
+ type PromptGenerator = (ctx: ChatGenerationContext) => Awaitable<unknown>;
 
-interface PromptGeneratorOptions
+ interface PromptGeneratorOptions
   extends ModelOptions,
     PromptSystemOptions,
     ContentSafetyOptions,
@@ -4570,20 +4449,20 @@ interface PromptGeneratorOptions
   throwOnError?: boolean;
 }
 
-interface FileOutputOptions {
+ interface FileOutputOptions {
   /**
    * Schema identifier to validate the generated file
    */
   schema?: string;
 }
 
-interface FileOutput {
+ interface FileOutput {
   pattern: string[];
   description?: string;
   options?: FileOutputOptions;
 }
 
-interface ImportTemplateOptions {
+ interface ImportTemplateOptions {
   /**
    * Ignore unknown arguments
    */
@@ -4592,10 +4471,10 @@ interface ImportTemplateOptions {
   /**
    * Template engine syntax
    */
-  format?: 'mustache' | 'jinja';
+  format?: "mustache" | "jinja";
 }
 
-interface PromptTemplateString {
+ interface PromptTemplateString {
   /**
    * Set a priority similar to CSS z-index
    * to control the trimming of the prompt when the context is full
@@ -4634,7 +4513,7 @@ interface PromptTemplateString {
   cacheControl(value: PromptCacheControlType): PromptTemplateString;
 }
 
-type ImportTemplateArgumentType =
+ type ImportTemplateArgumentType =
   | Awaitable<string | number | boolean>
   | (() => Awaitable<string | number | boolean>);
 
@@ -4643,59 +4522,43 @@ type ImportTemplateArgumentType =
  * Provides methods for importing templates, writing text, adding assistant responses,
  * creating template strings, fencing code blocks, defining variables, and logging.
  */
-interface ChatTurnGenerationContext {
+ interface ChatTurnGenerationContext {
   importTemplate(
     files: ElementOrArray<string | WorkspaceFile>,
     templateArguments?: Record<string, ImportTemplateArgumentType>,
-    options?: ImportTemplateOptions
+    options?: ImportTemplateOptions,
   ): void;
   writeText(body: Awaitable<string>, options?: WriteTextOptions): void;
-  assistant(
-    text: Awaitable<string>,
-    options?: Omit<WriteTextOptions, 'assistant'>
-  ): void;
+  assistant(text: Awaitable<string>, options?: Omit<WriteTextOptions, "assistant">): void;
   $(strings: TemplateStringsArray, ...args: any[]): PromptTemplateString;
   fence(body: StringLike, options?: FenceOptions): void;
   def(
     name: string,
-    body:
-      | string
-      | WorkspaceFile
-      | WorkspaceFile[]
-      | ShellOutput
-      | Fenced
-      | RunPromptResult,
-    options?: DefOptions
+    body: string | WorkspaceFile | WorkspaceFile[] | ShellOutput | Fenced | RunPromptResult,
+    options?: DefOptions,
   ): string;
-  defImages(
-    files: ElementOrArray<BufferLike>,
-    options?: DefImagesOptions
-  ): void;
-  defData(
-    name: string,
-    data: Awaitable<object[] | object>,
-    options?: DefDataOptions
-  ): string;
+  defImages(files: ElementOrArray<BufferLike>, options?: DefImagesOptions): void;
+  defData(name: string, data: Awaitable<object[] | object>, options?: DefDataOptions): string;
   defDiff<T extends string | WorkspaceFile>(
     name: string,
     left: T,
     right: T,
-    options?: DefDiffOptions
+    options?: DefDiffOptions,
   ): string;
   console: PromptGenerationConsole;
 }
 
-interface FileUpdate {
+ interface FileUpdate {
   before: string;
   after: string;
   validation?: FileEditValidation;
 }
 
-interface RunPromptResultPromiseWithOptions extends Promise<RunPromptResult> {
+ interface RunPromptResultPromiseWithOptions extends Promise<RunPromptResult> {
   options(values?: PromptGeneratorOptions): RunPromptResultPromiseWithOptions;
 }
 
-interface DefToolOptions extends ContentSafetyOptions {
+ interface DefToolOptions extends ContentSafetyOptions {
   /**
    * Maximum number of tokens per tool content response
    */
@@ -4717,7 +4580,7 @@ interface DefToolOptions extends ContentSafetyOptions {
    * If the intent is a function, it must build a LLM-as-Judge prompt that emits OK/ERR categories.
    */
   intent?:
-    | OptionsOrString<'description'>
+    | OptionsOrString<"description">
     | ((options: {
         tool: ToolDefinition;
         args: any;
@@ -4726,9 +4589,7 @@ interface DefToolOptions extends ContentSafetyOptions {
       }) => Awaitable<void>);
 }
 
-interface DefAgentOptions
-  extends Omit<PromptGeneratorOptions, 'label'>,
-    DefToolOptions {
+ interface DefAgentOptions extends Omit<PromptGeneratorOptions, "label">, DefToolOptions {
   /**
    * Excludes agent conversation from agent memory
    */
@@ -4740,12 +4601,12 @@ interface DefAgentOptions
   disableMemoryQuery?: boolean;
 }
 
-type ChatAgentHandler = (
+ type ChatAgentHandler = (
   ctx: ChatGenerationContext,
-  args: ChatFunctionArgs
+  args: ChatFunctionArgs,
 ) => Awaitable<unknown>;
 
-interface McpToolSpecification {
+ interface McpToolSpecification {
   /**
    * Tool identifier
    */
@@ -4754,17 +4615,15 @@ interface McpToolSpecification {
    * The high level intent of the tool, which can be used for LLM judge validation.
    * `description` uses the tool description as the intent.
    */
-  intent?: DefToolOptions['intent'];
+  intent?: DefToolOptions["intent"];
 }
 
-interface McpServerConfig extends ContentSafetyOptions {
+ interface McpServerConfig extends ContentSafetyOptions {
   /**
    * The executable to run to start the server.
    * Required for stdio transport, not used for URL-based transports.
    */
-  command?: OptionsOrString<
-    'npx' | 'uv' | 'uvx' | 'dotnet' | 'docker' | 'cargo'
-  >;
+  command?: OptionsOrString<"npx" | "uv" | "uvx" | "dotnet" | "docker" | "cargo">;
   /**
    * Command line arguments to pass to the executable.
    * Required for stdio transport, not used for URL-based transports.
@@ -4781,7 +4640,7 @@ interface McpServerConfig extends ContentSafetyOptions {
    * - "http": Use StreamableHTTPClientTransport (requires url)
    * - "sse": Use SSEClientTransport (requires url)
    */
-  type?: 'stdio' | 'http' | 'sse';
+  type?: "stdio" | "http" | "sse";
   /**
    * The server version
    */
@@ -4825,14 +4684,14 @@ interface McpServerConfig extends ContentSafetyOptions {
   /**
    * Validates that each tool has responses related to their description.
    */
-  intent?: DefToolOptions['intent'];
+  intent?: DefToolOptions["intent"];
 
   generator?: ChatGenerationContext;
 }
 
-type McpServersConfig = Record<string, Omit<McpServerConfig, 'id' | 'options'>>;
+ type McpServersConfig = Record<string, Omit<McpServerConfig, "id" | "options">>;
 
-interface McpAgentServerConfig extends McpServerConfig {
+ interface McpAgentServerConfig extends McpServerConfig {
   description: string;
   instructions?: string;
   /**
@@ -4841,14 +4700,11 @@ interface McpAgentServerConfig extends McpServerConfig {
   maxTokens?: number;
 }
 
-type McpAgentServersConfig = Record<
-  string,
-  Omit<McpAgentServerConfig, 'id' | 'options'>
->;
+ type McpAgentServersConfig = Record<string, Omit<McpAgentServerConfig, "id" | "options">>;
 
-type ZodTypeLike = { _def: any; safeParse: any; refine: any };
+ type ZodTypeLike = { _def: any; safeParse: any; refine: any };
 
-type BufferLike =
+ type BufferLike =
   | string
   | WorkspaceFile
   | Buffer
@@ -4858,11 +4714,11 @@ type BufferLike =
   | ReadableStream
   | SharedArrayBuffer;
 
-type TranscriptionModelType = OptionsOrString<
-  'openai:whisper-1' | 'openai:gpt-4o-transcribe' | 'whisperasr:default'
+ type TranscriptionModelType = OptionsOrString<
+  "openai:whisper-1" | "openai:gpt-4o-transcribe" | "whisperasr:default"
 >;
 
-interface ImageGenerationOptions extends ImageTransformOptions, RetryOptions {
+ interface ImageGenerationOptions extends ImageTransformOptions, RetryOptions {
   model?: OptionsOrString<ModelImageGenerationType>;
   /**
    * The quality of the image that will be generated.
@@ -4871,41 +4727,41 @@ interface ImageGenerationOptions extends ImageTransformOptions, RetryOptions {
    * high is supported for dall-e-3.
    * dall-e-2 ignores this flag
    */
-  quality?: 'auto' | 'low' | 'medium' | 'high';
+  quality?: "auto" | "low" | "medium" | "high";
   /**
    * Image size.
    * For gpt-image-1: 1024x1024, 1536x1024 (landscape), 1024x1536 (portrait), or auto (default value)
    * For dall-e: 256x256, 512x512, or 1024x1024 for dall-e-2, and one of 1024x1024, 1792x1024.
    */
   size?: OptionsOrString<
-    | 'auto'
-    | 'landscape'
-    | 'portrait'
-    | 'square'
-    | '1536x1024'
-    | '1024x1536'
-    | '256x256'
-    | '512x512'
-    | '1024x1024'
-    | '1024x1792'
-    | '1792x1024'
+    | "auto"
+    | "landscape"
+    | "portrait"
+    | "square"
+    | "1536x1024"
+    | "1024x1536"
+    | "256x256"
+    | "512x512"
+    | "1024x1024"
+    | "1024x1792"
+    | "1792x1024"
   >;
   /**
    * Only used for DALL-E 3
    */
-  style?: OptionsOrString<'vivid' | 'natural'>;
+  style?: OptionsOrString<"vivid" | "natural">;
 
   /**
    * For gpt-image-1 only, the type of image format to generate.
    */
-  outputFormat?: 'png' | 'jpeg' | 'webp';
+  outputFormat?: "png" | "jpeg" | "webp";
 
   /**
    * Generation mode. Defaults to "generate".
    * - "generate": Create new images from text prompts
    * - "edit": Edit existing images using text prompts and optional masks
    */
-  mode?: 'generate' | 'edit';
+  mode?: "generate" | "edit";
 
   /**
    * Input image for edit mode.
@@ -4921,7 +4777,7 @@ interface ImageGenerationOptions extends ImageTransformOptions, RetryOptions {
   mask?: BufferLike;
 }
 
-interface TranscriptionOptions extends CacheOptions, RetryOptions {
+ interface TranscriptionOptions extends CacheOptions, RetryOptions {
   /**
    * Model to use for transcription. By default uses the `transcribe` alias.
    */
@@ -4945,7 +4801,7 @@ interface TranscriptionOptions extends CacheOptions, RetryOptions {
   temperature?: number;
 }
 
-interface TranscriptionResult {
+ interface TranscriptionResult {
   /**
    * Complete transcription text
    */
@@ -4980,25 +4836,25 @@ interface TranscriptionResult {
   })[];
 }
 
-type SpeechModelType = OptionsOrString<
-  'openai:tts-1-hd' | 'openai:tts-1' | 'openai:gpt-4o-mini-tts'
+ type SpeechModelType = OptionsOrString<
+  "openai:tts-1-hd" | "openai:tts-1" | "openai:gpt-4o-mini-tts"
 >;
 
-type SpeechVoiceType = OptionsOrString<
-  | 'alloy'
-  | 'ash'
-  | 'coral'
-  | 'echo'
-  | 'fable'
-  | 'onyx'
-  | 'nova'
-  | 'sage'
-  | 'shimmer'
-  | 'verse'
-  | 'ballad'
+ type SpeechVoiceType = OptionsOrString<
+  | "alloy"
+  | "ash"
+  | "coral"
+  | "echo"
+  | "fable"
+  | "onyx"
+  | "nova"
+  | "sage"
+  | "shimmer"
+  | "verse"
+  | "ballad"
 >;
 
-interface SpeechOptions extends CacheOptions, RetryOptions {
+ interface SpeechOptions extends CacheOptions, RetryOptions {
   /**
    * Speech to text model
    */
@@ -5015,7 +4871,7 @@ interface SpeechOptions extends CacheOptions, RetryOptions {
   instructions?: string;
 }
 
-interface SpeechResult {
+ interface SpeechResult {
   /**
    * Generate audio-buffer file
    */
@@ -5026,68 +4882,58 @@ interface SpeechResult {
   error?: SerializedError;
 }
 
-interface ChatGenerationContext extends ChatTurnGenerationContext {
+ interface ChatGenerationContext extends ChatTurnGenerationContext {
   env: ExpansionVariables;
-  defSchema(
-    name: string,
-    schema: JSONSchema | ZodTypeLike,
-    options?: DefSchemaOptions
-  ): string;
+  defSchema(name: string, schema: JSONSchema | ZodTypeLike, options?: DefSchemaOptions): string;
   defTool(
-    tool: Omit<ToolCallback, 'generator'> | McpServersConfig | McpClient,
-    options?: DefToolOptions
+    tool: Omit<ToolCallback, "generator"> | McpServersConfig | McpClient,
+    options?: DefToolOptions,
   ): void;
   defTool(
     name: string,
     description: string,
     parameters: PromptParametersSchema | JSONSchema,
     fn: ChatFunctionHandler,
-    options?: DefToolOptions
+    options?: DefToolOptions,
   ): void;
   defAgent(
     name: string,
     description: string,
     fn: string | ChatAgentHandler,
-    options?: DefAgentOptions
+    options?: DefAgentOptions,
   ): void;
-  defChatParticipant(
-    participant: ChatParticipantHandler,
-    options?: ChatParticipantOptions
-  ): void;
+  defChatParticipant(participant: ChatParticipantHandler, options?: ChatParticipantOptions): void;
   defFileOutput(
     pattern: ElementOrArray<string | WorkspaceFile>,
     description: string,
-    options?: FileOutputOptions
+    options?: FileOutputOptions,
   ): void;
   runPrompt(
     generator: string | PromptGenerator,
-    options?: PromptGeneratorOptions
+    options?: PromptGeneratorOptions,
   ): Promise<RunPromptResult>;
-  prompt(
-    strings: TemplateStringsArray,
-    ...args: any[]
-  ): RunPromptResultPromiseWithOptions;
+  prompt(strings: TemplateStringsArray, ...args: any[]): RunPromptResultPromiseWithOptions;
   defFileMerge(fn: FileMergeHandler): void;
   defOutputProcessor(fn: PromptOutputProcessorHandler): void;
   transcribe(
     audio: string | WorkspaceFile,
-    options?: TranscriptionOptions
+    options?: TranscriptionOptions,
   ): Promise<TranscriptionResult>;
   speak(text: string, options?: SpeechOptions): Promise<SpeechResult>;
   generateImage(
     prompt: string,
-    options?: ImageGenerationOptions
+    options?: ImageGenerationOptions,
   ): Promise<{ image: WorkspaceFile; revisedPrompt?: string }>;
 }
 
-interface ChatGenerationContextOptions {
+ interface ChatGenerationContextOptions {
   /**
    * Prompt generation context
    */
   generator?: ChatGenerationContext;
 }
 
-interface GenerationOutput {
+ interface GenerationOutput {
   /**
    * full chat history
    */
@@ -5139,12 +4985,12 @@ interface GenerationOutput {
   usage?: RunPromptUsage;
 }
 
-type Point = {
+ type Point = {
   row: number;
   column: number;
 };
 
-interface DebugLogger {
+ interface DebugLogger {
   /**
    * Creates a debug logging function. Debug uses printf-style formatting. Below are the officially supported formatters:
    * - `%O`	Pretty-print an Object on multiple lines.
@@ -5167,7 +5013,7 @@ interface DebugLogger {
   namespace: string;
 }
 
-interface LoggerHost {
+ interface LoggerHost {
   /**
    * Creates a debug logging function. Debug uses printf-style formatting. Below are the officially supported formatters:
    * - `%O`	Pretty-print an Object on multiple lines.
@@ -5182,7 +5028,7 @@ interface LoggerHost {
   logger(category: string): DebugLogger;
 }
 
-interface ShellOptions {
+ interface ShellOptions {
   cwd?: string;
 
   stdin?: string;
@@ -5212,37 +5058,37 @@ interface ShellOptions {
   isolateEnv?: boolean;
 }
 
-interface ShellOutput {
+ interface ShellOutput {
   stdout?: string;
   stderr?: string;
   exitCode: number;
   failed?: boolean;
 }
 
-interface TimeoutOptions {
+ interface TimeoutOptions {
   /**
    * Maximum time in milliseconds. Default to no timeout
    */
   timeout?: number;
 }
 
-interface ShellSelectOptions {}
+ interface ShellSelectOptions {}
 
-interface ShellSelectChoice {
+ interface ShellSelectChoice {
   name?: string;
   value: string;
   description?: string;
 }
 
-interface ShellInputOptions {
+ interface ShellInputOptions {
   required?: boolean;
 }
 
-interface ShellConfirmOptions {
+ interface ShellConfirmOptions {
   default?: boolean;
 }
 
-interface ShellHost {
+ interface ShellHost {
   /**
    * Executes a shell command
    * @param command
@@ -5250,57 +5096,53 @@ interface ShellHost {
    * @param options
    */
   exec(commandWithArgs: string, options?: ShellOptions): Promise<ShellOutput>;
-  exec(
-    command: string,
-    args: string[],
-    options?: ShellOptions
-  ): Promise<ShellOutput>;
+  exec(command: string, args: string[], options?: ShellOptions): Promise<ShellOutput>;
 }
 
-interface McpToolReference {
+ interface McpToolReference {
   name: string;
   description?: string;
   inputSchema?: JSONSchema;
 }
 
-interface McpResourceReference {
+ interface McpResourceReference {
   name?: string;
   description?: string;
   uri: string;
   mimeType?: string;
 }
 
-interface McpServerToolResultTextPart {
-  type: 'text';
+ interface McpServerToolResultTextPart {
+  type: "text";
   text: string;
 }
 
-interface McpServerToolResultImagePart {
-  type: 'image';
+ interface McpServerToolResultImagePart {
+  type: "image";
   data: string;
   mimeType: string;
 }
 
-interface McpServerToolResourcePart {
-  type: 'resource';
+ interface McpServerToolResourcePart {
+  type: "resource";
   text?: string;
   uri?: string;
   mimeType?: string;
   blob?: string;
 }
 
-type McpServerToolResultPart =
+ type McpServerToolResultPart =
   | McpServerToolResultTextPart
   | McpServerToolResultImagePart
   | McpServerToolResourcePart;
 
-interface McpServerToolResult {
+ interface McpServerToolResult {
   isError?: boolean;
   content: McpServerToolResultPart[];
   text?: string;
 }
 
-interface McpClient extends AsyncDisposable {
+ interface McpClient extends AsyncDisposable {
   /**
    * Configuration of the server
    */
@@ -5336,11 +5178,8 @@ interface McpClient extends AsyncDisposable {
    * @param name Call the MCP tool
    * @param args
    */
-
-  callTool(
-    name: string,
-    args: Record<string, any>
-  ): Promise<McpServerToolResult>;
+   
+  callTool(name: string, args: Record<string, any>): Promise<McpServerToolResult>;
 
   /**
    * Closes clients and server.
@@ -5348,21 +5187,21 @@ interface McpClient extends AsyncDisposable {
   dispose(): Promise<void>;
 }
 
-interface McpHost {
+ interface McpHost {
   /**
    * Starts a Model Context Protocol server and returns a client.
    */
   mcpServer(config: McpServerConfig): Promise<McpClient>;
 }
 
-interface ResourceReference {
+ interface ResourceReference {
   uri: string; // Unique identifier for the resource
   name: string; // Human-readable name
   description?: string; // Optional description
   mimeType?: string; // Optional MIME type
 }
 
-interface ResourceHost {
+ interface ResourceHost {
   /**
    * Publishes a resource that will be exposed through the MCP server protocol.
    * @param content
@@ -5370,8 +5209,7 @@ interface ResourceHost {
   publishResource(
     name: string,
     content: BufferLike,
-    options?: Partial<Pick<ResourceReference, 'description' | 'mimeType'>> &
-      SecretDetectionOptions
+    options?: Partial<Pick<ResourceReference, "description" | "mimeType">> & SecretDetectionOptions,
   ): Promise<string>;
 
   /**
@@ -5384,12 +5222,10 @@ interface ResourceHost {
    * @param url - The URL to resolve.
    * @returns A promise that resolves to an object containing the parsed URI and resolved files, or undefined if resolution fails.
    */
-  resolveResource(
-    url: string
-  ): Promise<{ uri: URL; files: WorkspaceFile[] } | undefined>;
+  resolveResource(url: string): Promise<{ uri: URL; files: WorkspaceFile[] } | undefined>;
 }
 
-interface UserInterfaceHost {
+ interface UserInterfaceHost {
   /**
    * Asks the user to select between options
    * @param message question to ask
@@ -5398,7 +5234,7 @@ interface UserInterfaceHost {
   select(
     message: string,
     choices: (string | ShellSelectChoice)[],
-    options?: ShellSelectOptions
+    options?: ShellSelectOptions,
   ): Promise<string>;
 
   /**
@@ -5414,20 +5250,18 @@ interface UserInterfaceHost {
   confirm(message: string, options?: ShellConfirmOptions): Promise<boolean>;
 }
 
-interface ContainerPortBinding {
-  containerPort: OptionsOrString<'8000/tcp'>;
+ interface ContainerPortBinding {
+  containerPort: OptionsOrString<"8000/tcp">;
   hostPort: string | number;
 }
 
-interface ContainerOptions {
+ interface ContainerOptions {
   /**
    * Container image names.
    * @example python:alpine python:slim python
    * @see https://hub.docker.com/_/python/
    */
-  image?: OptionsOrString<
-    'python:alpine' | 'python:slim' | 'python' | 'node' | 'gcc'
-  >;
+  image?: OptionsOrString<"python:alpine" | "python:slim" | "python" | "node" | "gcc">;
 
   /**
    * Enable networking in container (disabled by default)
@@ -5460,7 +5294,7 @@ interface ContainerOptions {
   postCreateCommands?: ElementOrArray<string>;
 }
 
-interface PromiseQueue {
+ interface PromiseQueue {
   /**
    * Adds a new promise to the queue
    * @param fn
@@ -5488,13 +5322,13 @@ interface PromiseQueue {
   ): Promise<ReturnType[]>;
 }
 
-interface LanguageModelReference {
+ interface LanguageModelReference {
   provider: ModelProviderType;
   model: ModelType;
   modelId: string;
 }
 
-interface LanguageModelInfo {
+ interface LanguageModelInfo {
   id: ModelType;
   details?: string;
   url?: string;
@@ -5505,7 +5339,7 @@ interface LanguageModelInfo {
   family?: string;
 }
 
-interface LanguageModelProviderInfo {
+ interface LanguageModelProviderInfo {
   id: ModelProviderType;
   version?: string;
   error?: string;
@@ -5514,7 +5348,7 @@ interface LanguageModelProviderInfo {
   token?: string; // Optional token for the provider
 }
 
-interface LanguageModelHost {
+ interface LanguageModelHost {
   /**
    * Resolve a language model alias to a provider and model based on the current configuration
    * @param modelId
@@ -5531,13 +5365,13 @@ interface LanguageModelHost {
       listModels?: boolean;
       // If true, return the token
       token?: boolean;
-    }
+    },
   ): Promise<LanguageModelProviderInfo>;
 }
 
-type ContentSafetyProvider = 'azure';
+ type ContentSafetyProvider = "azure";
 
-interface ContentSafetyHost {
+ interface ContentSafetyHost {
   /**
    * Resolve a content safety client
    * @param id safety detection project
@@ -5545,7 +5379,7 @@ interface ContentSafetyHost {
   contentSafety(id?: ContentSafetyProvider): Promise<ContentSafety>;
 }
 
-interface RetryOptions {
+ interface RetryOptions {
   retryOn?: number[]; // HTTP status codes to retry on
   retries?: number; // Number of retry attempts
   retryDelay?: number; // Initial delay between retries
@@ -5553,7 +5387,7 @@ interface RetryOptions {
   maxRetryAfter?: number; // Maximum retry-after in milliseconds before giving up
 }
 
-interface CacheOptions {
+ interface CacheOptions {
   /**
    * By default, LLM queries are not cached.
    * If true, the LLM request will be cached. Use a string to override the default cache name
@@ -5561,13 +5395,13 @@ interface CacheOptions {
   cache?: boolean | string;
 }
 
-type FetchOptions = RequestInit & RetryOptions;
+ type FetchOptions = RequestInit & RetryOptions;
 
-type FetchTextOptions = Omit<FetchOptions, 'body' | 'signal' | 'window'> & {
-  convert?: 'markdown' | 'text' | 'tables';
+ type FetchTextOptions = Omit<FetchOptions, "body" | "signal" | "window"> & {
+  convert?: "markdown" | "text" | "tables";
 };
 
-interface PromptHost
+ interface PromptHost
   extends ShellHost,
     LoggerHost,
     McpHost,
@@ -5578,10 +5412,7 @@ interface PromptHost
   /**
    * A fetch wrapper with proxy, retry and timeout handling.
    */
-  fetch(
-    input: string | URL | globalThis.Request,
-    init?: FetchOptions
-  ): Promise<Response>;
+  fetch(input: string | URL | globalThis.Request, init?: FetchOptions): Promise<Response>;
 
   /**
    * A function that fetches text from a URL or a file
@@ -5590,7 +5421,7 @@ interface PromptHost
    */
   fetchText(
     url: string | WorkspaceFile,
-    options?: FetchTextOptions
+    options?: FetchTextOptions,
   ): Promise<{
     ok: boolean;
     status: number;
@@ -5624,7 +5455,7 @@ interface PromptHost
   teamsChannel(shareUrl?: string): Promise<MessageChannelClient>;
 }
 
-interface WorkspaceFileWithDescription extends WorkspaceFile {
+ interface WorkspaceFileWithDescription extends WorkspaceFile {
   /**
    * File description used for videos.
    */
@@ -5634,7 +5465,7 @@ interface WorkspaceFileWithDescription extends WorkspaceFile {
 /**
  * A client to a messaging channel
  */
-interface MessageChannelClient {
+ interface MessageChannelClient {
   /**
    * Posts a message with attachments to the channel
    * @param message
@@ -5651,11 +5482,11 @@ interface MessageChannelClient {
        * Sets to false to remove AI generated disclaimer
        */
       disclaimer?: boolean | string;
-    }
+    },
   ): Promise<string>;
 }
 
-interface ContainerHost extends ShellHost {
+ interface ContainerHost extends ShellHost {
   /**
    * Container unique identifier in provider
    */
@@ -5697,7 +5528,7 @@ interface ContainerHost extends ShellHost {
   copyTo(
     fromHost: string | string[],
     toContainer: string,
-    options?: Omit<FindFilesOptions, 'readText'>
+    options?: Omit<FindFilesOptions, "readText">,
   ): Promise<string[]>;
 
   /**
@@ -5732,7 +5563,7 @@ interface ContainerHost extends ShellHost {
   scheduler: PromiseQueue;
 }
 
-interface PromptContext extends ChatGenerationContext {
+ interface PromptContext extends ChatGenerationContext {
   script(options: PromptArgs): void;
   system(options: PromptSystemArgs): void;
   path: Path;
@@ -5741,17 +5572,17 @@ interface PromptContext extends ChatGenerationContext {
   host: PromptHost;
 }
 
-type RuntimePromptContext = Pick<
+ type RuntimePromptContext = Pick<
   PromptContext,
-  | 'host'
-  | 'env'
-  | 'workspace'
-  | 'retrieval'
-  | 'prompt'
-  | 'runPrompt'
-  | 'generateImage'
-  | 'transcribe'
-  | 'speak'
+  | "host"
+  | "env"
+  | "workspace"
+  | "retrieval"
+  | "prompt"
+  | "runPrompt"
+  | "generateImage"
+  | "transcribe"
+  | "speak"
 >;
 // Copyright (c) Microsoft Corporation.
 // Licensed under the MIT License.
@@ -5782,34 +5613,28 @@ declare function system(options: PromptSystemArgs): void;
 declare function importTemplate(
   files: ElementOrArray<string | WorkspaceFile>,
   arguments?: Record<string, ImportTemplateArgumentType>,
-  options?: ImportTemplateOptions
+  options?: ImportTemplateOptions,
 ): void;
 
 /**
  * Append given string to the prompt. It automatically appends "\n".
  * Typically best to use `` $`...` ``-templates instead.
  */
-declare function writeText(
-  body: Awaitable<string>,
-  options?: WriteTextOptions
-): void;
+declare function writeText(body: Awaitable<string>, options?: WriteTextOptions): void;
 
 /**
  * Append given string to the prompt as an assistant message.
  */
 declare function assistant(
   text: Awaitable<string>,
-  options?: Omit<WriteTextOptions, 'assistant'>
+  options?: Omit<WriteTextOptions, "assistant">,
 ): void;
 
 /**
  * Append given string to the prompt. It automatically appends "\n".
  * `` $`foo` `` is the same as `text("foo")`.
  */
-declare function $(
-  strings: TemplateStringsArray,
-  ...args: any[]
-): PromptTemplateString;
+declare function $(strings: TemplateStringsArray, ...args: any[]): PromptTemplateString;
 
 /**
  * Appends given (often multi-line) string to the prompt, surrounded in fences.
@@ -5829,14 +5654,8 @@ declare function fence(body: StringLike, options?: FenceOptions): void;
  */
 declare function def(
   name: string,
-  body:
-    | string
-    | WorkspaceFile
-    | WorkspaceFile[]
-    | ShellOutput
-    | Fenced
-    | RunPromptResult,
-  options?: DefOptions
+  body: string | WorkspaceFile | WorkspaceFile[] | ShellOutput | Fenced | RunPromptResult,
+  options?: DefOptions,
 ): string;
 
 /**
@@ -5848,7 +5667,7 @@ declare function def(
 declare function defFileOutput(
   pattern: ElementOrArray<string | WorkspaceFile>,
   description?: string,
-  options?: FileOutputOptions
+  options?: FileOutputOptions,
 ): void;
 
 /**
@@ -5860,15 +5679,15 @@ declare function defFileOutput(
  * @param fn callback invoked when the LLM requests to run this function
  */
 declare function defTool(
-  tool: Omit<ToolCallback, 'generator'> | McpServersConfig,
-  options?: DefToolOptions
+  tool: Omit<ToolCallback, "generator"> | McpServersConfig,
+  options?: DefToolOptions,
 ): void;
 declare function defTool(
   name: string,
   description: string,
   parameters: PromptParametersSchema | JSONSchema,
   fn: ChatFunctionHandler,
-  options?: DefToolOptions
+  options?: DefToolOptions,
 ): void;
 
 /**
@@ -5882,7 +5701,7 @@ declare function defAgent(
   name: string,
   description: string,
   fn: string | ChatAgentHandler,
-  options?: DefAgentOptions
+  options?: DefAgentOptions,
 ): void;
 
 /**
@@ -5996,13 +5815,8 @@ declare let tokenizers: Tokenizers;
  */
 declare function fetchText(
   url: string | WorkspaceFile,
-  options?: FetchTextOptions
-): Promise<{
-  ok: boolean;
-  status: number;
-  text?: string;
-  file?: WorkspaceFile;
-}>;
+  options?: FetchTextOptions,
+): Promise<{ ok: boolean; status: number; text?: string; file?: WorkspaceFile }>;
 
 /**
  * Declares a JSON schema variable.
@@ -6013,7 +5827,7 @@ declare function fetchText(
 declare function defSchema(
   name: string,
   schema: JSONSchema | ZodTypeLike,
-  options?: DefSchemaOptions
+  options?: DefSchemaOptions,
 ): string;
 
 /**
@@ -6021,10 +5835,7 @@ declare function defSchema(
  * @param files
  * @param options
  */
-declare function defImages(
-  files: ElementOrArray<BufferLike>,
-  options?: DefImagesOptions
-): void;
+declare function defImages(files: ElementOrArray<BufferLike>, options?: DefImagesOptions): void;
 
 /**
  * Renders a table or object in the prompt
@@ -6036,7 +5847,7 @@ declare function defImages(
 declare function defData(
   name: string,
   data: Awaitable<object[] | object>,
-  options?: DefDataOptions
+  options?: DefDataOptions,
 ): string;
 
 /**
@@ -6049,7 +5860,7 @@ declare function defDiff<T extends string | WorkspaceFile>(
   name: string,
   left: T,
   right: T,
-  options?: DefDiffOptions
+  options?: DefDiffOptions,
 ): string;
 
 /**
@@ -6064,7 +5875,7 @@ declare function cancel(reason?: string): void;
  */
 declare function runPrompt(
   generator: string | PromptGenerator,
-  options?: PromptGeneratorOptions
+  options?: PromptGeneratorOptions,
 ): Promise<RunPromptResult>;
 
 /**
@@ -6087,7 +5898,7 @@ declare function defOutputProcessor(fn: PromptOutputProcessorHandler): void;
  */
 declare function defChatParticipant(
   participant: ChatParticipantHandler,
-  options?: ChatParticipantOptions
+  options?: ChatParticipantOptions,
 ): void;
 
 /**
@@ -6097,7 +5908,7 @@ declare function defChatParticipant(
  */
 declare function transcribe(
   audio: string | WorkspaceFile,
-  options?: TranscriptionOptions
+  options?: TranscriptionOptions,
 ): Promise<TranscriptionResult>;
 
 /**
@@ -6105,10 +5916,7 @@ declare function transcribe(
  * @param text
  * @param options
  */
-declare function speak(
-  text: string,
-  options?: SpeechOptions
-): Promise<SpeechResult>;
+declare function speak(text: string, options?: SpeechOptions): Promise<SpeechResult>;
 
 /**
  * Generate an image and return the workspace file.
@@ -6117,5 +5925,5 @@ declare function speak(
  */
 declare function generateImage(
   prompt: string,
-  options?: ImageGenerationOptions
+  options?: ImageGenerationOptions,
 ): Promise<{ image: WorkspaceFile; revisedPrompt?: string }>;
