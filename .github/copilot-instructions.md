@@ -79,3 +79,5 @@
 - Whenever asked to implement a solution, and you are on the main or default branch, always start by creating a new branch.
 
 - Always use every tool available before beginning and finishing your implementation.
+
+- Always add Copilot as a reviewer to each PR
