@@ -50,6 +50,7 @@
     "prettier": "^3.5.3",
     "prettier-plugin-astro": "^0.14.1",
     "sharp": "^0.34.2",
+    "wait-on": "^8.0.4",
     "wireit": "^0.14.12",
     "wrangler": "^4.14.1"
   },
