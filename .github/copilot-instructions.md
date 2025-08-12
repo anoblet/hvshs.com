@@ -2,7 +2,7 @@
 
 ## Tools
 
-#file:../.copilot/instructions/git-flow.md
+#file:../.copilot/instructions/git-flow.instructions.md
 #file:../.copilot/instructions/memory.instructions.md
 #file:../.copilot/instructions/playwright.instructions.md
 #file:../.copilot/instructions/prompt.instructions.md
