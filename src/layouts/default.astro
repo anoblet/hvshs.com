@@ -78,21 +78,21 @@ const { title, description = 'Astro description' } = Astro.props;
     min-height: 100vh;
   }
 
-  /* Interstitial is visible by default with immediate dark theme styling */
+  /* Interstitial: Show while any custom elements are not yet defined */
   #interstitial {
-    opacity: 1;
-    pointer-events: auto;
-    transition: opacity 0.3s ease-in-out;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: oklch(0.205 0 0); /* --color-neutral-900 dark theme */
+    background-color: oklch(0.205 0 0); /* Dark theme background */
     z-index: 9999;
     display: flex;
     align-items: center;
     justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease-in-out;
   }
 
   #interstitial .interstitial-content {
@@ -102,7 +102,7 @@ const { title, description = 'Astro description' } = Astro.props;
   }
 
   #interstitial .interstitial-planet {
-    fill: oklch(0.91 0.096 180.426); /* --color-teal-200 dark theme */
+    fill: oklch(0.91 0.096 180.426); /* Teal color for dark theme */
     animation: pulse 2s ease-in-out infinite;
   }
 
@@ -116,20 +116,22 @@ const { title, description = 'Astro description' } = Astro.props;
     }
   }
 
-  /* Main content is hidden by default */
-  .hidden-until-loaded {
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
-  }
-
-  /* Hide interstitial and show main content when all custom elements are defined */
-  body:not(:has(*:not(:defined))) #interstitial {
-    opacity: 0;
-    pointer-events: none;
-  }
-
-  body:not(:has(*:not(:defined))) .hidden-until-loaded {
+  /* Show interstitial when any custom elements are not defined */
+  *:not(:defined) ~ #interstitial,
+  body:has(*:not(:defined)) #interstitial {
     opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* Hide main content while custom elements are loading */
+  body:has(*:not(:defined)) .hidden-until-loaded {
+    opacity: 0;
+  }
+
+  /* Show main content when all custom elements are defined */
+  .hidden-until-loaded {
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
   }
 
   main {
@@ -189,62 +191,7 @@ const { title, description = 'Astro description' } = Astro.props;
     }
   });
 
-  // Interstitial management with fallback for browsers that don't support :has()
-  function checkCustomElements() {
-    const customElementTags = [
-      'contact-component',
-      'theme-toggle',
-      'loading-bar',
-    ];
-    const allDefined = customElementTags.every(tag => customElements.get(tag));
-    const interstitial = document.getElementById('interstitial') as HTMLElement;
-    const hiddenContent = document.querySelector(
-      '.hidden-until-loaded'
-    ) as HTMLElement;
-
-    if (allDefined) {
-      // All custom elements are defined, hide interstitial and show content
-      if (interstitial) {
-        interstitial.style.opacity = '0';
-        interstitial.style.pointerEvents = 'none';
-      }
-      if (hiddenContent) {
-        hiddenContent.style.opacity = '1';
-      }
-      return true;
-    }
-    return false;
-  }
-
-  // Check immediately
-  if (!checkCustomElements()) {
-    // Poll for custom element definition
-    const checkInterval = setInterval(() => {
-      if (checkCustomElements()) {
-        clearInterval(checkInterval);
-      }
-    }, 50);
-
-    // Cleanup after maximum wait time
-    setTimeout(() => {
-      clearInterval(checkInterval);
-      // Force show content after timeout
-      const interstitial = document.getElementById(
-        'interstitial'
-      ) as HTMLElement;
-      const hiddenContent = document.querySelector(
-        '.hidden-until-loaded'
-      ) as HTMLElement;
-      if (interstitial) {
-        interstitial.style.opacity = '0';
-        interstitial.style.pointerEvents = 'none';
-      }
-      if (hiddenContent) {
-        hiddenContent.style.opacity = '1';
-      }
-    }, 3000);
-  }
-
+  // Analytics - deferred loading
   let analyticsActivated = false;
   const activateAnalytics = () => {
     if (analyticsActivated) return;
