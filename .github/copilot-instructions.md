@@ -1,12 +1,6 @@
-# Copilot Instructions
+# Project Instructions
 
-## Tools
-
-#file:../.copilot/instructions/git-flow.instructions.md
-#file:../.copilot/instructions/memory.instructions.md
-#file:../.copilot/instructions/playwright.instructions.md
-#file:../.copilot/instructions/prompt.instructions.md
-#file:../.copilot/instructions/sequential-thinking.instructions.md
+#file:../.copilot/instructions/index.instructions.md
 
 ## 🎯 PRIORITY: USER CLARIFICATIONS & MANUAL MODIFICATIONS 🎯
 
