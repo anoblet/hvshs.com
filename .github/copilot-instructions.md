@@ -80,6 +80,8 @@
 
 - Always use every tool available before beginning and finishing your implementation.
 
-- Always add Copilot as a reviewer to each PR
+- When you are ready to begin your work, create a new branch for your changes. When you are finished, file a PR to the `develop` branch.
 
-**_ NEVER MODIFY THIS PROJECTS `main` BRANCH! _**
+- Always assign the PR to `anoblet` and add Copilot as a reviewer.
+
+**_ NEVER MODIFY THE `main` BRANCH! _**
