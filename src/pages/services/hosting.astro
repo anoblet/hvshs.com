@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts/default.astro';
 import Card from '@components/Card.astro';
+import ArrowForward from '@icons/arrow-forward.svg';
 ---
 
 <Layout
@@ -131,8 +132,13 @@ import Card from '@components/Card.astro';
     </section>
 
     <div class="text-align-center margin-top-4">
-      <button-component href="/services/hosting/pricing" variant="primary">
+      <button-component
+        href="/services/hosting/pricing"
+        variant="primary"
+        class="min-width-25vw"
+      >
         View Hosting Pricing
+        <ArrowForward />
       </button-component>
     </div>
   </div>
