@@ -1,8 +1,6 @@
-/* Optimized font loading - only critical weights */
+/* Critical font loading optimization - minimal font loading */
 @import '@fontsource/noto-sans/latin-400.css';
 @import '@fontsource/noto-sans/latin-600.css';
-
-@import '@fontsource/poppins/latin-800.css';
 
 :root {
   --font-display: swap;
