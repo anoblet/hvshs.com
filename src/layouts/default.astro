@@ -125,13 +125,12 @@ const { title, description = 'Astro description' } = Astro.props;
 
   /* Hide main content while custom elements are loading */
   body:has(*:not(:defined)) .hidden-until-loaded {
-    opacity: 0;
+    visibility: hidden;
   }
 
   /* Show main content when all custom elements are defined */
   .hidden-until-loaded {
-    opacity: 1;
-    transition: opacity 0.3s ease-in-out;
+    visibility: visible;
   }
 
   main {
