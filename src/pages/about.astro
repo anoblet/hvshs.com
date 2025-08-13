@@ -2,6 +2,7 @@
 import Layout from '@layouts/default.astro';
 import Card from '@components/Card.astro';
 import profileImage from '@assets/images/profile.webp';
+import ArrowForward from '@icons/arrow-forward.svg';
 ---
 
 <Layout
@@ -208,8 +209,11 @@ import profileImage from '@assets/images/profile.webp';
         Let's connect and discuss how my experience can help bring your vision
         to life.
       </p>
-      <div class="gap grid">
-        <button-component href="/contact"> Get in Touch </button-component>
+      <div class="gap grid justify-content-center">
+        <button-component href="/contact" class="min-width-25vw">
+          Get in Touch
+          <ArrowForward />
+        </button-component>
       </div>
     </section>
   </div>

@@ -129,6 +129,10 @@ export const utility = css`
     max-width: 16rem;
   }
 
+  .min-width-25vw {
+    min-width: 25vw;
+  }
+
   .padding-horizontal-1 {
     padding: 0 1rem;
   }
