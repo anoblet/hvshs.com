@@ -47,7 +47,6 @@ const { title, description = 'Astro description' } = Astro.props;
       <slot />
     </main>
     <Footer />
-    <contact-component></contact-component>
     <theme-toggle></theme-toggle>
     <style>
       .skip-link {
@@ -188,6 +187,21 @@ const { title, description = 'Astro description' } = Astro.props;
       loadingBar.complete();
     }
   });
+
+  // Lazy load contact component after page is interactive
+  const loadContactComponent = () => {
+    if (!document.querySelector('contact-component')) {
+      const contactElement = document.createElement('contact-component');
+      document.body.appendChild(contactElement);
+    }
+  };
+
+  // Load contact component after interaction or idle
+  if ((window as any).requestIdleCallback) {
+    (window as any).requestIdleCallback(loadContactComponent);
+  } else {
+    setTimeout(loadContactComponent, 1000);
+  }
 
   // Analytics - deferred loading
   let analyticsActivated = false;
