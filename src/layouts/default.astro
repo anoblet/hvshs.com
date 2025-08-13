@@ -143,6 +143,8 @@ const { title, description = 'Astro description' } = Astro.props;
   }
 </style>
 <script>
+  import '@components/contact';
+  import '@components/social';
   import '@components/theme/toggle';
   import '@components/loading-bar';
   import { globalStyles } from '@styles/global';
@@ -159,19 +161,6 @@ const { title, description = 'Astro description' } = Astro.props;
   }
 
   applyStoredTheme();
-
-  // Defer loading of non-critical components
-  if ('requestIdleCallback' in window) {
-    (window as any).requestIdleCallback(() => {
-      import('@components/contact');
-      import('@components/social');
-    });
-  } else {
-    setTimeout(() => {
-      import('@components/contact');
-      import('@components/social');
-    }, 100);
-  }
 
   document.addEventListener('astro:after-swap', applyStoredTheme);
 
