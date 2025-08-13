@@ -57,6 +57,10 @@ export const utility = css`
     height: 0.5rem;
   }
 
+  .justify-content-center {
+    justify-content: center;
+  }
+
   .justify-content-space-around {
     justify-content: space-around;
   }
