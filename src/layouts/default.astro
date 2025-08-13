@@ -103,16 +103,15 @@ const { title, description = 'Astro description' } = Astro.props;
 
   #interstitial .interstitial-planet {
     fill: oklch(0.91 0.096 180.426); /* Teal color for dark theme */
-    animation: pulse 2s ease-in-out infinite;
+    animation: spin 2s linear infinite;
   }
 
-  @keyframes pulse {
-    0%,
-    100% {
-      transform: scale(1);
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
     }
-    50% {
-      transform: scale(1.2);
+    to {
+      transform: rotate(360deg);
     }
   }
 
