@@ -56,6 +56,10 @@ export const style = css`
 
     a {
       padding: 0 1rem;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      flex: 1;
     }
   }
 
@@ -64,12 +68,14 @@ export const style = css`
     height: 100%;
     display: flex;
     align-items: center;
+    flex: 1;
 
     .dropdown-trigger {
       padding: 0 1rem;
       height: 100%;
       display: flex;
       align-items: center;
+      flex: 1;
     }
 
     .dropdown-menu {

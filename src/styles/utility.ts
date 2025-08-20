@@ -57,6 +57,10 @@ export const utility = css`
     height: 0.5rem;
   }
 
+  .justify-content-center {
+    justify-content: center;
+  }
+
   .justify-content-space-around {
     justify-content: space-around;
   }
@@ -127,6 +131,10 @@ export const utility = css`
 
   .max-width-16 {
     max-width: 16rem;
+  }
+
+  .min-width-25vw {
+    min-width: 25vw;
   }
 
   .padding-horizontal-1 {
@@ -216,62 +224,5 @@ export const utility = css`
     .desktop-large {
       display: block;
     }
-  }
-
-  /* Interstitial loading utility classes */
-  .interstitial {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: var(--body-background-color, #fff);
-    z-index: 9999;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 1;
-    pointer-events: auto;
-    transition: opacity 0.3s ease-in-out;
-  }
-
-  .interstitial-content {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .interstitial-planet {
-    animation: pulse 2s ease-in-out infinite;
-    fill: var(--primary-color, var(--color-sky-600));
-  }
-
-  /* Support for dark mode when primary-color is not yet loaded */
-  @media (prefers-color-scheme: dark) {
-    .interstitial {
-      background-color: var(--body-background-color, #0a0a0a);
-    }
-    .interstitial-planet {
-      fill: var(--primary-color, var(--color-teal-200));
-    }
-  }
-
-  @keyframes pulse {
-    0%,
-    100% {
-      transform: scale(1);
-    }
-    50% {
-      transform: scale(1.2);
-    }
-  }
-
-  .hidden-until-loaded {
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
-  }
-
-  .loaded .hidden-until-loaded {
-    opacity: 1;
   }
 `;

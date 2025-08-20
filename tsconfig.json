@@ -1,19 +1,40 @@
 {
-  "compilerOptions": {
-    "baseUrl": ".",
-    "paths": {
-      "@assets/*": ["src/assets/*"],
-      "@components/*": ["src/components/*"],
-      "@icons/*": ["src/icons/*"],
-      "@layouts/*": ["src/layouts/*"],
-      "@mixins/*": ["src/mixins/*"],
-      "@styles/*": ["src/styles/*"],
-      "@themes/*": ["src/themes/*"],
-      "@utility/*": ["src/utility/*"]
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "@assets/*": [
+                "src/assets/*"
+            ],
+            "@components/*": [
+                "src/components/*"
+            ],
+            "@icons/*": [
+                "src/icons/*"
+            ],
+            "@layouts/*": [
+                "src/layouts/*"
+            ],
+            "@mixins/*": [
+                "src/mixins/*"
+            ],
+            "@styles/*": [
+                "src/styles/*"
+            ],
+            "@themes/*": [
+                "src/themes/*"
+            ],
+            "@utility/*": [
+                "src/utility/*"
+            ]
+        },
+        "target": "esnext"
     },
-    "target": "esnext"
-  },
-  "extends": "astro/tsconfigs/strict",
-  "include": [".astro/types.d.ts", "**/*"],
-  "exclude": ["dist"]
+    "extends": "astro/tsconfigs/strict",
+    "include": [
+        ".astro/types.d.ts",
+        "**/*"
+    ],
+    "exclude": [
+        "dist"
+    ]
 }

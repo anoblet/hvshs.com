@@ -83,13 +83,20 @@ const arrowForward = '';
       <h2>Ready to Get Started?</h2>
       <p>Let's connect and find the perfect solution for your project.</p>
       <span class="space"></span>
-      <a
-        class="button button-primary justify-content-center"
-        href="https://calendar.app.google/JjnLtVR6mnM11FcS9"
-      >
-        Book a Free Consultation
-        <ArrowForward />
-      </a>
+      <div class="flex justify-content-center">
+        <button-component
+          href="https://calendar.app.google/JjnLtVR6mnM11FcS9"
+          variant="primary"
+          class="min-width-25vw"
+        >
+          Book a Free Consultation
+          <ArrowForward />
+        </button-component>
+      </div>
     </section>
   </div>
 </Layout>
+
+<script>
+  import '@components/button';
+</script>

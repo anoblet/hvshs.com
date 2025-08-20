@@ -1,12 +1,6 @@
-# Copilot Instructions
+# Project Instructions
 
-# Tools
-
-#file:../.copilot/instructions/git-flow.md
-#file:../.copilot/instructions/memory.instructions.md
-#file:../.copilot/instructions/playwright.instructions.md
-#file:../.copilot/instructions/prompts.instructions.md
-#file:../.copilot/instructions/sequential-thinking.instructions.md
+#file:../.copilot/instructions/index.instructions.md
 
 ## 🎯 PRIORITY: USER CLARIFICATIONS & MANUAL MODIFICATIONS 🎯
 
@@ -79,3 +73,9 @@
 - Whenever asked to implement a solution, and you are on the main or default branch, always start by creating a new branch.
 
 - Always use every tool available before beginning and finishing your implementation.
+
+- When you are ready to begin your work, create a new branch for your changes. When you are finished, file a PR to the `develop` branch.
+
+- Always assign the PR to `anoblet` and add Copilot as a reviewer.
+
+**_ NEVER MODIFY THE `main` BRANCH! _**

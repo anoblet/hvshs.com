@@ -1,7 +1,7 @@
 {
   "name": "astronautical-apogee",
   "type": "module",
-  "version": "0.0.2",
+  "version": "0.3.0",
   "scripts": {
     "commit": "wireit",
     "deploy": "wireit",
@@ -14,11 +14,13 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "screenshot:business-card": "node scripts/screenshot-business-card.js",
+    "update:lighthouse-badges": "node scripts/update-lighthouse-badges.js",
     "prepare": "husky",
     "lighthouse": "npx lighthouse https://andrewnoblet.com --chrome-flags='--headless' --output json --output-path reports/lighthouse.json --quiet"
   },
   "dependencies": {
     "@anoblet/mixins": "github:anoblet/mixins",
+    "@astrojs/node": "^9.4.0",
     "astro": "^5.12.0",
     "lit": "^3.3.0",
     "playwright": "^1.54.1"
@@ -49,15 +51,13 @@
     "prettier": "^3.5.3",
     "prettier-plugin-astro": "^0.14.1",
     "sharp": "^0.34.2",
+    "wait-on": "^8.0.4",
     "wireit": "^0.14.12",
     "wrangler": "^4.14.1"
   },
   "wireit": {
     "build": {
-      "command": "astro build",
-      "dependencies": [
-        "commit"
-      ]
+      "command": "astro build"
     },
     "commit": {
       "command": "pnpm dlx genaiscript run commit"
