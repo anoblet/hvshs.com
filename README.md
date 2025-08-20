@@ -2,7 +2,21 @@
 
 A modern, performance-focused portfolio website showcasing professional web development expertise. Built with cutting-edge technologies including Astro, Lit Web Components, and TypeScript.
 
-## 🚀 Overview
+## � Lighthouse Scores
+
+[![Lighthouse Performance](https://img.shields.io/badge/Performance-70%2F100-orange?style=flat-square&logo=lighthouse)](https://pagespeed.web.dev/analysis/https-andrewnoblet-com/u0qtn8h2zc?form_factor=mobile)
+[![Lighthouse Accessibility](https://img.shields.io/badge/Accessibility-100%2F100-brightgreen?style=flat-square&logo=lighthouse)](https://pagespeed.web.dev/analysis/https-andrewnoblet-com/u0qtn8h2zc?form_factor=mobile)
+[![Lighthouse Best Practices](https://img.shields.io/badge/Best%20Practices-100%2F100-brightgreen?style=flat-square&logo=lighthouse)](https://pagespeed.web.dev/analysis/https-andrewnoblet-com/u0qtn8h2zc?form_factor=mobile)
+[![Lighthouse SEO](https://img.shields.io/badge/SEO-100%2F100-brightgreen?style=flat-square&logo=lighthouse)](https://pagespeed.web.dev/analysis/https-andrewnoblet-com/u0qtn8h2zc?form_factor=mobile)
+
+> **Note**: Badges show Lighthouse scores from the production deployment at [andrewnoblet.com](https://andrewnoblet.com). Click any badge to view the full PageSpeed Insights report. Scores are updated manually from the latest `pnpm lighthouse` report in `reports/lighthouse.json`.
+>
+> **Updating Badges**: Currently displays scores for the main production deployment. To update badges after optimization work:
+>
+> 1. Run `pnpm lighthouse` to generate a new report
+> 2. Run `pnpm update:lighthouse-badges` to update README badges automatically
+
+## �🚀 Overview
 
 Astronautical Apogee is a professional portfolio website that demonstrates modern web development practices and showcases expertise in full-stack development, UI/UX design, and web performance optimization. The site features a component-driven architecture with a focus on accessibility, performance, and maintainability.
 
@@ -132,6 +146,10 @@ pnpm lint             # Run ESLint
 pnpm lint:fix         # Fix ESLint issues
 pnpm format           # Format code with Prettier
 pnpm format:check     # Check code formatting
+
+# Performance & Monitoring
+pnpm lighthouse                # Run Lighthouse audit and save report
+pnpm update:lighthouse-badges   # Update README badges from latest report
 
 # Deployment
 pnpm deploy           # Deploy to Cloudflare Pages

@@ -14,6 +14,7 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "screenshot:business-card": "node scripts/screenshot-business-card.js",
+    "update:lighthouse-badges": "node scripts/update-lighthouse-badges.js",
     "prepare": "husky",
     "lighthouse": "npx lighthouse https://andrewnoblet.com --chrome-flags='--headless' --output json --output-path reports/lighthouse.json --quiet"
   },
