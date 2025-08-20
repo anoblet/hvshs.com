@@ -45,6 +45,10 @@ export const style = css`
 
     a {
       color: var(--navigation-a-color);
+
+      &:hover {
+        color: var(--navigation-a-hover-color);
+      }
     }
   }
 
@@ -57,6 +61,10 @@ export const style = css`
       &::marker {
         content: '';
         display: none;
+      }
+
+      &:hover {
+        color: var(--navigation-a-hover-color);
       }
     }
 
