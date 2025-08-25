@@ -1,6 +1,6 @@
 # Project Instructions
 
-#file:../.copilot/instructions/index.instructions.md
+#file:../copilot/instructions/index.instructions.md
 
 ## 🎯 PRIORITY: USER CLARIFICATIONS & MANUAL MODIFICATIONS 🎯
 
