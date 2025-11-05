@@ -1,8 +1,10 @@
 .astro
+.chroma
 .env
 .genaiscript
 .lighthouseci
 .screenshots
+.serena
 .playwright-mcp
 .wireit
 .wrangler
