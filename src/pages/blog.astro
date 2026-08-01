@@ -1,4 +1,6 @@
 ---
+import walkwayFoggy from '@assets/images/hudson-valley/walkway-foggy.jpg';
+import SmartImage from '@components/SmartImage.astro';
 import { getCollection } from 'astro:content';
 import Layout from '../layouts/default.astro';
 
@@ -28,6 +30,11 @@ const posts = postCollection.sort(
 >
   <div class="gap grid max-width-56 width-100">
     <h1 class="text-align-center">Blog</h1>
+    <SmartImage
+      src={walkwayFoggy}
+      alt="Walkway Over the Hudson railroad bridge spanning the Hudson River"
+      loading="eager"
+    />
     <p class="text-align-center">
       Discover new ideas, stories, and updates. Dive into topics that inspire,
       inform, and spark conversation—from home automation to energy efficiency.

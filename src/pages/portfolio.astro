@@ -1,6 +1,8 @@
 ---
 import ArrowForward from '@icons/arrow-forward.svg';
 import Card from '@components/Card.astro';
+import SmartImage from '@components/SmartImage.astro';
+import midHudsonBridge from '@assets/images/hudson-valley/mid-hudson-bridge.jpg';
 import Layout from '../layouts/default.astro';
 ---
 
@@ -11,6 +13,11 @@ import Layout from '../layouts/default.astro';
   <div class="column flex gap-3 page">
     <div class="gap grid">
       <h1 class="text-align-center">Projects</h1>
+      <SmartImage
+        src={midHudsonBridge}
+        alt="Mid-Hudson Bridge and Poughkeepsie viewed from Franny Reese State Park"
+        loading="eager"
+      />
       <p class="hero-description text-align-center">
         Smart home installations across the Hudson Valley — from cozy single
         rooms to full commercial systems. See how we help homes and businesses

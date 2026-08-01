@@ -1,6 +1,8 @@
 ---
 import ArrowForward from '@icons/arrow-forward.svg';
 import Card from '@components/Card.astro';
+import SmartImage from '@components/SmartImage.astro';
+import saugertiesLighthouse from '@assets/images/hudson-valley/saugerties-lighthouse.jpg';
 import Layout from '../layouts/default.astro';
 ---
 
@@ -11,6 +13,11 @@ import Layout from '../layouts/default.astro';
   <div class="column flex gap-3 page">
     <div class="gap grid">
       <h1 class="text-align-center">Services</h1>
+      <SmartImage
+        src={saugertiesLighthouse}
+        alt="Saugerties Lighthouse on the Hudson River"
+        loading="eager"
+      />
       <p class="hero-description text-align-center">
         Complete smart home services for the Hudson Valley. From design to
         installation to ongoing support, we deliver seamless, reliable smart

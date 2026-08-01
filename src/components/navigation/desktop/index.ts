@@ -1,5 +1,5 @@
 import { Base } from '@components/base';
-import { home, homeRepairService } from '@icons/index';
+import { home } from '@icons/index';
 import { globalStyles } from '@styles/global';
 import { html } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
@@ -98,7 +98,7 @@ export class NavigationDesktop extends Base {
         part="brand-icon"
         aria-label="Hudson Valley Smart Home Services"
       >
-        <icon-component>${homeRepairService}</icon-component>
+        <icon-component>${home}</icon-component>
       </a>
       <div class="right">
         <ul>

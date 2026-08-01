@@ -20,5 +20,7 @@ jsconfig.json
 .firebaserc
 firebase.json
 
+link.json
+
 task.md
 tasks.md

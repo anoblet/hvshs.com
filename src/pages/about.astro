@@ -5,6 +5,7 @@ import SmartImage from '@components/SmartImage.astro';
 import ArrowForward from '@icons/arrow-forward.svg';
 import devicesImage from '@assets/images/smart-home/devices-on-table-2.jpg';
 import approachImage from '@assets/images/smart-home/person-holding-smart-device.jpg';
+import catskillsShawangunk from '@assets/images/hudson-valley/catskills-shawangunk.jpg';
 ---
 
 <Layout
@@ -15,6 +16,11 @@ import approachImage from '@assets/images/smart-home/person-holding-smart-device
     <span></span>
     <section class="gap grid justify-content-center text-align-center">
       <h1>About Hudson Valley Smart Home Services</h1>
+      <SmartImage
+        src={catskillsShawangunk}
+        alt="Catskill Mountains and Shawangunk Ridge in the Hudson Valley"
+        loading="eager"
+      />
       <p>
         We're <strong>Hudson Valley Smart Home Services</strong> — a local team dedicated
         to making smart home technology work seamlessly for homes and businesses

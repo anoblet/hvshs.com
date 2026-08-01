@@ -1,128 +1,66 @@
 ---
 import Layout from '../layouts/default.astro';
-import SmartImage from '@components/SmartImage.astro';
-import heroImage from '@assets/images/smart-home/electronics-on-table.jpg';
+import { getImage } from 'astro:assets';
+import catskills from '@assets/images/hudson-valley/catskills-shawangunk.jpg';
+import walkway from '@assets/images/hudson-valley/walkway-foggy.jpg';
+import midHudson from '@assets/images/hudson-valley/mid-hudson-bridge.jpg';
+import blithewood from '@assets/images/hudson-valley/hudson-catskills-blithewood.jpg';
+import lighthouse from '@assets/images/hudson-valley/saugerties-lighthouse.jpg';
+import shawangunk from '@assets/images/hudson-valley/shawangunk-verkeerderkill.jpg';
+
+const heroSlides = await Promise.all(
+  [
+    {
+      src: catskills,
+      alt: 'Catskill Mountains panorama seen from the Shawangunk Ridge near Kerhonkson',
+    },
+    {
+      src: walkway,
+      alt: 'Walkway Over the Hudson railroad bridge spanning the Hudson River between Poughkeepsie and Highland',
+    },
+    {
+      src: midHudson,
+      alt: 'Mid-Hudson Bridge and Poughkeepsie viewed from Franny Reese State Park in Highland',
+    },
+    {
+      src: blithewood,
+      alt: 'Hudson River and the Catskill Escarpment viewed from North Germantown',
+    },
+    {
+      src: lighthouse,
+      alt: 'Saugerties Lighthouse on the Hudson River',
+    },
+    {
+      src: shawangunk,
+      alt: 'Shawangunk Ridge seen from Bear Hill Preserve near Cragsmoor in autumn',
+    },
+  ].map(async ({ src, alt }) => {
+    const optimized = await getImage({
+      src,
+      widths: [640, 960, 1280, 1920],
+      sizes: '100vw',
+      format: 'webp',
+    });
+    return {
+      src: optimized.src,
+      srcset: optimized.srcSet.attribute,
+      alt,
+    };
+  })
+);
+
+const heroSlidesJson = JSON.stringify(heroSlides);
 ---
 
 <Layout
   title="Hudson Valley Smart Home Services"
   description="Hudson Valley Smart Home Services - Professional smart home design, installation, and management for clients across the Hudson Valley. Lighting, climate, security, and entertainment automation."
 >
-  <index-component></index-component>
   <div class="width-100 max-width-64 margin-auto">
-    <SmartImage
-      src={heroImage}
-      alt="Assorted smart home devices arranged on a table"
-      loading="eager"
-    />
+    <hero-component images={heroSlidesJson}></hero-component>
   </div>
 </Layout>
 <script>
-  import { Base } from '@components/base';
   import '@components/button';
-  import { globalStyles } from '@styles/global.ts';
-  import { css, html } from 'lit';
-  import { customElement } from 'lit/decorators.js';
-
-  const taglines = [
-    'Smart Home Solutions for the Hudson Valley',
-    'Design, Install, and Manage Your Smart Home',
-    'Whole-Home Automation, Simplified',
-    'Connecting Your Home, Effortlessly',
-    'Local Experts in Smart Home Technology',
-    'Seamless Smart Home Services',
-    'Making Your Home Work Smarter',
-    'Expert Smart Home Installation & Support',
-  ];
-
-  @customElement('index-component')
-  class IndexComponent extends Base {
-    private randomTagline =
-      taglines[Math.floor(Math.random() * taglines.length)];
-
-    static styles = [
-      globalStyles,
-      css`
-        :host {
-          flex: 1;
-          width: 100%;
-        }
-
-        section {
-          display: flex;
-          flex: 1;
-          justify-content: center;
-          align-items: center;
-          flex-direction: column;
-
-          h1 {
-            color: var(--index-h1-color);
-            font-size: 1.75rem;
-            font-weight: 500;
-            margin: 0;
-            padding: 2rem;
-          }
-
-          #buttons {
-            min-width: 50%;
-
-            > * {
-              display: flex;
-
-              button-component {
-                flex: 1;
-              }
-            }
-
-            a {
-              &:hover {
-                text-decoration: none;
-              }
-            }
-          }
-        }
-      `,
-    ];
-
-    render() {
-      return html`
-        <section>
-          <div class="desktop">
-            <h1 class="text-align-center">
-              Hudson Valley Smart Home Services |
-              <span class="font-weight-800">${this.randomTagline}</span>
-            </h1>
-          </div>
-          <div class="mobile">
-            <h1 class="grid text-align-center">
-              <span class="text-align-center"
-                >Hudson Valley Smart Home Services</span
-              >
-              <span class="font-weight-800">${this.randomTagline}</span>
-            </h1>
-          </div>
-          <div class="desktop align-items-center">
-            <div class="flex gap min-width-50 padding" id="buttons">
-              <button-component href="/services" variant="primary">
-                Our Services
-              </button-component>
-              <button-component href="/contact" variant="secondary">
-                Book a Consultation
-              </button-component>
-            </div>
-          </div>
-          <div class="mobile">
-            <div class="column gap grid min-width-50 padding" id="buttons">
-              <button-component href="/services" variant="primary">
-                Our Services
-              </button-component>
-              <button-component href="/contact" variant="secondary">
-                Book a Consultation
-              </button-component>
-            </div>
-          </div>
-        </section>
-      `;
-    }
-  }
+  import '@components/hero';
 </script>
