@@ -108,13 +108,29 @@ export class HeroComponent extends Base {
         min-width: 12rem;
       }
 
+      .buttons button-component[variant='secondary'] {
+        background-color: rgb(255 255 255 / 0.92);
+        color: #0c151a;
+        outline-color: #fff;
+      }
+
+      .buttons button-component[variant='primary'] {
+        --button-background-color: var(--color-sky-700);
+        --button-color: #fff;
+      }
+
       @media (max-width: 48rem) {
         .hero {
-          aspect-ratio: 4 / 3;
+          aspect-ratio: auto;
+          min-height: 24rem;
+        }
+
+        .overlay {
+          padding: 1rem;
         }
 
         .text {
-          padding: 1.25rem 1.5rem;
+          padding: 1rem;
         }
 
         h1 {
