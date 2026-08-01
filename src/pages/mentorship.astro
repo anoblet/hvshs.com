@@ -1,7 +1,11 @@
 ---
 import Layout from '../layouts/default.astro';
 import Card from '@components/Card.astro';
+import SmartImage from '@components/SmartImage.astro';
 import ArrowForward from '@icons/arrow-forward.svg';
+import trainingImage from '@assets/images/smart-home/person-holding-phone.jpg';
+import masteryImage from '@assets/images/smart-home/white-tablet-screen.jpg';
+import diyImage from '@assets/images/smart-home/phone-camera-on-table.jpg';
 ---
 
 <Layout
@@ -21,6 +25,7 @@ import ArrowForward from '@icons/arrow-forward.svg';
 
     <div class="column gap-2 grid">
       <Card>
+        <SmartImage src={trainingImage} alt="Person holding a smartphone" />
         <h3>New Homeowner Training</h3>
         <div class="flex-1">
           <p>
@@ -38,6 +43,10 @@ import ArrowForward from '@icons/arrow-forward.svg';
       </Card>
 
       <Card>
+        <SmartImage
+          src={masteryImage}
+          alt="Tablet with a screen showing content"
+        />
         <h3>Getting the Most From Your System</h3>
         <div class="flex-1">
           <p>
@@ -55,6 +64,7 @@ import ArrowForward from '@icons/arrow-forward.svg';
       </Card>
 
       <Card>
+        <SmartImage src={diyImage} alt="Smartphone and camera on a table" />
         <h3>DIY & Expansion Guidance</h3>
         <div class="flex-1">
           <p>

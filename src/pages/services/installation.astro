@@ -1,7 +1,14 @@
 ---
 import Layout from '../../layouts/default.astro';
 import Card from '@components/Card.astro';
+import SmartImage from '@components/SmartImage.astro';
 import ArrowForward from '@icons/arrow-forward.svg';
+import lightingImage from '@assets/images/smart-home/smart-devices-flatlay.jpg';
+import climateImage from '@assets/images/smart-home/honeywell-thermostat.jpg';
+import securityImage from '@assets/images/smart-home/cctv-cameras-grey.jpg';
+import entertainmentImage from '@assets/images/smart-home/google-smart-speaker.jpg';
+import networkImage from '@assets/images/smart-home/monitor-keyboard-setup.jpg';
+import automationImage from '@assets/images/smart-home/smart-display-plant.jpg';
 ---
 
 <Layout
@@ -46,6 +53,10 @@ import ArrowForward from '@icons/arrow-forward.svg';
       <h2>Installation Services</h2>
       <div class="column gap grid">
         <Card>
+          <SmartImage
+            src={lightingImage}
+            alt="Smart home gadgets including a keyboard and light bulbs laid out flat"
+          />
           <h3>Lighting Installation</h3>
           <p>
             Smart switches, dimmers, and bulbs installed and configured for
@@ -59,6 +70,10 @@ import ArrowForward from '@icons/arrow-forward.svg';
           </ul>
         </Card>
         <Card>
+          <SmartImage
+            src={climateImage}
+            alt="Honeywell smart thermostat on a wall"
+          />
           <h3>Climate Control</h3>
           <p>
             Smart thermostat installation and configuration for comfortable,
@@ -72,6 +87,7 @@ import ArrowForward from '@icons/arrow-forward.svg';
           </ul>
         </Card>
         <Card>
+          <SmartImage src={securityImage} alt="CCTV security cameras" />
           <h3>Security Systems</h3>
           <p>
             Cameras, doorbells, locks, and sensors professionally installed for
@@ -85,6 +101,10 @@ import ArrowForward from '@icons/arrow-forward.svg';
           </ul>
         </Card>
         <Card>
+          <SmartImage
+            src={entertainmentImage}
+            alt="Google smart speaker on a table"
+          />
           <h3>Entertainment & Audio</h3>
           <p>
             Smart TVs, speakers, and whole-home audio installed and connected
@@ -98,6 +118,10 @@ import ArrowForward from '@icons/arrow-forward.svg';
           </ul>
         </Card>
         <Card>
+          <SmartImage
+            src={networkImage}
+            alt="Computer monitor and keyboard setup"
+          />
           <h3>Network & Connectivity</h3>
           <p>
             A solid network is the foundation of every smart home. We install
@@ -111,6 +135,10 @@ import ArrowForward from '@icons/arrow-forward.svg';
           </ul>
         </Card>
         <Card>
+          <SmartImage
+            src={automationImage}
+            alt="Smart display showing readings beside a plant"
+          />
           <h3>Automation & Integration</h3>
           <p>
             We connect all your devices into unified scenes, schedules, and

@@ -83,6 +83,15 @@ export const style = css`
     z-index: 1;
   }
 
+  .brand-icon {
+    --icon-color: var(--button-background-color);
+    --icon-size: 2rem;
+    cursor: default;
+    left: 50%;
+    position: absolute;
+    transform: translateX(-50%);
+  }
+
   svg {
     height: 2rem;
     width: 2rem;

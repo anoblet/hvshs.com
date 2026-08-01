@@ -1,6 +1,13 @@
 ---
 import Layout from '../../layouts/default.astro';
 import Card from '@components/Card.astro';
+import SmartImage from '@components/SmartImage.astro';
+import assessmentImage from '@assets/images/smart-home/person-holding-phone.jpg';
+import adviceImage from '@assets/images/smart-home/google-home-mini.jpg';
+import networkImage from '@assets/images/smart-home/ipad-keyboard-desk.jpg';
+import troubleshootingImage from '@assets/images/smart-home/phone-flashlight-table.jpg';
+import automationImage from '@assets/images/smart-home/laptop-on-table.jpg';
+import supportImage from '@assets/images/smart-home/white-tablet-screen.jpg';
 ---
 
 <Layout
@@ -45,6 +52,7 @@ import Card from '@components/Card.astro';
       <h2>Consultation Services</h2>
       <div class="column gap grid">
         <Card>
+          <SmartImage src={assessmentImage} alt="Person holding a smartphone" />
           <h3>Smart Home Assessment</h3>
           <p>
             A walkthrough of your home and current technology with clear,
@@ -58,6 +66,10 @@ import Card from '@components/Card.astro';
           </ul>
         </Card>
         <Card>
+          <SmartImage
+            src={adviceImage}
+            alt="Google Home Mini smart speaker with a smartphone"
+          />
           <h3>Device & Platform Advice</h3>
           <p>
             Guidance on the best devices and platforms for your needs, budget,
@@ -71,6 +83,10 @@ import Card from '@components/Card.astro';
           </ul>
         </Card>
         <Card>
+          <SmartImage
+            src={networkImage}
+            alt="iPad with keyboard and mouse on a desk"
+          />
           <h3>Home Network Planning</h3>
           <p>
             A solid network is the backbone of every smart home. We plan and
@@ -84,6 +100,10 @@ import Card from '@components/Card.astro';
           </ul>
         </Card>
         <Card>
+          <SmartImage
+            src={troubleshootingImage}
+            alt="Smartphone and flashlight on a table"
+          />
           <h3>Troubleshooting & Repairs</h3>
           <p>
             Expert diagnosis and resolution of smart home issues — from
@@ -97,6 +117,7 @@ import Card from '@components/Card.astro';
           </ul>
         </Card>
         <Card>
+          <SmartImage src={automationImage} alt="Laptop on a table" />
           <h3>Automation Design</h3>
           <p>
             Design meaningful automations — scenes, schedules, and routines that
@@ -110,6 +131,10 @@ import Card from '@components/Card.astro';
           </ul>
         </Card>
         <Card>
+          <SmartImage
+            src={supportImage}
+            alt="Tablet with a screen showing content"
+          />
           <h3>Ongoing Support</h3>
           <p>
             Maintenance and support plans that keep your smart home running

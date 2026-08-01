@@ -1,5 +1,7 @@
 ---
 import Layout from '../layouts/default.astro';
+import SmartImage from '@components/SmartImage.astro';
+import heroImage from '@assets/images/smart-home/electronics-on-table.jpg';
 ---
 
 <Layout
@@ -7,6 +9,13 @@ import Layout from '../layouts/default.astro';
   description="Hudson Valley Smart Home Services - Professional smart home design, installation, and management for clients across the Hudson Valley. Lighting, climate, security, and entertainment automation."
 >
   <index-component></index-component>
+  <div class="width-100 max-width-64 margin-auto">
+    <SmartImage
+      src={heroImage}
+      alt="Assorted smart home devices arranged on a table"
+      loading="eager"
+    />
+  </div>
 </Layout>
 <script>
   import { Base } from '@components/base';

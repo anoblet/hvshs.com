@@ -8,11 +8,12 @@ export const style = css`
     --icon-color: var(--navigation-icon-color);
     --icon-hover-color: var(--navigation-icon-hover-color);
 
+    align-items: center;
     background-color: var(--navigation-background-color);
     box-shadow: var(--box-shadow);
-    display: flex;
+    display: grid;
     flex: 1;
-    justify-content: space-between;
+    grid-template-columns: 1fr auto 1fr;
     opacity: 1;
     position: fixed;
     top: 0;
@@ -31,6 +32,31 @@ export const style = css`
     transition:
       opacity 0.4s ease-in-out,
       transform 0.3s ease-in-out;
+  }
+
+  .left {
+    align-items: center;
+    display: flex;
+    min-width: 0;
+
+    ul {
+      flex: 1;
+    }
+  }
+
+  .right {
+    align-items: center;
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    min-width: 0;
+  }
+
+  .brand-icon {
+    --icon-color: var(--button-background-color);
+    --icon-hover-color: var(--button-background-color);
+    --icon-size: 2rem;
+    justify-self: center;
   }
 
   #home {
@@ -113,9 +139,14 @@ export const style = css`
   ul {
     align-items: center;
     display: flex;
-    flex: 1;
     gap: 1rem;
     list-style: none;
+    overflow-x: auto;
     padding: 0 1rem;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
 `;

@@ -40,10 +40,10 @@ export const getTheme = (): Record<string, string> => {
         theme = light;
         break;
       default:
-        theme = dark;
+        theme = light;
     }
   } else {
-    theme = dark;
+    theme = light;
   }
   return theme;
 };

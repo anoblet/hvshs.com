@@ -1,7 +1,11 @@
 ---
 import Layout from '../../layouts/default.astro';
 import Card from '@components/Card.astro';
+import SmartImage from '@components/SmartImage.astro';
 import ArrowForward from '@icons/arrow-forward.svg';
+import lightingImage from '@assets/images/smart-home/smart-lighting-candle.jpg';
+import climateImage from '@assets/images/smart-home/nest-thermostat-63.jpg';
+import securityImage from '@assets/images/smart-home/surveillance-camera-wall.jpg';
 ---
 
 <Layout
@@ -53,6 +57,10 @@ import ArrowForward from '@icons/arrow-forward.svg';
       <h2>Design Services</h2>
       <div class="grid auto-fit-20 gap-2">
         <Card>
+          <SmartImage
+            src={lightingImage}
+            alt="Warm mood lighting from a smart candle"
+          />
           <h3>Lighting Design</h3>
           <p>
             Automated lighting for every room—schedules, scenes, and voice
@@ -66,6 +74,10 @@ import ArrowForward from '@icons/arrow-forward.svg';
           </ul>
         </Card>
         <Card>
+          <SmartImage
+            src={climateImage}
+            alt="Nest smart thermostat mounted on a wall"
+          />
           <h3>Climate & Comfort</h3>
           <p>
             Smart thermostats and climate systems that keep your home
@@ -79,6 +91,10 @@ import ArrowForward from '@icons/arrow-forward.svg';
           </ul>
         </Card>
         <Card>
+          <SmartImage
+            src={securityImage}
+            alt="Security camera mounted on a wall"
+          />
           <h3>Security & Safety</h3>
           <p>
             Integrated security systems with cameras, sensors, and smart locks

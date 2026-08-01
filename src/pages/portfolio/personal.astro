@@ -1,5 +1,11 @@
 ---
+import entertainmentImage from '@assets/images/smart-home/ipad-speaker-desk.jpg';
+import securityImage from '@assets/images/smart-home/phone-smart-lock-door.jpg';
+import automationImage from '@assets/images/smart-home/smart-display-plant.jpg';
+import lightingImage from '@assets/images/smart-home/smart-lighting-candle.jpg';
+import climateImage from '@assets/images/smart-home/thermostat-62.jpg';
 import Card from '@components/Card.astro';
+import SmartImage from '@components/SmartImage.astro';
 import Tag from '@components/Tag.astro';
 import Layout from '@layouts/default.astro';
 ---
@@ -18,6 +24,10 @@ import Layout from '@layouts/default.astro';
     </div>
     <div class="space-0-5"></div>
     <Card>
+      <SmartImage
+        src={lightingImage}
+        alt="Warm mood lighting from a smart candle"
+      />
       <h2>Whole-Home Lighting</h2>
       <div class="flex-1">
         <ul>
@@ -48,6 +58,10 @@ import Layout from '@layouts/default.astro';
       </div>
     </Card>
     <Card>
+      <SmartImage
+        src={climateImage}
+        alt="Smart thermostat displaying 62 degrees"
+      />
       <h2>Climate & Comfort</h2>
       <div class="flex-1">
         <ul>
@@ -77,6 +91,10 @@ import Layout from '@layouts/default.astro';
       </div>
     </Card>
     <Card>
+      <SmartImage
+        src={securityImage}
+        alt="Smartphone held at a door for smart lock access"
+      />
       <h2>Home Security</h2>
       <div class="flex-1">
         <ul>
@@ -107,6 +125,10 @@ import Layout from '@layouts/default.astro';
       </div>
     </Card>
     <Card>
+      <SmartImage
+        src={entertainmentImage}
+        alt="iPad beside a portable speaker"
+      />
       <h2>Entertainment & Audio</h2>
       <div class="flex-1">
         <ul>
@@ -136,6 +158,10 @@ import Layout from '@layouts/default.astro';
       </div>
     </Card>
     <Card>
+      <SmartImage
+        src={automationImage}
+        alt="Smart display showing readings beside a plant"
+      />
       <h2>Automation & Scenes</h2>
       <div class="flex-1">
         <ul>

@@ -1,5 +1,11 @@
 ---
+import automationImage from '@assets/images/smart-home/devices-on-table-2.jpg';
+import avImage from '@assets/images/smart-home/monitor-keyboard-setup.jpg';
+import accessImage from '@assets/images/smart-home/person-key-to-door.jpg';
+import lightingImage from '@assets/images/smart-home/smart-devices-flatlay.jpg';
+import hvacImage from '@assets/images/smart-home/thermostat-19-5.jpg';
 import Card from '@components/Card.astro';
+import SmartImage from '@components/SmartImage.astro';
 import Tag from '@components/Tag.astro';
 import Layout from '@layouts/default.astro';
 ---
@@ -19,6 +25,10 @@ import Layout from '@layouts/default.astro';
     </div>
     <div class="space-0-5"></div>
     <Card>
+      <SmartImage
+        src={lightingImage}
+        alt="Smart home gadgets including a keyboard and light bulbs laid out flat"
+      />
       <h2>Energy-Efficient Lighting</h2>
       <div class="flex-1">
         <ul>
@@ -45,6 +55,7 @@ import Layout from '@layouts/default.astro';
       </div>
     </Card>
     <Card>
+      <SmartImage src={accessImage} alt="Person holding a key at a door" />
       <h2>Access Control & Security</h2>
       <div class="flex-1">
         <ul>
@@ -71,6 +82,10 @@ import Layout from '@layouts/default.astro';
       </div>
     </Card>
     <Card>
+      <SmartImage
+        src={hvacImage}
+        alt="Smart thermostat displaying 19.5 degrees"
+      />
       <h2>HVAC Automation</h2>
       <div class="flex-1">
         <ul>
@@ -97,6 +112,7 @@ import Layout from '@layouts/default.astro';
       </div>
     </Card>
     <Card>
+      <SmartImage src={avImage} alt="Computer monitor and keyboard setup" />
       <h2>Conference & AV Systems</h2>
       <div class="flex-1">
         <ul>
@@ -123,6 +139,10 @@ import Layout from '@layouts/default.astro';
       </div>
     </Card>
     <Card>
+      <SmartImage
+        src={automationImage}
+        alt="Smart home devices grouped on a table"
+      />
       <h2>Building Automation</h2>
       <div class="flex-1">
         <ul>
