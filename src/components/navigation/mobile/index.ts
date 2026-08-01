@@ -27,7 +27,7 @@ export class NavigationMobile extends Base {
       <div class="space-between">
         <icon-component @click=${this.toggle}>${menu}</icon-component>
         <a
-          href="https://hvshs.com/"
+          href="/"
           class="brand-icon"
           aria-label="Hudson Valley Smart Home Services"
         >

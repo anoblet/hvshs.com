@@ -75,7 +75,7 @@ export class NavigationDesktop extends Base {
         </ul>
       </div>
       <a
-        href="https://hvshs.com/"
+        href="/"
         class="brand-icon"
         part="brand-icon"
         aria-label="Hudson Valley Smart Home Services"
