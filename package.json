@@ -20,10 +20,10 @@
   },
   "dependencies": {
     "@anoblet/mixins": "github:anoblet/mixins",
-    "@astrojs/node": "^9.4.0",
-    "astro": "^5.12.0",
+    "@astrojs/node": "^11.0.2",
+    "astro": "^7.1.1",
     "lit": "^3.3.0",
-    "playwright": "^1.54.1"
+    "playwright": "^1.62.1"
   },
   "lint-staged": {
     "*.{js,mjs,ts,astro}": [
@@ -50,10 +50,10 @@
     "lint-staged": "^16.1.2",
     "prettier": "^3.5.3",
     "prettier-plugin-astro": "^0.14.1",
-    "sharp": "^0.34.2",
+    "sharp": "^0.35.0",
     "wait-on": "^8.0.4",
     "wireit": "^0.14.12",
-    "wrangler": "^4.14.1"
+    "wrangler": "^4.118.0"
   },
   "wireit": {
     "build": {
