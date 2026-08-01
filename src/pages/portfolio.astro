@@ -5,30 +5,49 @@ import Layout from '../layouts/default.astro';
 ---
 
 <Layout
-  title="Portfolio"
-  description="Discover professional and personal projects showcasing expertise in web development, component architecture, and creative solutions. View real-world applications and technical achievements."
+  title="Projects"
+  description="Smart home installation projects across the Hudson Valley. Explore residential and commercial installations showcasing lighting, climate, security, and automation expertise."
 >
   <div class="column flex gap-3 page">
     <div class="gap grid">
-      <h1 class="text-align-center">Portfolio</h1>
+      <h1 class="text-align-center">Projects</h1>
       <p class="hero-description text-align-center">
-        Discover professional and personal projects that showcase expertise in
-        web development, component architecture, and creative solutions.
+        Smart home installations across the Hudson Valley — from cozy single
+        rooms to full commercial systems. See how we help homes and businesses
+        work smarter.
       </p>
     </div>
     <div class="column gap-2 grid">
       <Card>
-        <h3>Professional Projects</h3>
+        <h3>Residential Installations</h3>
         <div class="flex-1">
           <p>
-            Scalable web projects for e-commerce, education, and corporate
-            sites—delivering modern technology and user-focused results.
+            Whole-home automation for local families — lighting, climate,
+            security, and entertainment systems tailored to daily life.
           </p>
           <ul>
-            <li>Enterprise e-commerce platforms</li>
-            <li>Educational and training systems</li>
-            <li>Corporate websites and branding</li>
-            <li>Performance optimization and scalability</li>
+            <li>Whole-home lighting and scenes</li>
+            <li>Smart climate and energy savings</li>
+            <li>Security cameras and smart locks</li>
+            <li>Entertainment and whole-home audio</li>
+          </ul>
+        </div>
+        <a class="gap-0-5 justify-content-flex-end" href="/portfolio/personal">
+          View projects <ArrowForward />
+        </a>
+      </Card>
+      <Card>
+        <h3>Commercial Installations</h3>
+        <div class="flex-1">
+          <p>
+            Smart technology for local businesses — efficient lighting, secure
+            access, and automated environments that save time and money.
+          </p>
+          <ul>
+            <li>Energy-efficient lighting control</li>
+            <li>Access control and security</li>
+            <li>HVAC automation and monitoring</li>
+            <li>Conference room and AV systems</li>
           </ul>
         </div>
         <a
@@ -38,30 +57,11 @@ import Layout from '../layouts/default.astro';
           View projects <ArrowForward />
         </a>
       </Card>
-      <Card>
-        <h3>Personal Projects</h3>
-        <div class="flex-1">
-          <p>
-            Personal projects driven by passion for web tech, component systems,
-            and AI workflows—my space for innovation and new ideas.
-          </p>
-          <ul>
-            <li>Experimental web technologies</li>
-            <li>Component libraries and design systems</li>
-            <li>AI-driven development tools</li>
-            <li>Open source contributions</li>
-          </ul>
-        </div>
-        <a class="gap-0-5 justify-content-flex-end" href="/portfolio/personal">
-          View projects <ArrowForward />
-        </a>
-      </Card>
     </div>
     <section class="gap grid justify-content-center text-align-center">
-      <h2>Let's Connect!</h2>
+      <h2>Let's Get Started!</h2>
       <p>
-        Let's connect and discuss how my experience can help bring your vision
-        to life.
+        Let's connect and design the perfect smart home solution for your space.
       </p>
       <div class="gap grid justify-content-center">
         <button-component href="/contact" class="min-width-25vw">

@@ -1,32 +1,32 @@
 ---
-import Layout from '@layouts/default.astro';
 import PricingCard from '@components/PricingCard.astro';
+import Layout from '@layouts/default.astro';
 ---
 
 <Layout
   title="Pricing"
-  description="Transparent pricing for web development services. Choose from flexible plans that include direct collaboration, modern web technologies, and ongoing support. Get started today."
+  description="Transparent pricing for smart home services in the Hudson Valley. Choose from flexible plans that include professional design, installation, and ongoing support. Get started today."
 >
   <h1 class="text-align-center font-size-2 margin-bottom-2">Pricing</h1>
   <p
     class="hero-description text-align-center margin-bottom-4 max-width-48 margin-auto"
   >
-    Select the plan that suits your goals. Every plan includes direct
-    collaboration, modern web technologies, and ongoing support.
+    Select the plan that suits your goals. Every plan includes professional
+    design, quality installation, and ongoing support.
   </p>
 
   <div class="flex gap-2 justify-center margin-bottom-4">
-    <a
-      href="/services/hosting/pricing"
-      class="button button-primary font-size-1-125"
-    >
-      Hosting Pricing
-    </a>
     <a
       href="/services/design/pricing"
       class="button button-primary font-size-1-125"
     >
       Design Pricing
+    </a>
+    <a
+      href="/services/installation/pricing"
+      class="button button-primary font-size-1-125"
+    >
+      Installation Pricing
     </a>
     <a
       href="/services/consultation/pricing"
@@ -37,12 +37,12 @@ import PricingCard from '@components/PricingCard.astro';
   </div>
   <div class="grid auto-fit-20 gap-2 width-100 max-width-64 margin-auto">
     <PricingCard
-      title="Basic"
-      description="Perfect for individuals and startups to launch a professional web presence."
+      title="Essential"
+      description="Perfect for homeowners looking to get started with a smart home essentials package."
       features={[
-        'Single-page site',
-        'Responsive design',
-        'Basic SEO',
+        'Smart hub setup',
+        'Lighting controls',
+        'Smart thermostat install',
         'Email support',
       ]}
       price="$999"
@@ -50,12 +50,12 @@ import PricingCard from '@components/PricingCard.astro';
       buttonHref="/contact"
     />
     <PricingCard
-      title="Pro"
-      description="Designed for growing businesses needing advanced features and integrations."
+      title="Whole Home"
+      description="Designed for homes wanting full automation with security, climate, and entertainment."
       features={[
-        'Multi-page site',
-        'Custom integrations',
-        'Performance optimization',
+        'Whole-home automation',
+        'Security system setup',
+        'Custom scenes & routines',
         'Priority support',
       ]}
       price="$2,499"

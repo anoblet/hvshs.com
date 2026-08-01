@@ -3,8 +3,8 @@ import Layout from '../layouts/default.astro';
 ---
 
 <Layout
-  title="Andrew Noblet"
-  description="Andrew Noblet - Software Engineer specializing in modern, accessible web experiences. Crafting inclusive digital solutions with expert design, hosting, and consultation services."
+  title="Hudson Valley Smart Home Services"
+  description="Hudson Valley Smart Home Services - Professional smart home design, installation, and management for clients across the Hudson Valley. Lighting, climate, security, and entertainment automation."
 >
   <index-component></index-component>
 </Layout>
@@ -16,14 +16,14 @@ import Layout from '../layouts/default.astro';
   import { customElement } from 'lit/decorators.js';
 
   const taglines = [
-    'Crafting Modern, Accessible Web Experiences',
-    'Building Inclusive Digital Solutions',
-    'Designing for Everyone, Everywhere',
-    'Empowering Users with Accessible Design',
-    'Innovating for a Better Web Experience',
-    'Creating Seamless, Accessible Interfaces',
-    'Fostering Accessibility in Web Development',
-    'Championing Inclusive Web Design',
+    'Smart Home Solutions for the Hudson Valley',
+    'Design, Install, and Manage Your Smart Home',
+    'Whole-Home Automation, Simplified',
+    'Connecting Your Home, Effortlessly',
+    'Local Experts in Smart Home Technology',
+    'Seamless Smart Home Services',
+    'Making Your Home Work Smarter',
+    'Expert Smart Home Installation & Support',
   ];
 
   @customElement('index-component')
@@ -80,39 +80,35 @@ import Layout from '../layouts/default.astro';
         <section>
           <div class="desktop">
             <h1 class="text-align-center">
-              Andrew Noblet |
+              Hudson Valley Smart Home Services |
               <span class="font-weight-800">${this.randomTagline}</span>
             </h1>
           </div>
           <div class="mobile">
             <h1 class="grid text-align-center">
-              <span class="text-align-center">Andrew Noblet</span>
+              <span class="text-align-center"
+                >Hudson Valley Smart Home Services</span
+              >
               <span class="font-weight-800">${this.randomTagline}</span>
             </h1>
           </div>
           <div class="desktop align-items-center">
             <div class="flex gap min-width-50 padding" id="buttons">
-              <button-component href="/portfolio/personal" variant="primary">
-                Personal Projects
+              <button-component href="/services" variant="primary">
+                Our Services
               </button-component>
-              <button-component
-                href="/portfolio/professional"
-                variant="secondary"
-              >
-                Professional Work
+              <button-component href="/contact" variant="secondary">
+                Book a Consultation
               </button-component>
             </div>
           </div>
           <div class="mobile">
             <div class="column gap grid min-width-50 padding" id="buttons">
-              <button-component href="/portfolio/personal" variant="primary">
-                Personal Projects
+              <button-component href="/services" variant="primary">
+                Our Services
               </button-component>
-              <button-component
-                href="/portfolio/professional"
-                variant="secondary"
-              >
-                Professional Work
+              <button-component href="/contact" variant="secondary">
+                Book a Consultation
               </button-component>
             </div>
           </div>

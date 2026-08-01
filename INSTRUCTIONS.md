@@ -4,13 +4,17 @@
 
 - This project uses Astro JS, Lit, and Fluent UI. Familiarize yourself with these technologies if you are not already.
 
-- Create a portfolio site for a software deverloper. The Github profile is: https://github.com/anoblet/
+- The site is for [Hudson Valley Smart Home Services](https://hvshs.com/). It manages smart home devices and services for clients in the Hudson Valley area.
 
-- Include a services page, and a projects page. The three projects are [CXL](https://cxl.com/), [Graduation Source](https://graduationsource.com/), and [Avanti Systems USA](https://avantisystemsusa.com). Analyze the wesites and come up with the appropriate description for a software developer.
+- Key pages:
 
-- Use a dark background( #333), with the following colors as accents( #19f9d8, #45a9f9") Make the aesthetic modern and minimal.
+  - Services: `/services/design`, `/services/installation`, `/services/consultation` (each with a `/pricing` page)
+  - Projects (installations): `/portfolio/personal`, `/portfolio/professional`
+  - Education & Training: `/mentorship`
+  - Blog, About, Contact, Pricing, Business Card
+
+- Use a dark background (#333), with the following colors as accents (#19f9d8, #45a9f9). Make the aesthetic modern and minimal.
 
 ## Navigation
 
-Create a new navigation component. It should be inside thegit status
-header component. It should use a hamburger menu icon on mobile, and tabs on desktop. There should be Github, LinkedIn, and Email icons on the right hand side.
+Create a new navigation component. It should be inside the header component. It should use a hamburger menu icon on mobile, and tabs on desktop. There should be Github, LinkedIn, and Email icons on the right hand side.

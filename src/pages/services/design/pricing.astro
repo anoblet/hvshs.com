@@ -1,28 +1,30 @@
 ---
-import Layout from '@layouts/default.astro';
 import PricingCard from '@components/PricingCard.astro';
+import Layout from '@layouts/default.astro';
 ---
 
 <Layout
-  title="Design Pricing"
-  description="Professional UI/UX design pricing plans. Creative and user-focused design solutions for brands and products. Choose flexible pricing options that fit your vision and budget."
+  title="Smart Home Design Pricing"
+  description="Professional smart home design pricing plans for the Hudson Valley. Custom system planning for lighting, climate, security, and entertainment. Choose flexible pricing options that fit your vision and budget."
 >
-  <h1 class="text-align-center font-size-2 margin-bottom-2">Design Pricing</h1>
+  <h1 class="text-align-center font-size-2 margin-bottom-2">
+    Smart Home Design Pricing
+  </h1>
   <p
     class="hero-description text-align-center margin-bottom-4 max-width-48 margin-auto"
   >
-    Professional, creative, and user-focused design solutions for brands and
-    products. Choose the plan that fits your vision.
+    Professional, custom smart home system design tailored to your home and
+    lifestyle. Choose the plan that fits your vision.
   </p>
 
   <div class="grid auto-fit-20 gap-2 width-100 max-width-64 margin-auto">
     <PricingCard
       title="Starter Design"
-      description="For individuals and startups needing a polished, modern look for their first project."
+      description="For homeowners wanting a smart home plan for a single room or focused system."
       features={[
-        'Logo & brand colors',
-        '1 landing page',
-        'Basic style guide',
+        'Home technology assessment',
+        'Single-room design',
+        'Device & platform selection',
         'Email support',
       ]}
       price="$499"
@@ -31,11 +33,11 @@ import PricingCard from '@components/PricingCard.astro';
     />
     <PricingCard
       title="Pro Design"
-      description="For growing businesses seeking a cohesive brand and multi-page design system."
+      description="For homes seeking a comprehensive whole-home smart system design."
       features={[
-        'Full brand kit',
-        'Up to 5 pages',
-        'Component library',
+        'Full-home assessment',
+        'Whole-home system design',
+        'Automation planning',
         'Priority support',
       ]}
       price="$999"

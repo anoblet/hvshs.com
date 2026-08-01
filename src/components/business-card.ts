@@ -1,5 +1,5 @@
 import { Base } from '@components/base';
-import { planet, phone, mail, language } from '@icons/index';
+import { language, mail, phone, planet } from '@icons/index';
 import { css, html } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
@@ -86,21 +86,23 @@ export class BusinessCard extends Base {
             <div
               class="column flex padding justify-content-space-around width-100"
             >
-              <h1 class="font-weight-6 text-align-center">Andrew Noblet</h1>
+              <h1 class="font-weight-6 text-align-center">
+                Hudson Valley Smart Home Services
+              </h1>
               <p class="font-size-1-5 text-align-center">
-                Empowering your online presence with design, hosting, and expert
-                guidance.
+                Smart home design, installation, and support for the Hudson
+                Valley.
               </p>
               <div class="align-items-center flex space-around">
                 <ul class="amber-300 font-size-1-5 gap-2 grid">
                   <li>Design</li>
-                  <li>Hosting</li>
-                  <li>Consultation</li>
+                  <li>Installation</li>
+                  <li>Automation</li>
                 </ul>
                 <ul class="amber-300 font-size-1-5 gap-2 grid">
-                  <li>Mentorship</li>
-                  <li>Workshops</li>
-                  <li>Strategy</li>
+                  <li>Security</li>
+                  <li>Support</li>
+                  <li>Education</li>
                 </ul>
               </div>
               <div class="flex font-size-1-5 space-around">
@@ -114,7 +116,7 @@ export class BusinessCard extends Base {
                 </span>
                 <span class="align-items-center flex gap-0-5">
                   <icon-component>${language}</icon-component>
-                  andrewnoblet.com
+                  hvshs.com
                 </span>
               </div>
             </div>

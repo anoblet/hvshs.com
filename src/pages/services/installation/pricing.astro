@@ -1,0 +1,48 @@
+---
+import PricingCard from '@components/PricingCard.astro';
+import Layout from '@layouts/default.astro';
+---
+
+<Layout
+  title="Smart Home Installation Pricing"
+  description="Professional smart home installation pricing plans in the Hudson Valley. Expert setup of lighting, climate, security, and entertainment systems with transparent pricing that fits your needs and budget."
+>
+  <h1 class="text-align-center font-size-2 margin-bottom-2">
+    Installation Pricing
+  </h1>
+  <p
+    class="hero-description text-align-center margin-bottom-4 max-width-48 margin-auto"
+  >
+    Professional installation and configuration for every smart home setup.
+    Choose the plan that fits your needs.
+  </p>
+
+  <div class="grid auto-fit-20 gap-2 width-100 max-width-64 margin-auto">
+    <PricingCard
+      title="Basic Installation"
+      description="For homeowners installing a starter smart home system with a few key devices."
+      features={[
+        'Up to 10 devices',
+        'Hub & app setup',
+        'Network configuration',
+        'Email support',
+      ]}
+      price="$499"
+      buttonText="Get Installation"
+      buttonHref="/contact"
+    />
+    <PricingCard
+      title="Pro Installation"
+      description="For homes installing comprehensive systems requiring more devices and integration."
+      features={[
+        'Up to 30 devices',
+        'Security & climate install',
+        'Custom automation setup',
+        'Priority support',
+      ]}
+      price="$1,199"
+      buttonText="Get Installation"
+      buttonHref="/contact"
+    />
+  </div>
+</Layout>

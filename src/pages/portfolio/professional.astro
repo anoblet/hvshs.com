@@ -1,160 +1,152 @@
 ---
-import Layout from '@layouts/default.astro';
 import Card from '@components/Card.astro';
 import Tag from '@components/Tag.astro';
-import cxl from '@assets/cxl.com_.webp';
-import graduationSource from '@assets/graduationsource.com_.webp';
-import avantisystemsusa from '@assets/avantisystemsusa.com_.webp';
-import ArrowForward from '@icons/arrow-forward.svg';
-import { Image } from 'astro:assets';
+import Layout from '@layouts/default.astro';
 ---
 
 <Layout
-  title="Andrew Noblet - Professional"
-  description="Professional web development portfolio featuring scalable e-commerce platforms, high-performance applications, and enterprise solutions. Real-world client projects and technical achievements."
+  title="Commercial Installations"
+  description="Commercial smart home and building automation for Hudson Valley businesses. Energy-efficient lighting, access control, HVAC automation, and AV systems that save time and money."
 >
   <div class="column flex gap page">
     <div class="gap grid justify-content-center text-align-center">
-      <h1>Professional</h1>
+      <h1>Commercial Installations</h1>
       <p class="bold-5 max-width-56">
-        Explore professional web projects where I've built scalable e-commerce
-        platforms, educational systems, and corporate sites—demonstrating
-        expertise in modern tech and user-focused solutions.
+        Smart technology for local businesses — efficient lighting, secure
+        access, and automated environments that reduce costs and improve daily
+        operations.
       </p>
     </div>
     <div class="space-0-5"></div>
     <Card>
-      <h2>CXL</h2>
-      <Image src={cxl} alt="CXL" class="card-image" />
+      <h2>Energy-Efficient Lighting</h2>
       <div class="flex-1">
         <ul>
           <li>
-            Helped build CXL.com, a top online training platform for B2B
-            marketers.
+            Automated lighting control for offices, retail spaces, and
+            storefronts.
           </li>
           <li>
-            Delivered a feature-rich e-learning system with dynamic content,
-            user authentication, and subscription e-commerce.
+            <strong>Occupancy-Based Control:</strong> Lights that respond to presence
+            — on when needed, off when not.
           </li>
           <li>
-            Focused on a responsive, high-performance experience for on-demand
-            and live courses.
+            <strong>Scheduling:</strong> Lighting that follows business hours automatically,
+            including holidays and after-hours cleanups.
           </li>
+          <li>Significant energy and cost savings with usage reporting.</li>
         </ul>
       </div>
       <div class="flex flex-wrap gap-0-5 justify-content-center tags">
-        <Tag>HTML</Tag>
-        <Tag>CSS</Tag>
-        <Tag>JavaScript</Tag>
-        <Tag>Web Components</Tag>
-        <Tag>Lit</Tag>
-        <Tag>Wordpress</Tag>
-        <Tag>WooCommerce</Tag>
+        <Tag>Lighting Control</Tag>
+        <Tag>Occupancy Sensors</Tag>
+        <Tag>Scheduling</Tag>
+        <Tag>Energy Savings</Tag>
       </div>
-      <span></span>
-      <a
-        class="align-self-flex-end gap-0-5"
-        href="https://cxl.com/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Learn more <ArrowForward />
-      </a>
     </Card>
     <Card>
-      <h2>Graduation Source</h2>
-      <Image
-        src={graduationSource}
-        alt="Graduation Source"
-        class="card-image"
-      />
+      <h2>Access Control & Security</h2>
       <div class="flex-1">
         <ul>
           <li>
-            Built and maintained a robust e-commerce platform for
-            GraduationSource, serving 500,000+ graduates annually.
+            Smart locks and access control for offices, warehouses, and
+            storefronts.
           </li>
           <li>
-            Enhanced the product catalog, order management, and user account
-            features for a seamless experience.
+            <strong>Keyless Entry:</strong> Employee codes and schedules that revoke
+            access instantly when needed.
           </li>
           <li>
-            Developed student ordering portals, integrated payment gateways, and
-            ensured scalable, high-performance shopping for all education
-            levels.
+            <strong>Video Surveillance:</strong> Cameras with remote viewing and
+            recorded archives.
           </li>
+          <li>Integrated alarm monitoring and instant notifications.</li>
         </ul>
       </div>
       <div class="flex flex-wrap gap-0-5 justify-content-center tags">
-        <Tag>HTML</Tag>
-        <Tag>CSS</Tag>
-        <Tag>JS</Tag>
-        <Tag>PHP</Tag>
-        <Tag>Magento</Tag>
+        <Tag>Smart Locks</Tag>
+        <Tag>Access Control</Tag>
+        <Tag>Video Surveillance</Tag>
+        <Tag>Alarm Integration</Tag>
       </div>
-      <span></span>
-      <a
-        class="align-self-flex-end gap-0-5"
-        href="https://graduationsource.com/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Learn more <ArrowForward />
-      </a>
     </Card>
     <Card>
-      <h2>Avanti Systems USA</h2>
-      <Image
-        src={avantisystemsusa}
-        alt="Avanti Systems USA"
-        class="card-image"
-      />
+      <h2>HVAC Automation</h2>
       <div class="flex-1">
         <ul>
           <li>
-            Built a modern web presence for Avanti Systems USA, a leader in
-            commercial glass wall systems.
+            Smart thermostat and HVAC control for comfortable, efficient
+            workplaces.
           </li>
           <li>
-            Designed a visually engaging platform to showcase diverse product
-            lines—frameless, freestanding, and high wall systems.
+            <strong>Zone Control:</strong> Heat and cool only the areas in use, when
+            they're in use.
           </li>
           <li>
-            Delivered intuitive navigation and information architecture for
-            architects, designers, and contractors.
+            <strong>Energy Monitoring:</strong> Track usage across locations and
+            identify savings opportunities.
           </li>
-          <li>
-            Integrated robust product galleries, detailed specs, and lead
-            generation forms to boost engagement.
-          </li>
-          <li>
-            Prioritized responsive design and easy content management for
-            featured projects and the company blog.
-          </li>
+          <li>Remote management from anywhere.</li>
         </ul>
       </div>
       <div class="flex flex-wrap gap-0-5 justify-content-center tags">
-        <Tag>HTML</Tag>
-        <Tag>CSS</Tag>
-        <Tag>JavaScript</Tag>
-        <Tag>Wordpress</Tag>
+        <Tag>Smart Thermostats</Tag>
+        <Tag>Zone Control</Tag>
+        <Tag>Energy Monitoring</Tag>
+        <Tag>Remote Management</Tag>
       </div>
-      <span></span>
-      <a
-        class="align-self-flex-end gap-0-5"
-        href="https://avantisystemsusa.com/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Learn more <ArrowForward />
-      </a>
+    </Card>
+    <Card>
+      <h2>Conference & AV Systems</h2>
+      <div class="flex-1">
+        <ul>
+          <li>
+            Smart conference rooms with one-touch video calls, presentations,
+            and lighting scenes.
+          </li>
+          <li>
+            <strong>One-Touch Start:</strong> Lights, screen, and audio ready with
+            a single button press.
+          </li>
+          <li>
+            <strong>Reliable Video:</strong> Professional video conferencing that
+            just works for every meeting.
+          </li>
+          <li>Background music and paging for lobbies and common areas.</li>
+        </ul>
+      </div>
+      <div class="flex flex-wrap gap-0-5 justify-content-center tags">
+        <Tag>Conference Rooms</Tag>
+        <Tag>Video Conferencing</Tag>
+        <Tag>AV Control</Tag>
+        <Tag>Scenes</Tag>
+      </div>
+    </Card>
+    <Card>
+      <h2>Building Automation</h2>
+      <div class="flex-1">
+        <ul>
+          <li>
+            Connected systems that bring lighting, climate, security, and energy
+            together on one platform.
+          </li>
+          <li>
+            <strong>Central Control:</strong> Manage your entire building from one
+            dashboard, in the office or remotely.
+          </li>
+          <li>
+            <strong>Automation:</strong> Open/close, lock/unlock, and optimize based
+            on time, presence, and conditions.
+          </li>
+          <li>Scalable solutions that grow with your business.</li>
+        </ul>
+      </div>
+      <div class="flex flex-wrap gap-0-5 justify-content-center tags">
+        <Tag>Integration</Tag>
+        <Tag>Central Control</Tag>
+        <Tag>Automation</Tag>
+        <Tag>Scalable</Tag>
+      </div>
     </Card>
   </div>
 </Layout>
-<style>
-  .card-image {
-    border-radius: 0.25rem;
-    height: 100%;
-    width: 100%;
-  }
-</style>

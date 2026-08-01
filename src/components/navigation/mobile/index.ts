@@ -52,24 +52,24 @@ export class NavigationMobile extends Base {
             <li><a href="/">Home</a></li>
             <li>
               <details>
-                <summary>Portfolio</summary>
+                <summary>Services</summary>
                 <ul>
-                  <li><a href="/portfolio/personal">Personal</a></li>
-                  <li><a href="/portfolio/professional">Professional</a></li>
+                  <li><a href="/services/design">Design</a></li>
+                  <li><a href="/services/installation">Installation</a></li>
+                  <li><a href="/services/consultation">Consultation</a></li>
                 </ul>
               </details>
             </li>
             <li>
               <details>
-                <summary>Services</summary>
+                <summary>Projects</summary>
                 <ul>
-                  <li><a href="/services/design">Design</a></li>
-                  <li><a href="/services/hosting">Hosting</a></li>
-                  <li><a href="/services/consultation">Consultation</a></li>
+                  <li><a href="/portfolio/personal">Residential</a></li>
+                  <li><a href="/portfolio/professional">Commercial</a></li>
                 </ul>
               </details>
             </li>
-            <li><a href="/mentorship">Mentorship</a></li>
+            <li><a href="/mentorship">Education</a></li>
             <li><a href="/blog">Blog</a></li>
             <li><a href="/about">About</a></li>
           </ul>

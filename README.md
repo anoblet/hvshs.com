@@ -1,24 +1,24 @@
-# Astronautical Apogee
+# Hudson Valley Smart Home Services (hvshs.com)
 
-A modern, performance-focused portfolio website showcasing professional web development expertise. Built with cutting-edge technologies including Astro, Lit Web Components, and TypeScript.
+The official website for Hudson Valley Smart Home Services — smart home design, installation, and support for homes and businesses across the Hudson Valley. Built with Astro, Lit Web Components, and TypeScript.
 
-## � Lighthouse Scores
+## ⚡ Lighthouse Scores
 
-[![Lighthouse Performance](https://img.shields.io/badge/Performance-70%2F100-orange?style=flat-square&logo=lighthouse)](https://pagespeed.web.dev/analysis/https-andrewnoblet-com/u0qtn8h2zc?form_factor=mobile)
-[![Lighthouse Accessibility](https://img.shields.io/badge/Accessibility-100%2F100-brightgreen?style=flat-square&logo=lighthouse)](https://pagespeed.web.dev/analysis/https-andrewnoblet-com/u0qtn8h2zc?form_factor=mobile)
-[![Lighthouse Best Practices](https://img.shields.io/badge/Best%20Practices-100%2F100-brightgreen?style=flat-square&logo=lighthouse)](https://pagespeed.web.dev/analysis/https-andrewnoblet-com/u0qtn8h2zc?form_factor=mobile)
-[![Lighthouse SEO](https://img.shields.io/badge/SEO-100%2F100-brightgreen?style=flat-square&logo=lighthouse)](https://pagespeed.web.dev/analysis/https-andrewnoblet-com/u0qtn8h2zc?form_factor=mobile)
+[![Lighthouse Performance](https://img.shields.io/badge/Performance-70%2F100-orange?style=flat-square&logo=lighthouse)](https://pagespeed.web.dev/analysis/https-hvshs-com/u0qtn8h2zc?form_factor=mobile)
+[![Lighthouse Accessibility](https://img.shields.io/badge/Accessibility-100%2F100-brightgreen?style=flat-square&logo=lighthouse)](https://pagespeed.web.dev/analysis/https-hvshs-com/u0qtn8h2zc?form_factor=mobile)
+[![Lighthouse Best Practices](https://img.shields.io/badge/Best%20Practices-100%2F100-brightgreen?style=flat-square&logo=lighthouse)](https://pagespeed.web.dev/analysis/https-hvshs-com/u0qtn8h2zc?form_factor=mobile)
+[![Lighthouse SEO](https://img.shields.io/badge/SEO-100%2F100-brightgreen?style=flat-square&logo=lighthouse)](https://pagespeed.web.dev/analysis/https-hvshs-com/u0qtn8h2zc?form_factor=mobile)
 
-> **Note**: Badges show Lighthouse scores from the production deployment at [andrewnoblet.com](https://andrewnoblet.com). Click any badge to view the full PageSpeed Insights report. Scores are updated manually from the latest `pnpm lighthouse` report in `reports/lighthouse.json`.
+> **Note**: Badges show Lighthouse scores from the production deployment at [hvshs.com](https://hvshs.com). Click any badge to view the full PageSpeed Insights report. Scores are updated manually from the latest `pnpm lighthouse` report in `reports/lighthouse.json`.
 >
 > **Updating Badges**: Currently displays scores for the main production deployment. To update badges after optimization work:
 >
 > 1. Run `pnpm lighthouse` to generate a new report
 > 2. Run `pnpm update:lighthouse-badges` to update README badges automatically
 
-## �🚀 Overview
+## 🏠 Overview
 
-Astronautical Apogee is a professional portfolio website that demonstrates modern web development practices and showcases expertise in full-stack development, UI/UX design, and web performance optimization. The site features a component-driven architecture with a focus on accessibility, performance, and maintainability.
+Hudson Valley Smart Home Services is the online home for a local smart home business serving the Hudson Valley region. The site connects homeowners and businesses with professional smart home design, installation, and support — featuring a component-driven architecture with a focus on accessibility, performance, and maintainability.
 
 ## ✨ Features
 
@@ -54,7 +54,7 @@ Astronautical Apogee is a professional portfolio website that demonstrates moder
 ## 📁 Project Structure
 
 ```
-astronautical-apogee/
+hvshs.com/
 ├── src/
 │   ├── components/          # Reusable web components
 │   │   ├── base/           # Base component classes
@@ -65,7 +65,7 @@ astronautical-apogee/
 │   ├── layouts/            # Astro layout components
 │   ├── pages/              # Site pages and routes
 │   │   ├── blog/           # Blog posts
-│   │   ├── portfolio/      # Portfolio projects
+│   │   ├── portfolio/      # Projects (residential/commercial)
 │   │   └── services/       # Service offerings
 │   ├── styles/             # Global styles and themes
 │   ├── icons/              # SVG icon components
@@ -112,8 +112,8 @@ astronautical-apogee/
 1. **Clone the repository**
 
    ```bash
-   git clone https://github.com/anoblet/astronautical-apogee.git
-   cd astronautical-apogee
+   git clone https://github.com/anoblet/hvshs.com.git
+   cd hvshs.com
    ```
 
 2. **Install dependencies**
@@ -200,26 +200,23 @@ The project includes a sophisticated AI automation system powered by GenAIScript
 
 ## 📄 Content Structure
 
-### Portfolio
+### Projects
 
-- **Professional Projects**: Enterprise-level web applications
-  - CXL: E-learning platform development
-  - Graduation Source: E-commerce solutions
-  - Avanti Systems USA: Corporate web presence
-- **Personal Projects**: Open-source contributions and side projects
+- **Residential Installations**: Whole-home lighting, climate, security, and entertainment
+- **Commercial Installations**: Lighting control, access control, HVAC automation, and AV
 
 ### Services
 
-- **Web Development**: Full-stack application development
-- **UI/UX Design**: User interface and experience design
-- **Consultation**: Technical advisory and code reviews
-- **Mentorship**: Developer coaching and career guidance
+- **Smart Home Design**: Custom system planning and device selection
+- **Installation & Setup**: Professional device installation and configuration
+- **Consultation & Support**: Assessments, troubleshooting, and ongoing support
+- **Education & Training**: Learn to use and manage your smart home
 
 ### Blog
 
-- **Technical Articles**: Web development insights and tutorials
+- **Smart Home Tips**: Practical guidance for homeowners
 - **Industry Insights**: Trends and best practices
-- **Project Case Studies**: In-depth project breakdowns
+- **Case Studies**: In-depth project breakdowns
 
 ## 🔧 Configuration
 
@@ -286,14 +283,14 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ## 📞 Contact
 
-**Andrew Noblet**
+**Hudson Valley Smart Home Services**
 
-- **GitHub**: [anoblet](https://github.com/anoblet)
-- **Website**: [astronautical-apogee.pages.dev](https://my-astro-app.andrewbnoblet.workers.dev)
-- **LinkedIn**: [Andrew Noblet](https://linkedin.com/in/andrewnoblet)
+- **Phone**: (914) 417-9070
+- **Email**: andrewbnoblet@gmail.com
+- **Website**: [hvshs.com](https://hvshs.com)
 
 ---
 
 **Built with ❤️ using modern web technologies**
 
-_Current Version: 0.1.1_
+_Current Version: 0.3.0_

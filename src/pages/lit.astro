@@ -1,52 +1,91 @@
 ---
 import Layout from '../layouts/default.astro';
-import litdev from '../assets/lit.dev_.webp';
 ---
 
 <Layout
-  title="Lit"
-  description="Discover Lit - A simple library for building fast, lightweight web components. Learn about modern JavaScript/TypeScript development with this efficient, standards-based framework."
+  title="Technology"
+  description="The smart home platforms and technologies we support at Hudson Valley Smart Home Services - lighting, climate, security, entertainment, and voice assistants from the industry's leading brands."
 >
-  <h1>Lit</h1>
-  <card-component>
-    <img
-      src={litdev.src}
-      alt="Lit"
-      slot="image"
-      loading="lazy"
-      decoding="async"
-      fetchpriority="auto"
-      width={litdev.width}
-      height={litdev.height}
-    />
-    <h2 slot="title">
-      <a href="https://lit.dev/">Lit</a>
-    </h2>
-    <div class="tags" slot="tags">
-      <tag-component>JavaScript</tag-component>
-      <tag-component>TypeScript</tag-component>
-      <tag-component>Web Components</tag-component>
-      <tag-component>LitElement</tag-component>
-      <tag-component>Open Source</tag-component>
-    </div>
-    <ul class="flex column gap padding color-neutral-200" slot="content">
-      <li>
-        Lit is a fast, modern library for building web components and reactive
-        UIs.
-      </li>
-      <li>
-        I’ve spent 5+ years learning Lit and contributing to its ecosystem,
-        sharing ideas and improvements with the community.
-      </li>
-      <li>
-        My work includes building reusable UI components, exploring advanced
-        patterns, and championing web standards.
-      </li>
-    </ul>
-  </card-component>
+  <div class="grid gap-3 page">
+    <section class="justify-content-center gap grid text-align-center">
+      <h1>Smart Home Technology</h1>
+      <p class="hero-description">
+        We work with the industry's leading smart home platforms and
+        technologies. No matter what ecosystem you prefer, we design, install,
+        and integrate systems that work together seamlessly.
+      </p>
+    </section>
+    <section class="gap grid">
+      <h2>Platforms We Support</h2>
+      <div class="grid auto-fit-15 gap-2">
+        <div class="step-card">
+          <h3>Amazon Alexa</h3>
+          <p>Voice control for lighting, climate, entertainment, and more.</p>
+        </div>
+        <div class="step-card">
+          <h3>Google Home</h3>
+          <p>
+            Google Assistant integration for hands-free control throughout your
+            home.
+          </p>
+        </div>
+        <div class="step-card">
+          <h3>Apple HomeKit</h3>
+          <p>Secure, private smart home control from your Apple devices.</p>
+        </div>
+        <div class="step-card">
+          <h3>SmartThings</h3>
+          <p>
+            Flexible hub-based automation that connects hundreds of devices.
+          </p>
+        </div>
+        <div class="step-card">
+          <h3>Matter</h3>
+          <p>
+            The new universal standard that makes devices work across
+            ecosystems.
+          </p>
+        </div>
+        <div class="step-card">
+          <h3>Home Assistant</h3>
+          <p>
+            Powerful, local-first automation for advanced users who want full
+            control.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class="gap grid">
+      <h2>Device Categories</h2>
+      <div class="grid auto-fit-15 gap-2">
+        <div class="step-card">
+          <h3>Lighting</h3>
+          <p>Smart bulbs, switches, dimmers, and scenes from leading brands.</p>
+        </div>
+        <div class="step-card">
+          <h3>Climate</h3>
+          <p>Smart thermostats, sensors, and zoned climate control.</p>
+        </div>
+        <div class="step-card">
+          <h3>Security</h3>
+          <p>Cameras, doorbells, locks, sensors, and alarm integration.</p>
+        </div>
+        <div class="step-card">
+          <h3>Entertainment</h3>
+          <p>Smart TVs, speakers, and whole-home audio systems.</p>
+        </div>
+        <div class="step-card">
+          <h3>Network</h3>
+          <p>
+            Mesh Wi-Fi, routers, and wired infrastructure for reliable
+            connectivity.
+          </p>
+        </div>
+        <div class="step-card">
+          <h3>Automation</h3>
+          <p>Hubs, scenes, routines, and integrations that connect it all.</p>
+        </div>
+      </div>
+    </section>
+  </div>
 </Layout>
-
-<script>
-  import '../components/card';
-  import '../components/tag.ts';
-</script>

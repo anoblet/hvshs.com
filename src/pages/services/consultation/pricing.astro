@@ -1,11 +1,11 @@
 ---
-import Layout from '@layouts/default.astro';
 import PricingCard from '@components/PricingCard.astro';
+import Layout from '@layouts/default.astro';
 ---
 
 <Layout
-  title="Consultation Pricing"
-  description="Expert technical consultation pricing plans. Strategic advice and guidance to accelerate your project development. Choose consultation plans that fit your specific needs and timeline."
+  title="Smart Home Consultation Pricing"
+  description="Expert smart home consultation pricing plans. Guidance and advice to improve your smart home. Choose consultation plans that fit your specific needs and timeline."
 >
   <h1 class="text-align-center font-size-2 margin-bottom-2">
     Consultation Pricing
@@ -13,17 +13,17 @@ import PricingCard from '@components/PricingCard.astro';
   <p
     class="hero-description text-align-center margin-bottom-4 max-width-48 margin-auto"
   >
-    Expert guidance and strategic advice to accelerate your project. Choose the
+    Expert guidance and strategic advice to improve your smart home. Choose the
     consultation plan that fits your needs.
   </p>
 
   <div class="grid auto-fit-20 gap-2 width-100 max-width-64 margin-auto">
     <PricingCard
       title="Quick Consult"
-      description="For those needing fast answers or a second opinion on a specific challenge."
+      description="For those needing fast answers or a second opinion on a specific device or setup."
       features={[
         '30-minute session',
-        'Email summary',
+        'Device advice',
         'Actionable next steps',
         'Email follow-up',
       ]}
@@ -33,11 +33,11 @@ import PricingCard from '@components/PricingCard.astro';
     />
     <PricingCard
       title="Project Consult"
-      description="For teams or individuals seeking in-depth project review and recommendations."
+      description="For homeowners seeking an in-depth review of their smart home and recommendations."
       features={[
         '1-hour session',
-        'Detailed project review',
-        'Written report',
+        'Home setup review',
+        'Written recommendations',
         'Priority email support',
       ]}
       price="$299"

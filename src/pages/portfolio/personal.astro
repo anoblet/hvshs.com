@@ -1,150 +1,165 @@
 ---
-import Layout from '@layouts/default.astro';
 import Card from '@components/Card.astro';
 import Tag from '@components/Tag.astro';
-import genaiscript from '@assets/microsoft.github.io_genaiscript_.webp';
-import lit from '@assets/lit.dev_.webp';
-import astro from '@assets/astro.build_.webp';
-import ArrowForward from '@icons/arrow-forward.svg';
-import { Image } from 'astro:assets';
+import Layout from '@layouts/default.astro';
 ---
 
 <Layout
-  title="Andrew Noblet - Personal"
-  description="Explore personal projects showcasing passion for web development, open-source contributions, and experimental technologies. Creative solutions and innovative approaches to modern web challenges."
+  title="Residential Installations"
+  description="Residential smart home installations across the Hudson Valley. Whole-home lighting, climate, security, and entertainment systems tailored to your family's lifestyle."
 >
   <div class="column flex gap page">
     <div class="gap grid justify-content-center text-align-center">
-      <h1>Personal</h1>
+      <h1>Residential Installations</h1>
       <p class="bold-5 max-width-56">
-        Explore personal projects that showcase my passion for web development,
-        component architecture, and AI-driven workflows.
+        Smart home installations that make everyday life more comfortable,
+        secure, and energy-efficient — tailored to how your family lives.
       </p>
     </div>
     <div class="space-0-5"></div>
     <Card>
-      <h2>Astro</h2>
-      <Image src={astro} alt="Astro" class="card-image" />
+      <h2>Whole-Home Lighting</h2>
       <div class="flex-1">
         <ul>
           <li>
-            Astro is a modern static site builder focused on performance and
-            component-driven architecture.
+            Automated lighting throughout the home with smart switches, dimmers,
+            and scene controls.
           </li>
           <li>
-            <strong>Production Experience:</strong> I use Astro to build fast, maintainable,
-            and composable web projects with a focus on reusability and best practices,
-            including this very portfolio site.
+            <strong>Morning & Evening Scenes:</strong> Gradual wake-up lighting and
+            winding-down scenes that match your routines.
           </li>
           <li>
-            <strong>Community Involvement:</strong> I engage with the Astro community
-            by sharing feedback, testing new features, and contributing insights
-            from real-world project implementations.
+            <strong>Energy Efficiency:</strong> Lights that turn off when rooms are
+            empty and dim automatically to save power.
           </li>
           <li>
-            My experience includes creating complex layouts, building reusable
-            component systems, and integrating Astro with various frameworks
-            like Lit for optimal performance and developer experience.
+            Voice and app control for every room — from the kitchen to the
+            bedrooms.
           </li>
         </ul>
       </div>
       <div class="flex flex-wrap gap-0-5 justify-content-center tags">
-        <Tag>JavaScript</Tag>
-        <Tag>TypeScript</Tag>
-        <Tag>Static Site Generator</Tag>
-        <Tag>Astro</Tag>
-        <Tag>Open Source</Tag>
+        <Tag>Smart Switches</Tag>
+        <Tag>Smart Bulbs</Tag>
+        <Tag>Scenes</Tag>
+        <Tag>Voice Control</Tag>
+        <Tag>Energy Savings</Tag>
       </div>
-      <span></span>
-      <a class="align-self-flex-end gap-0-5" href="https://astro.build/">
-        Learn more <ArrowForward />
-      </a>
     </Card>
     <Card>
-      <h2>Lit</h2>
-      <Image src={lit} alt="Lit" class="card-image" />
+      <h2>Climate & Comfort</h2>
       <div class="flex-1">
         <ul>
           <li>
-            Lit is a fast, simple library for building web components and
-            reactive UIs.
+            Smart thermostat installation and configuration for year-round
+            comfort.
           </li>
           <li>
-            <strong>Active Open-Source Contributor:</strong> I have been contributing
-            to Lit's ecosystem for over 5 years, providing feedback on APIs, reporting
-            issues, and sharing improvements with the core team and community.
+            <strong>Adaptive Scheduling:</strong> Heating and cooling that adjusts
+            automatically to your daily routines.
           </li>
           <li>
-            <strong>Community Engagement:</strong> I participate in discussions on
-            GitHub, help other developers troubleshoot issues, and advocate for web
-            standards and best practices in the Lit community.
+            <strong>Remote Control:</strong> Adjust your home's temperature from
+            anywhere with your phone.
           </li>
           <li>
-            My work with Lit includes building production-ready reusable UI
-            components, exploring advanced patterns, and implementing complex
-            component architectures.
+            Energy monitoring that helps you understand and reduce your usage
+            and bills.
           </li>
         </ul>
       </div>
       <div class="flex flex-wrap gap-0-5 justify-content-center tags">
-        <Tag>JavaScript</Tag>
-        <Tag>TypeScript</Tag>
-        <Tag>Web Components</Tag>
-        <Tag>LitElement</Tag>
-        <Tag>Open Source</Tag>
+        <Tag>Smart Thermostats</Tag>
+        <Tag>Zoned Climate</Tag>
+        <Tag>Energy Monitoring</Tag>
+        <Tag>Remote Control</Tag>
       </div>
-      <span></span>
-      <a class="align-self-flex-end gap-0-5" href="https://lit.dev/">
-        Learn more <ArrowForward />
-      </a>
     </Card>
     <Card>
-      <h2>GenAIScript</h2>
-      <Image src={genaiscript} alt="GenAIScript" class="card-image" />
+      <h2>Home Security</h2>
       <div class="flex-1">
         <ul>
           <li>
-            <strong>Early Adopter & Contributor:</strong> I am actively learning
-            GenAIScript, an open-source scripting language for generative AI workflows
-            by Microsoft, and contributing to its growing community.
+            Integrated security with cameras, doorbells, sensors, and smart
+            locks for complete peace of mind.
           </li>
           <li>
-            <strong>Open-Source Contributions:</strong> I actively contribute to
-            the project by sharing feedback with the Microsoft team, reporting issues
-            and bugs, and engaging with other users to improve the project's documentation
-            and usability.
+            <strong>Arrival & Departure:</strong> Automations that arm your system
+            and lock your doors when you leave, and disarm on your return.
           </li>
           <li>
-            <strong>Production Implementation:</strong> I am implementing GenAIScript
-            in my daily workflow to automate content generation, experiment with
-            prompt engineering, and streamline repetitive development tasks using
-            AI.
+            <strong>Instant Alerts:</strong> Real-time notifications when motion
+            or activity is detected.
+          </li>
+          <li>
+            Video doorbells that let you see and speak with visitors from
+            anywhere.
           </li>
         </ul>
       </div>
       <div class="flex flex-wrap gap-0-5 justify-content-center tags">
-        <Tag>TypeScript</Tag>
-        <Tag>Node.js</Tag>
-        <Tag>AI</Tag>
-        <Tag>CLI</Tag>
-        <Tag>OpenAI</Tag>
-        <Tag>Prompt Engineering</Tag>
+        <Tag>Smart Cameras</Tag>
+        <Tag>Video Doorbells</Tag>
+        <Tag>Motion Sensors</Tag>
+        <Tag>Smart Locks</Tag>
+        <Tag>Alerts</Tag>
       </div>
-      <span></span>
-      <a
-        class="align-self-flex-end gap-0-5"
-        href="https://microsoft.github.io/genaiscript/"
-      >
-        Learn more <ArrowForward />
-      </a>
+    </Card>
+    <Card>
+      <h2>Entertainment & Audio</h2>
+      <div class="flex-1">
+        <ul>
+          <li>
+            Smart TVs, streaming, and whole-home audio installed and connected
+            for effortless entertainment.
+          </li>
+          <li>
+            <strong>Whole-Home Audio:</strong> Music that follows you from room to
+            room, controlled by voice or app.
+          </li>
+          <li>
+            <strong>Movie Mode:</strong> Lighting that dims and audio that focuses
+            the moment a movie starts.
+          </li>
+          <li>
+            Reliable streaming throughout the home on a properly configured
+            network.
+          </li>
+        </ul>
+      </div>
+      <div class="flex flex-wrap gap-0-5 justify-content-center tags">
+        <Tag>Smart TV</Tag>
+        <Tag>Whole-Home Audio</Tag>
+        <Tag>Streaming</Tag>
+        <Tag>Voice Control</Tag>
+      </div>
+    </Card>
+    <Card>
+      <h2>Automation & Scenes</h2>
+      <div class="flex-1">
+        <ul>
+          <li>
+            Connected automations that bring your whole home together — scenes,
+            schedules, and routines that just work.
+          </li>
+          <li>
+            <strong>Good Morning:</strong> Lights on, thermostat up, and news playing
+            — all with a single phrase.
+          </li>
+          <li>
+            <strong>Goodnight:</strong> All lights off, doors locked, and security
+            armed with one command.
+          </li>
+          <li>Personalization that evolves with your routines and needs.</li>
+        </ul>
+      </div>
+      <div class="flex flex-wrap gap-0-5 justify-content-center tags">
+        <Tag>Scenes</Tag>
+        <Tag>Schedules</Tag>
+        <Tag>Routines</Tag>
+        <Tag>Voice Assistant</Tag>
+      </div>
     </Card>
   </div>
 </Layout>
-
-<style>
-  .card-image {
-    border-radius: 0.25rem;
-    height: 100%;
-    width: 100%;
-  }
-</style>

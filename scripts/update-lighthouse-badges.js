@@ -33,10 +33,10 @@ function updateLighthouseBadges() {
 
     // Generate new badge URLs
     const badges = [
-      `[![Lighthouse Performance](https://img.shields.io/badge/Performance-${performance}%2F100-${getColor(performance)}?style=flat-square&logo=lighthouse)](https://pagespeed.web.dev/analysis/https-andrewnoblet-com/u0qtn8h2zc?form_factor=mobile)`,
-      `[![Lighthouse Accessibility](https://img.shields.io/badge/Accessibility-${accessibility}%2F100-${getColor(accessibility)}?style=flat-square&logo=lighthouse)](https://pagespeed.web.dev/analysis/https-andrewnoblet-com/u0qtn8h2zc?form_factor=mobile)`,
-      `[![Lighthouse Best Practices](https://img.shields.io/badge/Best%20Practices-${bestPractices}%2F100-${getColor(bestPractices)}?style=flat-square&logo=lighthouse)](https://pagespeed.web.dev/analysis/https-andrewnoblet-com/u0qtn8h2zc?form_factor=mobile)`,
-      `[![Lighthouse SEO](https://img.shields.io/badge/SEO-${seo}%2F100-${getColor(seo)}?style=flat-square&logo=lighthouse)](https://pagespeed.web.dev/analysis/https-andrewnoblet-com/u0qtn8h2zc?form_factor=mobile)`,
+      `[![Lighthouse Performance](https://img.shields.io/badge/Performance-${performance}%2F100-${getColor(performance)}?style=flat-square&logo=lighthouse)](https://pagespeed.web.dev/analysis/https-hvshs-com/u0qtn8h2zc?form_factor=mobile)`,
+      `[![Lighthouse Accessibility](https://img.shields.io/badge/Accessibility-${accessibility}%2F100-${getColor(accessibility)}?style=flat-square&logo=lighthouse)](https://pagespeed.web.dev/analysis/https-hvshs-com/u0qtn8h2zc?form_factor=mobile)`,
+      `[![Lighthouse Best Practices](https://img.shields.io/badge/Best%20Practices-${bestPractices}%2F100-${getColor(bestPractices)}?style=flat-square&logo=lighthouse)](https://pagespeed.web.dev/analysis/https-hvshs-com/u0qtn8h2zc?form_factor=mobile)`,
+      `[![Lighthouse SEO](https://img.shields.io/badge/SEO-${seo}%2F100-${getColor(seo)}?style=flat-square&logo=lighthouse)](https://pagespeed.web.dev/analysis/https-hvshs-com/u0qtn8h2zc?form_factor=mobile)`,
     ];
 
     // Read current README

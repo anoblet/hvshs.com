@@ -42,28 +42,6 @@ export class NavigationDesktop extends Base {
         <li>
           <div class="dropdown">
             <a
-              href="/portfolio"
-              class="dropdown-trigger"
-              role="button"
-              aria-haspopup="true"
-              aria-expanded="false"
-              aria-controls="portfolio-menu"
-              >Portfolio</a
-            >
-            <div
-              class="dropdown-menu"
-              id="portfolio-menu"
-              role="menu"
-              aria-label="Portfolio submenu"
-            >
-              <a href="/portfolio/personal" role="menuitem">Personal</a>
-              <a href="/portfolio/professional" role="menuitem">Professional</a>
-            </div>
-          </div>
-        </li>
-        <li>
-          <div class="dropdown">
-            <a
               href="/services"
               class="dropdown-trigger"
               role="button"
@@ -79,12 +57,34 @@ export class NavigationDesktop extends Base {
               aria-label="Services submenu"
             >
               <a href="/services/design" role="menuitem">Design</a>
-              <a href="/services/hosting" role="menuitem">Hosting</a>
+              <a href="/services/installation" role="menuitem">Installation</a>
               <a href="/services/consultation" role="menuitem">Consultation</a>
             </div>
           </div>
         </li>
-        <li><a href="/mentorship">Mentorship</a></li>
+        <li>
+          <div class="dropdown">
+            <a
+              href="/portfolio"
+              class="dropdown-trigger"
+              role="button"
+              aria-haspopup="true"
+              aria-expanded="false"
+              aria-controls="projects-menu"
+              >Projects</a
+            >
+            <div
+              class="dropdown-menu"
+              id="projects-menu"
+              role="menu"
+              aria-label="Projects submenu"
+            >
+              <a href="/portfolio/personal" role="menuitem">Residential</a>
+              <a href="/portfolio/professional" role="menuitem">Commercial</a>
+            </div>
+          </div>
+        </li>
+        <li><a href="/mentorship">Education</a></li>
         <li><a href="/blog">Blog</a></li>
         <li><a href="/about">About</a></li>
       </ul>

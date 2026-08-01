@@ -10,14 +10,14 @@ export class Consultation extends Base {
   @property({ type: String }) accessor copy: string = '';
 
   copyArray = [
-    'Interested in Working Together?',
+    'Interested in a Smarter Home?',
     'Let’s Connect!',
-    'Ready to Collaborate?',
-    'Let’s Discuss Your Project!',
-    'Let’s Bring Your Project to Life!',
-    'Let’s Make Your Vision a Reality!',
-    'Let’s Create Something Amazing Together!',
-    'Let’s Start Your Project Journey!',
+    'Ready to Automate Your Home?',
+    'Let’s Discuss Your Smart Home!',
+    'Let’s Bring Your Smart Home to Life!',
+    'Let’s Make Your Home Work Smarter!',
+    'Let’s Create a Seamless Smart Home Together!',
+    'Let’s Start Your Smart Home Journey!',
   ];
 
   constructor() {
@@ -47,8 +47,8 @@ export class Consultation extends Base {
       <section class="gap grid justify-content-center text-align-center">
         <h2>${this.copy}</h2>
         <p>
-          Let's connect and discuss how my experience can help bring your
-          project to life.
+          Let's connect and discuss how our smart home services can work for
+          your home.
         </p>
         <div></div>
         <a

@@ -1,0 +1,144 @@
+---
+import Layout from '../../layouts/default.astro';
+import Card from '@components/Card.astro';
+import ArrowForward from '@icons/arrow-forward.svg';
+---
+
+<Layout
+  title="Smart Home Installation Services"
+  description="Professional smart home installation in the Hudson Valley. Expert setup of lighting, climate, security, and entertainment systems with clean wiring and reliable configuration."
+>
+  <div class="grid gap-3 page">
+    <section class="justify-content-center gap grid text-align-center">
+      <h1>Installation & Setup</h1>
+      <p class="hero-description">
+        Professional installation of your smart home devices, done right the
+        first time. Clean wiring, proper placement, and reliable configuration
+        for systems that just work.
+      </p>
+    </section>
+    <section class="gap grid">
+      <h2>Why Choose Our Installation Services</h2>
+      <div class="grid auto-fit-15 gap-2">
+        <div class="step-card">
+          <h3>Professional Quality</h3>
+          <p>
+            Clean, code-compliant installation with attention to every detail.
+          </p>
+        </div>
+        <div class="step-card">
+          <h3>Reliable Setup</h3>
+          <p>
+            Proper configuration and testing so every device works reliably.
+          </p>
+        </div>
+        <div class="step-card">
+          <h3>Secure Configuration</h3>
+          <p>Network security best practices for all connected devices.</p>
+        </div>
+        <div class="step-card">
+          <h3>Ongoing Support</h3>
+          <p>Expert help whenever you need it, even after installation.</p>
+        </div>
+      </div>
+    </section>
+    <section class="gap grid">
+      <h2>Installation Services</h2>
+      <div class="column gap grid">
+        <Card>
+          <h3>Lighting Installation</h3>
+          <p>
+            Smart switches, dimmers, and bulbs installed and configured for
+            effortless lighting control throughout your home.
+          </p>
+          <ul>
+            <li>Smart switches and dimmers</li>
+            <li>Smart bulbs and fixtures</li>
+            <li>Scene and schedule setup</li>
+            <li>Voice assistant integration</li>
+          </ul>
+        </Card>
+        <Card>
+          <h3>Climate Control</h3>
+          <p>
+            Smart thermostat installation and configuration for comfortable,
+            energy-efficient climate management.
+          </p>
+          <ul>
+            <li>Smart thermostat installation</li>
+            <li>HVAC system integration</li>
+            <li>Zone control setup</li>
+            <li>Energy savings optimization</li>
+          </ul>
+        </Card>
+        <Card>
+          <h3>Security Systems</h3>
+          <p>
+            Cameras, doorbells, locks, and sensors professionally installed for
+            complete home security.
+          </p>
+          <ul>
+            <li>Camera and doorbell installation</li>
+            <li>Smart lock installation</li>
+            <li>Sensor placement and setup</li>
+            <li>Alarm system integration</li>
+          </ul>
+        </Card>
+        <Card>
+          <h3>Entertainment & Audio</h3>
+          <p>
+            Smart TVs, speakers, and whole-home audio installed and connected
+            for seamless entertainment.
+          </p>
+          <ul>
+            <li>Smart TV setup</li>
+            <li>Whole-home audio</li>
+            <li>Streaming device configuration</li>
+            <li>Media room wiring</li>
+          </ul>
+        </Card>
+        <Card>
+          <h3>Network & Connectivity</h3>
+          <p>
+            A solid network is the foundation of every smart home. We install
+            and optimize your Wi-Fi for reliable connections everywhere.
+          </p>
+          <ul>
+            <li>Mesh Wi-Fi installation</li>
+            <li>Network optimization</li>
+            <li>Device connectivity</li>
+            <li>Wired network setup</li>
+          </ul>
+        </Card>
+        <Card>
+          <h3>Automation & Integration</h3>
+          <p>
+            We connect all your devices into unified scenes, schedules, and
+            routines that work together automatically.
+          </p>
+          <ul>
+            <li>Platform integration</li>
+            <li>Scene and routine setup</li>
+            <li>Voice control configuration</li>
+            <li>Remote access setup</li>
+          </ul>
+        </Card>
+      </div>
+    </section>
+
+    <div class="flex text-align-center margin-top-4 justify-content-center">
+      <button-component
+        href="/services/installation/pricing"
+        variant="primary"
+        class="min-width-25vw"
+      >
+        View Installation Pricing
+        <ArrowForward />
+      </button-component>
+    </div>
+  </div>
+</Layout>
+
+<script>
+  import '@components/button';
+</script>
