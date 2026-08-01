@@ -89,12 +89,17 @@ export const globalStyles = css`
 
   h2 {
     color: var(--h2-color);
+    font-family: 'Montserrat', sans-serif;
     font-size: 2rem;
     line-height: 3rem;
   }
 
   h3 {
     color: var(--h3-color);
+  }
+
+  button {
+    font-family: 'Montserrat', sans-serif;
   }
 
   hr {

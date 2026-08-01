@@ -22,6 +22,7 @@ export class ButtonComponent extends Base {
         box-shadow: var(--box-shadow);
         color: var(--button-color);
         cursor: pointer;
+        font-family: 'Montserrat', sans-serif;
         font-size: 1.25rem;
         font-weight: 600;
         gap: 1rem;
