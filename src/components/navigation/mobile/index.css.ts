@@ -8,23 +8,12 @@ export const style = css`
     position: fixed;
     top: 0;
     left: 0;
-    transition:
-      opacity 0.4s ease-in-out,
-      transform 0.3s ease-in-out;
     width: 100%;
     z-index: 1000;
 
     aside > ul {
       margin: 0 1rem;
     }
-  }
-
-  :host([hidden]) {
-    opacity: 0;
-    transform: translateY(-100%);
-    transition:
-      opacity 0.4s ease-in-out,
-      transform 0.3s ease-in-out;
   }
 
   :host([opened]) {

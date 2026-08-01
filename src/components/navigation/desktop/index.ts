@@ -1,5 +1,5 @@
 import { Base } from '@components/base';
-import { home } from '@icons/index';
+import { hub } from '@icons/index';
 import { globalStyles } from '@styles/global';
 import { html } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
@@ -11,33 +11,15 @@ export class NavigationDesktop extends Base {
 
   static styles = [globalStyles, style];
 
-  scrollY = 0;
-
   close() {
     this.opened = false;
-  }
-
-  firstUpdated() {
-    super.firstUpdated();
-
-    window.addEventListener('scroll', () => {
-      if (this.scrollY > window.scrollY) {
-        this.hidden = false;
-      }
-
-      if (this.scrollY < window.scrollY) {
-        this.hidden = true;
-      }
-
-      this.scrollY = window.scrollY;
-    });
   }
 
   render() {
     return html`
       <div class="left">
         <a href="/" id="home" part="home" aria-label="Home">
-          <icon-component>${home}</icon-component>
+          <icon-component>${hub}</icon-component>
         </a>
         <ul class="overflow-x">
           <li>
@@ -98,7 +80,7 @@ export class NavigationDesktop extends Base {
         part="brand-icon"
         aria-label="Hudson Valley Smart Home Services"
       >
-        <icon-component>${home}</icon-component>
+        <icon-component>${hub}</icon-component>
       </a>
       <div class="right">
         <ul>

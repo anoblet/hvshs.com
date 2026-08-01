@@ -33,7 +33,6 @@ const { title, description = 'Astro description' } = Astro.props;
     </main>
     <Footer />
     <contact-component></contact-component>
-    <theme-toggle></theme-toggle>
     <style>
       *:has(:not(:defined)) {
         opacity: 0;
@@ -80,7 +79,6 @@ const { title, description = 'Astro description' } = Astro.props;
 <script>
   import '@components/contact';
   import '@components/social';
-  import '@components/theme/toggle';
   import { globalStyles } from '@styles/global';
   import { applyStoredTheme } from '@utility/theme';
 

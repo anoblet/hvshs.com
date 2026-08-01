@@ -1,7 +1,7 @@
 import { Base } from '@components/base';
 import '@components/icon';
 import '@components/social';
-import { close, home, menu } from '@icons/index';
+import { close, hub, menu } from '@icons/index';
 import { html } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { style } from './index.css';
@@ -11,8 +11,6 @@ export class NavigationMobile extends Base {
   @property({ type: Boolean, reflect: true }) accessor opened = false;
 
   static styles = [...super.styles, style];
-
-  scrollY = 0;
 
   toggle() {
     this.opened = !this.opened;
@@ -24,22 +22,6 @@ export class NavigationMobile extends Base {
     }
   }
 
-  firstUpdated() {
-    super.firstUpdated();
-
-    window.addEventListener('scroll', () => {
-      if (this.scrollY > window.scrollY) {
-        this.hidden = false;
-      }
-
-      if (this.scrollY < window.scrollY) {
-        this.hidden = true;
-      }
-
-      this.scrollY = window.scrollY;
-    });
-  }
-
   render() {
     return html`
       <div class="space-between">
@@ -49,7 +31,7 @@ export class NavigationMobile extends Base {
           class="brand-icon"
           aria-label="Hudson Valley Smart Home Services"
         >
-          <icon-component>${home}</icon-component>
+          <icon-component>${hub}</icon-component>
         </a>
       </div>
       <aside class="column gap flex">
