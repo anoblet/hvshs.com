@@ -83,6 +83,7 @@ export const globalStyles = css`
 
   h1 {
     color: var(--h1-color);
+    font-family: 'Montserrat', sans-serif;
     font-size: 2.5rem;
   }
 
