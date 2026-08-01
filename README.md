@@ -90,7 +90,7 @@ hvshs.com/
 
 ### Typography
 
-- **Primary**: Noto Sans for body text
+- **Primary**: Google Sans for body text
 - **Secondary**: Poppins for headings
 - **Loading**: Optimized web font loading with preconnect
 

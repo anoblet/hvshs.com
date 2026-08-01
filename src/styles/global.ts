@@ -51,7 +51,7 @@ export const globalStyles = css`
     color: var(--text-color);
     display: flex;
     flex-direction: column;
-    font-family: 'Noto Sans', 'Roboto', sans-serif;
+    font-family: 'Google Sans', 'Roboto', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     margin: 0;
@@ -96,6 +96,7 @@ export const globalStyles = css`
 
   h3 {
     color: var(--h3-color);
+    font-family: 'Montserrat', sans-serif;
   }
 
   button {

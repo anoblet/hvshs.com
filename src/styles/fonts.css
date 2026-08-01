@@ -1,6 +1,6 @@
 /* Critical font loading optimization - minimal font loading */
-@import '@fontsource/noto-sans/latin-400.css';
-@import '@fontsource/noto-sans/latin-600.css';
+@import '@fontsource/google-sans/latin-400.css';
+@import '@fontsource/google-sans/latin-600.css';
 @import '@fontsource/montserrat/latin-500.css';
 @import '@fontsource/montserrat/latin-700.css';
 @import '@fontsource/montserrat/latin-800.css';
@@ -11,7 +11,7 @@
 
 html {
   font-family:
-    'Noto Sans',
+    'Google Sans',
     system-ui,
     -apple-system,
     Segoe UI,
