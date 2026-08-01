@@ -110,6 +110,17 @@ export const homeRepairService = html`<svg
   />
 </svg>`;
 
+export const lightbulb = html`<svg
+  xmlns="http://www.w3.org/2000/svg"
+  height="24px"
+  viewBox="0 -960 960 960"
+  width="24px"
+>
+  <path
+    d="M480-80q-33 0-56.5-23.5T400-160h160q0 33-23.5 56.5T480-80Zm-80-120v-80h160v80H400Zm-40-120q-63-42-101.5-106T220-560q0-108 76-184t184-76q108 0 184 76t76 184q0 70-38.5 134T520-320H360Zm40-80h160q40-32 60-74t20-86q0-75-52.5-127.5T480-660q-75 0-127.5 52.5T300-560q0 44 20 86t60 74Zm80 0Z"
+  />
+</svg>`;
+
 export const home = html`<svg
   xmlns="http://www.w3.org/2000/svg"
   height="24px"

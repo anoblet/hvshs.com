@@ -1,9 +1,7 @@
 /* Critical font loading optimization - minimal font loading */
+@import '@fontsource-variable/google-sans-flex/wght.css';
 @import '@fontsource/google-sans/latin-400.css';
 @import '@fontsource/google-sans/latin-600.css';
-@import '@fontsource/montserrat/latin-500.css';
-@import '@fontsource/montserrat/latin-700.css';
-@import '@fontsource/montserrat/latin-800.css';
 
 :root {
   --font-display: swap;
@@ -11,7 +9,7 @@
 
 html {
   font-family:
-    'Google Sans',
+    'Google Sans Flex Variable',
     system-ui,
     -apple-system,
     Segoe UI,

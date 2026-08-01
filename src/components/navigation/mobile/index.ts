@@ -1,7 +1,7 @@
 import { Base } from '@components/base';
 import '@components/icon';
 import '@components/social';
-import { close, homeRepairService, menu } from '@icons/index';
+import { close, lightbulb, menu } from '@icons/index';
 import { html } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { style } from './index.css';
@@ -48,7 +48,7 @@ export class NavigationMobile extends Base {
           class="brand-icon"
           aria-label="Hudson Valley Smart Home Services"
         >
-          ${homeRepairService}
+          ${lightbulb}
         </icon-component>
       </div>
       <aside class="column gap flex">

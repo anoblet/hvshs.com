@@ -51,7 +51,8 @@ export const globalStyles = css`
     color: var(--text-color);
     display: flex;
     flex-direction: column;
-    font-family: 'Google Sans', 'Roboto', sans-serif;
+    font-family:
+      'Google Sans Flex Variable', 'Google Sans', 'Roboto', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     margin: 0;
@@ -77,26 +78,23 @@ export const globalStyles = css`
   h4,
   h5,
   h6 {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Google Sans', 'Google Sans Flex Variable', sans-serif;
     margin: 0;
   }
 
   h1 {
     color: var(--h1-color);
-    font-family: 'Montserrat', sans-serif;
     font-size: 2.5rem;
   }
 
   h2 {
     color: var(--h2-color);
-    font-family: 'Montserrat', sans-serif;
     font-size: 2rem;
     line-height: 3rem;
   }
 
   h3 {
     color: var(--h3-color);
-    font-family: 'Montserrat', sans-serif;
   }
 
   button {
