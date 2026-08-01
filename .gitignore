@@ -1,6 +1,7 @@
 .astro
 .chroma
 .env
+.firebase
 .genaiscript
 .lighthouseci
 .screenshots
@@ -15,3 +16,9 @@ node_modules
 genaiscript.d.ts
 tsconfig.json
 jsconfig.json
+
+.firebaserc
+firebase.json
+
+task.md
+tasks.md
