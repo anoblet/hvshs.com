@@ -1,7 +1,7 @@
 import { Base } from '@components/base';
 import '@components/button';
 import '@components/icon';
-import { arrowForward } from '@icons/index';
+import { phone } from '@icons/index';
 import { css, html } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
@@ -58,9 +58,7 @@ export class Consultation extends Base {
           rel="noopener noreferrer"
         >
           <button-component>
-            Schedule a consultation<icon-component
-              >${arrowForward}</icon-component
-            >
+            Contact<icon-component>${phone}</icon-component>
           </button-component>
         </a>
       </section>

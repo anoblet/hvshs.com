@@ -236,10 +236,10 @@ export class HeroComponent extends Base {
             </h1>
             <div class="buttons">
               <button-component href="/services" variant="primary">
-                Our Services
+                Services
               </button-component>
               <button-component href="/contact" variant="secondary">
-                Book a Consultation
+                Contact
               </button-component>
             </div>
           </div>
