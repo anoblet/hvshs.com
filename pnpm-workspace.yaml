@@ -3,6 +3,8 @@ packages:
 
 allowBuilds:
   esbuild: true
+  protobufjs: false
+  re2: false
   sharp: true
   workerd: true
 

@@ -48,8 +48,8 @@ Hudson Valley Smart Home Services is the online home for a local smart home busi
 
 ### Deployment
 
-- **[Cloudflare Pages](https://pages.cloudflare.com/)** - Static site hosting
-- **[Wrangler](https://developers.cloudflare.com/workers/wrangler/)** - Deployment tooling
+- **[Firebase Hosting](https://firebase.google.com/products/hosting)** - Static site hosting
+- **[Firebase CLI](https://firebase.google.com/docs/cli)** - Deployment tooling
 
 ## 📁 Project Structure
 
@@ -152,7 +152,7 @@ pnpm lighthouse                # Run Lighthouse audit and save report
 pnpm update:lighthouse-badges   # Update README badges from latest report
 
 # Deployment
-pnpm deploy           # Deploy to Cloudflare Pages
+pnpm deploy           # Deploy to Firebase Hosting
 ```
 
 ## 🏗 Architecture
@@ -231,10 +231,10 @@ The project includes comprehensive configuration for:
 
 ### Deployment
 
-Configured for Cloudflare Pages with:
+Configured for Firebase Hosting with:
 
 - **Automatic Builds**: Git-based deployment pipeline
-- **Performance Optimization**: Edge caching and compression
+- **Performance Optimization**: CDN caching and compression
 - **Custom Domain**: Professional domain configuration
 
 ## 🎯 Performance
