@@ -1,7 +1,5 @@
 import { Base } from '@components/base';
 import '@components/button';
-import '@components/icon';
-import { phone } from '@icons/index';
 import { css, html } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
@@ -57,9 +55,7 @@ export class Consultation extends Base {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <button-component>
-            Contact<icon-component>${phone}</icon-component>
-          </button-component>
+          <button-component> Contact </button-component>
         </a>
       </section>
     `;
