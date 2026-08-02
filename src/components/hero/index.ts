@@ -30,14 +30,14 @@ export class HeroComponent extends Base {
     ...super.styles,
     css`
       :host {
-        display: block;
+        display: flex;
+        flex-direction: column;
         flex: 1;
         width: 100%;
       }
 
       .hero {
-        aspect-ratio: 16 / 9;
-        border-radius: 0.5rem;
+        flex: 1;
         overflow: hidden;
         position: relative;
         width: 100%;
@@ -121,7 +121,6 @@ export class HeroComponent extends Base {
 
       @media (max-width: 48rem) {
         .hero {
-          aspect-ratio: auto;
           min-height: 24rem;
         }
 

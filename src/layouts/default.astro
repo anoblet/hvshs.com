@@ -9,9 +9,15 @@ import { ViewTransitions } from 'astro:transitions';
 interface Props {
   title: string;
   description?: string;
+  /** Removes main padding so content (e.g. a hero) fills the full content section */
+  fullBleed?: boolean;
 }
 
-const { title, description = 'Astro description' } = Astro.props;
+const {
+  title,
+  description = 'Astro description',
+  fullBleed = false,
+} = Astro.props;
 ---
 
 <!doctype html>
@@ -28,7 +34,11 @@ const { title, description = 'Astro description' } = Astro.props;
   <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
     <Header />
-    <main id="main-content" class="column flex gap">
+    <main
+      id="main-content"
+      class="column flex gap"
+      data-full-bleed={fullBleed ? '' : undefined}
+    >
       <slot />
     </main>
     <Footer />
@@ -74,6 +84,10 @@ const { title, description = 'Astro description' } = Astro.props;
     p {
       align-items: initial;
     }
+  }
+
+  main[data-full-bleed] {
+    padding: 0;
   }
 </style>
 <script>
