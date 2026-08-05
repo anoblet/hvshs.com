@@ -6,6 +6,7 @@ export const style = css`
     background: transparent;
     border: none;
     outline: none;
+    text-decoration: none;
   }
 
   :host {
