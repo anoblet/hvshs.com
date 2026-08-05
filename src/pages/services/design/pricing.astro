@@ -5,7 +5,7 @@ import Layout from '@layouts/default.astro';
 
 <Layout
   title="Smart Home Design Pricing"
-  description="Professional smart home design pricing plans for the Hudson Valley. Custom system planning for lighting, climate, security, and entertainment. Choose flexible pricing options that fit your vision and budget."
+  description="Subscription plans for ongoing smart home design guidance in the Hudson Valley, with custom system planning and support."
 >
   <h1 class="text-align-center font-size-2 margin-bottom-2">
     Smart Home Design Pricing
@@ -13,35 +13,39 @@ import Layout from '@layouts/default.astro';
   <p
     class="hero-description text-align-center margin-bottom-4 max-width-48 margin-auto"
   >
-    Professional, custom smart home system design tailored to your home and
-    lifestyle. Choose the plan that fits your vision.
+    Get ongoing design guidance tailored to your home and lifestyle. Initial
+    assessment and planning are included in the subscription.
   </p>
 
   <div class="grid auto-fit-20 gap-2 width-100 max-width-64 margin-auto">
     <PricingCard
-      title="Starter Design"
-      description="For homeowners wanting a smart home plan for a single room or focused system."
+      title="Design Care"
+      description="Ongoing guidance for a single room or focused smart home system."
       features={[
-        'Home technology assessment',
-        'Single-room design',
+        'Initial technology assessment',
+        'Single-room design plan',
         'Device & platform selection',
+        'Monthly design check-in',
         'Email support',
       ]}
-      price="$499"
-      buttonText="Get Design"
+      price="$49"
+      billingPeriod=" / month"
+      buttonText="Choose plan"
       buttonHref="/contact"
     />
     <PricingCard
-      title="Pro Design"
-      description="For homes seeking a comprehensive whole-home smart system design."
+      title="Whole-Home Design"
+      description="Comprehensive ongoing planning for homes with evolving smart systems."
       features={[
         'Full-home assessment',
-        'Whole-home system design',
+        'Whole-home system plan',
         'Automation planning',
+        'Monthly optimization review',
         'Priority support',
       ]}
-      price="$999"
-      buttonText="Get Design"
+      price="$99"
+      billingPeriod=" / month"
+      buttonText="Choose plan"
       buttonHref="/contact"
     />
   </div>

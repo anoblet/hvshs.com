@@ -5,7 +5,7 @@ import Layout from '@layouts/default.astro';
 
 <Layout
   title="Smart Home Installation Pricing"
-  description="Professional smart home installation pricing plans in the Hudson Valley. Expert setup of lighting, climate, security, and entertainment systems with transparent pricing that fits your needs and budget."
+  description="Subscription plans for smart home installation support in the Hudson Valley, including onboarding, maintenance, and expert system updates."
 >
   <h1 class="text-align-center font-size-2 margin-bottom-2">
     Installation Pricing
@@ -13,35 +13,39 @@ import Layout from '@layouts/default.astro';
   <p
     class="hero-description text-align-center margin-bottom-4 max-width-48 margin-auto"
   >
-    Professional installation and configuration for every smart home setup.
-    Choose the plan that fits your needs.
+    Keep your smart home running smoothly with recurring installation support.
+    Initial setup and configuration are included where listed.
   </p>
 
   <div class="grid auto-fit-20 gap-2 width-100 max-width-64 margin-auto">
     <PricingCard
-      title="Basic Installation"
-      description="For homeowners installing a starter smart home system with a few key devices."
+      title="Essential Care"
+      description="Ongoing support for a starter system with a few key devices."
       features={[
         'Up to 10 devices',
-        'Hub & app setup',
+        'Initial hub and app setup',
         'Network configuration',
+        'Monthly maintenance check',
         'Email support',
       ]}
-      price="$499"
-      buttonText="Get Installation"
+      price="$79"
+      billingPeriod=" / month"
+      buttonText="Choose plan"
       buttonHref="/contact"
     />
     <PricingCard
-      title="Pro Installation"
-      description="For homes installing comprehensive systems requiring more devices and integration."
+      title="Complete Care"
+      description="Recurring installation and maintenance for comprehensive systems and integrations."
       features={[
         'Up to 30 devices',
-        'Security & climate install',
-        'Custom automation setup',
+        'Initial security and climate setup',
+        'Custom automation updates',
+        'Monthly system review',
         'Priority support',
       ]}
-      price="$1,199"
-      buttonText="Get Installation"
+      price="$149"
+      billingPeriod=" / month"
+      buttonText="Choose plan"
       buttonHref="/contact"
     />
   </div>

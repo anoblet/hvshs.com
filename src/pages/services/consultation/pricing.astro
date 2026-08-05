@@ -5,7 +5,7 @@ import Layout from '@layouts/default.astro';
 
 <Layout
   title="Smart Home Consultation Pricing"
-  description="Expert smart home consultation pricing plans. Guidance and advice to improve your smart home. Choose consultation plans that fit your specific needs and timeline."
+  description="Subscription plans for ongoing smart home consultation, guidance, and prioritized support. One-time sessions remain available for focused projects."
 >
   <h1 class="text-align-center font-size-2 margin-bottom-2">
     Consultation Pricing
@@ -13,35 +13,37 @@ import Layout from '@layouts/default.astro';
   <p
     class="hero-description text-align-center margin-bottom-4 max-width-48 margin-auto"
   >
-    Expert guidance and strategic advice to improve your smart home. Choose the
-    consultation plan that fits your needs.
+    Get a recurring partner for decisions, improvements, and troubleshooting.
+    One-time consultations remain available for focused project needs.
   </p>
 
   <div class="grid auto-fit-20 gap-2 width-100 max-width-64 margin-auto">
     <PricingCard
-      title="Quick Consult"
-      description="For those needing fast answers or a second opinion on a specific device or setup."
+      title="Guidance"
+      description="A monthly source of fast answers and second opinions for your smart home."
       features={[
-        '30-minute session',
+        'One 30-minute session monthly',
         'Device advice',
         'Actionable next steps',
-        'Email follow-up',
+        'Ongoing email follow-up',
       ]}
-      price="$99"
-      buttonText="Contact"
+      price="$39"
+      billingPeriod=" / month"
+      buttonText="Choose plan"
       buttonHref="/contact"
     />
     <PricingCard
-      title="Project Consult"
-      description="For homeowners seeking an in-depth review of their smart home and recommendations."
+      title="Advisory"
+      description="Ongoing strategic advice for homeowners managing a larger or evolving system."
       features={[
-        '1-hour session',
-        'Home setup review',
+        'One 1-hour session monthly',
+        'Quarterly home setup review',
         'Written recommendations',
-        'Priority email support',
+        'Priority ongoing support',
       ]}
-      price="$299"
-      buttonText="Contact"
+      price="$89"
+      billingPeriod=" / month"
+      buttonText="Choose plan"
       buttonHref="/contact"
     />
   </div>

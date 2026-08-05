@@ -4,11 +4,19 @@ export interface Props {
   description: string;
   features: string[];
   price: string;
+  billingPeriod?: string;
   buttonText: string;
   buttonHref: string;
 }
-const { title, description, features, price, buttonText, buttonHref } =
-  Astro.props;
+const {
+  title,
+  description,
+  features,
+  price,
+  billingPeriod,
+  buttonText,
+  buttonHref,
+} = Astro.props;
 ---
 
 <card-component>
@@ -19,6 +27,7 @@ const { title, description, features, price, buttonText, buttonHref } =
   </ul>
   <div class="font-size-2 font-weight-6 margin-bottom-2 text-align-center">
     {price}
+    {billingPeriod && <span class="font-size-1">{billingPeriod}</span>}
   </div>
   <div class="flex justify-content-center">
     <button-component variant="primary" href={buttonHref}

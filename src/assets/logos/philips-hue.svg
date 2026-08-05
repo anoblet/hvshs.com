@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 96" role="img" aria-labelledby="title">
+  <title id="title">Philips Hue</title>
+  <rect width="320" height="96" rx="12" fill="#f5f5f5"/>
+  <circle cx="52" cy="48" r="25" fill="#ff5f00"/>
+  <path fill="#fff" d="M40 36h7v24h-7zm17 0h7v24h-7z"/>
+  <text x="94" y="58" fill="#163a70" font-family="Arial, sans-serif" font-size="29" font-weight="700">PHILIPS hue</text>
+</svg>

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 96" role="img" aria-labelledby="title">
+  <title id="title">Aqara</title>
+  <rect width="320" height="96" rx="12" fill="#f5f5f5"/>
+  <path fill="#1b1b1b" d="M40 70 70 24h22l30 46h-18l-7-12H65l-7 12H40Zm34-25h14l-7-12-7 12Z"/>
+  <text x="139" y="63" fill="#1b1b1b" font-family="Arial, sans-serif" font-size="40" font-weight="700">aqara</text>
+</svg>

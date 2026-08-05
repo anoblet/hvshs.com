@@ -1,4 +1,7 @@
 ---
+import aqaraLogo from '@assets/logos/aqara.svg';
+import philipsHueLogo from '@assets/logos/philips-hue.svg';
+import thirdRealityLogo from '@assets/logos/third-reality.svg';
 import Layout from '../layouts/default.astro';
 ---
 
@@ -56,6 +59,38 @@ import Layout from '../layouts/default.astro';
       </div>
     </section>
     <section class="gap grid">
+      <h2>Device Brands We Support</h2>
+      <div class="grid auto-fit-15 gap-2">
+        <div class="step-card text-align-center">
+          <img
+            class="brand-logo"
+            src={aqaraLogo.src}
+            alt="Aqara"
+            loading="lazy"
+          />
+          <h3>Aqara</h3>
+        </div>
+        <div class="step-card text-align-center">
+          <img
+            class="brand-logo"
+            src={philipsHueLogo.src}
+            alt="Philips Hue"
+            loading="lazy"
+          />
+          <h3>Philips Hue</h3>
+        </div>
+        <div class="step-card text-align-center">
+          <img
+            class="brand-logo"
+            src={thirdRealityLogo.src}
+            alt="Third Reality"
+            loading="lazy"
+          />
+          <h3>Third Reality</h3>
+        </div>
+      </div>
+    </section>
+    <section class="gap grid">
       <h2>Device Categories</h2>
       <div class="grid auto-fit-15 gap-2">
         <div class="step-card">
@@ -89,3 +124,13 @@ import Layout from '../layouts/default.astro';
     </section>
   </div>
 </Layout>
+
+<style>
+  .brand-logo {
+    display: block;
+    height: 4.5rem;
+    margin: 0 auto 1rem;
+    max-width: 100%;
+    object-fit: contain;
+  }
+</style>

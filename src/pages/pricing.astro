@@ -11,8 +11,8 @@ import Layout from '@layouts/default.astro';
   <p
     class="hero-description text-align-center margin-bottom-4 max-width-48 margin-auto"
   >
-    Select the plan that suits your goals. Every plan includes professional
-    design, quality installation, and ongoing support.
+    Choose a monthly service plan for ongoing smart home guidance, maintenance,
+    and support. One-time setup work is included where noted.
   </p>
 
   <div class="flex gap-2 justify-center margin-bottom-4">
@@ -20,46 +20,49 @@ import Layout from '@layouts/default.astro';
       href="/services/design/pricing"
       class="button button-primary font-size-1-125"
     >
-      Pricing
+      Design plans
     </a>
     <a
       href="/services/installation/pricing"
       class="button button-primary font-size-1-125"
     >
-      Pricing
+      Installation plans
     </a>
     <a
       href="/services/consultation/pricing"
       class="button button-primary font-size-1-125"
     >
-      Pricing
+      Consultation plans
     </a>
   </div>
   <div class="grid auto-fit-20 gap-2 width-100 max-width-64 margin-auto">
     <PricingCard
       title="Essential"
-      description="Perfect for homeowners looking to get started with a smart home essentials package."
+      description="A monthly foundation for homeowners getting started with a smart home essentials package."
       features={[
-        'Smart hub setup',
-        'Lighting controls',
-        'Smart thermostat install',
+        'Smart hub onboarding',
+        'Lighting and thermostat setup',
+        'Monthly system check-in',
         'Email support',
       ]}
-      price="$999"
-      buttonText="Get Started"
+      price="$99"
+      billingPeriod=" / month"
+      buttonText="Start subscription"
       buttonHref="/contact"
     />
     <PricingCard
       title="Whole Home"
-      description="Designed for homes wanting full automation with security, climate, and entertainment."
+      description="Ongoing whole-home automation support for security, climate, and entertainment systems."
       features={[
-        'Whole-home automation',
-        'Security system setup',
-        'Custom scenes & routines',
+        'Whole-home onboarding',
+        'Security and climate setup',
+        'Custom scenes and routines',
+        'Monthly optimization review',
         'Priority support',
       ]}
-      price="$2,499"
-      buttonText="Get Started"
+      price="$249"
+      billingPeriod=" / month"
+      buttonText="Start subscription"
       buttonHref="/contact"
     />
   </div>
