@@ -17,9 +17,6 @@ genaiscript.d.ts
 tsconfig.json
 jsconfig.json
 
-.firebaserc
-firebase.json
-
 link.json
 
 task.md
