@@ -28,7 +28,7 @@ jobs:
           node-version: 22
           cache: pnpm
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: pnpm ci
       - name: Build site
         run: pnpm build
       - name: Deploy to Firebase Hosting
