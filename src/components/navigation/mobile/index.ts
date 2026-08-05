@@ -25,7 +25,17 @@ export class NavigationMobile extends Base {
   render() {
     return html`
       <div class="space-between">
-        <icon-component @click=${this.toggle}>${menu}</icon-component>
+        <button
+          class="menu-toggle"
+          @click=${this.toggle}
+          aria-label=${this.opened
+            ? 'Close navigation menu'
+            : 'Open navigation menu'}
+          aria-expanded=${this.opened ? 'true' : 'false'}
+          aria-controls="mobile-drawer"
+        >
+          <icon-component>${this.opened ? close : menu}</icon-component>
+        </button>
         <a
           href="/"
           class="brand-icon"
@@ -34,39 +44,52 @@ export class NavigationMobile extends Base {
           <icon-component>${hub}</icon-component>
         </a>
       </div>
-      <aside class="column gap flex">
-        <icon-component @click=${this.toggle}>${close}</icon-component>
+      <div
+        id="mobile-drawer"
+        class="column gap flex drawer"
+        aria-hidden=${this.opened ? 'false' : 'true'}
+      >
+        <button
+          class="menu-toggle"
+          @click=${this.toggle}
+          aria-label="Close navigation menu"
+        >
+          <icon-component>${close}</icon-component>
+        </button>
         <div class="flex-1 padding">
-          <ul>
-            <li><a href="/">Home</a></li>
-            <li>
-              <details>
-                <summary>Services</summary>
-                <ul>
-                  <li><a href="/services/design">Design</a></li>
-                  <li><a href="/services/installation">Installation</a></li>
-                  <li><a href="/services/consultation">Consultation</a></li>
-                </ul>
-              </details>
-            </li>
-            <li>
-              <details>
-                <summary>Projects</summary>
-                <ul>
-                  <li><a href="/portfolio/personal">Residential</a></li>
-                  <li><a href="/portfolio/professional">Commercial</a></li>
-                </ul>
-              </details>
-            </li>
-            <li><a href="/mentorship">Education</a></li>
-            <li><a href="/service-area">Service Area</a></li>
-            <li><a href="/blog">Blog</a></li>
-            <li><a href="/faq">FAQ</a></li>
-            <li><a href="/about">About</a></li>
-          </ul>
+          <nav aria-label="Mobile navigation">
+            <ul>
+              <li><a href="/">Home</a></li>
+              <li>
+                <details>
+                  <summary>Services</summary>
+                  <ul>
+                    <li><a href="/services/design">Design</a></li>
+                    <li><a href="/services/installation">Installation</a></li>
+                    <li><a href="/services/consultation">Consultation</a></li>
+                  </ul>
+                </details>
+              </li>
+              <li>
+                <details>
+                  <summary>Projects</summary>
+                  <ul>
+                    <li><a href="/portfolio/personal">Residential</a></li>
+                    <li><a href="/portfolio/professional">Commercial</a></li>
+                  </ul>
+                </details>
+              </li>
+              <li><a href="/pricing">Pricing</a></li>
+              <li><a href="/mentorship">Education</a></li>
+              <li><a href="/service-area">Service Area</a></li>
+              <li><a href="/blog">Blog</a></li>
+              <li><a href="/faq">FAQ</a></li>
+              <li><a href="/about">About</a></li>
+            </ul>
+          </nav>
         </div>
         <social-component></social-component>
-      </aside>
+      </div>
     `;
   }
 }

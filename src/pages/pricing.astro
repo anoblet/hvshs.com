@@ -15,10 +15,45 @@ import Layout from '@layouts/default.astro';
         plans. Every quote is scoped and signed off before work begins — no
         surprise bills.
       </p>
+      <div
+        class="trust-strip flex gap-2 flex-wrap justify-content-center"
+        aria-label="Pricing guarantees"
+      >
+        <span class="trust-item">✓ No surprise bills</span>
+        <span class="trust-item">✓ Fixed quotes</span>
+        <span class="trust-item">✓ 12-month labor warranty</span>
+        <span class="trust-item">✓ Cancel anytime</span>
+      </div>
     </header>
 
-    <section class="gap-2 grid">
-      <h2>Project Packages</h2>
+    <section class="gap-2 grid" id="two-ways">
+      <h2>Two ways to work with us</h2>
+      <div class="grid auto-fit-20 gap-2 width-100">
+        <article class="option-card">
+          <h3>Project packages</h3>
+          <p>
+            One-time installation for new smart home setups. Pick a tier, get it
+            done.
+          </p>
+          <a href="#project-packages" class="button button-primary"
+            >View packages</a
+          >
+        </article>
+        <article class="option-card">
+          <h3>Monthly care plans</h3>
+          <p>
+            Ongoing support, updates, and maintenance. Keep your system running
+            perfectly.
+          </p>
+          <a href="#care-plans" class="button button-primary">View plans</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="gap-2 grid" id="project-packages">
+      <h2>
+        <span class="section-chip one-time">One-time</span> Project Packages
+      </h2>
       <p>
         Transparent, fixed quotes for complete projects. Most homeowners pick
         the middle tier — the value jump is obvious.
@@ -85,8 +120,11 @@ import Layout from '@layouts/default.astro';
       </p>
     </section>
 
-    <section class="gap-2 grid">
-      <h2>Monthly Care Plans</h2>
+    <section class="gap-2 grid" id="care-plans">
+      <h2>
+        <span class="section-chip subscription">Subscription</span> Monthly Care
+        Plans
+      </h2>
       <p>
         Smart home support that never sleeps. Care plans convert one-off jobs
         into ongoing peace of mind — one avoided service call roughly pays for a
@@ -104,6 +142,7 @@ import Layout from '@layouts/default.astro';
           ]}
           price="$25"
           billingPeriod=" / month · or $249/yr"
+          recurring
           buttonText="Start care"
           buttonHref="/contact"
         />
@@ -121,6 +160,7 @@ import Layout from '@layouts/default.astro';
           price="$49"
           billingPeriod=" / month · or $499/yr"
           badge="Most Popular"
+          recurring
           buttonText="Start care"
           buttonHref="/contact"
         />
@@ -136,9 +176,13 @@ import Layout from '@layouts/default.astro';
           ]}
           price="$79"
           billingPeriod=" / month"
+          recurring
           buttonText="Start care"
           buttonHref="/contact"
         />
+      </div>
+      <div class="savings-note">
+        <strong>Best value:</strong> Annual plans save 2 months of billing
       </div>
       <p>
         Care plans require an installation or audit history with us — no cold

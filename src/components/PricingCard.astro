@@ -9,6 +9,8 @@ export interface Props {
   buttonHref: string;
   /** Optional highlight label shown above the title (e.g., "Most Popular") */
   badge?: string;
+  /** Whether this is a recurring/subscription plan (affects styling and label) */
+  recurring?: boolean;
 }
 const {
   title,
@@ -19,23 +21,34 @@ const {
   buttonText,
   buttonHref,
   badge,
+  recurring = false,
 } = Astro.props;
 ---
 
-<card-component>
+<card-component class={recurring ? 'recurring' : 'one-time'}>
   {badge && <span class="badge">{badge}</span>}
+  <span class={`plan-type ${recurring ? 'subscription' : 'one-time'}`}>
+    {recurring ? 'Subscription' : 'One-time'}
+  </span>
   <h2 class="font-size-1-5">{title}</h2>
   <p class="font-size-1-125">{description}</p>
   <ul class="list margin-bottom-2">
     {features.map(feature => <li>{feature}</li>)}
   </ul>
-  <div class="font-size-2 font-weight-6 margin-bottom-2 text-align-center">
+  <div
+    class="font-size-2 font-weight-6 margin-bottom-2 text-align-center price-row"
+  >
     {price}
-    {billingPeriod && <span class="font-size-1">{billingPeriod}</span>}
+    {
+      billingPeriod && (
+        <span class="font-size-1 billing-period">{billingPeriod}</span>
+      )
+    }
   </div>
   <div class="flex justify-content-center">
-    <button-component variant="primary" href={buttonHref}
-      >{buttonText}</button-component
+    <button-component
+      variant={recurring ? 'primary' : 'secondary'}
+      href={buttonHref}>{buttonText}</button-component
     >
   </div>
 </card-component>
@@ -51,6 +64,37 @@ const {
     letter-spacing: 0.05em;
     padding: 0.25rem 0.75rem;
     text-transform: uppercase;
+  }
+
+  .plan-type {
+    align-self: flex-start;
+    border-radius: 999px;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    padding: 0.2rem 0.625rem;
+    text-transform: uppercase;
+  }
+
+  .plan-type.subscription {
+    background: var(--color-sky-700, var(--color-teal-500));
+    color: #fff;
+  }
+
+  .plan-type.one-time {
+    background: var(--color-neutral-700);
+    color: var(--color-neutral-200);
+  }
+
+  .price-row {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 0.35rem;
+  }
+
+  .billing-period {
+    color: var(--color-neutral-400);
   }
 </style>
 

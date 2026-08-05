@@ -24,8 +24,6 @@ const taglines = [
 export class HeroComponent extends Base {
   @property({ type: String }) accessor images = '[]';
 
-  @property({ type: Number }) accessor interval = 6000;
-
   static styles = [
     ...super.styles,
     css`
@@ -156,8 +154,6 @@ export class HeroComponent extends Base {
 
   private current = 0;
 
-  private timerId?: ReturnType<typeof setInterval>;
-
   private tagline = taglines[Math.floor(Math.random() * taglines.length)];
 
   private get slides(): HeroImage[] {
@@ -171,61 +167,25 @@ export class HeroComponent extends Base {
 
   connectedCallback() {
     super.connectedCallback();
-    this.start();
+    const slides = this.slides;
+    this.current =
+      slides.length > 0 ? Math.floor(Math.random() * slides.length) : 0;
   }
-
-  disconnectedCallback() {
-    super.disconnectedCallback();
-    this.stop();
-  }
-
-  private reducedMotion() {
-    return (
-      window.matchMedia?.('(prefers-reduced-motion: reduce)').matches ?? false
-    );
-  }
-
-  private start() {
-    this.stop();
-    if (this.slides.length < 2 || this.reducedMotion()) return;
-    this.timerId = setInterval(() => {
-      this.current = (this.current + 1) % this.slides.length;
-      this.requestUpdate();
-    }, this.interval);
-  }
-
-  private stop() {
-    if (this.timerId) {
-      clearInterval(this.timerId);
-      this.timerId = undefined;
-    }
-  }
-
-  private handleEnter = () => this.stop();
-
-  private handleLeave = () => this.start();
 
   render() {
+    const slide = this.slides[this.current];
     return html`
-      <div
-        class="hero"
-        @mouseenter=${this.handleEnter}
-        @mouseleave=${this.handleLeave}
-        @focusin=${this.handleEnter}
-        @focusout=${this.handleLeave}
-      >
+      <div class="hero">
         <div class="slides">
-          ${this.slides.map(
-            (image, index) => html`
-              <img
-                class="slide ${index === this.current ? 'active' : ''}"
-                src=${image.src}
-                srcset=${image.srcset ?? ''}
-                alt=${image.alt}
-                loading=${index === 0 ? 'eager' : 'lazy'}
-              />
-            `
-          )}
+          ${slide
+            ? html`<img
+                class="slide active"
+                src=${slide.src}
+                srcset=${slide.srcset ?? ''}
+                alt=${slide.alt}
+                loading="eager"
+              />`
+            : ''}
         </div>
         <div class="overlay">
           <div class="text">

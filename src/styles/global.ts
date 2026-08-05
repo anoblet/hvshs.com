@@ -44,6 +44,26 @@ export const globalStyles = css`
     &:hover {
       color: var(--a-hover-color);
     }
+
+    &:focus-visible {
+      outline: 2px solid var(--color-accent-500, #19f9d8);
+      outline-offset: 2px;
+      border-radius: 2px;
+    }
+  }
+
+  button:focus-visible,
+  [role='button']:focus-visible,
+  input:focus-visible,
+  select:focus-visible,
+  textarea:focus-visible {
+    outline: 2px solid var(--color-accent-500, #19f9d8);
+    outline-offset: 2px;
+  }
+
+  p a {
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
   }
 
   body {
@@ -441,6 +461,75 @@ export const globalStyles = css`
 
     @media (max-width: 768px) {
       padding: 1.25rem;
+    }
+  }
+
+  .trust-strip {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    margin: 1.5rem 0;
+  }
+
+  .trust-item {
+    background: var(--color-neutral-100);
+    border: 1px solid var(--color-neutral-200);
+    border-radius: 2rem;
+    color: var(--color-neutral-700);
+    font-size: 0.875rem;
+    padding: 0.5rem 1rem;
+    white-space: nowrap;
+  }
+
+  .option-card {
+    background: var(--color-neutral-100);
+    border: 1px solid var(--color-neutral-200);
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.5rem;
+    text-align: center;
+
+    h3 {
+      margin: 0;
+    }
+
+    p {
+      flex: 1;
+    }
+  }
+
+  .section-chip {
+    background: var(--color-neutral-700);
+    border-radius: 1rem;
+    color: var(--color-neutral-100);
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-right: 0.5rem;
+    padding: 0.25rem 0.75rem;
+    text-transform: uppercase;
+    vertical-align: middle;
+  }
+
+  .section-chip.one-time {
+    background: var(--color-neutral-700);
+  }
+
+  .section-chip.subscription {
+    background: var(--color-teal-500);
+  }
+
+  .savings-note {
+    background: var(--color-teal-100);
+    border: 1px solid var(--color-teal-300);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    text-align: center;
+
+    strong {
+      color: var(--color-teal-700);
     }
   }
 

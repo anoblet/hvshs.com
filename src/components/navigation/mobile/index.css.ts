@@ -1,6 +1,13 @@
 import { css } from 'lit';
 
 export const style = css`
+  .menu-toggle {
+    appearance: none;
+    background: transparent;
+    border: none;
+    outline: none;
+  }
+
   :host {
     background-color: var(--navigation-background-color);
     box-shadow: var(--box-shadow);
@@ -11,19 +18,19 @@ export const style = css`
     width: 100%;
     z-index: 1000;
 
-    aside > ul {
+    .drawer > ul {
       margin: 0 1rem;
     }
   }
 
   :host([opened]) {
-    aside {
+    .drawer {
       left: 0;
       transition: left 0.2s ease-in-out;
     }
   }
 
-  aside {
+  .drawer {
     background-color: var(--navigation-background-color);
     height: 100vh;
     left: -100vw;

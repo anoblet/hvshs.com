@@ -71,7 +71,7 @@ export class NavigationDesktop extends Base {
               </div>
             </div>
           </li>
-          <li><a href="/pricing">Plans</a></li>
+          <li><a href="/pricing">Pricing</a></li>
           <li><a href="/mentorship">Education</a></li>
           <li><a href="/service-area">Service Area</a></li>
         </ul>
