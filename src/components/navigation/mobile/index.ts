@@ -1,7 +1,7 @@
 import { Base } from '@components/base';
 import '@components/icon';
 import '@components/social';
-import { close, hub, menu } from '@icons/index';
+import { close, menu } from '@icons/index';
 import { html } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { style } from './index.css';
@@ -37,11 +37,10 @@ export class NavigationMobile extends Base {
           <icon-component>${this.opened ? close : menu}</icon-component>
         </button>
         <a
-          href="/"
+          href="https://hvshs.com/"
           class="brand-icon"
           aria-label="Hudson Valley Smart Home Services"
         >
-          <icon-component>${hub}</icon-component>
           <span class="brand-title">HVSHS</span>
         </a>
       </div>

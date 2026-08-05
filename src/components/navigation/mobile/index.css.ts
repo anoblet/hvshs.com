@@ -80,8 +80,6 @@ export const style = css`
   }
 
   .brand-icon {
-    --icon-color: var(--button-background-color);
-    --icon-size: 2rem;
     align-items: center;
     cursor: default;
     display: flex;

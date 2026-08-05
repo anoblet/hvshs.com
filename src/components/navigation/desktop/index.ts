@@ -77,12 +77,11 @@ export class NavigationDesktop extends Base {
         </ul>
       </div>
       <a
-        href="/"
+        href="https://hvshs.com/"
         class="brand-icon"
         part="brand-icon"
         aria-label="Hudson Valley Smart Home Services"
       >
-        <icon-component>${hub}</icon-component>
         <span class="brand-title">Hudson Valley Smart Home Solutions</span>
       </a>
       <div class="right">

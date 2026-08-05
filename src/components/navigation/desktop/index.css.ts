@@ -41,12 +41,9 @@ export const style = css`
   }
 
   .brand-icon {
-    --icon-color: var(--button-background-color);
-    --icon-hover-color: var(--button-background-color);
     align-items: center;
     display: flex;
     gap: 0.5rem;
-    --icon-size: 2rem;
     justify-self: center;
   }
 
