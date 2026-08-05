@@ -11,6 +11,7 @@
 chats
 dist
 node_modules
+storage
 
 genaiscript.d.ts
 tsconfig.json
