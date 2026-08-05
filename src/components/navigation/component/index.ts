@@ -6,8 +6,8 @@ import { html } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { style } from './index.css';
 
-@customElement('navigation-mobile')
-export class NavigationMobile extends Base {
+@customElement('navigation-component')
+export class NavigationComponent extends Base {
   @property({ type: Boolean, reflect: true }) accessor opened = false;
 
   static styles = [...super.styles, style];
