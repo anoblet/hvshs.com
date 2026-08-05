@@ -42,6 +42,7 @@ export class NavigationMobile extends Base {
           aria-label="Hudson Valley Smart Home Services"
         >
           <icon-component>${hub}</icon-component>
+          <span class="brand-title">HVSHS</span>
         </a>
       </div>
       <div

@@ -82,10 +82,19 @@ export const style = css`
   .brand-icon {
     --icon-color: var(--button-background-color);
     --icon-size: 2rem;
+    align-items: center;
     cursor: default;
+    display: flex;
+    gap: 0.5rem;
     left: 50%;
     position: absolute;
     transform: translateX(-50%);
+  }
+
+  .brand-title {
+    color: var(--navigation-a-color);
+    font-size: 1rem;
+    font-weight: 600;
   }
 
   svg {

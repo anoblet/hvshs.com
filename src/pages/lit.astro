@@ -1,7 +1,11 @@
 ---
 import aqaraLogo from '@assets/logos/aqara.svg';
+import bluetoothLogo from '@assets/logos/bluetooth.svg';
 import philipsHueLogo from '@assets/logos/philips-hue.svg';
 import thirdRealityLogo from '@assets/logos/third-reality.svg';
+import wifiLogo from '@assets/logos/wifi.svg';
+import zWaveLogo from '@assets/logos/z-wave.svg';
+import zigbeeLogo from '@assets/logos/zigbee.svg';
 import Layout from '../layouts/default.astro';
 ---
 
@@ -87,6 +91,42 @@ import Layout from '../layouts/default.astro';
             loading="lazy"
           />
           <h3>Third Reality</h3>
+        </div>
+        <div class="step-card text-align-center">
+          <img
+            class="brand-logo"
+            src={zigbeeLogo.src}
+            alt="Zigbee"
+            loading="lazy"
+          />
+          <h3>Zigbee</h3>
+        </div>
+        <div class="step-card text-align-center">
+          <img
+            class="brand-logo"
+            src={zWaveLogo.src}
+            alt="Z-Wave"
+            loading="lazy"
+          />
+          <h3>Z-Wave</h3>
+        </div>
+        <div class="step-card text-align-center">
+          <img
+            class="brand-logo"
+            src={wifiLogo.src}
+            alt="Wi-Fi"
+            loading="lazy"
+          />
+          <h3>Wi-Fi</h3>
+        </div>
+        <div class="step-card text-align-center">
+          <img
+            class="brand-logo"
+            src={bluetoothLogo.src}
+            alt="Bluetooth"
+            loading="lazy"
+          />
+          <h3>Bluetooth</h3>
         </div>
       </div>
     </section>

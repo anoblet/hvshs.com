@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 96" role="img" aria-labelledby="title">
+  <title id="title">Zigbee</title>
+  <rect width="320" height="96" rx="12" fill="#f5f5f5"/>
+  <path fill="#f4b400" d="M38 30h46L50 64h34v10H37l34-34H38z"/>
+  <text x="103" y="62" fill="#1b1b1b" font-family="Arial, sans-serif" font-size="38" font-weight="700">Zigbee</text>
+</svg>

@@ -83,6 +83,7 @@ export class NavigationDesktop extends Base {
         aria-label="Hudson Valley Smart Home Services"
       >
         <icon-component>${hub}</icon-component>
+        <span class="brand-title">Hudson Valley Smart Home Solutions</span>
       </a>
       <div class="right">
         <ul>

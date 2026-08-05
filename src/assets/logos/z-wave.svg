@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 96" role="img" aria-labelledby="title">
+  <title id="title">Z-Wave</title>
+  <rect width="320" height="96" rx="12" fill="#f5f5f5"/>
+  <path fill="#2b6cb0" d="M38 30h50v10L52 64h36v10H38V64l36-24H38z"/>
+  <text x="104" y="62" fill="#1b1b1b" font-family="Arial, sans-serif" font-size="34" font-weight="700">Z-Wave</text>
+</svg>
