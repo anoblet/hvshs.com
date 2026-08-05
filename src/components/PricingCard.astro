@@ -12,6 +12,7 @@ export interface Props {
   /** Whether this is a recurring/subscription plan (affects styling and label) */
   recurring?: boolean;
 }
+
 const {
   title,
   description,
@@ -25,76 +26,215 @@ const {
 } = Astro.props;
 ---
 
-<card-component class={recurring ? 'recurring' : 'one-time'}>
-  {badge && <span class="badge">{badge}</span>}
-  <span class={`plan-type ${recurring ? 'subscription' : 'one-time'}`}>
-    {recurring ? 'Subscription' : 'One-time'}
-  </span>
-  <h2 class="font-size-1-5">{title}</h2>
-  <p class="font-size-1-125">{description}</p>
-  <ul class="list margin-bottom-2">
-    {features.map(feature => <li>{feature}</li>)}
-  </ul>
-  <div
-    class="font-size-2 font-weight-6 margin-bottom-2 text-align-center price-row"
-  >
-    {price}
+<card-component
+  class:list={[
+    'pricing-card',
+    recurring ? 'recurring' : 'one-time',
+    { featured: Boolean(badge) },
+  ]}
+>
+  <div class="card-header">
+    <div class="eyebrow-row">
+      <span class:list={['plan-type', recurring ? 'subscription' : 'one-time']}>
+        {recurring ? 'Subscription' : 'One-time'}
+      </span>
+      {badge && <span class="badge">{badge}</span>}
+    </div>
+    <h2>{title}</h2>
+    <p class="description">{description}</p>
+  </div>
+
+  <div class="price-row">
+    <span class="price-amount">{price}</span>
     {
       billingPeriod && (
-        <span class="font-size-1 billing-period">{billingPeriod}</span>
+        <span class="billing-period">{billingPeriod.trim()}</span>
       )
     }
   </div>
-  <div class="flex justify-content-center">
+
+  <ul class="feature-list">
+    {
+      features.map(feature => (
+        <li>
+          <>
+            <span class="check" aria-hidden="true">
+              ✓
+            </span>
+            <span>{feature}</span>
+          </>
+        </li>
+      ))
+    }
+  </ul>
+
+  <div class="card-action">
     <button-component
       variant={recurring ? 'primary' : 'secondary'}
-      href={buttonHref}>{buttonText}</button-component
+      href={buttonHref}
     >
+      {buttonText}<span class="arrow" aria-hidden="true">→</span>
+    </button-component>
   </div>
 </card-component>
 
 <style>
-  .badge {
-    align-self: flex-start;
-    background: var(--color-accent-500, var(--color-teal-500));
-    border-radius: 999px;
-    color: var(--color-neutral-900);
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.05em;
-    padding: 0.25rem 0.75rem;
-    text-transform: uppercase;
+  card-component {
+    --card-border-color: var(--color-neutral-400);
+    --card-background-color: var(--color-neutral-50);
+    border-radius: 1rem;
+    box-sizing: border-box;
+    min-height: 100%;
+    overflow: hidden;
+    position: relative;
   }
 
+  card-component::before {
+    background: var(--color-neutral-700);
+    content: '';
+    height: 0.25rem;
+    inset: 0 0 auto;
+    position: absolute;
+  }
+
+  card-component.recurring::before {
+    background: var(--color-sky-700, var(--color-teal-500));
+  }
+  card-component.featured {
+    --card-border-color: var(--color-accent-500, var(--color-teal-500));
+  }
+  card-component.featured::before {
+    background: var(--color-accent-500, var(--color-teal-500));
+  }
+
+  .card-header {
+    display: grid;
+    gap: 0.75rem;
+  }
+  .eyebrow-row {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: space-between;
+    min-height: 1.5rem;
+  }
+  h2 {
+    font-size: clamp(1.35rem, 2vw, 1.75rem);
+    margin: 0;
+  }
+  .description {
+    color: var(--color-neutral-700);
+    line-height: 1.55;
+    margin: 0;
+    min-height: 3.1em;
+  }
+
+  .badge,
   .plan-type {
-    align-self: flex-start;
     border-radius: 999px;
     font-size: 0.6875rem;
-    font-weight: 600;
-    letter-spacing: 0.04em;
-    padding: 0.2rem 0.625rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    padding: 0.3rem 0.65rem;
     text-transform: uppercase;
   }
-
+  .badge {
+    background: var(--color-accent-500, var(--color-teal-500));
+    color: var(--color-neutral-900);
+  }
   .plan-type.subscription {
     background: var(--color-sky-700, var(--color-teal-500));
     color: #fff;
   }
-
   .plan-type.one-time {
     background: var(--color-neutral-700);
     color: var(--color-neutral-200);
   }
 
   .price-row {
-    display: flex;
-    align-items: baseline;
-    justify-content: center;
+    border-bottom: 1px solid var(--color-neutral-300);
+    display: grid;
     gap: 0.35rem;
+    justify-items: start;
+    margin: 0.25rem 0 0.5rem;
+    padding: 1rem 0 1.25rem;
+  }
+  .price-label {
+    color: var(--color-neutral-400);
+    font-size: 0.6875rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .price-display {
+    align-items: baseline;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: flex-end;
+    max-width: 100%;
+  }
+  .price-amount {
+    color: var(--color-neutral-900);
+    font-size: clamp(2.25rem, 5vw, 3.25rem);
+    font-weight: 750;
+    letter-spacing: -0.06em;
+    line-height: 0.95;
+  }
+  .billing-period {
+    color: var(--color-neutral-700);
+    font-size: 0.875rem;
+    line-height: 1.3;
+    max-width: 100%;
+    text-align: left;
+    text-wrap: balance;
   }
 
-  .billing-period {
-    color: var(--color-neutral-400);
+  .feature-list {
+    display: grid;
+    flex: 1;
+    gap: 0.8rem;
+    list-style: none;
+    margin: 0;
+    padding: 0.25rem 0;
+  }
+  li {
+    align-items: flex-start;
+    color: var(--color-neutral-800);
+    display: flex;
+    gap: 0.65rem;
+    line-height: 1.45;
+  }
+  .check {
+    color: var(--color-accent-500, var(--color-teal-500));
+    flex: 0 0 auto;
+    font-weight: 700;
+  }
+  .card-action {
+    margin-top: auto;
+    padding-top: 0.75rem;
+  }
+  button-component {
+    width: 100%;
+  }
+  .arrow {
+    font-size: 1.25em;
+    line-height: 0;
+    transition: transform 0.2s ease;
+  }
+  button-component:hover .arrow {
+    transform: translateX(0.2rem);
+  }
+
+  @media (max-width: 30rem) {
+    .eyebrow-row {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+    .description {
+      min-height: 0;
+    }
   }
 </style>
 

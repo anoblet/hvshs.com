@@ -12,7 +12,7 @@ const { class: className = '' } = Astro.props;
 
 <style>
   .card {
-    background-color: var(--card-background-color);
+    background-color: var(--card-background-color, #fff);
     border-radius: 0.5rem;
     display: flex;
     flex-direction: column;
