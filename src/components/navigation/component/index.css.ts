@@ -6,6 +6,8 @@ export const style = css`
     background: transparent;
     border: none;
     outline: none;
+    margin: 0;
+    padding: 0;
     text-decoration: none;
   }
 
