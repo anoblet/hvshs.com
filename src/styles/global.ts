@@ -361,6 +361,30 @@ export const globalStyles = css`
     overflow-x: auto;
   }
 
+  .pricing-table {
+    border-collapse: collapse;
+    width: 100%;
+
+    th,
+    td {
+      border-bottom: 1px solid var(--color-neutral-700);
+      padding: 0.75rem 1rem;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      color: var(--h2-color);
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    td:first-child {
+      font-weight: 500;
+      white-space: nowrap;
+    }
+  }
+
   .padding {
     padding: var(--padding);
   }

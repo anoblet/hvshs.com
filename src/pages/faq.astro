@@ -1,0 +1,181 @@
+---
+import Layout from '../layouts/default.astro';
+---
+
+<Layout
+  title="Frequently Asked Questions"
+  description="Answers to common questions about smart home services in the Hudson Valley — pricing, service area, vendor lock-in, warranties, NYSERDA rebates, and more."
+>
+  <div class="column flex gap-3 page">
+    <header class="gap grid text-align-center justify-content-center">
+      <h1 class="font-size-2 margin-bottom-2">Frequently Asked Questions</h1>
+      <p class="hero-description">
+        Honest answers about how we work, what things cost, and what to expect
+        when you hire a local smart home team.
+      </p>
+    </header>
+
+    <section class="gap-2 grid">
+      <h2>Service Area</h2>
+      <details>
+        <summary>Where do you work?</summary>
+        <p>
+          We're based in Tarrytown and serve the Rivertowns and lower Hudson
+          Valley — including Sleepy Hollow, Irvington, Dobbs Ferry,
+          Hastings-on-Hudson, Ardsley, Scarsdale, White Plains, Bronxville, and
+          beyond. See our full{' '}
+          <a href="/service-area">service area</a>. Trip fees apply beyond 25
+          miles of Tarrytown (see <a href="/pricing">pricing</a>).
+        </p>
+      </details>
+      <details>
+        <summary>Do you only work in Westchester?</summary>
+        <p>
+          No — we regularly serve the broader Hudson Valley from Rockland and
+          Westchester counties up through Dutchess and Ulster. We prioritize the
+          lower Hudson Valley for onsite work and offer remote support anywhere.
+        </p>
+      </details>
+    </section>
+
+    <section class="gap-2 grid">
+      <h2>Approach &amp; Contract</h2>
+      <details>
+        <summary>Are you vendor-neutral?</summary>
+        <p>
+          Yes. We design around the devices and platforms that fit your home and
+          budget — Amazon, Apple, Google, Home Assistant, and professional
+          systems alike. We don't sell a proprietary ecosystem and we don't lock
+          you into one.
+        </p>
+      </details>
+      <details>
+        <summary>Do you require a contract?</summary>
+        <p>
+          No. Projects are quoted and delivered up front. Ongoing care is
+          available as a monthly care plan you can cancel anytime, or
+          pay-as-you-go hourly support. We earn your repeat business — we don't
+          contract it.
+        </p>
+      </details>
+      <details>
+        <summary>What warranty do you offer?</summary>
+        <p>
+          Workmanship is backed by a 12-month labor warranty. Hardware is
+          covered by its manufacturer warranty, and we help you manage any
+          claims. See our{' '}
+          <a href="/services/consultation/pricing">warranty details</a>.
+        </p>
+      </details>
+    </section>
+
+    <section class="gap-2 grid">
+      <h2>Cost &amp; Rebates</h2>
+      <details>
+        <summary>How much does a smart home cost?</summary>
+        <p>
+          It depends on scope. Popular starting points: a smart lighting kit
+          from $199, a smart home audit at $199 (fully credited toward any
+          project), whole-home packages from $999, and full automation projects
+          from $3,500. See our{' '}
+          <a href="/pricing">complete pricing</a>.
+        </p>
+      </details>
+      <details>
+        <summary>Are there rebates for smart thermostats and lighting?</summary>
+        <p>
+          Often, yes. NYSERDA and utility programs (including the Con Edison
+          service area) frequently offer rebates on smart thermostats, smart
+          lighting, and other energy-saving equipment. We help you identify and
+          apply for qualifying rebates — see our post on{' '}
+          <a href="/blog/nyserda-rebates-westchester"
+            >NYSERDA rebates for Westchester homes</a
+          >.
+        </p>
+      </details>
+      <details>
+        <summary>Do you charge for a quote?</summary>
+        <p>
+          No. Free consultations and itemized quotes are included. A $199 smart
+          home audit is optional when you want a deeper look — and it's fully
+          credited toward any project.
+        </p>
+      </details>
+    </section>
+
+    <section class="gap-2 grid">
+      <h2>Common Problems</h2>
+      <details>
+        <summary>Why is my Wi-Fi slow?</summary>
+        <p>
+          In older Hudson Valley homes the most common culprits are central
+          wiring, plaster and masonry blocking signals, and a single router
+          placed at the wrong end of the house. A mesh network or wired backhaul
+          usually fixes it. See our guide to{' '}
+          <a href="/blog/slow-wifi-hudson-valley"
+            >slow Wi-Fi in the Hudson Valley</a
+          >.
+        </p>
+      </details>
+      <details>
+        <summary>Which system is best — Lutron or Control4?</summary>
+        <p>
+          It depends on your goals. Lutron excels at lighting and is a great
+          retrofit choice; Control4 is a full automation platform best suited to
+          larger new builds. As a vendor-neutral team, we'll recommend based on
+          your home, not our inventory. See our{' '}
+          <a href="/blog/lutron-vs-control4-westchester"
+            >Lutron vs. Control4 comparison</a
+          >.
+        </p>
+      </details>
+      <details>
+        <summary>Can you work with devices I already own?</summary>
+        <p>
+          Yes. We regularly take over, consolidate, and fix existing smart home
+          gear — even systems installed by other companies or bought online.
+        </p>
+      </details>
+    </section>
+
+    <section class="gap-2 grid text-align-center justify-content-center">
+      <h2>Still have questions?</h2>
+      <p>
+        Book a free consultation and we'll walk through your home, your goals,
+        and your budget.
+      </p>
+      <button-component
+        href="/contact"
+        variant="primary"
+        class="min-width-25vw"
+      >
+        Book a Consultation
+      </button-component>
+    </section>
+  </div>
+</Layout>
+
+<style>
+  details {
+    border-bottom: 1px solid var(--color-neutral-700);
+    padding: 0.75rem 0;
+  }
+
+  summary {
+    cursor: pointer;
+    font-weight: 600;
+    padding: 0.5rem 0;
+  }
+
+  summary::marker {
+    color: var(--a-color);
+  }
+
+  details p {
+    margin: 0 0 1rem;
+  }
+</style>
+
+<script>
+  import '@components/button';
+</script>

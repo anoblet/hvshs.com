@@ -5,48 +5,169 @@ import Layout from '@layouts/default.astro';
 
 <Layout
   title="Smart Home Installation Pricing"
-  description="Subscription plans for smart home installation support in the Hudson Valley, including onboarding, maintenance, and expert system updates."
+  description="Transparent, fixed installation pricing in the Hudson Valley — mesh Wi-Fi, thermostats, doorbells, locks, cameras, and smart lighting."
 >
-  <h1 class="text-align-center font-size-2 margin-bottom-2">
-    Installation Pricing
-  </h1>
-  <p
-    class="hero-description text-align-center margin-bottom-4 max-width-48 margin-auto"
-  >
-    Keep your smart home running smoothly with recurring installation support.
-    Initial setup and configuration are included where listed.
-  </p>
+  <div class="column flex gap-3 page">
+    <header class="gap grid text-align-center justify-content-center">
+      <h1 class="font-size-2 margin-bottom-2">Installation Pricing</h1>
+      <p class="hero-description">
+        Fixed per-device installs with no surprise bills. Hardware is billed at
+        cost — you pay for clean, reliable setup done right the first time.
+      </p>
+    </header>
 
-  <div class="grid auto-fit-20 gap-2 width-100 max-width-64 margin-auto">
-    <PricingCard
-      title="Essential Care"
-      description="Ongoing support for a starter system with a few key devices."
-      features={[
-        'Up to 10 devices',
-        'Initial hub and app setup',
-        'Network configuration',
-        'Monthly maintenance check',
-        'Email support',
-      ]}
-      price="$79"
-      billingPeriod=" / month"
-      buttonText="Choose plan"
-      buttonHref="/contact"
-    />
-    <PricingCard
-      title="Complete Care"
-      description="Recurring installation and maintenance for comprehensive systems and integrations."
-      features={[
-        'Up to 30 devices',
-        'Initial security and climate setup',
-        'Custom automation updates',
-        'Monthly system review',
-        'Priority support',
-      ]}
-      price="$149"
-      billingPeriod=" / month"
-      buttonText="Choose plan"
-      buttonHref="/contact"
-    />
+    <section class="gap-2 grid">
+      <h2>Installation Packages</h2>
+      <div class="grid auto-fit-20 gap-2 width-100">
+        <PricingCard
+          title="Essential"
+          description="For renters and owners with one or two simple upgrades. About 2–3 hours."
+          features={[
+            'Smart thermostat install (1)',
+            '1 video doorbell or 1 smart lock',
+            'Smart hub setup',
+            'Basic Wi-Fi health check + router optimization',
+            'Voice assistant setup (Echo/Google) + app walkthrough',
+            '30-day email follow-up',
+          ]}
+          price="$999"
+          billingPeriod=" one-time"
+          buttonText="Get a quote"
+          buttonHref="/contact"
+        />
+        <PricingCard
+          title="Whole Home"
+          description="The typical single-family home. About 1 day (6–8 hours)."
+          features={[
+            'Whole-home Wi-Fi: mesh system install (up to 3 nodes) + placement survey',
+            '1 smart thermostat',
+            '1 video doorbell + 1 smart lock',
+            'Smart lighting starter: 1 room kit (up to 6 bulbs/switches) + scenes',
+            'Voice control setup in 2 rooms + basic routines',
+            'Full app setup + 1-hour in-home training session',
+            '60-day email follow-up',
+          ]}
+          price="$2,499"
+          billingPeriod=" one-time"
+          badge="Most Popular"
+          buttonText="Get a quote"
+          buttonHref="/contact"
+        />
+      </div>
+    </section>
+
+    <section class="gap-2 grid">
+      <h2>Installation à La Carte</h2>
+      <div class="overflow-x-auto">
+        <table class="pricing-table">
+          <thead>
+            <tr>
+              <th>Item</th>
+              <th>Price (installed)</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Mesh Wi-Fi install (per node)</td>
+              <td>$150/node (min 2)</td>
+              <td>
+                Placement survey, wired backhaul where possible, app setup,
+                speed test before/after
+              </td>
+            </tr>
+            <tr>
+              <td>Router/modem optimization only</td>
+              <td>$99</td>
+              <td>Part of audit or standalone visit</td>
+            </tr>
+            <tr>
+              <td>Smart thermostat install</td>
+              <td>$179</td>
+              <td>
+                Existing C-wire; +$50 if wiring needs minor work; line-voltage =
+                refer out
+              </td>
+            </tr>
+            <tr>
+              <td>Video doorbell install</td>
+              <td>$179</td>
+              <td>Hardwired or battery; chime config</td>
+            </tr>
+            <tr>
+              <td>Smart lock install</td>
+              <td>$179</td>
+              <td>Deadbolt replacement, rekey NOT included (refer locksmith)</td
+              >
+            </tr>
+            <tr>
+              <td>Security camera (indoor)</td>
+              <td>$149/cam</td>
+              <td>App setup, zones, alerts</td>
+            </tr>
+            <tr>
+              <td>Security camera (outdoor/wired)</td>
+              <td>$249/cam</td>
+              <td>Mounting, cabling up to 50 ft; +$50 per extra 25 ft</td>
+            </tr>
+            <tr>
+              <td>Camera system package (4-cam)</td>
+              <td>$899</td>
+              <td>Includes NVR/cloud config</td>
+            </tr>
+            <tr>
+              <td>Smart lighting — bulb kit (up to 6)</td>
+              <td>$199</td>
+              <td>Scenes + schedule setup</td>
+            </tr>
+            <tr>
+              <td>Smart lighting — switch/dimmer</td>
+              <td>$149/switch</td>
+              <td>In-wall; verify neutral wire, +$40 if absent</td>
+            </tr>
+            <tr>
+              <td>Smart speaker/display setup</td>
+              <td>$49/device</td>
+              <td>Grouping, multi-room audio</td>
+            </tr>
+            <tr>
+              <td>TV/streaming/AV setup</td>
+              <td>$99–$249</td>
+              <td>Per room, scope-based</td>
+            </tr>
+            <tr>
+              <td>Home Assistant build</td>
+              <td>$499–$1,499+</td>
+              <td>Quote per home; complexity varies wildly</td>
+            </tr>
+            <tr>
+              <td>Device decommissioning/removal</td>
+              <td>$99/device</td>
+              <td>Old system removal, cleanup</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        Hardware is billed at cost + 20% markup (15% on systems over $1,000).
+        Client-supplied hardware: standard install fee applies; no warranty on
+        client gear.
+      </p>
+    </section>
+
+    <p>
+      See the <a href="/pricing">full pricing breakdown</a> for project packages,
+      monthly care plans, and every à la carte service.
+    </p>
+
+    <div class="flex justify-content-center margin-bottom-4">
+      <button-component
+        href="/contact"
+        variant="primary"
+        class="min-width-25vw"
+      >
+        Get started
+      </button-component>
+    </div>
   </div>
 </Layout>

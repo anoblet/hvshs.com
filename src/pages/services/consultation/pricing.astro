@@ -5,46 +5,123 @@ import Layout from '@layouts/default.astro';
 
 <Layout
   title="Smart Home Consultation Pricing"
-  description="Subscription plans for ongoing smart home consultation, guidance, and prioritized support. One-time sessions remain available for focused projects."
+  description="Transparent support pricing in the Hudson Valley — hourly onsite and remote support, flat troubleshooting visits, and smart home audits."
 >
-  <h1 class="text-align-center font-size-2 margin-bottom-2">
-    Consultation Pricing
-  </h1>
-  <p
-    class="hero-description text-align-center margin-bottom-4 max-width-48 margin-auto"
-  >
-    Get a recurring partner for decisions, improvements, and troubleshooting.
-    One-time consultations remain available for focused project needs.
-  </p>
+  <div class="column flex gap-3 page">
+    <header class="gap grid text-align-center justify-content-center">
+      <h1 class="font-size-2 margin-bottom-2">Consultation Pricing</h1>
+      <p class="hero-description">
+        Flat-rate troubleshooting and hourly support — with the first hour of
+        any onsite visit covered by the $119 minimum service call.
+      </p>
+    </header>
 
-  <div class="grid auto-fit-20 gap-2 width-100 max-width-64 margin-auto">
-    <PricingCard
-      title="Guidance"
-      description="A monthly source of fast answers and second opinions for your smart home."
-      features={[
-        'One 30-minute session monthly',
-        'Device advice',
-        'Actionable next steps',
-        'Ongoing email follow-up',
-      ]}
-      price="$39"
-      billingPeriod=" / month"
-      buttonText="Choose plan"
-      buttonHref="/contact"
-    />
-    <PricingCard
-      title="Advisory"
-      description="Ongoing strategic advice for homeowners managing a larger or evolving system."
-      features={[
-        'One 1-hour session monthly',
-        'Quarterly home setup review',
-        'Written recommendations',
-        'Priority ongoing support',
-      ]}
-      price="$89"
-      billingPeriod=" / month"
-      buttonText="Choose plan"
-      buttonHref="/contact"
-    />
+    <section class="gap-2 grid">
+      <h2>Support Rates</h2>
+      <div class="grid auto-fit-20 gap-2 width-100">
+        <PricingCard
+          title="Onsite Support"
+          description="In-home help when you need it — 1-hour minimum."
+          features={[
+            '1-hour minimum',
+            'Diagnostics & fixes on-site',
+            '$95/hr after the first hour (capped at $350 unless approved)',
+            'Trip fee waived on visits over $500',
+          ]}
+          price="$119"
+          billingPeriod=" / hr"
+          buttonText="Book support"
+          buttonHref="/contact"
+        />
+        <PricingCard
+          title="Remote Support"
+          description="Fast help without a visit — 30-minute minimum."
+          features={[
+            '30-minute minimum',
+            'App, account & device troubleshooting',
+            'Password/app recovery, re-pairing devices',
+            'Wi-Fi health checks',
+          ]}
+          price="$79"
+          billingPeriod=" / hr"
+          buttonText="Book support"
+          buttonHref="/contact"
+        />
+        <PricingCard
+          title="Smart Home Audit"
+          description="The entry point for every project — a 90-minute walkthrough with a written report."
+          features={[
+            'In-home walkthrough (~90 min)',
+            'Written report with prioritized recommendations',
+            'Wi-Fi health check',
+            'Fully credited toward any project within 30 days',
+          ]}
+          price="$199"
+          billingPeriod=" flat"
+          buttonText="Book an audit"
+          buttonHref="/contact"
+        />
+      </div>
+    </section>
+
+    <section class="gap-2 grid">
+      <h2>Troubleshooting &amp; Support</h2>
+      <div class="overflow-x-auto">
+        <table class="pricing-table">
+          <thead>
+            <tr>
+              <th>Scenario</th>
+              <th>Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>"It stopped working" diagnostic visit</td>
+              <td>
+                $119 flat first hour; $95/hr after (capped at $350 unless client
+                approves)
+              </td>
+            </tr>
+            <tr>
+              <td>Wi-Fi dead zone / slow network visit</td>
+              <td>$119 flat (most fixable in one visit)</td>
+            </tr>
+            <tr>
+              <td>Post-internet-provider-change reconfiguration</td>
+              <td>$99 flat</td>
+            </tr>
+            <tr>
+              <td>Password/app recovery, re-pairing devices</td>
+              <td>$79/hr remote or $119 flat onsite</td>
+            </tr>
+            <tr>
+              <td>"Remove this smart stuff, I'm done"</td>
+              <td>$99/device</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        If we installed it and it's a genuine equipment failure, warranty
+        service is free for 12 months (labor only; hardware warranty follows the
+        manufacturer). If it's user error or a change of mind, standard rates
+        apply.
+      </p>
+    </section>
+
+    <p>
+      See the <a href="/pricing">full pricing breakdown</a> for project packages,
+      monthly care plans, and every à la carte service.
+    </p>
+
+    <div class="flex justify-content-center margin-bottom-4">
+      <button-component
+        href="/contact"
+        variant="primary"
+        class="min-width-25vw"
+      >
+        Get support
+      </button-component>
+    </div>
   </div>
 </Layout>

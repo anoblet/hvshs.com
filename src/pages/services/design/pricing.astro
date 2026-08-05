@@ -5,48 +5,105 @@ import Layout from '@layouts/default.astro';
 
 <Layout
   title="Smart Home Design Pricing"
-  description="Subscription plans for ongoing smart home design guidance in the Hudson Valley, with custom system planning and support."
+  description="Fixed-price smart home design services in the Hudson Valley — from a $199 Smart Home Audit to custom Home Assistant builds."
 >
-  <h1 class="text-align-center font-size-2 margin-bottom-2">
-    Smart Home Design Pricing
-  </h1>
-  <p
-    class="hero-description text-align-center margin-bottom-4 max-width-48 margin-auto"
-  >
-    Get ongoing design guidance tailored to your home and lifestyle. Initial
-    assessment and planning are included in the subscription.
-  </p>
+  <div class="column flex gap-3 page">
+    <header class="gap grid text-align-center justify-content-center">
+      <h1 class="font-size-2 margin-bottom-2">Smart Home Design Pricing</h1>
+      <p class="hero-description">
+        Every design project starts with an audit — and the $199 audit fee is
+        fully credited toward any project booked within 30 days.
+      </p>
+    </header>
 
-  <div class="grid auto-fit-20 gap-2 width-100 max-width-64 margin-auto">
-    <PricingCard
-      title="Design Care"
-      description="Ongoing guidance for a single room or focused smart home system."
-      features={[
-        'Initial technology assessment',
-        'Single-room design plan',
-        'Device & platform selection',
-        'Monthly design check-in',
-        'Email support',
-      ]}
-      price="$49"
-      billingPeriod=" / month"
-      buttonText="Choose plan"
-      buttonHref="/contact"
-    />
-    <PricingCard
-      title="Whole-Home Design"
-      description="Comprehensive ongoing planning for homes with evolving smart systems."
-      features={[
-        'Full-home assessment',
-        'Whole-home system plan',
-        'Automation planning',
-        'Monthly optimization review',
-        'Priority support',
-      ]}
-      price="$99"
-      billingPeriod=" / month"
-      buttonText="Choose plan"
-      buttonHref="/contact"
-    />
+    <section class="gap-2 grid">
+      <h2>Design Services</h2>
+      <div class="grid auto-fit-20 gap-2 width-100">
+        <PricingCard
+          title="Smart Home Audit"
+          description="The entry point for every project — a 90-minute walkthrough with a written report."
+          features={[
+            'In-home walkthrough (~90 min)',
+            'Written report with prioritized recommendations',
+            'Wi-Fi health check',
+            'Fully credited toward any project within 30 days',
+          ]}
+          price="$199"
+          billingPeriod=" flat"
+          buttonText="Book an audit"
+          buttonHref="/contact"
+        />
+        <PricingCard
+          title="Home Assistant Build"
+          description="A custom hub that connects every ecosystem in your home under one interface."
+          features={[
+            'Cross-ecosystem control',
+            'Advanced automations & dashboards',
+            'Quote per home — complexity varies widely',
+          ]}
+          price="from $499"
+          billingPeriod=" quote per home"
+          buttonText="Get a quote"
+          buttonHref="/contact"
+        />
+      </div>
+    </section>
+
+    <section class="gap-2 grid">
+      <h2>Design à La Carte</h2>
+      <div class="overflow-x-auto">
+        <table class="pricing-table">
+          <thead>
+            <tr>
+              <th>Item</th>
+              <th>Price (installed)</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Smart lighting — bulb kit (up to 6)</td>
+              <td>$199</td>
+              <td>Scenes + schedule setup</td>
+            </tr>
+            <tr>
+              <td>Smart lighting — switch/dimmer</td>
+              <td>$149/switch</td>
+              <td>In-wall; verify neutral wire, +$40 if absent</td>
+            </tr>
+            <tr>
+              <td>Smart speaker/display setup</td>
+              <td>$49/device</td>
+              <td>Grouping, multi-room audio</td>
+            </tr>
+            <tr>
+              <td>TV/streaming/AV setup</td>
+              <td>$99–$249</td>
+              <td>Per room, scope-based</td>
+            </tr>
+            <tr>
+              <td>Home Assistant build</td>
+              <td>$499–$1,499+</td>
+              <td>Quote per home; complexity varies wildly</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <p>
+      See the <a href="/pricing">full pricing breakdown</a> for project packages,
+      monthly care plans, and every à la carte service.
+    </p>
+
+    <div class="flex justify-content-center margin-bottom-4">
+      <button-component
+        href="/contact"
+        variant="primary"
+        class="min-width-25vw"
+      >
+        Get started
+      </button-component>
+    </div>
   </div>
 </Layout>

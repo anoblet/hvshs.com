@@ -5,65 +5,400 @@ import Layout from '@layouts/default.astro';
 
 <Layout
   title="Pricing"
-  description="Transparent pricing for smart home services in the Hudson Valley. Choose from flexible plans that include professional design, installation, and ongoing support. Get started today."
+  description="Transparent, fixed pricing for smart home services in the Hudson Valley. Project packages, à la carte installation, and monthly care plans. No surprise bills."
 >
-  <h1 class="text-align-center font-size-2 margin-bottom-2">Pricing</h1>
-  <p
-    class="hero-description text-align-center margin-bottom-4 max-width-48 margin-auto"
-  >
-    Choose a monthly service plan for ongoing smart home guidance, maintenance,
-    and support. One-time setup work is included where noted.
-  </p>
+  <div class="column flex gap-3 page">
+    <header class="gap grid text-align-center justify-content-center">
+      <h1 class="font-size-2 margin-bottom-2">Pricing</h1>
+      <p class="hero-description">
+        Fixed project packages, transparent per-device pricing, and monthly care
+        plans. Every quote is scoped and signed off before work begins — no
+        surprise bills.
+      </p>
+    </header>
 
-  <div class="flex gap-2 justify-center margin-bottom-4">
-    <a
-      href="/services/design/pricing"
-      class="button button-primary font-size-1-125"
+    <section class="gap-2 grid">
+      <h2>Project Packages</h2>
+      <p>
+        Transparent, fixed quotes for complete projects. Most homeowners pick
+        the middle tier — the value jump is obvious.
+      </p>
+      <div class="grid auto-fit-20 gap-2 width-100">
+        <PricingCard
+          title="Essential"
+          description="For renters and owners with one or two simple upgrades. About 2–3 hours."
+          features={[
+            'Smart thermostat install (1)',
+            '1 video doorbell or 1 smart lock',
+            'Smart hub setup',
+            'Basic Wi-Fi health check + router optimization',
+            'Voice assistant setup (Echo/Google) + app walkthrough',
+            '30-day email follow-up',
+          ]}
+          price="$999"
+          billingPeriod=" one-time"
+          buttonText="Get a quote"
+          buttonHref="/contact"
+        />
+        <PricingCard
+          title="Whole Home"
+          description="The typical single-family home. About 1 day (6–8 hours)."
+          features={[
+            'Whole-home Wi-Fi: mesh system install (up to 3 nodes) + placement survey',
+            '1 smart thermostat',
+            '1 video doorbell + 1 smart lock',
+            'Smart lighting starter: 1 room kit (up to 6 bulbs/switches) + scenes',
+            'Voice control setup in 2 rooms + basic routines',
+            '1 smart speaker included in setup',
+            'Full app setup + 1-hour in-home training session',
+            '60-day email follow-up',
+          ]}
+          price="$2,499"
+          billingPeriod=" one-time"
+          badge="Most Popular"
+          buttonText="Get a quote"
+          buttonHref="/contact"
+        />
+        <PricingCard
+          title="Whole-Home Automation"
+          description="For the fully wired home. 2–3 days, scoped per home."
+          features={[
+            'Everything in Whole Home ($2,499 tier)',
+            'Multi-room smart lighting (switches + bulbs, dimmers, scenes)',
+            'Security suite: 2–4 cameras, sensors, siren, monitoring app config',
+            'Smart speakers/audio in 3+ rooms',
+            'Advanced automations (presence, schedules, vacation mode)',
+            'Optional: Home Assistant hub for cross-ecosystem control',
+            '2-hour training session + personalized quick-reference card',
+            'Priority support for 90 days',
+          ]}
+          price="from $3,500"
+          billingPeriod=" quote per home"
+          buttonText="Get a quote"
+          buttonHref="/contact"
+        />
+      </div>
+      <p>
+        <strong>Move-In Ready</strong> (realtor &amp; property partners) — from $2,000.
+        New-homeowner bundle: security + thermostats + Wi-Fi + locks done before
+        move-in. Configurable from the tiers above; flat partner pricing for realtors.
+      </p>
+    </section>
+
+    <section class="gap-2 grid">
+      <h2>Monthly Care Plans</h2>
+      <p>
+        Smart home support that never sleeps. Care plans convert one-off jobs
+        into ongoing peace of mind — one avoided service call roughly pays for a
+        year of Care Lite.
+      </p>
+      <div class="grid auto-fit-20 gap-2 width-100">
+        <PricingCard
+          title="Care Lite"
+          description="For homes that just need to stay current."
+          features={[
+            'Quarterly remote check-in',
+            'Firmware updates & app/account health',
+            '10% off labor',
+            'Priority email',
+          ]}
+          price="$25"
+          billingPeriod=" / month · or $249/yr"
+          buttonText="Start care"
+          buttonHref="/contact"
+        />
+        <PricingCard
+          title="Care Plus"
+          description="For homes that must always work."
+          features={[
+            'Monthly check',
+            'Firmware + backup checks',
+            '1 free remote tune-up per quarter',
+            '15% off labor',
+            'Priority scheduling',
+            'Annual in-home review',
+          ]}
+          price="$49"
+          billingPeriod=" / month · or $499/yr"
+          badge="Most Popular"
+          buttonText="Start care"
+          buttonHref="/contact"
+        />
+        <PricingCard
+          title="Automation Keeper"
+          description="For power users running Home Assistant or complex setups."
+          features={[
+            'Monthly updates',
+            'Automation debugging',
+            'Unlimited remote support',
+            '2 onsite visits per year',
+            '20% off labor',
+          ]}
+          price="$79"
+          billingPeriod=" / month"
+          buttonText="Start care"
+          buttonHref="/contact"
+        />
+      </div>
+      <p>
+        Care plans require an installation or audit history with us — no cold
+        sign-ups without a prior visit. Annual plans are billed upfront (2
+        months free).
+      </p>
+    </section>
+
+    <section class="gap-2 grid">
+      <h2>À La Carte Pricing</h2>
+      <p>
+        Per-device installs with transparent, fixed pricing. Hardware is billed
+        at cost — you pay for expertise, not boxes.
+      </p>
+      <div class="overflow-x-auto">
+        <table class="pricing-table">
+          <thead>
+            <tr>
+              <th>Item</th>
+              <th>Price (installed)</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Smart Home Audit / Assessment</td>
+              <td>$199 flat</td>
+              <td>
+                ~90 min walkthrough + written report (credited toward any
+                project booked within 30 days)
+              </td>
+            </tr>
+            <tr>
+              <td>Mesh Wi-Fi install (per node)</td>
+              <td>$150/node (min 2)</td>
+              <td>
+                Placement survey, wired backhaul where possible, app setup,
+                speed test before/after
+              </td>
+            </tr>
+            <tr>
+              <td>Router/modem optimization only</td>
+              <td>$99</td>
+              <td>Part of audit or standalone visit</td>
+            </tr>
+            <tr>
+              <td>Smart thermostat install</td>
+              <td>$179</td>
+              <td>
+                Existing C-wire; +$50 if wiring needs minor work; line-voltage =
+                refer out
+              </td>
+            </tr>
+            <tr>
+              <td>Video doorbell install</td>
+              <td>$179</td>
+              <td>Hardwired or battery; chime config</td>
+            </tr>
+            <tr>
+              <td>Smart lock install</td>
+              <td>$179</td>
+              <td>Deadbolt replacement, rekey NOT included (refer locksmith)</td
+              >
+            </tr>
+            <tr>
+              <td>Security camera (indoor)</td>
+              <td>$149/cam</td>
+              <td>App setup, zones, alerts</td>
+            </tr>
+            <tr>
+              <td>Security camera (outdoor/wired)</td>
+              <td>$249/cam</td>
+              <td>Mounting, cabling up to 50 ft; +$50 per extra 25 ft</td>
+            </tr>
+            <tr>
+              <td>Camera system package (4-cam)</td>
+              <td>$899</td>
+              <td>Includes NVR/cloud config</td>
+            </tr>
+            <tr>
+              <td>Smart lighting — bulb kit (up to 6)</td>
+              <td>$199</td>
+              <td>Scenes + schedule setup</td>
+            </tr>
+            <tr>
+              <td>Smart lighting — switch/dimmer</td>
+              <td>$149/switch</td>
+              <td>In-wall; verify neutral wire, +$40 if absent</td>
+            </tr>
+            <tr>
+              <td>Smart speaker/display setup</td>
+              <td>$49/device</td>
+              <td>Grouping, multi-room audio</td>
+            </tr>
+            <tr>
+              <td>TV/streaming/AV setup</td>
+              <td>$99–$249</td>
+              <td>Per room, scope-based</td>
+            </tr>
+            <tr>
+              <td>Home Assistant build</td>
+              <td>$499–$1,499+</td>
+              <td>Quote per home; complexity varies wildly</td>
+            </tr>
+            <tr>
+              <td>Device decommissioning/removal</td>
+              <td>$99/device</td>
+              <td>Old system removal, cleanup</td>
+            </tr>
+            <tr>
+              <td>Hourly support (onsite)</td>
+              <td>$119/hr</td>
+              <td>1-hr minimum</td>
+            </tr>
+            <tr>
+              <td>Hourly support (remote)</td>
+              <td>$79/hr</td>
+              <td>30-min minimum</td>
+            </tr>
+            <tr>
+              <td>Trip fee (beyond 25 mi of Tarrytown)</td>
+              <td>$49</td>
+              <td>Waived on projects over $500</td>
+            </tr>
+            <tr>
+              <td>Express/same-day scheduling</td>
+              <td>+$75</td>
+              <td>Subject to availability</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        Hardware is billed at cost + 20% markup (15% on systems over $1,000).
+        Client-supplied hardware: standard install fee applies; no warranty on
+        client gear.
+      </p>
+    </section>
+
+    <section class="gap-2 grid">
+      <h2>Troubleshooting &amp; Support</h2>
+      <div class="overflow-x-auto">
+        <table class="pricing-table">
+          <thead>
+            <tr>
+              <th>Scenario</th>
+              <th>Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>"It stopped working" diagnostic visit</td>
+              <td>
+                $119 flat first hour; $95/hr after (capped at $350 unless client
+                approves)
+              </td>
+            </tr>
+            <tr>
+              <td>Wi-Fi dead zone / slow network visit</td>
+              <td>$119 flat (most fixable in one visit)</td>
+            </tr>
+            <tr>
+              <td>Post-internet-provider-change reconfiguration</td>
+              <td>$99 flat</td>
+            </tr>
+            <tr>
+              <td>Password/app recovery, re-pairing devices</td>
+              <td>$79/hr remote or $119 flat onsite</td>
+            </tr>
+            <tr>
+              <td>"Remove this smart stuff, I'm done"</td>
+              <td>$99/device</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        If we installed it and it's a genuine equipment failure, warranty
+        service is free for 12 months (labor only; hardware warranty follows the
+        manufacturer). If it's user error or a change of mind, standard rates
+        apply.
+      </p>
+    </section>
+
+    <section class="gap-2 grid">
+      <h2>Discounts &amp; Bundling</h2>
+      <ul>
+        <li>
+          <strong>Audit credit:</strong> your $199 audit is fully credited toward
+          any project booked within 30 days — the audit becomes free in effect.
+        </li>
+        <li>
+          <strong>Multi-service bundle:</strong> 10% off when 3+ service lines are
+          booked together (e.g., thermostat + doorbell + locks).
+        </li>
+        <li>
+          <strong>Referral credit:</strong> $50 off your next service for both you
+          and your referral, credited after the referee's first paid job.
+        </li>
+        <li><strong>Senior discount (65+):</strong> 10% off labor.</li>
+        <li>
+          <strong>First-responder / teacher / military:</strong> 10% off labor.
+        </li>
+        <li>
+          <strong>No stacking:</strong> one discount per invoice — bundle, referral,
+          or senior — not all three.
+        </li>
+      </ul>
+    </section>
+
+    <section class="gap-2 grid">
+      <h2>Pricing Policies</h2>
+      <ul>
+        <li>
+          <strong>Minimum service call:</strong> $119, applied to the first hour
+          of any onsite visit.
+        </li>
+        <li>
+          <strong>Quotes valid 30 days.</strong> Fixed quotes require scope sign-off;
+          changes during the job = change order with written approval before extra
+          work.
+        </li>
+        <li>
+          <strong>Cancellation:</strong> free up to 24h before your window; $50 fee
+          inside 24h; no-show = full minimum fee.
+        </li>
+        <li>
+          <strong>Payment:</strong> 50% deposit books projects over $500; balance
+          due on completion (before the training session ends). Hourly/support visits
+          billed same-day. Cash, check, and credit/debit accepted.
+        </li>
+        <li>
+          <strong>Hardware warranty:</strong> 12-month labor warranty on our installs;
+          device warranties follow the manufacturer — we help file claims.
+        </li>
+        <li>
+          <strong>Referred out:</strong> line-voltage electrical work (licensed electrician),
+          plumbing-adjacent work, rekeying (locksmith), structural mounting beyond
+          standard surfaces, and whole-home AV theater builds (partner).
+        </li>
+      </ul>
+    </section>
+
+    <nav
+      class="flex gap-2 justify-content-center flex-wrap"
+      aria-label="Pricing by service"
     >
-      Design plans
-    </a>
-    <a
-      href="/services/installation/pricing"
-      class="button button-primary font-size-1-125"
-    >
-      Installation plans
-    </a>
-    <a
-      href="/services/consultation/pricing"
-      class="button button-primary font-size-1-125"
-    >
-      Consultation plans
-    </a>
-  </div>
-  <div class="grid auto-fit-20 gap-2 width-100 max-width-64 margin-auto">
-    <PricingCard
-      title="Essential"
-      description="A monthly foundation for homeowners getting started with a smart home essentials package."
-      features={[
-        'Smart hub onboarding',
-        'Lighting and thermostat setup',
-        'Monthly system check-in',
-        'Email support',
-      ]}
-      price="$99"
-      billingPeriod=" / month"
-      buttonText="Start subscription"
-      buttonHref="/contact"
-    />
-    <PricingCard
-      title="Whole Home"
-      description="Ongoing whole-home automation support for security, climate, and entertainment systems."
-      features={[
-        'Whole-home onboarding',
-        'Security and climate setup',
-        'Custom scenes and routines',
-        'Monthly optimization review',
-        'Priority support',
-      ]}
-      price="$249"
-      billingPeriod=" / month"
-      buttonText="Start subscription"
-      buttonHref="/contact"
-    />
+      <a href="/services/design/pricing">Design pricing</a>
+      <a href="/services/installation/pricing">Installation pricing</a>
+      <a href="/services/consultation/pricing">Consultation pricing</a>
+    </nav>
+
+    <div class="flex justify-content-center margin-bottom-4">
+      <button-component
+        href="/contact"
+        variant="primary"
+        class="min-width-25vw"
+      >
+        Get a quote
+      </button-component>
+    </div>
   </div>
 </Layout>

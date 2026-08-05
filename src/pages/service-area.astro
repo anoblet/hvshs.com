@@ -1,0 +1,207 @@
+---
+import Layout from '../layouts/default.astro';
+import Card from '@components/Card.astro';
+import SmartImage from '@components/SmartImage.astro';
+import midHudsonBridge from '@assets/images/hudson-valley/mid-hudson-bridge.jpg';
+import lightingImage from '@assets/images/smart-home/smart-lighting-candle.jpg';
+import climateImage from '@assets/images/smart-home/nest-thermostat-63.jpg';
+import securityImage from '@assets/images/smart-home/surveillance-camera-wall.jpg';
+---
+
+<Layout
+  title="Tarrytown Smart Home Services"
+  description="Tarrytown's local smart home team — design, installation, and support for Tarrytown, Sleepy Hollow, Irvington, Dobbs Ferry, Scarsdale, White Plains, and the surrounding Rivertowns and lower Hudson Valley."
+>
+  <div class="column flex gap-3 page">
+    <section class="gap grid">
+      <div class="gap grid">
+        <h1 class="font-size-2 margin-bottom-2">
+          Tarrytown Smart Home Services
+        </h1>
+        <p class="hero-description">
+          We're a local, vendor-neutral smart home team based in Tarrytown —
+          serving the Rivertowns and lower Hudson Valley with design,
+          installation, and ongoing support. No franchise. No call center. No
+          vendor lock-in.
+        </p>
+        <p class="hero-description">
+          Because we live here, we know the area's older housing stock, tricky
+          Wi-Fi dead zones, and 100-year-old wiring — and how to work around
+          them without tearing up your walls.
+        </p>
+      </div>
+      <SmartImage
+        src={midHudsonBridge}
+        alt="The Tappan Zee Bridge over the Hudson River near Tarrytown"
+      />
+    </section>
+
+    <section class="gap-2 grid">
+      <h2>Communities We Serve</h2>
+      <div class="grid auto-fit-20 gap-2">
+        <Card>
+          <h3>Tarrytown</h3>
+          <p>
+            Home base. Fastest response times, local references, and on-call
+            support for neighbors.
+          </p>
+        </Card>
+        <Card>
+          <h3>Sleepy Hollow</h3>
+          <p>
+            Full smart home design and installation for historic homes and new
+            construction alike.
+          </p>
+        </Card>
+        <Card>
+          <h3>Irvington</h3>
+          <p>
+            Whole-home lighting, climate, and security for the Rivertowns'
+            hillside homes.
+          </p>
+        </Card>
+        <Card>
+          <h3>Dobbs Ferry</h3>
+          <p>
+            Network, entertainment, and smart home systems built around how your
+            family lives.
+          </p>
+        </Card>
+        <Card>
+          <h3>Hastings-on-Hudson</h3>
+          <p>
+            Retrofit-friendly installs that respect older construction and tight
+            spaces.
+          </p>
+        </Card>
+        <Card>
+          <h3>Ardsley</h3>
+          <p>
+            Smart lighting, thermostats, and security for Ardsley's garden-style
+            homes.
+          </p>
+        </Card>
+        <Card>
+          <h3>Scarsdale</h3>
+          <p>
+            Whole-home automation and premium AV for Scarsdale's larger
+            residences.
+          </p>
+        </Card>
+        <Card>
+          <h3>White Plains</h3>
+          <p>
+            Downtown and residential smart home services, from apartments to
+            single-family homes.
+          </p>
+        </Card>
+        <Card>
+          <h3>Bronxville &amp; Eastchester</h3>
+          <p>
+            Design-forward systems that complement classic Bronxville
+            architecture.
+          </p>
+        </Card>
+        <Card>
+          <h3>Rye &amp; Larchmont</h3>
+          <p>
+            Sound, security, and lighting for the Sound Shore's waterfront
+            homes.
+          </p>
+        </Card>
+      </div>
+      <p>
+        Not on this list? We also serve the broader lower Hudson Valley, from
+        Westchester and Rockland counties up through Dutchess and Ulster. Trip
+        fees apply beyond 25 miles of Tarrytown (see{' '}
+        <a href="/pricing">pricing</a>).
+      </p>
+    </section>
+
+    <section class="gap-2 grid">
+      <h2>Local Smart Home Services</h2>
+      <div class="grid auto-fit-20 gap-2">
+        <Card>
+          <SmartImage
+            src={lightingImage}
+            alt="Warm mood lighting from a smart candle"
+          />
+          <h3>Lighting &amp; Shades</h3>
+          <p>
+            Scenes, schedules, and voice control that match how your home is
+            actually used — dimmers, switches, and motorized shades.
+          </p>
+        </Card>
+        <Card>
+          <SmartImage
+            src={climateImage}
+            alt="Nest smart thermostat mounted on a wall"
+          />
+          <h3>Climate &amp; Energy</h3>
+          <p>
+            Smart thermostats, zoning, and energy savings — including help
+            navigating NYSERDA and utility rebates through the EnergySmart Homes
+            Rivertowns campaign.
+          </p>
+        </Card>
+        <Card>
+          <SmartImage
+            src={securityImage}
+            alt="Surveillance camera mounted on a wall"
+          />
+          <h3>Security &amp; Wi-Fi</h3>
+          <p>
+            Cameras, smart locks, doorbells, and whole-home Wi-Fi mesh that
+            actually covers every room — no dead zones.
+          </p>
+        </Card>
+      </div>
+    </section>
+
+    <section class="gap-2 grid">
+      <h2>Why a Local Smart Home Team?</h2>
+      <ul>
+        <li>
+          <strong>We're here.</strong> Neighbors helping neighbors — same-day support
+          calls instead of out-of-town dispatch.
+        </li>
+        <li>
+          <strong>No vendor lock-in.</strong> We design around the devices you choose,
+          not a proprietary ecosystem contract.
+        </li>
+        <li>
+          <strong>No long-term contracts.</strong> Projects are quoted up front and
+          support is pay-as-you-go or a monthly care plan you can cancel.
+        </li>
+        <li>
+          <strong>Older homes, done right.</strong> We regularly work around plaster,
+          knob-and-tube, and ungrounded circuits in the area's historic housing stock.
+        </li>
+      </ul>
+    </section>
+
+    <section class="gap-2 grid text-align-center justify-content-center">
+      <h2>Ready to get started?</h2>
+      <p>
+        Book a free consultation or start with a smart home audit — fully
+        credited toward any project.
+      </p>
+      <div class="flex gap justify-content-center">
+        <button-component
+          href="/contact"
+          variant="primary"
+          class="min-width-25vw"
+        >
+          Book a Consultation
+        </button-component>
+        <button-component href="/pricing" class="min-width-25vw">
+          See Pricing
+        </button-component>
+      </div>
+    </section>
+  </div>
+</Layout>
+
+<script>
+  import '@components/button';
+</script>

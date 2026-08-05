@@ -18,6 +18,68 @@ const {
   description = 'Astro description',
   fullBleed = false,
 } = Astro.props;
+
+const localBusinessSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'HomeAndConstructionBusiness',
+  '@id': 'https://hvshs.com/#business',
+  name: 'Hudson Valley Smart Home Services',
+  url: 'https://hvshs.com',
+  description:
+    'Local, vendor-neutral smart home design, installation, and support serving Tarrytown, the Rivertowns, and the lower Hudson Valley.',
+  telephone: '+1-914-417-9070',
+  email: 'andrewbnoblet@gmail.com',
+  priceRange: '$$',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Tarrytown',
+    addressRegion: 'NY',
+    addressCountry: 'US',
+  },
+  areaServed: [
+    'Tarrytown',
+    'Sleepy Hollow',
+    'Irvington',
+    'Dobbs Ferry',
+    'Hastings-on-Hudson',
+    'Ardsley',
+    'Scarsdale',
+    'White Plains',
+    'Bronxville',
+    'Rye',
+    'Hudson Valley',
+  ],
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Smart Home Services',
+    itemListElement: [
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Smart Home Design',
+          url: 'https://hvshs.com/services/design',
+        },
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Smart Home Installation',
+          url: 'https://hvshs.com/services/installation',
+        },
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Consultation & Support',
+          url: 'https://hvshs.com/services/consultation',
+        },
+      },
+    ],
+  },
+};
 ---
 
 <!doctype html>
@@ -29,6 +91,10 @@ const {
     <link rel="icon" type="image/svg+xml" href={logo} />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify(localBusinessSchema)}
+    />
     <ViewTransitions />
   </head>
   <body>

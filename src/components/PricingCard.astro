@@ -7,6 +7,8 @@ export interface Props {
   billingPeriod?: string;
   buttonText: string;
   buttonHref: string;
+  /** Optional highlight label shown above the title (e.g., "Most Popular") */
+  badge?: string;
 }
 const {
   title,
@@ -16,10 +18,12 @@ const {
   billingPeriod,
   buttonText,
   buttonHref,
+  badge,
 } = Astro.props;
 ---
 
 <card-component>
+  {badge && <span class="badge">{badge}</span>}
   <h2 class="font-size-1-5">{title}</h2>
   <p class="font-size-1-125">{description}</p>
   <ul class="list margin-bottom-2">
@@ -36,7 +40,21 @@ const {
   </div>
 </card-component>
 
+<style>
+  .badge {
+    align-self: flex-start;
+    background: var(--color-accent-500, var(--color-teal-500));
+    border-radius: 999px;
+    color: var(--color-neutral-900);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    padding: 0.25rem 0.75rem;
+    text-transform: uppercase;
+  }
+</style>
+
 <script>
-  import '@components/card';
   import '@components/button';
+  import '@components/card';
 </script>
