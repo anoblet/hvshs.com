@@ -1,6 +1,16 @@
 ---
 import Layout from '../layouts/default.astro';
 import { getImage } from 'astro:assets';
+import augustLogo from '@assets/logos/august.svg';
+import aqaraLogo from '@assets/logos/aqara.svg';
+import bluetoothLogo from '@assets/logos/bluetooth.svg';
+import homeAssistantLogo from '@assets/logos/home-assistant.svg';
+import philipsHueLogo from '@assets/logos/philips-hue.svg';
+import tpLinkLogo from '@assets/logos/tp-link.png';
+import thirdRealityLogo from '@assets/logos/third-reality.svg';
+import wifiLogo from '@assets/logos/wifi.svg';
+import zWaveLogo from '@assets/logos/z-wave.svg';
+import zigbeeLogo from '@assets/logos/zigbee.svg';
 import catskills from '@assets/images/hudson-valley/catskills-shawangunk.jpg';
 import walkway from '@assets/images/hudson-valley/walkway-foggy.jpg';
 import midHudson from '@assets/images/hudson-valley/mid-hudson-bridge.jpg';
@@ -50,6 +60,47 @@ const heroSlides = await Promise.all(
 );
 
 const heroSlidesJson = JSON.stringify(heroSlides);
+
+const logos = [
+  { src: augustLogo.src, alt: 'August', href: 'https://august.com/' },
+  { src: aqaraLogo.src, alt: 'Aqara', href: 'https://www.aqara.com/' },
+  {
+    src: bluetoothLogo.src,
+    alt: 'Bluetooth',
+    href: 'https://www.bluetooth.com/',
+  },
+  {
+    src: homeAssistantLogo.src,
+    alt: 'Home Assistant',
+    href: 'https://www.home-assistant.io/',
+  },
+  {
+    src: philipsHueLogo.src,
+    alt: 'Philips Hue',
+    href: 'https://www.philips-hue.com/',
+  },
+  {
+    src: tpLinkLogo.src,
+    alt: 'TP-Link',
+    href: 'https://www.tp-link.com/',
+  },
+  {
+    src: thirdRealityLogo.src,
+    alt: 'Third Reality',
+    href: 'https://thirdreality.com/',
+  },
+  { src: wifiLogo.src, alt: 'Wi-Fi', href: 'https://www.wi-fi.org/' },
+  {
+    src: zWaveLogo.src,
+    alt: 'Z-Wave',
+    href: 'https://z-wavealliance.org/',
+  },
+  {
+    src: zigbeeLogo.src,
+    alt: 'Zigbee',
+    href: 'https://csa-iot.org/all-solutions/zigbee/',
+  },
+];
 ---
 
 <Layout
@@ -58,7 +109,115 @@ const heroSlidesJson = JSON.stringify(heroSlides);
   fullBleed
 >
   <hero-component images={heroSlidesJson}></hero-component>
+  <section
+    class="logo-carousel"
+    aria-label="Smart home technologies we support"
+  >
+    <div class="logo-carousel__track">
+      {
+        [0, 1].map(group => (
+          <div class="logo-carousel__group" aria-hidden={group === 1}>
+            {logos.map(({ src, alt, href }) => (
+              <a
+                href={href}
+                target="_blank"
+                rel="noreferrer"
+                tabindex={group === 1 ? -1 : undefined}
+              >
+                <img src={src} alt={alt} data-logo={alt} />
+              </a>
+            ))}
+          </div>
+        ))
+      }
+    </div>
+  </section>
 </Layout>
+
+<style>
+  .logo-carousel {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background: #fff;
+  }
+
+  .logo-carousel__track {
+    display: flex;
+    align-items: center;
+    width: max-content;
+    animation: logo-carousel-scroll 28s linear infinite reverse;
+  }
+
+  .logo-carousel__group {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 1.5rem 2rem;
+  }
+
+  .logo-carousel a {
+    display: grid;
+    width: 8rem;
+    height: 4.5rem;
+    flex: 0 0 8rem;
+    place-items: center;
+    border-radius: 0.25rem;
+    background: #f5f5f5;
+  }
+
+  .logo-carousel img {
+    display: block;
+    width: 6rem;
+    height: 3rem;
+    object-fit: contain;
+    filter: brightness(0);
+  }
+
+  .logo-carousel img[data-logo='Bluetooth'],
+  .logo-carousel img[data-logo='Philips Hue'],
+  .logo-carousel img[data-logo='TP-Link'],
+  .logo-carousel img[data-logo='Wi-Fi'] {
+    filter: none;
+  }
+
+  .logo-carousel::before,
+  .logo-carousel::after {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    bottom: 0;
+    width: 4rem;
+    content: '';
+    pointer-events: none;
+  }
+
+  .logo-carousel::before {
+    left: 0;
+    background: linear-gradient(to right, #fff, rgb(255 255 255 / 0%));
+  }
+
+  .logo-carousel::after {
+    right: 0;
+    background: linear-gradient(to left, #fff, rgb(255 255 255 / 0%));
+  }
+
+  @keyframes logo-carousel-scroll {
+    from {
+      transform: translateX(0);
+    }
+
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .logo-carousel__track {
+      animation: none;
+    }
+  }
+</style>
 <script>
   import '@components/button';
   import '@components/hero';
