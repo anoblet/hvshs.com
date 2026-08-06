@@ -1,6 +1,6 @@
 import { Base } from '@components/base';
 import '@components/icon';
-import { chevronLeft, chevronRight } from '@icons/index';
+import { arrowBack, arrowForward } from '@icons/index';
 import { css, html } from 'lit';
 import {
   customElement,
@@ -164,7 +164,7 @@ export class ScrollComponent extends Base {
           tabindex="0"
           aria-label="Previous"
         >
-          ${chevronLeft}
+          ${arrowBack}
         </icon-component>
         <slot></slot>
         <icon-component
@@ -175,7 +175,7 @@ export class ScrollComponent extends Base {
           tabindex="0"
           aria-label="Next"
         >
-          ${chevronRight}
+          ${arrowForward}
         </icon-component>
       </div>
     `;

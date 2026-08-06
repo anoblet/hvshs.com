@@ -11,6 +11,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Switched deployment from Cloudflare Workers (Wrangler) to Firebase Hosting
 
+### UI
+
+- Standardized all rendered UI arrows on the Material Symbols `arrow_forward` icon family (mirrored `arrow_back` for previous/back actions) across the logo-carousel nav buttons, pricing-card CTAs, and scroll navigation; retired chevron icons
+
 ## [0.3.0] - 2026-08-06
 
 ### Branding
