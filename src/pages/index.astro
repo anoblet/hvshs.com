@@ -1,7 +1,6 @@
 ---
 import Layout from '../layouts/default.astro';
 import { getImage } from 'astro:assets';
-import augustLogo from '@assets/logos/august.svg';
 import aqaraLogo from '@assets/logos/aqara.svg';
 import bluetoothLogo from '@assets/logos/bluetooth.svg';
 import inovelliLogo from '@assets/logos/inovelli.png';
@@ -62,7 +61,12 @@ const heroSlides = await Promise.all(
 const heroSlidesJson = JSON.stringify(heroSlides);
 
 const logos = [
-  { src: augustLogo.src, alt: 'August', href: 'https://august.com/' },
+  {
+    src: 'https://cdn.shopify.com/s/files/1/1354/7835/files/logoSvg.svg?12380900890489450926',
+    alt: 'August',
+    href: 'https://august.com/',
+    keepColors: true,
+  },
   { src: aqaraLogo.src, alt: 'Aqara', href: 'https://www.aqara.com/' },
   {
     src: bluetoothLogo.src,
@@ -247,6 +251,7 @@ const logos = [
   }
 
   .logo-carousel img.logo-carousel__img--color,
+  .logo-carousel img[data-logo='August'],
   .logo-carousel img[data-logo='Bluetooth'],
   .logo-carousel img[data-logo='Inovelli'],
   .logo-carousel img[data-logo='Philips Hue'],
