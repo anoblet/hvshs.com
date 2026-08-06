@@ -34,5 +34,6 @@ jobs:
       - name: Deploy to Firebase Hosting
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
+          channelId: 'preview'
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_HVSHS_8274D }}
           projectId: hvshs-8274d
