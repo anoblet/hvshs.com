@@ -191,7 +191,7 @@ export class HeroComponent extends Base {
         <div class="overlay">
           <div class="text">
             <h1>
-              Hudson Valley Smart Home Solutions (HVSHS)<br />
+              Hudson Valley Smart Home Solutions<br />
               <span class="highlight">${this.tagline}</span>
             </h1>
             <div class="buttons">
