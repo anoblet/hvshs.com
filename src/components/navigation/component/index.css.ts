@@ -98,6 +98,20 @@ export const style = css`
     font-weight: 600;
   }
 
+  .brand-title-desktop {
+    display: none;
+  }
+
+  @media (min-width: 48rem) {
+    .brand-title-mobile {
+      display: none;
+    }
+
+    .brand-title-desktop {
+      display: inline;
+    }
+  }
+
   svg {
     height: 2rem;
     width: 2rem;
