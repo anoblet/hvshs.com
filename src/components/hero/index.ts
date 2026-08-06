@@ -15,7 +15,7 @@ const taglines = [
   'Whole-Home Automation, Simplified',
   'Connecting Your Home, Effortlessly',
   'Local Experts in Smart Home Technology',
-  'Seamless Smart Home Services',
+  'Seamless Smart Home Solutions',
   'Making Your Home Work Smarter',
   'Expert Smart Home Installation & Support',
 ];
@@ -190,7 +190,7 @@ export class HeroComponent extends Base {
         <div class="overlay">
           <div class="text">
             <h1>
-              Hudson Valley Smart Home Services<br />
+              Hudson Valley Smart Home Solutions (HVSHS)<br />
               <span class="highlight">${this.tagline}</span>
             </h1>
             <div class="buttons">

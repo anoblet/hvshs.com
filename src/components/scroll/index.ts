@@ -40,7 +40,7 @@ export class ScrollComponent extends Base {
       }
 
       icon-component:focus {
-        outline: 2px solid var(--color-accent-500, #19f9d8);
+        outline: 2px solid var(--color-accent-500, var(--color-sky-500));
         outline-offset: 2px;
         border-radius: 50%;
       }

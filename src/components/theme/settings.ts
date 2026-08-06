@@ -28,7 +28,7 @@ export class ThemeComponent extends BeforeRender(Base) {
         color: var(--text-color);
 
         &:focus {
-          outline: 2px solid var(--color-teal-200);
+          outline: 2px solid var(--color-sky-200);
           outline-offset: 2px;
         }
       }
@@ -49,7 +49,7 @@ export class ThemeComponent extends BeforeRender(Base) {
 
       button {
         padding: 0.75rem 1.5rem;
-        background-color: var(--color-teal-200);
+        background-color: var(--color-sky-200);
         color: var(--color-neutral-900);
         border: none;
         border-radius: var(--border-radius);
@@ -58,7 +58,7 @@ export class ThemeComponent extends BeforeRender(Base) {
         margin-top: 1rem;
 
         &:hover {
-          background-color: var(--color-teal-300);
+          background-color: var(--color-sky-300);
         }
       }
     `,

@@ -130,7 +130,7 @@ export const style = css`
 
   .title {
     align-items: center;
-    color: var(--color-teal-200);
+    color: var(--color-sky-200);
     display: flex;
     flex: 1;
     font-size: 1.25rem;

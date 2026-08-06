@@ -1,6 +1,6 @@
 import { Base } from '@components/base';
-import { customElement, queryAll, state } from 'lit/decorators.js';
 import { css, html } from 'lit';
+import { customElement, queryAll, state } from 'lit/decorators.js';
 import { BeforeRender } from '../../mixins/BeforeRenderMixin';
 
 @customElement('settings-component')
@@ -26,7 +26,7 @@ export class SettingsComponent extends BeforeRender(Base) {
         color: var(--text-color);
 
         &:focus {
-          outline: 2px solid var(--color-teal-200);
+          outline: 2px solid var(--color-sky-200);
           outline-offset: 2px;
         }
       }

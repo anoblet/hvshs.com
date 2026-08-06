@@ -46,7 +46,7 @@ export const globalStyles = css`
     }
 
     &:focus-visible {
-      outline: 2px solid var(--color-accent-500, #19f9d8);
+      outline: 2px solid var(--color-accent-500, var(--color-sky-500));
       outline-offset: 2px;
       border-radius: 2px;
     }
@@ -57,7 +57,7 @@ export const globalStyles = css`
   input:focus-visible,
   select:focus-visible,
   textarea:focus-visible {
-    outline: 2px solid var(--color-accent-500, #19f9d8);
+    outline: 2px solid var(--color-accent-500, var(--color-sky-500));
     outline-offset: 2px;
   }
 
@@ -434,12 +434,16 @@ export const globalStyles = css`
     font-style: italic;
   }
 
-  .rose-200 {
-    color: var(--color-rose-200);
+  .sky-200 {
+    color: var(--color-sky-200);
   }
 
-  .rose-400 {
-    color: var(--color-rose-400);
+  .sky-300 {
+    color: var(--color-sky-300);
+  }
+
+  .sky-400 {
+    color: var(--color-sky-400);
   }
 
   .space {
@@ -522,19 +526,15 @@ export const globalStyles = css`
   }
 
   .savings-note {
-    background: var(--color-teal-100);
-    border: 1px solid var(--color-teal-300);
+    background: var(--color-sky-50);
+    border: 1px solid var(--color-sky-200);
     border-radius: 0.5rem;
     padding: 1rem;
     text-align: center;
 
     strong {
-      color: var(--color-teal-700);
+      color: var(--color-sky-700);
     }
-  }
-
-  .teal-200 {
-    color: var(--color-teal-200);
   }
 
   .text-align-center {
@@ -560,13 +560,13 @@ export const globalStyles = css`
 
   html[data-theme='dark'] {
     li::marker {
-      content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='1rem' viewBox='0 -960 960 720' width='1rem' fill='oklch(0.91 0.096 180.426)'%0A%3E%3Cpath d='M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z' /%3E%3C/svg%3E");
+      content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='1rem' viewBox='0 -960 960 720' width='1rem' fill='oklch(0.901 0.058 230.902)'%0A%3E%3Cpath d='M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z' /%3E%3C/svg%3E");
     }
   }
 
   :host([data-theme='dark']) {
     li::marker {
-      content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='1rem' viewBox='0 -960 960 720' width='1rem' fill='oklch(0.91 0.096 180.426)'%0A%3E%3Cpath d='M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z' /%3E%3C/svg%3E");
+      content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='1rem' viewBox='0 -960 960 720' width='1rem' fill='oklch(0.901 0.058 230.902)'%0A%3E%3Cpath d='M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z' /%3E%3C/svg%3E");
     }
   }
 

@@ -1,6 +1,6 @@
 # Smart Home Images
 
-25 royalty-free images for the Hudson Valley Smart Home Services site.
+25 royalty-free images for the Hudson Valley Smart Home Solutions site.
 
 - **License:** All images are from [Unsplash](https://unsplash.com) under the [Unsplash License](https://unsplash.com/license), which permits free commercial and non-commercial use without attribution (attribution appreciated but not required).
 - **Source:** Each row lists the Unsplash photo page for attribution and the direct CDN URL used for download.

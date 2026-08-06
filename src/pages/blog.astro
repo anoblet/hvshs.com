@@ -6,19 +6,6 @@ import Layout from '../layouts/default.astro';
 
 const postCollection = await getCollection('blog');
 
-const originalPosts = postCollection
-  .filter(post => post.data.ai !== true)
-  .sort(
-    (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
-  );
-
-const generatedPosts = postCollection
-  .filter(post => post.data.ai === true)
-  .sort(
-    (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
-  );
-
-// const posts = [...originalPosts, ...generatedPosts];
 const posts = postCollection.sort(
   (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
 );
@@ -26,7 +13,7 @@ const posts = postCollection.sort(
 
 <Layout
   title="Blog"
-  description="Smart home tips, guides, and updates from Hudson Valley Smart Home Services. Discover new ideas about home automation, energy efficiency, security, and getting the most from your smart devices."
+  description="Smart home tips, guides, and updates from Hudson Valley Smart Home Solutions. Discover new ideas about home automation, energy efficiency, security, and getting the most from your smart devices."
 >
   <div class="gap grid max-width-56 width-100">
     <h1 class="text-align-center">Blog</h1>

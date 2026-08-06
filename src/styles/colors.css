@@ -243,4 +243,5 @@
   --color-stone-950: oklch(0.147 0.004 49.25);
   --color-black: #000;
   --color-white: #fff;
+  --color-accent-500: var(--color-sky-500);
 }

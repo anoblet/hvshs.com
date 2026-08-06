@@ -28,18 +28,24 @@ export class BusinessCard extends Base {
 
       :host([data-theme='dark']) {
         li::marker {
-          content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='1rem' viewBox='0 -960 960 960' width='1rem' fill='oklch(0.91 0.096 180.426)'%0A%3E%3Cpath d='M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z' /%3E%3C/svg%3E");
+          content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='1rem' viewBox='0 -960 960 960' width='1rem' fill='oklch(0.901 0.058 230.902)'%0A%3E%3Cpath d='M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z' /%3E%3C/svg%3E");
         }
       }
 
       :host([side='back']) {
+        color: var(--color-neutral-100);
+
         icon-component {
           margin-top: 0.25rem;
         }
+
+        h1 {
+          color: var(--color-neutral-50);
+        }
       }
 
-      .amber-300 {
-        color: var(--color-amber-300);
+      .sky-300 {
+        color: var(--color-sky-300);
       }
 
       .front {
@@ -87,19 +93,19 @@ export class BusinessCard extends Base {
               class="column flex padding justify-content-space-around width-100"
             >
               <h1 class="font-weight-6 text-align-center">
-                Hudson Valley Smart Home Services
+                Hudson Valley Smart Home Solutions (HVSHS)
               </h1>
               <p class="font-size-1-5 text-align-center">
                 Smart home design, installation, and support for the Hudson
                 Valley.
               </p>
               <div class="align-items-center flex space-around">
-                <ul class="amber-300 font-size-1-5 gap-2 grid">
+                <ul class="sky-300 font-size-1-5 gap-2 grid">
                   <li>Design</li>
                   <li>Installation</li>
                   <li>Automation</li>
                 </ul>
-                <ul class="amber-300 font-size-1-5 gap-2 grid">
+                <ul class="sky-300 font-size-1-5 gap-2 grid">
                   <li>Security</li>
                   <li>Support</li>
                   <li>Education</li>
