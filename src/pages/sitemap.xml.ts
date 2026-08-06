@@ -7,8 +7,10 @@ const staticRoutes = [
   '/',
   '/about',
   '/blog',
+  '/business-card',
   '/contact',
   '/faq',
+  '/lit',
   '/mentorship',
   '/portfolio',
   '/portfolio/personal',
@@ -22,6 +24,8 @@ const staticRoutes = [
   '/services/installation/pricing',
   '/services/consultation',
   '/services/consultation/pricing',
+  '/settings',
+  '/theme',
 ];
 
 export const GET: APIRoute = async () => {

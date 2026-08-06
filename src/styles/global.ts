@@ -487,7 +487,7 @@ export const globalStyles = css`
   }
 
   .option-card {
-    background: var(--color-neutral-100);
+    background: var(--card-background-color, var(--color-neutral-100));
     border: 1px solid var(--color-neutral-200);
     border-radius: 0.5rem;
     display: flex;
@@ -526,7 +526,7 @@ export const globalStyles = css`
   }
 
   .savings-note {
-    background: var(--color-sky-50);
+    background: var(--card-background-color, var(--color-sky-50));
     border: 1px solid var(--color-sky-200);
     border-radius: 0.5rem;
     padding: 1rem;
@@ -535,6 +535,10 @@ export const globalStyles = css`
     strong {
       color: var(--color-sky-700);
     }
+  }
+
+  html[data-theme='dark'] .savings-note strong {
+    color: var(--color-sky-200);
   }
 
   .text-align-center {

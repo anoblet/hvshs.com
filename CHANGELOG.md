@@ -11,6 +11,33 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Switched deployment from Cloudflare Workers (Wrangler) to Firebase Hosting
 
+## [0.3.0] - 2026-08-06
+
+### Branding
+
+- Standardized the business name to "Hudson Valley Smart Home Solutions" across the site, metadata, and docs
+- Fixed `/service-area` title and H1 (previously "Tarrytown Smart Home Solutions")
+- Centralized page-title branding in `default.astro` with a `pageTitle` guard — appends " | Hudson Valley Smart Home Solutions" to `<title>`, `og:title`, and `twitter:title` without doubling when the title already contains the name
+- Added light/dark `<meta name="theme-color">` tags (`#f5f5f5` light / `#262626` dark)
+- Updated stale brand references in `README.md` and `INSTRUCTIONS.md` ("Smart Home Services" → "Smart Home Solutions")
+
+### Accessibility
+
+- Fixed dark-mode WCAG contrast violations on card-based pages (`/pricing`, `/service-area`, `/mentorship`, etc.):
+  - Defined `card-background-color: var(--color-neutral-800)` in `src/themes/dark.json`
+  - Made `PricingCard` surfaces and text theme-aware via `--text-color` / `--h2-color` tokens (removed light-only background override)
+  - Made `.option-card` and `.savings-note` surfaces theme-aware in `src/styles/global.ts`; dark-mode `strong` now uses `sky-200`
+- Fixed `/service-area` CTA horizontal overflow at narrow viewports (`minmax(0, 1fr)` grid track + `flex-wrap`)
+
+### Performance
+
+- Added `fetchpriority="high"` to the hero (LCP) image — Lighthouse Performance stable at 93 (target ≥ 80)
+
+### Testing & Tooling
+
+- Updated `lighthouserc.cjs` audit URL port 4321 → 4322
+- Added `/business-card`, `/lit`, `/settings`, `/theme` to `src/pages/sitemap.xml.ts`
+
 ## [0.1.1] - 2025-08-10
 
 ### Added

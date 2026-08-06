@@ -14,6 +14,7 @@
   "button-secondary-color": "var(--color-sky-200)",
   "button-secondary-hover-color": "var(--color-sky-200)",
   "button-secondary-outline": "1px solid var(--color-sky-300)",
+  "card-background-color": "var(--color-neutral-800)",
   "card-border-color": "var(--color-neutral-400)",
   "color-four": "var(--color-sky-200)",
   "color-one": "var(--color-sky-200)",

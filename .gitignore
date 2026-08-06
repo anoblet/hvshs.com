@@ -1,5 +1,6 @@
 .astro
 .chroma
+.copilot
 .env
 .firebase
 .genaiscript
@@ -11,6 +12,7 @@
 chats
 dist
 node_modules
+reports
 storage
 
 genaiscript.d.ts

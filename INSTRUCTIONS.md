@@ -4,7 +4,7 @@
 
 - This project uses Astro JS, Lit, and Fluent UI. Familiarize yourself with these technologies if you are not already.
 
-- The site is for [Hudson Valley Smart Home Services](https://hvshs.com/). It manages smart home devices and services for clients in the Hudson Valley area.
+- The site is for [Hudson Valley Smart Home Solutions](https://hvshs.com/). It manages smart home devices and services for clients in the Hudson Valley area.
 
 - Key pages:
 

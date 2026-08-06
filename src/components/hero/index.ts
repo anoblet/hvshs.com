@@ -184,6 +184,7 @@ export class HeroComponent extends Base {
                 srcset=${slide.srcset ?? ''}
                 alt=${slide.alt}
                 loading="eager"
+                fetchpriority="high"
               />`
             : ''}
         </div>

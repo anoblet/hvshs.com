@@ -1,7 +1,7 @@
 module.exports = {
   ci: {
     collect: {
-      url: ['http://localhost:4321/'],
+      url: ['http://localhost:4322/'],
       numberOfRuns: 1,
     },
     upload: {

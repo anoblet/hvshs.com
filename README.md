@@ -1,6 +1,6 @@
-# Hudson Valley Smart Home Services (hvshs.com)
+# Hudson Valley Smart Home Solutions (hvshs.com)
 
-The official website for Hudson Valley Smart Home Services — smart home design, installation, and support for homes and businesses across the Hudson Valley. Built with Astro, Lit Web Components, and TypeScript.
+The official website for Hudson Valley Smart Home Solutions — smart home design, installation, and support for homes and businesses across the Hudson Valley. Built with Astro, Lit Web Components, and TypeScript.
 
 ## ⚡ Lighthouse Scores
 
@@ -18,7 +18,7 @@ The official website for Hudson Valley Smart Home Services — smart home design
 
 ## 🏠 Overview
 
-Hudson Valley Smart Home Services is the online home for a local smart home business serving the Hudson Valley region. The site connects homeowners and businesses with professional smart home design, installation, and support — featuring a component-driven architecture with a focus on accessibility, performance, and maintainability.
+Hudson Valley Smart Home Solutions is the online home for a local smart home business serving the Hudson Valley region. The site connects homeowners and businesses with professional smart home design, installation, and support — featuring a component-driven architecture with a focus on accessibility, performance, and maintainability.
 
 ## ✨ Features
 
@@ -283,7 +283,7 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ## 📞 Contact
 
-**Hudson Valley Smart Home Services**
+**Hudson Valley Smart Home Solutions**
 
 - **Phone**: (914) 417-9070
 - **Email**: andrewbnoblet@gmail.com
