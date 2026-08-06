@@ -5,9 +5,9 @@
   "border-radius": "0.25rem",
   "box-shadow": "0 0.25rem 0.25rem rgba(0, 0, 0, 0.125)",
   "button-background-color": "var(--color-sky-700)",
-  "button-color": "var(--color-neutral-50)",
-  "button-hover-background-color": "var(--color-neutral-900)",
-  "button-hover-color": "var(--color-neutral-100)",
+  "button-color": "var(--color-white)",
+  "button-hover-background-color": "var(--color-sky-800)",
+  "button-hover-color": "var(--color-white)",
   "button-outline": "1px solid var(--color-neutral-100)",
   "button-secondary-border": "1px solid var(--color-neutral-600)",
   "button-secondary-color": "var(--color-neutral-900)",
@@ -49,5 +49,5 @@
   "text-color": "var(--color-neutral-800)",
   "theme-toggle-background-color": "var(--color-neutral-900)",
   "theme-toggle-icon-color": "var(--color-neutral-100)",
-  "button-icon-color": "var(--color-neutral-900)"
+  "button-icon-color": "var(--color-white)"
 }

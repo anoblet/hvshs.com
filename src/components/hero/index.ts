@@ -114,7 +114,7 @@ export class HeroComponent extends Base {
 
       .buttons button-component[variant='primary'] {
         --button-background-color: var(--color-sky-700);
-        --button-color: #fff;
+        --button-color: var(--color-white);
       }
 
       @media (max-width: 48rem) {

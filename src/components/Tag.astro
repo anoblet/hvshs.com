@@ -21,16 +21,21 @@ const { variant = 'primary' } = Astro.props;
 
   .tag-primary {
     background-color: var(--primary-color);
-    color: var(--button-color);
+    color: var(--color-neutral-950);
   }
 
   .tag-secondary {
     background-color: var(--secondary-color);
-    color: var(--button-color);
+    color: var(--color-neutral-50);
   }
 
   .tag-tertiary {
     background-color: var(--tertiary-color);
-    color: var(--button-color);
+    color: var(--color-neutral-50);
+  }
+
+  html[data-theme='dark'] .tag-secondary,
+  html[data-theme='dark'] .tag-tertiary {
+    color: var(--color-neutral-900);
   }
 </style>
