@@ -6,7 +6,7 @@
   "box-shadow": "0 0.125rem 0.125rem rgba(0, 0, 0, 0.125)",
   "button-background-color": "var(--color-sky-700)",
   "button-color": "var(--color-white)",
-  "button-hover-background-color": "var(--color-sky-800)",
+  "button-hover-background-color": "var(--color-sky-600)",
   "button-hover-color": "var(--color-white)",
   "button-icon-color": "var(--color-white)",
   "button-outline": "1px solid var(--color-neutral-900)",

@@ -199,7 +199,7 @@ export class HeroComponent extends Base {
                 Services
               </button-component>
               <button-component href="/contact" variant="secondary">
-                Contact
+                Contact Us
               </button-component>
             </div>
           </div>

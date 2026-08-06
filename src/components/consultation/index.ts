@@ -55,7 +55,7 @@ export class Consultation extends Base {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <button-component> Contact </button-component>
+          <button-component> Contact Us </button-component>
         </a>
       </section>
     `;

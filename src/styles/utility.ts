@@ -173,18 +173,29 @@ export const utility = css`
   .button:hover {
     background: var(--button-hover-background-color, var(--color-primary-700));
     border-color: var(--button-hover-border-color, var(--color-primary-700));
+    color: var(
+      --button-hover-color,
+      var(--button-text-color, var(--color-primary-contrast))
+    );
     text-decoration: none;
   }
 
   .button-primary {
-    background: var(--color-primary);
-    border-color: var(--color-primary);
-    color: var(--color-primary-contrast);
+    background: var(--button-background-color, var(--color-primary));
+    border-color: var(--button-background-color, var(--color-primary));
+    color: var(--button-color, var(--color-primary-contrast));
   }
 
   .button-primary:hover {
-    background: var(--color-primary-700);
-    border-color: var(--color-primary-700);
+    background: var(--button-hover-background-color, var(--color-primary-700));
+    border-color: var(
+      --button-hover-background-color,
+      var(--color-primary-700)
+    );
+    color: var(
+      --button-hover-color,
+      var(--button-color, var(--color-primary-contrast))
+    );
   }
 
   /* Responsive utility classes */
