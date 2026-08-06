@@ -37,7 +37,7 @@ export class NavigationComponent extends Base {
           <icon-component>${this.opened ? close : menu}</icon-component>
         </button>
         <a
-          href="https://hvshs.com/"
+          href="/"
           class="brand-icon"
           aria-label="Hudson Valley Smart Home Solutions (HVSHS)"
         >
@@ -46,18 +46,15 @@ export class NavigationComponent extends Base {
             >Hudson Valley Smart Home Solutions</span
           >
         </a>
-        <a
-          href="https://hvshs.com/"
-          class="menu-toggle"
-          aria-label="Hudson Valley Smart Home Services"
-        >
+        <div class="menu-toggle hub-icon" aria-hidden="true">
           <icon-component>${hub}</icon-component>
-        </a>
+        </div>
       </div>
       <div
         id="mobile-drawer"
         class="column gap flex drawer"
         aria-hidden=${this.opened ? 'false' : 'true'}
+        ?inert=${!this.opened}
       >
         <button
           class="menu-toggle"
