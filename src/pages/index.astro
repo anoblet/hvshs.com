@@ -4,7 +4,6 @@ import { getImage } from 'astro:assets';
 import augustLogo from '@assets/logos/august.svg';
 import aqaraLogo from '@assets/logos/aqara.svg';
 import bluetoothLogo from '@assets/logos/bluetooth.svg';
-import homeAssistantLogo from '@assets/logos/home-assistant.svg';
 import inovelliLogo from '@assets/logos/inovelli.png';
 import philipsHueLogo from '@assets/logos/philips-hue.svg';
 import tpLinkLogo from '@assets/logos/tp-link.png';
@@ -69,38 +68,44 @@ const logos = [
     src: bluetoothLogo.src,
     alt: 'Bluetooth',
     href: 'https://www.bluetooth.com/',
+    keepColors: true,
   },
   {
-    src: homeAssistantLogo.src,
+    src: 'https://upload.wikimedia.org/wikipedia/commons/a/ab/New_Home_Assistant_logo.svg',
     alt: 'Home Assistant',
     href: 'https://www.home-assistant.io/',
+    keepColors: true,
   },
   {
     src: inovelliLogo.src,
     alt: 'Inovelli',
     href: 'https://www.inovelli.com/',
+    keepColors: true,
   },
   {
     src: philipsHueLogo.src,
     alt: 'Philips Hue',
     href: 'https://www.philips-hue.com/',
+    keepColors: true,
   },
   {
     src: tpLinkLogo.src,
     alt: 'TP-Link',
     href: 'https://www.tp-link.com/',
+    keepColors: true,
   },
   {
     src: thirdRealityLogo.src,
     alt: 'Third Reality',
     href: 'https://thirdreality.com/',
   },
-  { src: wifiLogo.src, alt: 'Wi-Fi', href: 'https://www.wi-fi.org/' },
   {
-    src: zWaveLogo.src,
-    alt: 'Z-Wave',
-    href: 'https://z-wavealliance.org/',
+    src: wifiLogo.src,
+    alt: 'Wi-Fi',
+    href: 'https://www.wi-fi.org/',
+    keepColors: true,
   },
+  { src: zWaveLogo.src, alt: 'Z-Wave', href: 'https://z-wavealliance.org/' },
   {
     src: zigbeeLogo.src,
     alt: 'Zigbee',
@@ -119,24 +124,45 @@ const logos = [
     class="logo-carousel"
     aria-label="Smart home technologies we support"
   >
+    <button
+      class="logo-carousel__nav logo-carousel__nav--prev"
+      aria-label="Previous logos"
+    >
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"></path>
+      </svg>
+    </button>
     <div class="logo-carousel__track">
       {
         [0, 1].map(group => (
           <div class="logo-carousel__group" aria-hidden={group === 1}>
-            {logos.map(({ src, alt, href }) => (
+            {logos.map(({ src, alt, href, keepColors }) => (
               <a
                 href={href}
                 target="_blank"
                 rel="noreferrer"
                 tabindex={group === 1 ? -1 : undefined}
               >
-                <img src={src} alt={alt} data-logo={alt} />
+                <img
+                  src={src}
+                  alt={alt}
+                  data-logo={alt}
+                  class:list={[{ 'logo-carousel__img--color': keepColors }]}
+                />
               </a>
             ))}
           </div>
         ))
       }
     </div>
+    <button
+      class="logo-carousel__nav logo-carousel__nav--next"
+      aria-label="Next logos"
+    >
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path>
+      </svg>
+    </button>
   </section>
 </Layout>
 
@@ -146,6 +172,46 @@ const logos = [
     width: 100%;
     overflow: hidden;
     background: #fff;
+  }
+
+  .logo-carousel:hover .logo-carousel__track {
+    animation-play-state: paused;
+  }
+
+  .logo-carousel__nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    width: 2.5rem;
+    height: 2.5rem;
+    border: none;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.9);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+  }
+
+  .logo-carousel__nav:hover {
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  }
+
+  .logo-carousel__nav svg {
+    width: 1.5rem;
+    height: 1.5rem;
+    fill: #333;
+  }
+
+  .logo-carousel__nav--prev {
+    left: 1rem;
+  }
+
+  .logo-carousel__nav--next {
+    right: 1rem;
   }
 
   .logo-carousel__track {
@@ -180,6 +246,7 @@ const logos = [
     filter: brightness(0);
   }
 
+  .logo-carousel img.logo-carousel__img--color,
   .logo-carousel img[data-logo='Bluetooth'],
   .logo-carousel img[data-logo='Inovelli'],
   .logo-carousel img[data-logo='Philips Hue'],
@@ -224,8 +291,111 @@ const logos = [
       animation: none;
     }
   }
+
+  @media (max-width: 768px) {
+    .logo-carousel a {
+      width: 6rem;
+      height: 3.5rem;
+      flex: 0 0 6rem;
+    }
+
+    .logo-carousel img {
+      width: 4.5rem;
+      height: 2.25rem;
+    }
+
+    .logo-carousel__group {
+      gap: 1.5rem;
+      padding: 1rem 1.5rem;
+    }
+
+    .logo-carousel__nav {
+      width: 2rem;
+      height: 2rem;
+    }
+
+    .logo-carousel__nav svg {
+      width: 1.25rem;
+      height: 1.25rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .logo-carousel a {
+      width: 5rem;
+      height: 3rem;
+      flex: 0 0 5rem;
+    }
+
+    .logo-carousel img {
+      width: 3.75rem;
+      height: 1.875rem;
+    }
+
+    .logo-carousel__group {
+      gap: 1rem;
+      padding: 0.75rem 1rem;
+    }
+  }
 </style>
 <script>
   import '@components/button';
   import '@components/hero';
+
+  // Logo carousel navigation
+  const carousel = document.querySelector('.logo-carousel');
+  const track = carousel?.querySelector('.logo-carousel__track');
+  const prevBtn = carousel?.querySelector('.logo-carousel__nav--prev');
+  const nextBtn = carousel?.querySelector('.logo-carousel__nav--next');
+
+  if (track && prevBtn && nextBtn) {
+    const getScrollAmount = () => {
+      const logo = track.querySelector('a');
+      if (!logo) return 200;
+      const style = getComputedStyle(logo);
+      const width = logo.offsetWidth;
+      const marginRight = parseInt(style.marginRight) || 0;
+      return width + marginRight;
+    };
+
+    let currentOffset = 0;
+    const maxOffset = track.scrollWidth / 2;
+
+    const updatePosition = () => {
+      track.style.transform = `translateX(${currentOffset}px)`;
+    };
+
+    prevBtn.addEventListener('click', () => {
+      // Pause animation
+      track.style.animationPlayState = 'paused';
+
+      // If animation is running, get current position
+      if (!currentOffset) {
+        const computed = getComputedStyle(track);
+        const matrix = new DOMMatrix(computed.transform);
+        currentOffset = matrix.m41;
+      }
+
+      currentOffset += getScrollAmount();
+      if (currentOffset > 0) currentOffset = 0;
+      updatePosition();
+    });
+
+    nextBtn.addEventListener('click', () => {
+      // Pause animation
+      track.style.animationPlayState = 'paused';
+
+      // If animation is running, get current position
+      if (!currentOffset) {
+        const computed = getComputedStyle(track);
+        const matrix = new DOMMatrix(computed.transform);
+        currentOffset = matrix.m41;
+      }
+
+      currentOffset -= getScrollAmount();
+      if (currentOffset < -maxOffset)
+        currentOffset = -maxOffset + getScrollAmount();
+      updatePosition();
+    });
+  }
 </script>
