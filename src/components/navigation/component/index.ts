@@ -39,7 +39,7 @@ export class NavigationComponent extends Base {
         <a
           href="https://hvshs.com/"
           class="brand-icon"
-          aria-label="Hudson Valley Smart Home Services"
+          aria-label="Hudson Valley Smart Home Solutions (HVSHS)"
         >
           <span class="brand-title brand-title-mobile">HVSHS</span>
           <span class="brand-title brand-title-desktop"

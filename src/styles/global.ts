@@ -518,7 +518,7 @@ export const globalStyles = css`
   }
 
   .section-chip.subscription {
-    background: var(--color-teal-500);
+    background: var(--color-sky-700);
   }
 
   .savings-note {

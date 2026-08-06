@@ -28,6 +28,16 @@ import Layout from '../layouts/default.astro';
       class="services-hero-image"
       loading="lazy"
     />
+    <section class="gap grid justify-content-center text-align-center">
+      <h2>
+        <span class="section-chip subscription">Subscription</span> Services backed
+        by care plans
+      </h2>
+      <p class="hero-description">
+        Design, installation, and support — each paired with a monthly care plan
+        from <strong>$25/month</strong> so your smart home stays reliable for years.
+      </p>
+    </section>
     <div class="column gap-2 grid">
       <Card>
         <h2 class="font-size-1-125 line-height-1-5">Smart Home Design</h2>
@@ -36,9 +46,13 @@ import Layout from '../layouts/default.astro';
             Custom smart home system planning tailored to your home, lifestyle,
             and budget—focused on what matters most to you.
           </p>
-          <p>
-            <strong>Design packages from $499</strong> · Care plans from $25/month
-          </p>
+          <div class="pricing-block">
+            <p class="care-plan-line">
+              <span class="plan-pill">Care plan</span>
+              <strong>from $25/month</strong>
+            </p>
+            <p class="one-time-line">One-time design packages from $499</p>
+          </div>
           <ul>
             <li>Home technology assessment</li>
             <li>Lighting, climate & security design</li>
@@ -48,7 +62,7 @@ import Layout from '../layouts/default.astro';
         </div>
         <span></span>
         <a class="gap-0-5 align-self-flex-end" href="/services/design">
-          Learn more <ArrowForward />
+          Learn more about smart home design <ArrowForward />
         </a>
       </Card>
       <Card>
@@ -58,9 +72,15 @@ import Layout from '../layouts/default.astro';
             Professional installation and configuration of smart home devices.
             Clean wiring, proper placement, and reliable setup—done right.
           </p>
-          <p>
-            <strong>Installation packages from $999</strong> · Care plans from $25/month
-          </p>
+          <div class="pricing-block">
+            <p class="care-plan-line">
+              <span class="plan-pill">Care plan</span>
+              <strong>from $25/month</strong>
+            </p>
+            <p class="one-time-line">
+              One-time installation packages from $999
+            </p>
+          </div>
           <ul>
             <li>Device installation and mounting</li>
             <li>Wiring and network configuration</li>
@@ -70,7 +90,7 @@ import Layout from '../layouts/default.astro';
         </div>
         <span></span>
         <a class="gap-0-5 align-self-flex-end" href="/services/installation">
-          Learn more <ArrowForward />
+          Learn more about installation & setup <ArrowForward />
         </a>
       </Card>
       <Card>
@@ -80,9 +100,13 @@ import Layout from '../layouts/default.astro';
             Expert guidance for smart home challenges—advice on devices,
             platforms, troubleshooting, and long-term system strategy.
           </p>
-          <p>
-            <strong>Assessments from $199</strong> · Care plans from $25/month
-          </p>
+          <div class="pricing-block">
+            <p class="care-plan-line">
+              <span class="plan-pill">Care plan</span>
+              <strong>from $25/month</strong>
+            </p>
+            <p class="one-time-line">One-time assessments from $199</p>
+          </div>
           <ul class="flex-1">
             <li>Smart home assessments and advice</li>
             <li>Device and platform recommendations</li>
@@ -92,7 +116,7 @@ import Layout from '../layouts/default.astro';
         </div>
         <span></span>
         <a class="gap-0-5 align-self-flex-end" href="/services/consultation">
-          Learn more <ArrowForward />
+          Learn more about consultation & support <ArrowForward />
         </a>
       </Card>
     </div>
@@ -121,5 +145,45 @@ import Layout from '../layouts/default.astro';
   :global(.services-hero-image) {
     margin-inline: auto;
     max-width: 30rem;
+  }
+
+  .pricing-block {
+    background: var(--color-teal-50);
+    border: 1px solid var(--color-teal-200);
+    border-radius: 0.5rem;
+    color: var(--color-neutral-800);
+    display: grid;
+    gap: 0.25rem;
+    padding: 0.75rem 1rem;
+  }
+
+  .care-plan-line {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 0;
+  }
+
+  .care-plan-line strong {
+    color: var(--color-neutral-900);
+  }
+
+  .plan-pill {
+    background: var(--color-sky-700, var(--color-teal-500));
+    border-radius: 999px;
+    color: #fff;
+    font-size: 0.6875rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    line-height: 1.4;
+    padding: 0.25rem 0.6rem;
+    text-transform: uppercase;
+  }
+
+  .one-time-line {
+    color: var(--color-neutral-600);
+    font-size: 0.875rem;
+    margin: 0;
   }
 </style>

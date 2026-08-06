@@ -84,7 +84,7 @@ export const style = css`
 
   .brand-icon {
     align-items: center;
-    cursor: default;
+    cursor: pointer;
     display: flex;
     gap: 0.5rem;
     left: 50%;
