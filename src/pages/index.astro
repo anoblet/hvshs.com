@@ -10,38 +10,38 @@ import thirdRealityLogo from '@assets/logos/third-reality.svg';
 import wifiLogo from '@assets/logos/wifi.svg';
 import zWaveLogo from '@assets/logos/z-wave.svg';
 import zigbeeLogo from '@assets/logos/zigbee.svg';
-import catskills from '@assets/images/hudson-valley/catskills-shawangunk.jpg';
-import walkway from '@assets/images/hudson-valley/walkway-foggy.jpg';
-import midHudson from '@assets/images/hudson-valley/mid-hudson-bridge.jpg';
-import blithewood from '@assets/images/hudson-valley/hudson-catskills-blithewood.jpg';
-import lighthouse from '@assets/images/hudson-valley/saugerties-lighthouse.jpg';
-import shawangunk from '@assets/images/hudson-valley/shawangunk-verkeerderkill.jpg';
+import peekamoose from '@assets/images/hudson-valley/peekamoose-overlook-panorama.jpg';
+import stormKing from '@assets/images/hudson-valley/storm-king-sunrise.jpg';
+import bearMountain from '@assets/images/hudson-valley/bear-mountain-view.jpg';
+import olanaSunset from '@assets/images/hudson-valley/olana-sunset.jpg';
+import esopus from '@assets/images/hudson-valley/esopus-lighthouse.jpg';
+import minnewaska from '@assets/images/hudson-valley/lake-minnewaska.jpg';
 
 const heroSlides = await Promise.all(
   [
     {
-      src: catskills,
-      alt: 'Catskill Mountains panorama seen from the Shawangunk Ridge near Kerhonkson',
+      src: peekamoose,
+      alt: 'Catskill Mountains panorama from the Great Southern Overlook on Peekamoose Mountain',
     },
     {
-      src: walkway,
-      alt: 'Walkway Over the Hudson railroad bridge spanning the Hudson River between Poughkeepsie and Highland',
+      src: stormKing,
+      alt: 'Sunrise over the Hudson Highlands at Storm King State Park',
     },
     {
-      src: midHudson,
-      alt: 'Mid-Hudson Bridge and Poughkeepsie viewed from Franny Reese State Park in Highland',
+      src: bearMountain,
+      alt: 'Bear Mountain rising above the Hudson River from Bear Mountain Bridge Road',
     },
     {
-      src: blithewood,
-      alt: 'Hudson River and the Catskill Escarpment viewed from North Germantown',
+      src: olanaSunset,
+      alt: 'The Rip Van Winkle Bridge, Hudson River, and Catskill Mountains at sunset from Olana',
     },
     {
-      src: lighthouse,
-      alt: 'Saugerties Lighthouse on the Hudson River',
+      src: esopus,
+      alt: 'Esopus Meadows Lighthouse in the fog on the Hudson River',
     },
     {
-      src: shawangunk,
-      alt: 'Shawangunk Ridge seen from Bear Hill Preserve near Cragsmoor in autumn',
+      src: minnewaska,
+      alt: 'Lake Minnewaska in the Minnewaska State Park Preserve',
     },
   ].map(async ({ src, alt }) => {
     const optimized = await getImage({
@@ -128,7 +128,6 @@ const logos = [
   description="Hudson Valley Smart Home Solutions - subscription-based smart home design, installation, maintenance, and support for lighting, climate, security, and entertainment automation."
   fullBleed
 >
-  <hero-component images={heroSlidesJson}></hero-component>
   <section
     class="logo-carousel"
     aria-label="Smart home technologies we support"
@@ -177,10 +176,15 @@ const logos = [
       </svg>
     </button>
   </section>
+  <hero-component images={heroSlidesJson}></hero-component>
 </Layout>
 
 <style>
   .logo-carousel {
+    /* Clears the fixed navigation-component nav now that the carousel is the
+       first element on the page; 5rem matches the non-full-bleed main padding
+       convention. */
+    padding-top: 5rem;
     position: relative;
     width: 100%;
     overflow: hidden;
@@ -193,7 +197,10 @@ const logos = [
 
   .logo-carousel__nav {
     position: absolute;
-    top: 50%;
+    /* Center vertically on the carousel's content area (below the 5rem top
+       padding), not the full carousel box, so the buttons never sit under
+       the fixed nav at short viewport heights. */
+    top: calc(5rem + (100% - 5rem) / 2);
     transform: translateY(-50%);
     z-index: 2;
     width: 2.5rem;
@@ -238,13 +245,13 @@ const logos = [
     display: flex;
     align-items: center;
     gap: 2rem;
-    padding: 1.5rem 2rem;
+    padding: 0.75rem 2rem;
   }
 
   .logo-carousel a {
     display: grid;
     width: 8rem;
-    height: 4.5rem;
+    height: 3.5rem;
     flex: 0 0 8rem;
     place-items: center;
     border-radius: 0.25rem;
@@ -254,7 +261,7 @@ const logos = [
   .logo-carousel img {
     display: block;
     width: 6rem;
-    height: 3rem;
+    height: 2.5rem;
     object-fit: contain;
     filter: brightness(0);
   }
@@ -310,18 +317,18 @@ const logos = [
   @media (max-width: 768px) {
     .logo-carousel a {
       width: 6rem;
-      height: 3.5rem;
+      height: 3rem;
       flex: 0 0 6rem;
     }
 
     .logo-carousel img {
       width: 4.5rem;
-      height: 2.25rem;
+      height: 2rem;
     }
 
     .logo-carousel__group {
       gap: 1.5rem;
-      padding: 1rem 1.5rem;
+      padding: 0.5rem 1.5rem;
     }
 
     .logo-carousel__nav {
@@ -338,18 +345,18 @@ const logos = [
   @media (max-width: 480px) {
     .logo-carousel a {
       width: 5rem;
-      height: 3rem;
+      height: 2.5rem;
       flex: 0 0 5rem;
     }
 
     .logo-carousel img {
       width: 3.75rem;
-      height: 1.875rem;
+      height: 1.5rem;
     }
 
     .logo-carousel__group {
       gap: 1rem;
-      padding: 0.75rem 1rem;
+      padding: 0.5rem 1rem;
     }
   }
 </style>

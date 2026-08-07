@@ -14,6 +14,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### UI
 
 - Standardized all rendered UI arrows on the Material Symbols `arrow_forward` icon family (mirrored `arrow_back` for previous/back actions) across the logo-carousel nav buttons, pricing-card CTAs, and scroll navigation; retired chevron icons
+- Moved the home-page logo carousel above the hero section (first element inside the `fullBleed` layout); carousel clears the fixed nav with `padding-top: 5rem` and centers its prev/next buttons on the content area via `top: calc(5rem + (100% - 5rem) / 2)`
+- Reduced the home-page logo carousel band height at all breakpoints (group padding `0.75/0.5/0.5rem`, tile heights `3.5/3/2.5rem`, img heights `2.5/2/1.5rem` at base/768/480) — band now 80/64/56px tall; nav `padding-top: 5rem` and button centering unchanged
 
 ## [0.3.0] - 2026-08-06
 
