@@ -9,6 +9,12 @@ export const style = css`
     margin: 0;
     padding: 0;
     text-decoration: none;
+
+    &:focus-visible {
+      outline: 2px solid var(--color-accent-500, var(--color-sky-500));
+      outline-offset: 4px;
+      border-radius: 0.25rem;
+    }
   }
 
   :host {

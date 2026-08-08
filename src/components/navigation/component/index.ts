@@ -22,6 +22,14 @@ export class NavigationComponent extends Base {
     }
   }
 
+  connectedCallback() {
+    super.connectedCallback();
+    this.addEventListener('click', event => {
+      if ((event.target as HTMLElement).closest('.drawer a'))
+        this.opened = false;
+    });
+  }
+
   render() {
     return html`
       <div class="space-between">

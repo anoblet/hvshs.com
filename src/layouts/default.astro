@@ -4,6 +4,8 @@ import '@styles/fonts.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import logo from '@assets/icons/hub_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg?url';
+import socialImage from '@assets/images/hudson-valley/peekamoose-overlook-panorama.jpg';
+import { getImage } from 'astro:assets';
 import { ViewTransitions } from 'astro:transitions';
 
 interface Props {
@@ -23,6 +25,10 @@ const {
 const pageTitle = title.includes('Hudson Valley Smart Home Solutions')
   ? title
   : `${title} | Hudson Valley Smart Home Solutions`;
+const socialImageUrl = new URL(
+  (await getImage({ src: socialImage, format: 'webp', width: 1200 })).src,
+  Astro.site
+).href;
 
 const localBusinessSchema = {
   '@context': 'https://schema.org',
@@ -106,10 +112,17 @@ const localBusinessSchema = {
     <link rel="icon" type="image/svg+xml" href={logo} />
     <link rel="canonical" href={`https://hvshs.com${Astro.url.pathname}`} />
     <meta name="generator" content={Astro.generator} />
+    <meta name="robots" content="index, follow" />
     <title>{pageTitle}</title>
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
+    <meta
+      property="og:site_name"
+      content="Hudson Valley Smart Home Solutions"
+    />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:image" content={socialImageUrl} />
     <meta
       property="og:url"
       content={`https://hvshs.com${Astro.url.pathname}`}
@@ -117,6 +130,7 @@ const localBusinessSchema = {
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={pageTitle} />
     <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={socialImageUrl} />
     <script
       type="application/ld+json"
       set:html={JSON.stringify(localBusinessSchema)}
