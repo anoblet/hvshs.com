@@ -7,9 +7,16 @@ interface Props {
   alt: string;
   class?: string;
   loading?: 'eager' | 'lazy';
+  fetchpriority?: 'high' | 'low' | 'auto';
 }
 
-const { src, alt, class: className = '', loading = 'lazy' } = Astro.props;
+const {
+  src,
+  alt,
+  class: className = '',
+  loading = 'lazy',
+  fetchpriority = loading === 'eager' ? 'high' : 'auto',
+} = Astro.props;
 ---
 
 <Image
@@ -17,6 +24,7 @@ const { src, alt, class: className = '', loading = 'lazy' } = Astro.props;
   alt={alt}
   class={`smart-image ${className}`}
   loading={loading}
+  fetchpriority={fetchpriority}
   widths={[480, 768, 1280]}
   sizes="(max-width: 768px) 100vw, 50vw"
   format="webp"
