@@ -70,6 +70,7 @@ export default [
       '.astro/**',
       'reports/**',
       'chats/**',
+      '.copilot/**',
       'bin/**',
       '.genaiscript/**',
       'genaisrc/**',
