@@ -37,3 +37,4 @@ jobs:
           channelId: 'preview'
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_HVSHS_8274D }}
           projectId: hvshs-8274d
+          channelId: live
